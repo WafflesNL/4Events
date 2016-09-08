@@ -35,19 +35,20 @@
             this.lbLikes = new System.Windows.Forms.Label();
             this.lblNaam = new System.Windows.Forms.Label();
             this.lblPost = new System.Windows.Forms.Label();
+            this.btnAttach = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TijdlijnBox
             // 
             this.TijdlijnBox.FormattingEnabled = true;
-            this.TijdlijnBox.Location = new System.Drawing.Point(12, 38);
+            this.TijdlijnBox.Location = new System.Drawing.Point(9, 38);
             this.TijdlijnBox.Name = "TijdlijnBox";
-            this.TijdlijnBox.Size = new System.Drawing.Size(283, 290);
+            this.TijdlijnBox.Size = new System.Drawing.Size(310, 290);
             this.TijdlijnBox.TabIndex = 0;
             // 
             // btnPost
             // 
-            this.btnPost.Location = new System.Drawing.Point(217, 334);
+            this.btnPost.Location = new System.Drawing.Point(241, 334);
             this.btnPost.Name = "btnPost";
             this.btnPost.Size = new System.Drawing.Size(78, 33);
             this.btnPost.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             // btnLike
             // 
-            this.btnLike.Location = new System.Drawing.Point(301, 38);
+            this.btnLike.Location = new System.Drawing.Point(325, 38);
             this.btnLike.Name = "btnLike";
             this.btnLike.Size = new System.Drawing.Size(75, 23);
             this.btnLike.TabIndex = 3;
@@ -74,7 +75,7 @@
             // lbLikes
             // 
             this.lbLikes.AutoSize = true;
-            this.lbLikes.Location = new System.Drawing.Point(260, 22);
+            this.lbLikes.Location = new System.Drawing.Point(287, 22);
             this.lbLikes.Name = "lbLikes";
             this.lbLikes.Size = new System.Drawing.Size(32, 13);
             this.lbLikes.TabIndex = 4;
@@ -92,17 +93,27 @@
             // lblPost
             // 
             this.lblPost.AutoSize = true;
-            this.lblPost.Location = new System.Drawing.Point(103, 22);
+            this.lblPost.Location = new System.Drawing.Point(101, 22);
             this.lblPost.Name = "lblPost";
-            this.lblPost.Size = new System.Drawing.Size(35, 13);
+            this.lblPost.Size = new System.Drawing.Size(33, 13);
             this.lblPost.TabIndex = 6;
-            this.lblPost.Text = "label1";
+            this.lblPost.Text = "Posts";
+            // 
+            // btnAttach
+            // 
+            this.btnAttach.Location = new System.Drawing.Point(218, 334);
+            this.btnAttach.Name = "btnAttach";
+            this.btnAttach.Size = new System.Drawing.Size(17, 32);
+            this.btnAttach.TabIndex = 7;
+            this.btnAttach.Text = "A";
+            this.btnAttach.UseVisualStyleBackColor = true;
             // 
             // TijdlijnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 378);
+            this.ClientSize = new System.Drawing.Size(407, 378);
+            this.Controls.Add(this.btnAttach);
             this.Controls.Add(this.lblPost);
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.lbLikes);
@@ -126,5 +137,6 @@
         private System.Windows.Forms.Label lbLikes;
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.Label lblPost;
+        private System.Windows.Forms.Button btnAttach;
     }
 }

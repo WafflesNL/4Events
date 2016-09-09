@@ -52,11 +52,23 @@
     <Compile Include="Forms\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BetalingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BetalingsForm.Designer.cs">
+      <DependentUpon>BetalingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EventForm.Designer.cs">
       <DependentUpon>EventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterForm.Designer.cs">
+      <DependentUpon>FilterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GastenOverzichtForm.cs">
       <SubType>Form</SubType>
@@ -76,6 +88,12 @@
     <Compile Include="Forms\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReserveringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReserveringForm.Designer.cs">
+      <DependentUpon>ReserveringForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TijdlijnForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +111,14 @@
     <EmbeddedResource Include="Forms\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BetalingsForm.resx">
+      <DependentUpon>BetalingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterForm.resx">
+      <DependentUpon>FilterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GastenOverzichtForm.resx">
       <DependentUpon>GastenOverzichtForm.cs</DependentUpon>
@@ -104,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReserveringForm.resx">
+      <DependentUpon>ReserveringForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TijdlijnForm.resx">
       <DependentUpon>TijdlijnForm.cs</DependentUpon>

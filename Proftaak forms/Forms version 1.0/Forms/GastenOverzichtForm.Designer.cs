@@ -31,9 +31,9 @@
             this.GastenOverzichtLijst = new System.Windows.Forms.ListBox();
             this.lblNaam = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnToevoegen = new System.Windows.Forms.Button();
-            this.btnAanpassen = new System.Windows.Forms.Button();
+            this.btnAanwezig = new System.Windows.Forms.Button();
+            this.btnNietAanwezig = new System.Windows.Forms.Button();
+            this.lblAanwezig = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // GastenOverzichtLijst
@@ -41,7 +41,7 @@
             this.GastenOverzichtLijst.FormattingEnabled = true;
             this.GastenOverzichtLijst.Location = new System.Drawing.Point(12, 25);
             this.GastenOverzichtLijst.Name = "GastenOverzichtLijst";
-            this.GastenOverzichtLijst.Size = new System.Drawing.Size(155, 225);
+            this.GastenOverzichtLijst.Size = new System.Drawing.Size(175, 225);
             this.GastenOverzichtLijst.TabIndex = 0;
             // 
             // lblNaam
@@ -56,47 +56,47 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(80, 6);
+            this.lblStatus.Location = new System.Drawing.Point(50, 6);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(78, 13);
             this.lblStatus.TabIndex = 2;
             this.lblStatus.Text = "Betalingsstatus";
             // 
-            // btnDelete
+            // btnAanwezig
             // 
-            this.btnDelete.Location = new System.Drawing.Point(173, 25);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 25);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnAanwezig.Location = new System.Drawing.Point(193, 25);
+            this.btnAanwezig.Name = "btnAanwezig";
+            this.btnAanwezig.Size = new System.Drawing.Size(99, 25);
+            this.btnAanwezig.TabIndex = 3;
+            this.btnAanwezig.Text = "Aanwezig";
+            this.btnAanwezig.UseVisualStyleBackColor = true;
             // 
-            // btnToevoegen
+            // btnNietAanwezig
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(173, 56);
-            this.btnToevoegen.Name = "btnToevoegen";
-            this.btnToevoegen.Size = new System.Drawing.Size(99, 25);
-            this.btnToevoegen.TabIndex = 4;
-            this.btnToevoegen.Text = "Toevoegen";
-            this.btnToevoegen.UseVisualStyleBackColor = true;
+            this.btnNietAanwezig.Location = new System.Drawing.Point(193, 56);
+            this.btnNietAanwezig.Name = "btnNietAanwezig";
+            this.btnNietAanwezig.Size = new System.Drawing.Size(99, 25);
+            this.btnNietAanwezig.TabIndex = 4;
+            this.btnNietAanwezig.Text = "Niet Aanwezig";
+            this.btnNietAanwezig.UseVisualStyleBackColor = true;
             // 
-            // btnAanpassen
+            // lblAanwezig
             // 
-            this.btnAanpassen.Location = new System.Drawing.Point(173, 87);
-            this.btnAanpassen.Name = "btnAanpassen";
-            this.btnAanpassen.Size = new System.Drawing.Size(99, 25);
-            this.btnAanpassen.TabIndex = 5;
-            this.btnAanpassen.Text = "Aanpassen";
-            this.btnAanpassen.UseVisualStyleBackColor = true;
+            this.lblAanwezig.AutoSize = true;
+            this.lblAanwezig.Location = new System.Drawing.Point(134, 6);
+            this.lblAanwezig.Name = "lblAanwezig";
+            this.lblAanwezig.Size = new System.Drawing.Size(53, 13);
+            this.lblAanwezig.TabIndex = 5;
+            this.lblAanwezig.Text = "Aanwezig";
             // 
             // GastenOverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.btnAanpassen);
-            this.Controls.Add(this.btnToevoegen);
-            this.Controls.Add(this.btnDelete);
+            this.ClientSize = new System.Drawing.Size(300, 262);
+            this.Controls.Add(this.lblAanwezig);
+            this.Controls.Add(this.btnNietAanwezig);
+            this.Controls.Add(this.btnAanwezig);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.GastenOverzichtLijst);
@@ -112,8 +112,8 @@
         private System.Windows.Forms.ListBox GastenOverzichtLijst;
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnToevoegen;
-        private System.Windows.Forms.Button btnAanpassen;
+        private System.Windows.Forms.Button btnAanwezig;
+        private System.Windows.Forms.Button btnNietAanwezig;
+        private System.Windows.Forms.Label lblAanwezig;
     }
 }

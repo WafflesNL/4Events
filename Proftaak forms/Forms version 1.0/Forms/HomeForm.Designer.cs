@@ -35,12 +35,13 @@
             this.btnBetalingStatus = new System.Windows.Forms.Button();
             this.btnEventInfo = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
+            this.btnReserveren = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogOut
             // 
             this.btnLogOut.Location = new System.Drawing.Point(9, 334);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(68, 36);
             this.btnLogOut.TabIndex = 0;
@@ -91,11 +92,21 @@
             this.btnAccount.Text = "Accountinformatie";
             this.btnAccount.UseVisualStyleBackColor = true;
             // 
+            // btnReserveren
+            // 
+            this.btnReserveren.Location = new System.Drawing.Point(166, 92);
+            this.btnReserveren.Name = "btnReserveren";
+            this.btnReserveren.Size = new System.Drawing.Size(129, 28);
+            this.btnReserveren.TabIndex = 6;
+            this.btnReserveren.Text = "Reserveren";
+            this.btnReserveren.UseVisualStyleBackColor = true;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 379);
+            this.Controls.Add(this.btnReserveren);
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.btnEventInfo);
             this.Controls.Add(this.btnBetalingStatus);
@@ -103,7 +114,7 @@
             this.Controls.Add(this.btnTijdlijn);
             this.Controls.Add(this.btnLogOut);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.ResumeLayout(false);
@@ -118,5 +129,6 @@
         private System.Windows.Forms.Button btnBetalingStatus;
         private System.Windows.Forms.Button btnEventInfo;
         private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.Button btnReserveren;
     }
 }

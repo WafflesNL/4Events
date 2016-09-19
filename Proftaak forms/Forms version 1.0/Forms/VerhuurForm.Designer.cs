@@ -37,7 +37,6 @@
             this.lblPrijs = new System.Windows.Forms.Label();
             this.tbTotaal = new System.Windows.Forms.TextBox();
             this.btnTotaal = new System.Windows.Forms.Button();
-            this.btnTerug = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbbMateriaal
@@ -118,21 +117,11 @@
             this.btnTotaal.Text = "Totaal";
             this.btnTotaal.UseVisualStyleBackColor = true;
             // 
-            // btnTerug
-            // 
-            this.btnTerug.Location = new System.Drawing.Point(12, 324);
-            this.btnTerug.Name = "btnTerug";
-            this.btnTerug.Size = new System.Drawing.Size(75, 23);
-            this.btnTerug.TabIndex = 9;
-            this.btnTerug.Text = "Terug";
-            this.btnTerug.UseVisualStyleBackColor = true;
-            // 
             // VerhuurForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 355);
-            this.Controls.Add(this.btnTerug);
+            this.ClientSize = new System.Drawing.Size(302, 330);
             this.Controls.Add(this.btnTotaal);
             this.Controls.Add(this.tbTotaal);
             this.Controls.Add(this.lblPrijs);
@@ -160,6 +149,5 @@
         private System.Windows.Forms.Label lblPrijs;
         private System.Windows.Forms.TextBox tbTotaal;
         private System.Windows.Forms.Button btnTotaal;
-        private System.Windows.Forms.Button btnTerug;
     }
 }

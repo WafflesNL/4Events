@@ -34,7 +34,6 @@
             this.btnAanwezig = new System.Windows.Forms.Button();
             this.btnNietAanwezig = new System.Windows.Forms.Button();
             this.lblAanwezig = new System.Windows.Forms.Label();
-            this.btnTerug = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GastenOverzichtLijst
@@ -90,21 +89,11 @@
             this.lblAanwezig.TabIndex = 5;
             this.lblAanwezig.Text = "Aanwezig";
             // 
-            // btnTerug
-            // 
-            this.btnTerug.Location = new System.Drawing.Point(12, 256);
-            this.btnTerug.Name = "btnTerug";
-            this.btnTerug.Size = new System.Drawing.Size(75, 23);
-            this.btnTerug.TabIndex = 6;
-            this.btnTerug.Text = "Terug";
-            this.btnTerug.UseVisualStyleBackColor = true;
-            // 
             // GastenOverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 284);
-            this.Controls.Add(this.btnTerug);
+            this.ClientSize = new System.Drawing.Size(300, 262);
             this.Controls.Add(this.lblAanwezig);
             this.Controls.Add(this.btnNietAanwezig);
             this.Controls.Add(this.btnAanwezig);
@@ -126,6 +115,5 @@
         private System.Windows.Forms.Button btnAanwezig;
         private System.Windows.Forms.Button btnNietAanwezig;
         private System.Windows.Forms.Label lblAanwezig;
-        private System.Windows.Forms.Button btnTerug;
     }
 }

@@ -36,6 +36,7 @@
             this.btnEventInfo = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnReserveren = new System.Windows.Forms.Button();
+            this.btnPlaats = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogOut
@@ -101,11 +102,21 @@
             this.btnReserveren.Text = "Reserveren";
             this.btnReserveren.UseVisualStyleBackColor = true;
             // 
+            // btnPlaats
+            // 
+            this.btnPlaats.Location = new System.Drawing.Point(12, 138);
+            this.btnPlaats.Name = "btnPlaats";
+            this.btnPlaats.Size = new System.Drawing.Size(129, 28);
+            this.btnPlaats.TabIndex = 7;
+            this.btnPlaats.Text = "Plaats Reserveren";
+            this.btnPlaats.UseVisualStyleBackColor = true;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 379);
+            this.Controls.Add(this.btnPlaats);
             this.Controls.Add(this.btnReserveren);
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.btnEventInfo);
@@ -130,5 +141,6 @@
         private System.Windows.Forms.Button btnEventInfo;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnReserveren;
+        private System.Windows.Forms.Button btnPlaats;
     }
 }

@@ -64,12 +64,6 @@
     <Compile Include="Forms\EventForm.Designer.cs">
       <DependentUpon>EventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FilterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FilterForm.Designer.cs">
-      <DependentUpon>FilterForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\GastenOverzichtForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +110,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FilterForm.resx">
-      <DependentUpon>FilterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GastenOverzichtForm.resx">
       <DependentUpon>GastenOverzichtForm.cs</DependentUpon>

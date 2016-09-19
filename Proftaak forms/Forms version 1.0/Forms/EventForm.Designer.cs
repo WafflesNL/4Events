@@ -43,6 +43,7 @@
             this.btnOverzicht = new System.Windows.Forms.Button();
             this.btnReservering = new System.Windows.Forms.Button();
             this.cbLocatie = new System.Windows.Forms.ComboBox();
+            this.btnVerhuur = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEventNaam
@@ -161,11 +162,21 @@
             this.cbLocatie.Size = new System.Drawing.Size(146, 21);
             this.cbLocatie.TabIndex = 13;
             // 
+            // btnVerhuur
+            // 
+            this.btnVerhuur.Location = new System.Drawing.Point(149, 270);
+            this.btnVerhuur.Name = "btnVerhuur";
+            this.btnVerhuur.Size = new System.Drawing.Size(146, 25);
+            this.btnVerhuur.TabIndex = 14;
+            this.btnVerhuur.Text = "Verhuur";
+            this.btnVerhuur.UseVisualStyleBackColor = true;
+            // 
             // EventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 379);
+            this.Controls.Add(this.btnVerhuur);
             this.Controls.Add(this.cbLocatie);
             this.Controls.Add(this.btnReservering);
             this.Controls.Add(this.btnOverzicht);
@@ -202,5 +213,6 @@
         private System.Windows.Forms.Button btnOverzicht;
         private System.Windows.Forms.Button btnReservering;
         private System.Windows.Forms.ComboBox cbLocatie;
+        private System.Windows.Forms.Button btnVerhuur;
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="Forms\BetalingsForm.Designer.cs">
       <DependentUpon>BetalingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CampingOverzichtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CampingOverzichtForm.Designer.cs">
+      <DependentUpon>CampingOverzichtForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BetalingsForm.resx">
       <DependentUpon>BetalingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CampingOverzichtForm.resx">
+      <DependentUpon>CampingOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>

@@ -4,3 +4,5 @@ C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debu
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csprojResolveAssemblyReference.cache
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb

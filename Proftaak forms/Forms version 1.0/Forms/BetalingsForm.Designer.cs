@@ -63,6 +63,7 @@
             this.btnBetalen.TabIndex = 2;
             this.btnBetalen.Text = "Betalen";
             this.btnBetalen.UseVisualStyleBackColor = true;
+            this.btnBetalen.Click += new System.EventHandler(this.btnBetalen_Click);
             // 
             // comboBox1
             // 
@@ -112,6 +113,7 @@
             this.Controls.Add(this.lblSaldoDB);
             this.Controls.Add(this.lblSaldo);
             this.Name = "BetalingsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BetalingsForm";
             this.ResumeLayout(false);
             this.PerformLayout();

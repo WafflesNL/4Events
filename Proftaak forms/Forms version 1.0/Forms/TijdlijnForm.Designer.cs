@@ -39,6 +39,7 @@
             this.btnFilter = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblCategorie = new System.Windows.Forms.Label();
+            this.btnTerug = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TijdlijnBox
@@ -57,6 +58,7 @@
             this.btnPost.TabIndex = 1;
             this.btnPost.Text = "Post";
             this.btnPost.UseVisualStyleBackColor = true;
+            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
             // textBox1
             // 
@@ -74,6 +76,7 @@
             this.btnLike.TabIndex = 3;
             this.btnLike.Text = "Like";
             this.btnLike.UseVisualStyleBackColor = true;
+            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
             // 
             // lbLikes
             // 
@@ -110,6 +113,7 @@
             this.btnAttach.TabIndex = 7;
             this.btnAttach.Text = "A";
             this.btnAttach.UseVisualStyleBackColor = true;
+            this.btnAttach.Click += new System.EventHandler(this.btnAttach_Click);
             // 
             // btnFilter
             // 
@@ -119,6 +123,7 @@
             this.btnFilter.TabIndex = 8;
             this.btnFilter.Text = "Zoeken";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // comboBox1
             // 
@@ -137,11 +142,22 @@
             this.lblCategorie.TabIndex = 10;
             this.lblCategorie.Text = "Categorie";
             // 
+            // btnTerug
+            // 
+            this.btnTerug.Location = new System.Drawing.Point(15, 390);
+            this.btnTerug.Name = "btnTerug";
+            this.btnTerug.Size = new System.Drawing.Size(80, 31);
+            this.btnTerug.TabIndex = 11;
+            this.btnTerug.Text = "Terug";
+            this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
+            // 
             // TijdlijnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 394);
+            this.ClientSize = new System.Drawing.Size(409, 433);
+            this.Controls.Add(this.btnTerug);
             this.Controls.Add(this.lblCategorie);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnFilter);
@@ -154,6 +170,7 @@
             this.Controls.Add(this.btnPost);
             this.Controls.Add(this.TijdlijnBox);
             this.Name = "TijdlijnForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TijdlijnForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -173,5 +190,6 @@
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblCategorie;
+        private System.Windows.Forms.Button btnTerug;
     }
 }

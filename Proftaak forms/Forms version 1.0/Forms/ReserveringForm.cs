@@ -16,5 +16,18 @@ namespace Forms_version_1._0.Forms
         {
             InitializeComponent();
         }
+
+        private void btnTerug_Click(object sender, EventArgs e)
+        {
+            EventForm window = new EventForm();
+            this.Hide();
+            window.ShowDialog();
+            this.Close();
+        }
+
+        private void btnVerwijder_Click(object sender, EventArgs e)
+        {
+            //Removes selected reservation from the list/database.
+        }
     }
 }

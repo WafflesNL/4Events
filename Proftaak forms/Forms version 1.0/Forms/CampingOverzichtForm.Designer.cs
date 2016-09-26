@@ -363,6 +363,7 @@
             this.btnVerwijder.TabIndex = 41;
             this.btnVerwijder.Text = "Verwijder Reservering";
             this.btnVerwijder.UseVisualStyleBackColor = true;
+            this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
             // btnReserveer
             // 
@@ -372,6 +373,7 @@
             this.btnReserveer.TabIndex = 42;
             this.btnReserveer.Text = "Reserveer";
             this.btnReserveer.UseVisualStyleBackColor = true;
+            this.btnReserveer.Click += new System.EventHandler(this.btnReserveer_Click);
             // 
             // btnTerug
             // 
@@ -381,6 +383,7 @@
             this.btnTerug.TabIndex = 43;
             this.btnTerug.Text = "Terug";
             this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
             // 
             // btnFilter
             // 
@@ -390,6 +393,7 @@
             this.btnFilter.TabIndex = 44;
             this.btnFilter.Text = "Filter Op";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // comboBox1
             // 
@@ -450,6 +454,7 @@
             this.Controls.Add(this.tbPlaats3);
             this.Controls.Add(this.tbPlaats2);
             this.Name = "CampingOverzichtForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CampingOverzichtForm";
             this.ResumeLayout(false);
             this.PerformLayout();

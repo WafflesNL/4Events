@@ -16,5 +16,11 @@ namespace Forms_version_1._0.Forms
         {
             InitializeComponent();
         }
+
+        private void btnZoek_Click(object sender, EventArgs e)
+        {
+            //Searches the timeline for Posts containing the specified info.
+            this.Close();
+        }
     }
 }

@@ -55,15 +55,17 @@
             this.btnVerhuur.TabIndex = 1;
             this.btnVerhuur.Text = "Verhuur";
             this.btnVerhuur.UseVisualStyleBackColor = true;
+            this.btnVerhuur.Click += new System.EventHandler(this.btnVerhuur_Click);
             // 
             // btnIndex
             // 
-            this.btnIndex.Location = new System.Drawing.Point(208, 69);
+            this.btnIndex.Location = new System.Drawing.Point(12, 324);
             this.btnIndex.Name = "btnIndex";
             this.btnIndex.Size = new System.Drawing.Size(82, 23);
             this.btnIndex.TabIndex = 2;
             this.btnIndex.Text = "Terug";
             this.btnIndex.UseVisualStyleBackColor = true;
+            this.btnIndex.Click += new System.EventHandler(this.btnIndex_Click);
             // 
             // lblMatNaam
             // 
@@ -85,12 +87,13 @@
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(208, 98);
+            this.btnToevoegen.Location = new System.Drawing.Point(209, 69);
             this.btnToevoegen.Name = "btnToevoegen";
             this.btnToevoegen.Size = new System.Drawing.Size(81, 23);
             this.btnToevoegen.TabIndex = 5;
             this.btnToevoegen.Text = "Toevoegen";
             this.btnToevoegen.UseVisualStyleBackColor = true;
+            this.btnToevoegen.Click += new System.EventHandler(this.btnToevoegen_Click);
             // 
             // lblPrijs
             // 
@@ -116,12 +119,13 @@
             this.btnTotaal.TabIndex = 8;
             this.btnTotaal.Text = "Totaal";
             this.btnTotaal.UseVisualStyleBackColor = true;
+            this.btnTotaal.Click += new System.EventHandler(this.btnTotaal_Click);
             // 
             // VerhuurForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 330);
+            this.ClientSize = new System.Drawing.Size(302, 351);
             this.Controls.Add(this.btnTotaal);
             this.Controls.Add(this.tbTotaal);
             this.Controls.Add(this.lblPrijs);
@@ -132,6 +136,7 @@
             this.Controls.Add(this.btnVerhuur);
             this.Controls.Add(this.lbbMateriaal);
             this.Name = "VerhuurForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerhuurForm";
             this.ResumeLayout(false);
             this.PerformLayout();

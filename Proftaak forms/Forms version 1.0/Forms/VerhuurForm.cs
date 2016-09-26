@@ -16,5 +16,28 @@ namespace Forms_version_1._0.Forms
         {
             InitializeComponent();
         }
+
+        private void btnIndex_Click(object sender, EventArgs e)
+        {
+            EventForm window = new EventForm();
+            this.Hide();
+            window.ShowDialog();
+            this.Close();
+        }
+
+        private void btnVerhuur_Click(object sender, EventArgs e)
+        {
+            //Adds selected Object to seperate list which will be saved untill user presser "Totaal".
+        }
+
+        private void btnToevoegen_Click(object sender, EventArgs e)
+        {
+            //Adds selected Object to the main list. Meaning that it's been returned.
+        }
+
+        private void btnTotaal_Click(object sender, EventArgs e)
+        {
+            //Checks seperate list and adds all the costs to see the total price.
+        }
     }
 }

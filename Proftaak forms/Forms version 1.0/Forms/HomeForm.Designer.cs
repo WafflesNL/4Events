@@ -48,6 +48,7 @@
             this.btnLogOut.TabIndex = 0;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnTijdlijn
             // 
@@ -57,6 +58,7 @@
             this.btnTijdlijn.TabIndex = 1;
             this.btnTijdlijn.Text = "Naar Tijdlijn";
             this.btnTijdlijn.UseVisualStyleBackColor = true;
+            this.btnTijdlijn.Click += new System.EventHandler(this.btnTijdlijn_Click);
             // 
             // cbSelectEvent
             // 
@@ -74,6 +76,7 @@
             this.btnBetalingStatus.TabIndex = 3;
             this.btnBetalingStatus.Text = "Betalingsstatus";
             this.btnBetalingStatus.UseVisualStyleBackColor = true;
+            this.btnBetalingStatus.Click += new System.EventHandler(this.btnBetalingStatus_Click);
             // 
             // btnEventInfo
             // 
@@ -83,6 +86,7 @@
             this.btnEventInfo.TabIndex = 4;
             this.btnEventInfo.Text = "Eventinformatie";
             this.btnEventInfo.UseVisualStyleBackColor = true;
+            this.btnEventInfo.Click += new System.EventHandler(this.btnEventInfo_Click);
             // 
             // btnAccount
             // 
@@ -92,6 +96,7 @@
             this.btnAccount.TabIndex = 5;
             this.btnAccount.Text = "Accountinformatie";
             this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnReserveren
             // 
@@ -101,6 +106,7 @@
             this.btnReserveren.TabIndex = 6;
             this.btnReserveren.Text = "Reserveren";
             this.btnReserveren.UseVisualStyleBackColor = true;
+            this.btnReserveren.Click += new System.EventHandler(this.btnReserveren_Click);
             // 
             // btnPlaats
             // 
@@ -110,6 +116,7 @@
             this.btnPlaats.TabIndex = 7;
             this.btnPlaats.Text = "Plaats Reserveren";
             this.btnPlaats.UseVisualStyleBackColor = true;
+            this.btnPlaats.Click += new System.EventHandler(this.btnPlaats_Click);
             // 
             // HomeForm
             // 
@@ -127,6 +134,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
             this.ResumeLayout(false);
 

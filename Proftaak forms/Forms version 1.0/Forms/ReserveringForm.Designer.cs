@@ -78,6 +78,7 @@
             this.btnVerwijder.TabIndex = 4;
             this.btnVerwijder.Text = "Verwijder";
             this.btnVerwijder.UseVisualStyleBackColor = true;
+            this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
             // btnTerug
             // 
@@ -87,6 +88,7 @@
             this.btnTerug.TabIndex = 5;
             this.btnTerug.Text = "Terug";
             this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
             // 
             // ReserveringForm
             // 
@@ -100,6 +102,7 @@
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.lstReservering);
             this.Name = "ReserveringForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReserveringForm";
             this.ResumeLayout(false);
             this.PerformLayout();

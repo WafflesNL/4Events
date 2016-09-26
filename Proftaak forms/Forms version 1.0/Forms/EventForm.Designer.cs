@@ -43,6 +43,7 @@
             this.btnOverzicht = new System.Windows.Forms.Button();
             this.btnReservering = new System.Windows.Forms.Button();
             this.cbLocatie = new System.Windows.Forms.ComboBox();
+            this.btnVerhuur = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEventNaam
@@ -125,6 +126,7 @@
             this.btnOpslaan.TabIndex = 9;
             this.btnOpslaan.Text = "Opslaan";
             this.btnOpslaan.UseVisualStyleBackColor = true;
+            this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
             // btnNietOpslaan
             // 
@@ -134,6 +136,7 @@
             this.btnNietOpslaan.TabIndex = 10;
             this.btnNietOpslaan.Text = "Niet Opslaan";
             this.btnNietOpslaan.UseVisualStyleBackColor = true;
+            this.btnNietOpslaan.Click += new System.EventHandler(this.btnNietOpslaan_Click);
             // 
             // btnOverzicht
             // 
@@ -143,6 +146,7 @@
             this.btnOverzicht.TabIndex = 11;
             this.btnOverzicht.Text = "GastenOverzicht";
             this.btnOverzicht.UseVisualStyleBackColor = true;
+            this.btnOverzicht.Click += new System.EventHandler(this.btnOverzicht_Click);
             // 
             // btnReservering
             // 
@@ -152,6 +156,7 @@
             this.btnReservering.TabIndex = 12;
             this.btnReservering.Text = "Reserveringen";
             this.btnReservering.UseVisualStyleBackColor = true;
+            this.btnReservering.Click += new System.EventHandler(this.btnReservering_Click);
             // 
             // cbLocatie
             // 
@@ -161,11 +166,22 @@
             this.cbLocatie.Size = new System.Drawing.Size(146, 21);
             this.cbLocatie.TabIndex = 13;
             // 
+            // btnVerhuur
+            // 
+            this.btnVerhuur.Location = new System.Drawing.Point(149, 270);
+            this.btnVerhuur.Name = "btnVerhuur";
+            this.btnVerhuur.Size = new System.Drawing.Size(146, 25);
+            this.btnVerhuur.TabIndex = 14;
+            this.btnVerhuur.Text = "Verhuur";
+            this.btnVerhuur.UseVisualStyleBackColor = true;
+            this.btnVerhuur.Click += new System.EventHandler(this.btnVerhuur_Click);
+            // 
             // EventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 379);
+            this.Controls.Add(this.btnVerhuur);
             this.Controls.Add(this.cbLocatie);
             this.Controls.Add(this.btnReservering);
             this.Controls.Add(this.btnOverzicht);
@@ -180,6 +196,7 @@
             this.Controls.Add(this.lblEventBeschrijving);
             this.Controls.Add(this.lblEventNaam);
             this.Name = "EventForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,5 +219,6 @@
         private System.Windows.Forms.Button btnOverzicht;
         private System.Windows.Forms.Button btnReservering;
         private System.Windows.Forms.ComboBox cbLocatie;
+        private System.Windows.Forms.Button btnVerhuur;
     }
 }

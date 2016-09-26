@@ -70,6 +70,7 @@
             this.btnAanwezig.TabIndex = 3;
             this.btnAanwezig.Text = "Aanwezig";
             this.btnAanwezig.UseVisualStyleBackColor = true;
+            this.btnAanwezig.Click += new System.EventHandler(this.btnAanwezig_Click);
             // 
             // btnNietAanwezig
             // 
@@ -79,6 +80,7 @@
             this.btnNietAanwezig.TabIndex = 4;
             this.btnNietAanwezig.Text = "Niet Aanwezig";
             this.btnNietAanwezig.UseVisualStyleBackColor = true;
+            this.btnNietAanwezig.Click += new System.EventHandler(this.btnNietAanwezig_Click);
             // 
             // lblAanwezig
             // 
@@ -101,6 +103,7 @@
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.GastenOverzichtLijst);
             this.Name = "GastenOverzichtForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GastenOverzichtForm";
             this.ResumeLayout(false);
             this.PerformLayout();

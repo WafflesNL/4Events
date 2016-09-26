@@ -16,5 +16,11 @@ namespace Forms_version_1._0.Forms
         {
             InitializeComponent();
         }
+
+        private void btnBetalen_Click(object sender, EventArgs e)
+        {
+            //Takes the user to a 3rd party Paying Method
+            this.Close();
+        }
     }
 }

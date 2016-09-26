@@ -16,5 +16,13 @@ namespace Forms_version_1._0
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            HomeForm window = new HomeForm();
+            this.Hide();
+            window.ShowDialog();
+            this.Close();
+        }
     }
 }

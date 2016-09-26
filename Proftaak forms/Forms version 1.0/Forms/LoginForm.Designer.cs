@@ -42,7 +42,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(140, 202);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 20);
             this.textBox1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(140, 224);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(195, 20);
             this.textBox2.TabIndex = 1;
@@ -58,12 +58,13 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(190, 247);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(92, 41);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblGebruikersNaam
             // 
@@ -89,7 +90,7 @@
             // 
             this.pb4Events.Image = global::Forms_version_1._0.Properties.Resources._4Events;
             this.pb4Events.Location = new System.Drawing.Point(107, 12);
-            this.pb4Events.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb4Events.Margin = new System.Windows.Forms.Padding(2);
             this.pb4Events.Name = "pb4Events";
             this.pb4Events.Size = new System.Drawing.Size(263, 163);
             this.pb4Events.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,8 +121,9 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pb4Events)).EndInit();
             this.ResumeLayout(false);

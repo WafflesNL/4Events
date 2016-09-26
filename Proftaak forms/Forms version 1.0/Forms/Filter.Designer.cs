@@ -34,7 +34,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnZoek = new System.Windows.Forms.Button();
-            this.btnTerug = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -87,15 +86,7 @@
             this.btnZoek.TabIndex = 6;
             this.btnZoek.Text = "Zoek";
             this.btnZoek.UseVisualStyleBackColor = true;
-            // 
-            // btnTerug
-            // 
-            this.btnTerug.Location = new System.Drawing.Point(12, 93);
-            this.btnTerug.Name = "btnTerug";
-            this.btnTerug.Size = new System.Drawing.Size(75, 23);
-            this.btnTerug.TabIndex = 7;
-            this.btnTerug.Text = "Terug";
-            this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnZoek.Click += new System.EventHandler(this.btnZoek_Click);
             // 
             // comboBox1
             // 
@@ -111,7 +102,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(272, 126);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btnTerug);
             this.Controls.Add(this.btnZoek);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -119,6 +109,7 @@
             this.Controls.Add(this.lblWoord);
             this.Controls.Add(this.lblNaam);
             this.Name = "Filter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filter";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,7 +124,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnZoek;
-        private System.Windows.Forms.Button btnTerug;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }

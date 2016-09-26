@@ -140,6 +140,7 @@
             this.btnOpslaan.TabIndex = 11;
             this.btnOpslaan.Text = "Opslaan";
             this.btnOpslaan.UseVisualStyleBackColor = true;
+            this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
             // btnNietOpslaan
             // 
@@ -149,6 +150,7 @@
             this.btnNietOpslaan.TabIndex = 12;
             this.btnNietOpslaan.Text = "Niet Opslaan";
             this.btnNietOpslaan.UseVisualStyleBackColor = true;
+            this.btnNietOpslaan.Click += new System.EventHandler(this.btnNietOpslaan_Click);
             // 
             // AccountForm
             // 
@@ -169,6 +171,7 @@
             this.Controls.Add(this.tbWachtwoord);
             this.Controls.Add(this.tbNaam);
             this.Name = "AccountForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accountinformatie";
             this.ResumeLayout(false);
             this.PerformLayout();

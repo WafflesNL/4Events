@@ -16,5 +16,15 @@ namespace Forms_version_1._0.Forms
         {
             InitializeComponent();
         }
+
+        private void btnAanwezig_Click(object sender, EventArgs e)
+        {
+            //Puts the status of the selected guest to "Aanwezig".
+        }
+
+        private void btnNietAanwezig_Click(object sender, EventArgs e)
+        {
+            //Puts the status of the selected guest to "Afwezig".
+        }
     }
 }

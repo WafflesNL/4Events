@@ -21,5 +21,10 @@ namespace Forms_version_1._0.Classes
         {
 
         }
+
+        public void GetPost(Post post)
+        {
+
+        }
     }
 }

@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0.Classes
 {
-    public class Plaats
+    class Camping
     {
-        public Reservering Reservering { get; set; }
-        public enum Categorie
+        public string Name { get; set; }
+
+        public void GetPlaats()
         {
-            Luxe,
-            Normal,
-            Green,
+
         }
     }
 }

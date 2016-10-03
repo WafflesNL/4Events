@@ -24,9 +24,9 @@ namespace Forms_version_1._0
 
             try
             {
-                connect.ConnectionString = "Connection string"; //working connection
-
-                connect.Open();
+                connect.ConnectionString = "Data Source = mssql.fhict.local; Initial Catalog = dbi344256; Persist Security Info = True; User ID = dbi344256; Password = 4Events";
+                
+                            connect.Open();
             }
             catch (Exception e)
             {

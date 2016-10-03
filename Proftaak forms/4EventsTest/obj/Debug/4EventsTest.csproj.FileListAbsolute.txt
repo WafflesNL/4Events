@@ -1,0 +1,9 @@
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\bin\Debug\4EventsTest.dll
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\bin\Debug\4EventsTest.pdb
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\bin\Debug\Forms version 1.0.exe
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\bin\Debug\Forms version 1.0.pdb
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\obj\Debug\4EventsTest.csprojResolveAssemblyReference.cache
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\obj\Debug\4EventsTest.dll
+C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\4EventsTest\obj\Debug\4EventsTest.pdb

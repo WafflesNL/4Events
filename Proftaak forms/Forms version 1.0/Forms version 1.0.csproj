@@ -47,7 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Betaling.cs" />
     <Compile Include="Classes\Database\DatabaseConnectie.cs" />
+    <Compile Include="Classes\Event.cs" />
+    <Compile Include="Classes\Locatie.cs" />
+    <Compile Include="Classes\Materiaal.cs" />
+    <Compile Include="Classes\Plaats.cs" />
+    <Compile Include="Classes\Post.cs" />
+    <Compile Include="Classes\Reservering.cs" />
+    <Compile Include="Classes\Tijdlijn.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>

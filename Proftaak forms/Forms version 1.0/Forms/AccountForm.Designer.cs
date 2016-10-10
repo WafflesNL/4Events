@@ -60,6 +60,7 @@
             this.tbNewPassword.Name = "tbNewPassword";
             this.tbNewPassword.Size = new System.Drawing.Size(224, 22);
             this.tbNewPassword.TabIndex = 1;
+            this.tbNewPassword.UseSystemPasswordChar = true;
             // 
             // tbRepeatPassword
             // 
@@ -68,6 +69,7 @@
             this.tbRepeatPassword.Name = "tbRepeatPassword";
             this.tbRepeatPassword.Size = new System.Drawing.Size(224, 22);
             this.tbRepeatPassword.TabIndex = 2;
+            this.tbRepeatPassword.UseSystemPasswordChar = true;
             // 
             // tbUserName
             // 

@@ -29,23 +29,27 @@ namespace Forms_version_1._0.Froms
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
-            if (tbName.Text != null && tbNewPassword.Text != null && tbOldPassword.Text != null && tbRepeatPassword.Text != null && tbUserName.Text != null)
+            if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "")
             {
-
-
+                //change account and password
+                if (tbNewPassword.Text == tbRepeatPassword.Text)
+                {
+                    //if passwords are the same
+                }
+                else
+                {
+                    MessageBox.Show("Wachtwoorden komen niet overeen");
+                }     
+            }
+            else if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "")
+            {
+                Account Account = new Account(tbName.Text, tbUserName.Text)
             }
             else
             {
-                MessageBox.Show("Niet alle gegevens zijn ingevuld");
+                MessageBox.Show("Niet alle gegevens zijn correct ingevuld");
             }
 
-
-
-            //Saves the changes made to the Account.
-            HomeForm window = new HomeForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
         }
 
         public void GetAccountInformation()

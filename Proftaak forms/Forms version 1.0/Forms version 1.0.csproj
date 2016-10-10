@@ -57,6 +57,7 @@
     <Compile Include="Classes\Post.cs" />
     <Compile Include="Classes\Reservering.cs" />
     <Compile Include="Classes\Tijdlijn.cs" />
+    <Compile Include="Classes\CurrentAccount.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,9 +124,10 @@
     <Compile Include="Forms\VerhuurForm.Designer.cs">
       <DependentUpon>VerhuurForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Enum\Function.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\Database\QueryClass.cs" />
+    <Compile Include="Classes\Database\DatabaseLogin.cs" />
     <EmbeddedResource Include="Forms\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>

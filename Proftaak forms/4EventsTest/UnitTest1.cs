@@ -16,5 +16,13 @@ namespace _4EventsTest
             Assert.AreEqual(true, Bool);
 
         }
+
+        [TestMethod]
+        public void DataNameTest()
+        {
+            string Bool = DatabaseLogin.GetString(1, "Gebruikersnaam");
+            Assert.AreEqual("Lin", Bool);
+
+        }
     }
 }

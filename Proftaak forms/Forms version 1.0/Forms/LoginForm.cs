@@ -19,10 +19,22 @@ namespace Forms_version_1._0
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            HomeForm window = new HomeForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
+            string Username = tbUsername.Text;
+            string Password = tbPassword.Text;
+
+            if (CurrentAccount.Login(Password, Username))
+            {
+                HomeForm window = new HomeForm();
+                this.Hide();
+                window.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                lblInlogstatus.Text = "Het inloggen is mislukt probeer het opnieuw";
+            }
+
+          
         }
     }
 }

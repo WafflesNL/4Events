@@ -19,10 +19,12 @@ namespace Forms_version_1._0
             this.Password = password;
         }
 
+        /*
         public void Login(string Username, string Password)
         {
-            QueryClass.Login(Username, Password);         
+            DatabaseLogin.Login(Username, Password);         
         }
+        */
 
         public void EditAccount(string Name, string Username, string Password)
         {

@@ -136,6 +136,7 @@
             this.btnAccountWijzingen.Text = "Accounts Wijzigen";
             this.btnAccountWijzingen.UseVisualStyleBackColor = true;
             this.btnAccountWijzingen.Visible = false;
+            this.btnAccountWijzingen.Click += new System.EventHandler(this.btnAccountWijzingen_Click);
             // 
             // HomeForm
             // 

@@ -71,6 +71,11 @@ namespace Forms_version_1._0
             this.Close();
         }
 
+        private void btnAccountWijzingen_Click(object sender, EventArgs e)
+        {
+            //Accountbeheerder gaat naar een form waar hij een overzicht krijgt van alle accounts enkan die aanpassen.
+        }
+
         public void GetAcces()
         {       
             if (CurrentAccount.Function == Function.Accountbeheerder)
@@ -78,5 +83,7 @@ namespace Forms_version_1._0
                 btnAccountWijzingen.Visible = true;
             }
         }
+
+      
     }
 }

@@ -11,6 +11,7 @@ namespace Forms_version_1._0
         public string Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public Function Function { get; set; }
 
         public Account(string name, string username, string password)
         {
@@ -19,19 +20,10 @@ namespace Forms_version_1._0
             this.Password = password;
         }
 
-        /*
-        public void Login(string Username, string Password)
-        {
-            DatabaseLogin.Login(Username, Password);         
-        }
-        */
-
+  
         public void EditAccount(string Name, string Username, string Password)
         {
-           this.Name = Name;
-           this.Username = Username;
-           this.Password = Username;  
-            //Database Alter Table goes here         
+           //account has to be changed here
         }
 
 

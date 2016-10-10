@@ -19,7 +19,7 @@ namespace Forms_version_1._0
         {
             ID = DatabaseLogin.CheckUser(Password, Username);
 
-            if (ID != 0)
+            if (ID != 0 && GetUserName(ID) && GetPassword(ID) && GetName(ID) && GetFunction(ID))
             {
                 return true;
             }

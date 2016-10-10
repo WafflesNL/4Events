@@ -23,6 +23,9 @@ namespace _4EventsTest
             string Bool = DatabaseLogin.GetString(1, "Gebruikersnaam");
             Assert.AreEqual("Lin", Bool);
 
+            string Bool2 = DatabaseLogin.GetString(1, "Naam");
+            Assert.AreEqual("Lin Lin", Bool2);
+
         }
     }
 }

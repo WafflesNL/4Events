@@ -36,6 +36,7 @@
             this.lblWachtwoord = new System.Windows.Forms.Label();
             this.pb4Events = new System.Windows.Forms.PictureBox();
             this.lblInlogstatus = new System.Windows.Forms.Label();
+            this.btnSignUp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb4Events)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(253, 304);
+            this.btnLogin.Location = new System.Drawing.Point(323, 305);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(123, 50);
@@ -105,11 +106,23 @@
             this.lblInlogstatus.Size = new System.Drawing.Size(0, 17);
             this.lblInlogstatus.TabIndex = 6;
             // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Location = new System.Drawing.Point(187, 305);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(123, 50);
+            this.btnSignUp.TabIndex = 7;
+            this.btnSignUp.Text = "Registreer";
+            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 366);
+            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.lblInlogstatus);
             this.Controls.Add(this.pb4Events);
             this.Controls.Add(this.lblWachtwoord);
@@ -137,6 +150,7 @@
         private System.Windows.Forms.Label lblWachtwoord;
         private System.Windows.Forms.PictureBox pb4Events;
         private System.Windows.Forms.Label lblInlogstatus;
+        private System.Windows.Forms.Button btnSignUp;
     }
 }
 

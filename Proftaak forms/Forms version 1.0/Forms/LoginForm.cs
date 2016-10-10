@@ -36,5 +36,11 @@ namespace Forms_version_1._0
 
           
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            RegistreerForm Form = new RegistreerForm();
+            Form.ShowDialog();
+        }
     }
 }

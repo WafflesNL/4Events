@@ -37,6 +37,7 @@
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnReserveren = new System.Windows.Forms.Button();
             this.btnPlaats = new System.Windows.Forms.Button();
+            this.btnAccountWijzingen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogOut
@@ -125,11 +126,23 @@
             this.btnPlaats.UseVisualStyleBackColor = true;
             this.btnPlaats.Click += new System.EventHandler(this.btnPlaats_Click);
             // 
+            // btnAccountWijzingen
+            // 
+            this.btnAccountWijzingen.Location = new System.Drawing.Point(224, 323);
+            this.btnAccountWijzingen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAccountWijzingen.Name = "btnAccountWijzingen";
+            this.btnAccountWijzingen.Size = new System.Drawing.Size(168, 34);
+            this.btnAccountWijzingen.TabIndex = 8;
+            this.btnAccountWijzingen.Text = "Accounts Wijzigen";
+            this.btnAccountWijzingen.UseVisualStyleBackColor = true;
+            this.btnAccountWijzingen.Visible = false;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 466);
+            this.Controls.Add(this.btnAccountWijzingen);
             this.Controls.Add(this.btnPlaats);
             this.Controls.Add(this.btnReserveren);
             this.Controls.Add(this.btnAccount);
@@ -157,5 +170,6 @@
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnReserveren;
         private System.Windows.Forms.Button btnPlaats;
+        private System.Windows.Forms.Button btnAccountWijzingen;
     }
 }

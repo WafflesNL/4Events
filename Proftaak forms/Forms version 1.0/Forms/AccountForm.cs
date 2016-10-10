@@ -28,16 +28,15 @@ namespace Forms_version_1._0.Froms
         }
 
         private void btnOpslaan_Click(object sender, EventArgs e)
-        {
-            //bool Check;
-
+        {        
             if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "") //change account and password
             {
                 
                 if (tbNewPassword.Text == tbRepeatPassword.Text)  //If passwords are the same
                 {
                     Account Account = new Account(tbName.Text, tbUserName.Text, tbNewPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
-                    Account.EditAccount(Account);
+                    bool Check = Account.EditAccount(Account);
+                    CheckUserName(Check);
                 }
                 else
                 {
@@ -47,26 +46,32 @@ namespace Forms_version_1._0.Froms
             else if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "") //Don't change password
             {
                 Account Account = new Account(tbName.Text, tbUserName.Text, tbOldPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
-                Account.EditAccount(Account);
+                bool Check = Account.EditAccount(Account);
+                CheckUserName(Check);
             }
             else
             {
                 MessageBox.Show("Niet alle gegevens zijn correct ingevuld");
-            }
+            }                          
+        }
 
-            /*
-            if ()
+        private void CheckUserName(bool Check)
+        {
+            if (Check)
             {
-
+                MessageBox.Show("Het account is succesvol aangepast");
+                HomeForm Home = new HomeForm();
+                this.Hide();
+                Home.ShowDialog();
+               
             }
             else
             {
-                MessageBox.Show("The username already exists in the database");
+                MessageBox.Show("De gebruikersnaam bestaat al in de database");
             }
-            */
         }
 
-        public void GetAccountInformation()
+        private void GetAccountInformation()
         {
             tbName.Text = CurrentAccount.Name;
             tbUserName.Text = CurrentAccount.UserName;

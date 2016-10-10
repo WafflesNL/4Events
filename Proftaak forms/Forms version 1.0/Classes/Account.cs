@@ -28,6 +28,12 @@ namespace Forms_version_1._0
             return Check;       
         }
 
+        public bool CreateAccount(Account Account)
+        {
+            bool Check = DatabaseCreateAccount.CreateAccount(Account);
+            return Check;
+        }
+
 
     }
 }

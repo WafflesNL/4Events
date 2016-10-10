@@ -22,11 +22,12 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "UPDATE Account SET Gebruikersnaam = @UserName, Wachtwoord = @Password, Naam = @Name, Functie = @Function WHERE Gebruikersnaam = 'Lin'";
+                    cmd.CommandText = "UPDATE Account SET Gebruikersnaam = @UserName, Wachtwoord = @Password, Naam = @Name, Functie = @Function WHERE Gebruikersnaam = @CurrentUserName";
                     cmd.Parameters.Add(new SqlParameter("Name", Account.Name));
                     cmd.Parameters.Add(new SqlParameter("UserName", Account.Username));
                     cmd.Parameters.Add(new SqlParameter("Password", Account.Password));
-                    cmd.Parameters.Add(new SqlParameter("Function", Account.Function));
+                    cmd.Parameters.Add(new SqlParameter("Function", Account.Function.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("CurrentUserName", CurrentAccount.UserName));
                     cmd.ExecuteNonQuery();
 
                     Check = true;           

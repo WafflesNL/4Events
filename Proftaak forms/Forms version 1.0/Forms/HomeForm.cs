@@ -17,6 +17,7 @@ namespace Forms_version_1._0
         public HomeForm()
         {
             InitializeComponent();
+            GetAcces();         
         }
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
@@ -68,6 +69,14 @@ namespace Forms_version_1._0
             this.Hide();
             window.ShowDialog();
             this.Close();
+        }
+
+        public void GetAcces()
+        {       
+            if (CurrentAccount.Function == Function.Accountbeheerder)
+            {
+                btnAccountWijzingen.Visible = true;
+            }
         }
     }
 }

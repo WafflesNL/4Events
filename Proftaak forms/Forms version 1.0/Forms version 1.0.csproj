@@ -59,6 +59,7 @@
     <Compile Include="Classes\Tijdlijn.cs" />
     <Compile Include="Classes\CurrentAccount.cs" />
     <Compile Include="Classes\Database\DatabaseEditAccount.cs" />
+    <Compile Include="Classes\Database\DatabaseCreateAccount.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +130,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Database\DatabaseLogin.cs" />
+    <Compile Include="Forms\RegistreerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistreerForm.Designer.cs">
+      <DependentUpon>RegistreerForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistreerForm.resx">
+      <DependentUpon>RegistreerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReserveringForm.resx">
       <DependentUpon>ReserveringForm.cs</DependentUpon>

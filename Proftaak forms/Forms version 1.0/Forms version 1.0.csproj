@@ -58,6 +58,7 @@
     <Compile Include="Classes\Reservering.cs" />
     <Compile Include="Classes\Tijdlijn.cs" />
     <Compile Include="Classes\CurrentAccount.cs" />
+    <Compile Include="Classes\Database\DatabaseEditAccount.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>

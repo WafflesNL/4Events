@@ -1,24 +1,5 @@
 C:\Users\Gebruiker\Documents\schooljaar 2016-2017\proftaak event\C#\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.config
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.config
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.config
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csprojResolveAssemblyReference.cache
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.pdb
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csprojResolveAssemblyReference.cache
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Froms.AccountForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.BetalingsForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.CampingOverzichtForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.EventForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.Filter.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.GastenOverzichtForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.HomeForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.FormLogin.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.ReserveringForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.TijdlijnForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.VerhuurForm.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Properties.Resources.resources
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.GenerateResource.Cache
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
-C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb

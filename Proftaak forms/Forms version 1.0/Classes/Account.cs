@@ -22,9 +22,10 @@ namespace Forms_version_1._0
         }
 
   
-        public void EditAccount(string Name, string Username, string Password)
+        public bool EditAccount(Account Account)
         {
-           //account has to be changed here
+            bool Check = DatabaseEditAccount.EditAccount(Account);
+            return Check;       
         }
 
 

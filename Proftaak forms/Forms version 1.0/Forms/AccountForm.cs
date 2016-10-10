@@ -29,27 +29,41 @@ namespace Forms_version_1._0.Froms
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
-            if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "")
+            //bool Check;
+
+            if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "") //change account and password
             {
-                //change account and password
-                if (tbNewPassword.Text == tbRepeatPassword.Text)
+                
+                if (tbNewPassword.Text == tbRepeatPassword.Text)  //If passwords are the same
                 {
-                    //if passwords are the same
+                    Account Account = new Account(tbName.Text, tbUserName.Text, tbNewPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
+                    Account.EditAccount(Account);
                 }
                 else
                 {
                     MessageBox.Show("Wachtwoorden komen niet overeen");
                 }     
             }
-            else if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "")
+            else if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "") //Don't change password
             {
-                Account Account = new Account(tbName.Text, tbUserName.Text)
+                Account Account = new Account(tbName.Text, tbUserName.Text, tbOldPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
+                Account.EditAccount(Account);
             }
             else
             {
                 MessageBox.Show("Niet alle gegevens zijn correct ingevuld");
             }
 
+            /*
+            if ()
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("The username already exists in the database");
+            }
+            */
         }
 
         public void GetAccountInformation()
@@ -58,13 +72,13 @@ namespace Forms_version_1._0.Froms
             tbUserName.Text = CurrentAccount.UserName;
             tbOldPassword.Text = CurrentAccount.Password;
             cbFunction.Text = CurrentAccount.Function.ToString();
-            if (CurrentAccount.Function == Function.Bezoeker || CurrentAccount.Function == Function.Medewerker)
+            if (CurrentAccount.Function == Function.Accountbeheerder)
             {
-                cbFunction.Enabled = false;
+                cbFunction.Enabled = true;
             }
             else
             {
-                cbFunction.Enabled = true;
+                cbFunction.Enabled = false;
             }
         }
     }

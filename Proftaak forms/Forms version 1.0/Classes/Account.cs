@@ -40,5 +40,9 @@ namespace Forms_version_1._0
             return AccountList;
         }
 
+        public override string ToString()
+        {
+            return Username + ", " + Password + ", " + Name + ", " + Function;
+        }
     }
 }

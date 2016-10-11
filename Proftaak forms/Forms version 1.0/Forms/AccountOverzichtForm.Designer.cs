@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCreateAccount = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbAccounts = new System.Windows.Forms.ListBox();
             this.btnRemoveAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,14 +44,14 @@
             this.btnCreateAccount.UseVisualStyleBackColor = true;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
-            // listBox1
+            // lbAccounts
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(130, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(442, 340);
-            this.listBox1.TabIndex = 1;
+            this.lbAccounts.FormattingEnabled = true;
+            this.lbAccounts.ItemHeight = 16;
+            this.lbAccounts.Location = new System.Drawing.Point(130, 12);
+            this.lbAccounts.Name = "lbAccounts";
+            this.lbAccounts.Size = new System.Drawing.Size(442, 340);
+            this.lbAccounts.TabIndex = 1;
             // 
             // btnRemoveAccount
             // 
@@ -71,6 +71,7 @@
             this.btnChangeAccount.TabIndex = 3;
             this.btnChangeAccount.Text = "Account aanpassen";
             this.btnChangeAccount.UseVisualStyleBackColor = true;
+            this.btnChangeAccount.Click += new System.EventHandler(this.btnChangeAccount_Click);
             // 
             // AccountOverzichtForm
             // 
@@ -79,7 +80,7 @@
             this.ClientSize = new System.Drawing.Size(584, 370);
             this.Controls.Add(this.btnChangeAccount);
             this.Controls.Add(this.btnRemoveAccount);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbAccounts);
             this.Controls.Add(this.btnCreateAccount);
             this.Name = "AccountOverzichtForm";
             this.Text = "AccountOverzichtForm";
@@ -90,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCreateAccount;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbAccounts;
         private System.Windows.Forms.Button btnRemoveAccount;
         private System.Windows.Forms.Button btnChangeAccount;
     }

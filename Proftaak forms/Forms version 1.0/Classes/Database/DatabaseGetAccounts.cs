@@ -22,19 +22,18 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "";
-                    //cmd.Parameters.Add(new SqlParameter("Password", Password));
-                    //cmd.Parameters.Add(new SqlParameter("UserName", Username));
-
-                    //cmd.ExecuteNonQuery();             
-                    //OracleDataReader reader = cmd.ExecuteReader();
+                    cmd.CommandText = "SELECT * FROM Account";
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                       //Check = Convert.ToInt32(reader["ID"]);//
-                       // Account Account = new Account();
-                       // AccountList.Add(Account);
+                       string Username = (reader["Gebruikersnaam"].ToString());
+                       string Password = (reader["Wachtwoord"].ToString());
+                       string Function = (reader["Functie"].ToString());
+                       string Name = (reader["Naam"].ToString());
+
+                       Account Account = new Account(Name, Username, Password, CurrentAccount.TranslateFunction(Function));
+                       AccountList.Add(Account);
                     }
                     return AccountList;
                 }

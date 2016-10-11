@@ -34,6 +34,11 @@ namespace Forms_version_1._0
             return Check;
         }
 
+        public List<Account> GetAccountList()
+        {
+            List<Account> AccountList = DatabaseGetAccounts.GetAccounts();
+            return AccountList;
+        }
 
     }
 }

@@ -48,7 +48,7 @@
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(168, 66);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(224, 22);
             this.tbName.TabIndex = 0;
@@ -56,7 +56,7 @@
             // tbNewPassword
             // 
             this.tbNewPassword.Location = new System.Drawing.Point(168, 164);
-            this.tbNewPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNewPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbNewPassword.Name = "tbNewPassword";
             this.tbNewPassword.Size = new System.Drawing.Size(224, 22);
             this.tbNewPassword.TabIndex = 1;
@@ -65,7 +65,7 @@
             // tbRepeatPassword
             // 
             this.tbRepeatPassword.Location = new System.Drawing.Point(168, 196);
-            this.tbRepeatPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbRepeatPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbRepeatPassword.Name = "tbRepeatPassword";
             this.tbRepeatPassword.Size = new System.Drawing.Size(224, 22);
             this.tbRepeatPassword.TabIndex = 2;
@@ -74,7 +74,7 @@
             // tbUserName
             // 
             this.tbUserName.Location = new System.Drawing.Point(168, 100);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(224, 22);
             this.tbUserName.TabIndex = 3;
@@ -133,7 +133,7 @@
             // 
             this.tbOldPassword.Enabled = false;
             this.tbOldPassword.Location = new System.Drawing.Point(168, 132);
-            this.tbOldPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbOldPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbOldPassword.Name = "tbOldPassword";
             this.tbOldPassword.Size = new System.Drawing.Size(224, 22);
             this.tbOldPassword.TabIndex = 9;
@@ -151,7 +151,7 @@
             // btnOpslaan
             // 
             this.btnOpslaan.Location = new System.Drawing.Point(303, 398);
-            this.btnOpslaan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpslaan.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpslaan.Name = "btnOpslaan";
             this.btnOpslaan.Size = new System.Drawing.Size(91, 54);
             this.btnOpslaan.TabIndex = 11;
@@ -162,7 +162,7 @@
             // btnNietOpslaan
             // 
             this.btnNietOpslaan.Location = new System.Drawing.Point(16, 399);
-            this.btnNietOpslaan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNietOpslaan.Margin = new System.Windows.Forms.Padding(4);
             this.btnNietOpslaan.Name = "btnNietOpslaan";
             this.btnNietOpslaan.Size = new System.Drawing.Size(91, 53);
             this.btnNietOpslaan.TabIndex = 12;
@@ -184,7 +184,7 @@
             // 
             this.cbFunction.FormattingEnabled = true;
             this.cbFunction.Items.AddRange(new object[] {
-            "Beheeder",
+            "Beheerder",
             "Bezoeker",
             "Medewerker",
             "AccountBeheeder"});
@@ -213,7 +213,7 @@
             this.Controls.Add(this.tbRepeatPassword);
             this.Controls.Add(this.tbNewPassword);
             this.Controls.Add(this.tbName);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accountinformatie";

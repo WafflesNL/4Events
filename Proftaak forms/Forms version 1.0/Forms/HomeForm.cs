@@ -65,6 +65,7 @@ namespace Forms_version_1._0
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            CurrentAccount.RemovePropertys();
             FormLogin window = new FormLogin();
             this.Hide();
             window.ShowDialog();
@@ -73,14 +74,28 @@ namespace Forms_version_1._0
 
         private void btnAccountWijzingen_Click(object sender, EventArgs e)
         {
-            //Accountbeheerder gaat naar een form waar hij een overzicht krijgt van alle accounts enkan die aanpassen.
+            AccountOverzichtForm Form = new AccountOverzichtForm();
+            Form.ShowDialog();
         }
 
-        public void GetAcces()
-        {       
-            if (CurrentAccount.Function == Function.Accountbeheerder)
+        //Geeft toegang aan de gebruikers 
+        private void GetAcces()
+        {
+            if (CurrentAccount.Function == Function.Beheerder)
             {
-                btnAccountWijzingen.Visible = true;
+                btnAccountView.Visible = true;
+            }
+            else if(CurrentAccount.Function == Function.Accountbeheerder)
+            {
+                btnAccountView.Visible = true;
+            }
+            else if(CurrentAccount.Function == Function.Medewerker)
+            {
+
+            }
+            else
+            {
+
             }
         }
 

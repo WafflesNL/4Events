@@ -61,31 +61,36 @@ namespace Forms_version_1._0
         {
             string Check = DatabaseLogin.GetString(ID, "Functie");
             if (Check != "")
-            {
-                Function function = Function.Bezoeker;
-                switch (Check)
-                {
-                    case "Bezoeker":
-                        function = Function.Bezoeker;
-                        break;
-                    case "Beheerder":
-                        function = Function.Beheerder;
-                        break;
-                    case "Accountbeheerder":
-                        function = Function.Accountbeheerder;
-                        break;
-                    case "Medewerker":
-                        function = Function.Medewerker;
-                        break;            
-                }
-
-                Function = function;
+            {           
+                Function = TranslateFunction(Check);
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+
+        public static Function TranslateFunction(string ParameterFunction)
+        {
+            Function function = Function.Bezoeker;
+            switch (ParameterFunction)
+            {
+                case "Bezoeker":
+                    function = Function.Bezoeker;
+                    break;
+                case "Beheerder":
+                    function = Function.Beheerder;
+                    break;
+                case "Accountbeheerder":
+                    function = Function.Accountbeheerder;
+                    break;
+                case "Medewerker":
+                    function = Function.Medewerker;
+                    break;
+            }
+            return function;
         }
 
         private static bool GetName(int ID)
@@ -108,5 +113,14 @@ namespace Forms_version_1._0
 
         }
         */
+
+        public static void RemovePropertys()
+        {
+            ID = 0;
+            UserName = null;
+            Password = null;
+            Function = Function.Bezoeker;
+            Name = null;
+        }
     }
 }

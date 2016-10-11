@@ -30,19 +30,21 @@
         {
             this.btnSave = new System.Windows.Forms.Button();
             this.lblAccountinfo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblReapeatPassword = new System.Windows.Forms.Label();
+            this.lblNewPassword = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblNaam = new System.Windows.Forms.Label();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.tbRepeatPassword = new System.Windows.Forms.TextBox();
             this.tbNewPassword = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
+            this.lblFunction = new System.Windows.Forms.Label();
+            this.cbFunction = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(294, 200);
+            this.btnSave.Location = new System.Drawing.Point(294, 233);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(91, 54);
@@ -61,25 +63,25 @@
             this.lblAccountinfo.TabIndex = 26;
             this.lblAccountinfo.Text = "Registreer informatie";
             // 
-            // label2
+            // lblReapeatPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 163);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 17);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Herhaal Wachtwoord";
+            this.lblReapeatPassword.AutoSize = true;
+            this.lblReapeatPassword.Location = new System.Drawing.Point(9, 163);
+            this.lblReapeatPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReapeatPassword.Name = "lblReapeatPassword";
+            this.lblReapeatPassword.Size = new System.Drawing.Size(140, 17);
+            this.lblReapeatPassword.TabIndex = 23;
+            this.lblReapeatPassword.Text = "Herhaal Wachtwoord";
             // 
-            // label1
+            // lblNewPassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 131);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Nieuw Wachtwoord";
+            this.lblNewPassword.AutoSize = true;
+            this.lblNewPassword.Location = new System.Drawing.Point(9, 131);
+            this.lblNewPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNewPassword.Name = "lblNewPassword";
+            this.lblNewPassword.Size = new System.Drawing.Size(128, 17);
+            this.lblNewPassword.TabIndex = 22;
+            this.lblNewPassword.Text = "Nieuw Wachtwoord";
             // 
             // lblUserName
             // 
@@ -135,15 +137,42 @@
             this.tbName.Size = new System.Drawing.Size(224, 22);
             this.tbName.TabIndex = 16;
             // 
+            // lblFunction
+            // 
+            this.lblFunction.AutoSize = true;
+            this.lblFunction.Location = new System.Drawing.Point(9, 197);
+            this.lblFunction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFunction.Name = "lblFunction";
+            this.lblFunction.Size = new System.Drawing.Size(54, 17);
+            this.lblFunction.TabIndex = 28;
+            this.lblFunction.Text = "Functie";
+            this.lblFunction.Visible = false;
+            // 
+            // cbFunction
+            // 
+            this.cbFunction.FormattingEnabled = true;
+            this.cbFunction.Items.AddRange(new object[] {
+            "Beheerder",
+            "Bezoeker",
+            "Medewerker",
+            "AccountBeheeder"});
+            this.cbFunction.Location = new System.Drawing.Point(161, 194);
+            this.cbFunction.Name = "cbFunction";
+            this.cbFunction.Size = new System.Drawing.Size(224, 24);
+            this.cbFunction.TabIndex = 29;
+            this.cbFunction.Visible = false;
+            // 
             // RegistreerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 271);
+            this.ClientSize = new System.Drawing.Size(402, 300);
+            this.Controls.Add(this.cbFunction);
+            this.Controls.Add(this.lblFunction);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblAccountinfo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblReapeatPassword);
+            this.Controls.Add(this.lblNewPassword);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.tbUserName);
@@ -160,13 +189,15 @@
         #endregion
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblAccountinfo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblReapeatPassword;
+        private System.Windows.Forms.Label lblNewPassword;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.TextBox tbUserName;
         private System.Windows.Forms.TextBox tbRepeatPassword;
         private System.Windows.Forms.TextBox tbNewPassword;
         private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Label lblFunction;
+        private System.Windows.Forms.ComboBox cbFunction;
     }
 }

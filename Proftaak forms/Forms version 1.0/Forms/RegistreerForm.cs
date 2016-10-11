@@ -15,17 +15,28 @@ namespace Forms_version_1._0
         public RegistreerForm()
         {
             InitializeComponent();
+            GetAcces();
         }
 
-        //Zelfde code als ander form moet nog aan gewerkt worden
+        //netheid code moet nog aan gewerkt worden
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Function function;
+            if (CurrentAccount.Function == Function.Accountbeheerder)
+            {
+                function = CurrentAccount.TranslateFunction(cbFunction.Text);
+            }
+            else
+            {
+                function = Function.Bezoeker;
+            }
+
             if (tbName.Text != "" && tbUserName.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "") //change account and password
             {
 
                 if (tbNewPassword.Text == tbRepeatPassword.Text)  //If passwords are the same
                 {
-                    Account Account = new Account(tbName.Text, tbUserName.Text, tbNewPassword.Text, Function.Bezoeker);
+                    Account Account = new Account(tbName.Text, tbUserName.Text, tbNewPassword.Text, function);
                     bool Check = Account.CreateAccount(Account);
                     CheckUserName(Check);
                 }
@@ -40,6 +51,8 @@ namespace Forms_version_1._0
             }
         }
 
+
+
         public void CheckUserName(bool Check)
         {
             if (Check)
@@ -50,6 +63,28 @@ namespace Forms_version_1._0
             else
             {
                 MessageBox.Show("De gebruikersnaam bestaat al in de database");
+            }
+        }
+
+
+        private void GetAcces()
+        {
+            if (CurrentAccount.Function == Function.Beheerder)
+            {
+               
+            }
+            else if (CurrentAccount.Function == Function.Accountbeheerder)
+            {
+                lblFunction.Visible = true;
+                cbFunction.Visible = true;
+            }
+            else if (CurrentAccount.Function == Function.Medewerker)
+            {
+
+            }
+            else
+            {
+
             }
         }
     }

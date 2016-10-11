@@ -12,7 +12,7 @@ namespace Forms_version_1._0
 {
     public partial class AccountOverzichtForm : Form
     {
-        //andere oplossing is nodig
+        //Andere oplossing is nodig
         Account account = new Account("", "", "", Function.Bezoeker);
 
         public AccountOverzichtForm()
@@ -23,7 +23,7 @@ namespace Forms_version_1._0
 
         private void btnRemoveAccount_Click(object sender, EventArgs e)
         {
-            //geen must have hoeft niet geïmplementeerd te worden
+            //Geen must have hoeft niet geïmplementeerd te worden
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace Forms_version_1._0
 
         private void btnChangeAccount_Click(object sender, EventArgs e)
         {
-            //geselecteerd account moet aangepast worden.
+            //Geselecteerd account moet aangepast worden.
         }
 
 

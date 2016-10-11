@@ -114,6 +114,14 @@ namespace Forms_version_1._0
         }
         */
 
+        public static void UpdateAccount(Account account)
+        {
+            UserName = account.Username;
+            Password = account.Password;
+            Function = account.Function;
+            Name = account.Name;
+        }
+
         public static void RemovePropertys()
         {
             ID = 0;

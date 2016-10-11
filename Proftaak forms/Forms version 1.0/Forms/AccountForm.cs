@@ -36,7 +36,9 @@ namespace Forms_version_1._0.Froms
                 {
                     Account Account = new Account(tbName.Text, tbUserName.Text, tbNewPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
                     bool Check = Account.EditAccount(Account);
+                    CurrentAccount.UpdateAccount(Account);
                     CheckUserName(Check);
+                
                 }
                 else
                 {
@@ -47,7 +49,8 @@ namespace Forms_version_1._0.Froms
             {
                 Account Account = new Account(tbName.Text, tbUserName.Text, tbOldPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
                 bool Check = Account.EditAccount(Account);
-                CheckUserName(Check);
+                CurrentAccount.UpdateAccount(Account);
+                CheckUserName(Check);         
             }
             else
             {

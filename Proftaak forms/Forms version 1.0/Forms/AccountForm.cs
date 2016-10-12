@@ -15,6 +15,7 @@ namespace Forms_version_1._0.Froms
         public AccountForm()
         {
             InitializeComponent();
+            GetAcces();
             GetAccountInformation();
         }
 
@@ -29,7 +30,7 @@ namespace Forms_version_1._0.Froms
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {        
-            if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "") //change account and password
+            if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "" && (tbNewPassword.Text != "" || tbRepeatPassword.Text != "")) //change account and password
             {
                 
                 if (tbNewPassword.Text == tbRepeatPassword.Text)  //If passwords are the same
@@ -79,10 +80,22 @@ namespace Forms_version_1._0.Froms
             tbName.Text = CurrentAccount.Name;
             tbUserName.Text = CurrentAccount.UserName;
             tbOldPassword.Text = CurrentAccount.Password;
-            cbFunction.Text = CurrentAccount.Function.ToString();
-            if (CurrentAccount.Function == Function.Accountbeheerder)
+            cbFunction.Text = CurrentAccount.Function.ToString();          
+        }
+
+        private void GetAcces()
+        {
+            if (CurrentAccount.Function == Function.Beheerder)
             {
-                cbFunction.Enabled = true;
+                cbFunction.Enabled = false;
+            }
+            else if (CurrentAccount.Function == Function.Accountbeheerder)
+            {
+                cbFunction.Enabled = false;
+            }
+            else if (CurrentAccount.Function == Function.Medewerker)
+            {
+                cbFunction.Enabled = false;
             }
             else
             {

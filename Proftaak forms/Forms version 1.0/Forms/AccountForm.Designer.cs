@@ -41,7 +41,7 @@
             this.lblAccountinfo = new System.Windows.Forms.Label();
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.btnNietOpslaan = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblFunction = new System.Windows.Forms.Label();
             this.cbFunction = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -170,15 +170,15 @@
             this.btnNietOpslaan.UseVisualStyleBackColor = true;
             this.btnNietOpslaan.Click += new System.EventHandler(this.btnNietOpslaan_Click);
             // 
-            // label4
+            // lblFunction
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 233);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 17);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Functie";
+            this.lblFunction.AutoSize = true;
+            this.lblFunction.Location = new System.Drawing.Point(16, 233);
+            this.lblFunction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFunction.Name = "lblFunction";
+            this.lblFunction.Size = new System.Drawing.Size(54, 17);
+            this.lblFunction.TabIndex = 14;
+            this.lblFunction.Text = "Functie";
             // 
             // cbFunction
             // 
@@ -199,7 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 466);
             this.Controls.Add(this.cbFunction);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblFunction);
             this.Controls.Add(this.btnNietOpslaan);
             this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.lblAccountinfo);
@@ -237,7 +237,7 @@
         private System.Windows.Forms.Label lblAccountinfo;
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.Button btnNietOpslaan;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFunction;
         private System.Windows.Forms.ComboBox cbFunction;
     }
 }

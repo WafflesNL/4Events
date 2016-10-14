@@ -70,9 +70,9 @@
     <Compile Include="Classes\Reservering.cs" />
     <Compile Include="Classes\Tijdlijn.cs" />
     <Compile Include="Classes\CurrentAccount.cs" />
-    <Compile Include="Classes\Database\DatabaseEditAccount.cs" />
-    <Compile Include="Classes\Database\DatabaseCreateAccount.cs" />
-    <Compile Include="Classes\Database\DatabaseGetAccounts.cs" />
+    <Compile Include="Classes\Database\AccountManagement\DatabaseEditAccount.cs" />
+    <Compile Include="Classes\Database\AccountManagement\DatabaseCreateAccount.cs" />
+    <Compile Include="Classes\Database\AccountManagement\DatabaseGetAccounts.cs" />
     <Compile Include="Forms\AccountManagementForms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -31,53 +31,59 @@
             this.components = new System.ComponentModel.Container();
             this.lblEventNaam = new System.Windows.Forms.Label();
             this.lblEventBeschrijving = new System.Windows.Forms.Label();
-            this.tbEventNaam = new System.Windows.Forms.TextBox();
-            this.tbEventBeschrijving = new System.Windows.Forms.TextBox();
+            this.tbEventName = new System.Windows.Forms.TextBox();
+            this.tbEventDiscription = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblEventInfo = new System.Windows.Forms.Label();
             this.lblEventLocatie = new System.Windows.Forms.Label();
             this.lblEventDatum = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnOpslaan = new System.Windows.Forms.Button();
-            this.btnNietOpslaan = new System.Windows.Forms.Button();
-            this.btnOverzicht = new System.Windows.Forms.Button();
-            this.btnReservering = new System.Windows.Forms.Button();
-            this.cbLocatie = new System.Windows.Forms.ComboBox();
-            this.btnVerhuur = new System.Windows.Forms.Button();
+            this.dtpDateEvent = new System.Windows.Forms.DateTimePicker();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnQuestOverview = new System.Windows.Forms.Button();
+            this.btnReservations = new System.Windows.Forms.Button();
+            this.cbLocation = new System.Windows.Forms.ComboBox();
+            this.btnRental = new System.Windows.Forms.Button();
+            this.numQuantityVisitors = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantityVisitors = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantityVisitors)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEventNaam
             // 
             this.lblEventNaam.AutoSize = true;
-            this.lblEventNaam.Location = new System.Drawing.Point(12, 57);
+            this.lblEventNaam.Location = new System.Drawing.Point(16, 70);
+            this.lblEventNaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEventNaam.Name = "lblEventNaam";
-            this.lblEventNaam.Size = new System.Drawing.Size(61, 13);
+            this.lblEventNaam.Size = new System.Drawing.Size(79, 17);
             this.lblEventNaam.TabIndex = 0;
             this.lblEventNaam.Text = "Eventnaam";
             // 
             // lblEventBeschrijving
             // 
             this.lblEventBeschrijving.AutoSize = true;
-            this.lblEventBeschrijving.Location = new System.Drawing.Point(12, 83);
+            this.lblEventBeschrijving.Location = new System.Drawing.Point(16, 102);
+            this.lblEventBeschrijving.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEventBeschrijving.Name = "lblEventBeschrijving";
-            this.lblEventBeschrijving.Size = new System.Drawing.Size(95, 13);
+            this.lblEventBeschrijving.Size = new System.Drawing.Size(124, 17);
             this.lblEventBeschrijving.TabIndex = 1;
             this.lblEventBeschrijving.Text = "Event Beschrijving";
             // 
-            // tbEventNaam
+            // tbEventName
             // 
-            this.tbEventNaam.Location = new System.Drawing.Point(149, 54);
-            this.tbEventNaam.Name = "tbEventNaam";
-            this.tbEventNaam.Size = new System.Drawing.Size(146, 20);
-            this.tbEventNaam.TabIndex = 2;
+            this.tbEventName.Location = new System.Drawing.Point(199, 66);
+            this.tbEventName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEventName.Name = "tbEventName";
+            this.tbEventName.Size = new System.Drawing.Size(193, 22);
+            this.tbEventName.TabIndex = 2;
             // 
-            // tbEventBeschrijving
+            // tbEventDiscription
             // 
-            this.tbEventBeschrijving.Location = new System.Drawing.Point(149, 80);
-            this.tbEventBeschrijving.Multiline = true;
-            this.tbEventBeschrijving.Name = "tbEventBeschrijving";
-            this.tbEventBeschrijving.Size = new System.Drawing.Size(146, 71);
-            this.tbEventBeschrijving.TabIndex = 3;
+            this.tbEventDiscription.Location = new System.Drawing.Point(199, 98);
+            this.tbEventDiscription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEventDiscription.Multiline = true;
+            this.tbEventDiscription.Name = "tbEventDiscription";
+            this.tbEventDiscription.Size = new System.Drawing.Size(193, 86);
+            this.tbEventDiscription.TabIndex = 3;
             // 
             // notifyIcon1
             // 
@@ -87,117 +93,136 @@
             // lblEventInfo
             // 
             this.lblEventInfo.AutoSize = true;
-            this.lblEventInfo.Location = new System.Drawing.Point(95, 9);
+            this.lblEventInfo.Location = new System.Drawing.Point(127, 11);
+            this.lblEventInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEventInfo.Name = "lblEventInfo";
-            this.lblEventInfo.Size = new System.Drawing.Size(84, 13);
+            this.lblEventInfo.Size = new System.Drawing.Size(110, 17);
             this.lblEventInfo.TabIndex = 4;
             this.lblEventInfo.Text = "Event Informatie";
             // 
             // lblEventLocatie
             // 
             this.lblEventLocatie.AutoSize = true;
-            this.lblEventLocatie.Location = new System.Drawing.Point(12, 159);
+            this.lblEventLocatie.Location = new System.Drawing.Point(16, 199);
+            this.lblEventLocatie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEventLocatie.Name = "lblEventLocatie";
-            this.lblEventLocatie.Size = new System.Drawing.Size(73, 13);
+            this.lblEventLocatie.Size = new System.Drawing.Size(94, 17);
             this.lblEventLocatie.TabIndex = 5;
             this.lblEventLocatie.Text = "Event Locatie";
             // 
             // lblEventDatum
             // 
             this.lblEventDatum.AutoSize = true;
-            this.lblEventDatum.Location = new System.Drawing.Point(12, 188);
+            this.lblEventDatum.Location = new System.Drawing.Point(16, 229);
+            this.lblEventDatum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEventDatum.Name = "lblEventDatum";
-            this.lblEventDatum.Size = new System.Drawing.Size(69, 13);
+            this.lblEventDatum.Size = new System.Drawing.Size(89, 17);
             this.lblEventDatum.TabIndex = 7;
             this.lblEventDatum.Text = "Event Datum";
             // 
-            // dateTimePicker1
+            // dtpDateEvent
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 182);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dtpDateEvent.Location = new System.Drawing.Point(199, 224);
+            this.dtpDateEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateEvent.Name = "dtpDateEvent";
+            this.dtpDateEvent.Size = new System.Drawing.Size(193, 22);
+            this.dtpDateEvent.TabIndex = 8;
             // 
-            // btnOpslaan
+            // btnSave
             // 
-            this.btnOpslaan.Location = new System.Drawing.Point(233, 324);
-            this.btnOpslaan.Name = "btnOpslaan";
-            this.btnOpslaan.Size = new System.Drawing.Size(62, 43);
-            this.btnOpslaan.TabIndex = 9;
-            this.btnOpslaan.Text = "Opslaan";
-            this.btnOpslaan.UseVisualStyleBackColor = true;
-            this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
+            this.btnSave.Location = new System.Drawing.Point(313, 415);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(83, 53);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Opslaan";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
-            // btnNietOpslaan
+            // btnQuestOverview
             // 
-            this.btnNietOpslaan.Location = new System.Drawing.Point(12, 324);
-            this.btnNietOpslaan.Name = "btnNietOpslaan";
-            this.btnNietOpslaan.Size = new System.Drawing.Size(62, 43);
-            this.btnNietOpslaan.TabIndex = 10;
-            this.btnNietOpslaan.Text = "Niet Opslaan";
-            this.btnNietOpslaan.UseVisualStyleBackColor = true;
-            this.btnNietOpslaan.Click += new System.EventHandler(this.btnNietOpslaan_Click);
+            this.btnQuestOverview.Location = new System.Drawing.Point(201, 289);
+            this.btnQuestOverview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuestOverview.Name = "btnQuestOverview";
+            this.btnQuestOverview.Size = new System.Drawing.Size(195, 31);
+            this.btnQuestOverview.TabIndex = 11;
+            this.btnQuestOverview.Text = "Aanwezige bezoekers";
+            this.btnQuestOverview.UseVisualStyleBackColor = true;
+            this.btnQuestOverview.Click += new System.EventHandler(this.btnOverzicht_Click);
             // 
-            // btnOverzicht
+            // btnReservations
             // 
-            this.btnOverzicht.Location = new System.Drawing.Point(149, 208);
-            this.btnOverzicht.Name = "btnOverzicht";
-            this.btnOverzicht.Size = new System.Drawing.Size(146, 25);
-            this.btnOverzicht.TabIndex = 11;
-            this.btnOverzicht.Text = "GastenOverzicht";
-            this.btnOverzicht.UseVisualStyleBackColor = true;
-            this.btnOverzicht.Click += new System.EventHandler(this.btnOverzicht_Click);
+            this.btnReservations.Location = new System.Drawing.Point(201, 327);
+            this.btnReservations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReservations.Name = "btnReservations";
+            this.btnReservations.Size = new System.Drawing.Size(195, 31);
+            this.btnReservations.TabIndex = 12;
+            this.btnReservations.Text = "Reserveringen";
+            this.btnReservations.UseVisualStyleBackColor = true;
+            this.btnReservations.Click += new System.EventHandler(this.btnReservering_Click);
             // 
-            // btnReservering
+            // cbLocation
             // 
-            this.btnReservering.Location = new System.Drawing.Point(149, 239);
-            this.btnReservering.Name = "btnReservering";
-            this.btnReservering.Size = new System.Drawing.Size(146, 25);
-            this.btnReservering.TabIndex = 12;
-            this.btnReservering.Text = "Reserveringen";
-            this.btnReservering.UseVisualStyleBackColor = true;
-            this.btnReservering.Click += new System.EventHandler(this.btnReservering_Click);
+            this.cbLocation.FormattingEnabled = true;
+            this.cbLocation.Location = new System.Drawing.Point(199, 192);
+            this.cbLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLocation.Name = "cbLocation";
+            this.cbLocation.Size = new System.Drawing.Size(193, 24);
+            this.cbLocation.TabIndex = 13;
             // 
-            // cbLocatie
+            // btnRental
             // 
-            this.cbLocatie.FormattingEnabled = true;
-            this.cbLocatie.Location = new System.Drawing.Point(149, 156);
-            this.cbLocatie.Name = "cbLocatie";
-            this.cbLocatie.Size = new System.Drawing.Size(146, 21);
-            this.cbLocatie.TabIndex = 13;
+            this.btnRental.Location = new System.Drawing.Point(201, 367);
+            this.btnRental.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRental.Name = "btnRental";
+            this.btnRental.Size = new System.Drawing.Size(195, 31);
+            this.btnRental.TabIndex = 14;
+            this.btnRental.Text = "Verhuur";
+            this.btnRental.UseVisualStyleBackColor = true;
+            this.btnRental.Click += new System.EventHandler(this.btnVerhuur_Click);
             // 
-            // btnVerhuur
+            // numQuantityVisitors
             // 
-            this.btnVerhuur.Location = new System.Drawing.Point(149, 270);
-            this.btnVerhuur.Name = "btnVerhuur";
-            this.btnVerhuur.Size = new System.Drawing.Size(146, 25);
-            this.btnVerhuur.TabIndex = 14;
-            this.btnVerhuur.Text = "Verhuur";
-            this.btnVerhuur.UseVisualStyleBackColor = true;
-            this.btnVerhuur.Click += new System.EventHandler(this.btnVerhuur_Click);
+            this.numQuantityVisitors.Location = new System.Drawing.Point(199, 253);
+            this.numQuantityVisitors.Name = "numQuantityVisitors";
+            this.numQuantityVisitors.Size = new System.Drawing.Size(193, 22);
+            this.numQuantityVisitors.TabIndex = 15;
+            // 
+            // lblQuantityVisitors
+            // 
+            this.lblQuantityVisitors.AutoSize = true;
+            this.lblQuantityVisitors.Location = new System.Drawing.Point(16, 258);
+            this.lblQuantityVisitors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantityVisitors.Name = "lblQuantityVisitors";
+            this.lblQuantityVisitors.Size = new System.Drawing.Size(54, 17);
+            this.lblQuantityVisitors.TabIndex = 16;
+            this.lblQuantityVisitors.Text = "Visitors";
             // 
             // EventForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 379);
-            this.Controls.Add(this.btnVerhuur);
-            this.Controls.Add(this.cbLocatie);
-            this.Controls.Add(this.btnReservering);
-            this.Controls.Add(this.btnOverzicht);
-            this.Controls.Add(this.btnNietOpslaan);
-            this.Controls.Add(this.btnOpslaan);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(409, 481);
+            this.Controls.Add(this.lblQuantityVisitors);
+            this.Controls.Add(this.numQuantityVisitors);
+            this.Controls.Add(this.btnRental);
+            this.Controls.Add(this.cbLocation);
+            this.Controls.Add(this.btnReservations);
+            this.Controls.Add(this.btnQuestOverview);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.dtpDateEvent);
             this.Controls.Add(this.lblEventDatum);
             this.Controls.Add(this.lblEventLocatie);
             this.Controls.Add(this.lblEventInfo);
-            this.Controls.Add(this.tbEventBeschrijving);
-            this.Controls.Add(this.tbEventNaam);
+            this.Controls.Add(this.tbEventDiscription);
+            this.Controls.Add(this.tbEventName);
             this.Controls.Add(this.lblEventBeschrijving);
             this.Controls.Add(this.lblEventNaam);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EventForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventForm";
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantityVisitors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,18 +232,19 @@
 
         private System.Windows.Forms.Label lblEventNaam;
         private System.Windows.Forms.Label lblEventBeschrijving;
-        private System.Windows.Forms.TextBox tbEventNaam;
-        private System.Windows.Forms.TextBox tbEventBeschrijving;
+        private System.Windows.Forms.TextBox tbEventName;
+        private System.Windows.Forms.TextBox tbEventDiscription;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label lblEventInfo;
         private System.Windows.Forms.Label lblEventLocatie;
         private System.Windows.Forms.Label lblEventDatum;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button btnOpslaan;
-        private System.Windows.Forms.Button btnNietOpslaan;
-        private System.Windows.Forms.Button btnOverzicht;
-        private System.Windows.Forms.Button btnReservering;
-        private System.Windows.Forms.ComboBox cbLocatie;
-        private System.Windows.Forms.Button btnVerhuur;
+        private System.Windows.Forms.DateTimePicker dtpDateEvent;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnQuestOverview;
+        private System.Windows.Forms.Button btnReservations;
+        private System.Windows.Forms.ComboBox cbLocation;
+        private System.Windows.Forms.Button btnRental;
+        private System.Windows.Forms.NumericUpDown numQuantityVisitors;
+        private System.Windows.Forms.Label lblQuantityVisitors;
     }
 }

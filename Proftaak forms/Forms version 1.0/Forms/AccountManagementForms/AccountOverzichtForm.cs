@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Froms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace Forms_version_1._0
     public partial class AccountOverzichtForm : Form
     {
         //Andere oplossing is nodig
-        Account account = new Account("", "", "", Function.Bezoeker);
+        public Account account = new Account("", "", "", Function.Bezoeker);
 
         public AccountOverzichtForm()
         {
@@ -35,7 +36,15 @@ namespace Forms_version_1._0
 
         private void btnChangeAccount_Click(object sender, EventArgs e)
         {
-            //Geselecteerd account moet aangepast worden.
+            if (lbAccounts.SelectedItem != null)
+            {
+                Account Index = lbAccounts.SelectedItem as Account;
+                AlterAccountForm Form = new AlterAccountForm();
+                Form.GetAccountInformation(Index);
+                Form.ShowDialog();
+               //Verwijst naar form waar account aan te passen is             
+            }           
+            RefreshForm();
         }
 
 

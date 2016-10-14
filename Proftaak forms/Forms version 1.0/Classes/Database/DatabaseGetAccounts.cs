@@ -27,12 +27,13 @@ namespace Forms_version_1._0
 
                     while (reader.Read())
                     {
+                        int ID = Convert.ToInt32(reader["ID"]);
                        string Username = (reader["Gebruikersnaam"].ToString());
                        string Password = (reader["Wachtwoord"].ToString());
                        string Function = (reader["Functie"].ToString());
                        string Name = (reader["Naam"].ToString());
 
-                       Account Account = new Account(Name, Username, Password, CurrentAccount.TranslateFunction(Function));
+                       Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
                        AccountList.Add(Account);
                     }
                     return AccountList;

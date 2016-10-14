@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Forms_version_1._0.Froms
 {
     public partial class AccountForm : Form
-    {
+    {    
         public AccountForm()
         {
             InitializeComponent();
@@ -19,15 +19,7 @@ namespace Forms_version_1._0.Froms
             GetAccountInformation();
         }
 
-        private void btnNietOpslaan_Click(object sender, EventArgs e)
-        {
-            //Won't save the changes made to the Account.
-            HomeForm window = new HomeForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
-        }
-
+       
         private void btnOpslaan_Click(object sender, EventArgs e)
         {        
             if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "" && (tbNewPassword.Text != "" || tbRepeatPassword.Text != "")) //change account and password
@@ -35,9 +27,9 @@ namespace Forms_version_1._0.Froms
                 
                 if (tbNewPassword.Text == tbRepeatPassword.Text)  //If passwords are the same
                 {
-                    Account Account = new Account(tbName.Text, tbUserName.Text, tbNewPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
-                    bool Check = Account.EditAccount(Account);
-                    CurrentAccount.UpdateAccount(Account);
+                    Account Account = new Account(CurrentAccount.ID, tbName.Text, tbUserName.Text, tbNewPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));                   
+                    bool Check = Account.EditAccount(Account);                            
+                    CurrentAccount.UpdateAccount(Account);                  
                     CheckUserName(Check);
                 
                 }
@@ -48,9 +40,9 @@ namespace Forms_version_1._0.Froms
             }
             else if (tbName.Text != "" && tbUserName.Text != "" && cbFunction.Text != "") //Don't change password
             {
-                Account Account = new Account(tbName.Text, tbUserName.Text, tbOldPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
+                Account Account = new Account(CurrentAccount.ID, tbName.Text, tbUserName.Text, tbOldPassword.Text, (Function)Enum.Parse(typeof(Function), cbFunction.Text));
                 bool Check = Account.EditAccount(Account);
-                CurrentAccount.UpdateAccount(Account);
+                CurrentAccount.UpdateAccount(Account);        
                 CheckUserName(Check);         
             }
             else
@@ -63,11 +55,8 @@ namespace Forms_version_1._0.Froms
         {
             if (Check)
             {
-                MessageBox.Show("Het account is succesvol aangepast");
-                HomeForm Home = new HomeForm();
-                this.Hide();
-                Home.ShowDialog();
-               
+                MessageBox.Show("Het account is succesvol aangepast");        
+                this.Close();              
             }
             else
             {
@@ -76,12 +65,13 @@ namespace Forms_version_1._0.Froms
         }
 
         private void GetAccountInformation()
-        {
+        {               
             tbName.Text = CurrentAccount.Name;
             tbUserName.Text = CurrentAccount.UserName;
             tbOldPassword.Text = CurrentAccount.Password;
-            cbFunction.Text = CurrentAccount.Function.ToString();          
+            cbFunction.Text = CurrentAccount.Function.ToString();              
         }
+
 
         private void GetAcces()
         {

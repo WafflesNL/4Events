@@ -31,7 +31,7 @@
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lbAccounts = new System.Windows.Forms.ListBox();
             this.btnRemoveAccount = new System.Windows.Forms.Button();
-            this.btnChangeAccount = new System.Windows.Forms.Button();
+            this.btnEditAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreateAccount
@@ -63,22 +63,22 @@
             this.btnRemoveAccount.UseVisualStyleBackColor = true;
             this.btnRemoveAccount.Click += new System.EventHandler(this.btnRemoveAccount_Click);
             // 
-            // btnChangeAccount
+            // btnEditAccount
             // 
-            this.btnChangeAccount.Location = new System.Drawing.Point(12, 66);
-            this.btnChangeAccount.Name = "btnChangeAccount";
-            this.btnChangeAccount.Size = new System.Drawing.Size(112, 48);
-            this.btnChangeAccount.TabIndex = 3;
-            this.btnChangeAccount.Text = "Account aanpassen";
-            this.btnChangeAccount.UseVisualStyleBackColor = true;
-            this.btnChangeAccount.Click += new System.EventHandler(this.btnChangeAccount_Click);
+            this.btnEditAccount.Location = new System.Drawing.Point(12, 66);
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.Size = new System.Drawing.Size(112, 48);
+            this.btnEditAccount.TabIndex = 3;
+            this.btnEditAccount.Text = "Account aanpassen";
+            this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnChangeAccount_Click);
             // 
             // AccountOverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 370);
-            this.Controls.Add(this.btnChangeAccount);
+            this.Controls.Add(this.btnEditAccount);
             this.Controls.Add(this.btnRemoveAccount);
             this.Controls.Add(this.lbAccounts);
             this.Controls.Add(this.btnCreateAccount);
@@ -93,6 +93,6 @@
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.ListBox lbAccounts;
         private System.Windows.Forms.Button btnRemoveAccount;
-        private System.Windows.Forms.Button btnChangeAccount;
+        private System.Windows.Forms.Button btnEditAccount;
     }
 }

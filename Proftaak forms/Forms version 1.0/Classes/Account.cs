@@ -8,20 +8,31 @@ namespace Forms_version_1._0
 {
     public class Account
     {
+        public int ID { get;  set;}
         public string Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public Function Function { get; set; }
 
-        public Account(string name, string username, string password, Function function)
+     
+        public Account(int ID, string name, string username, string password, Function function) //Second constructer 
         {
+            this.ID = ID;
             this.Name = name;
             this.Username = username;
             this.Password = password;
             this.Function = function;
         }
 
-  
+        public Account(string name, string username, string password, Function function) //Second constructer 
+        {         
+            this.Name = name;
+            this.Username = username;
+            this.Password = password;
+            this.Function = function;
+        }
+
+
         public bool EditAccount(Account Account)
         {
             bool Check = DatabaseEditAccount.EditAccount(Account);
@@ -32,6 +43,13 @@ namespace Forms_version_1._0
         {
             bool Check = DatabaseCreateAccount.CreateAccount(Account);
             return Check;
+        }
+
+        public int GetHighestAccountID()
+        {
+
+            //wordt aan gewerkt
+            return 0;
         }
 
         public List<Account> GetAccountList()

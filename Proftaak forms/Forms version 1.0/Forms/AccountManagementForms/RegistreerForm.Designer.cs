@@ -155,7 +155,7 @@
             "Beheerder",
             "Bezoeker",
             "Medewerker",
-            "AccountBeheeder"});
+            "Accountbeheerder"});
             this.cbFunction.Location = new System.Drawing.Point(161, 194);
             this.cbFunction.Name = "cbFunction";
             this.cbFunction.Size = new System.Drawing.Size(224, 24);

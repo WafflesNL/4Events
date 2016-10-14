@@ -40,7 +40,6 @@
             this.tbOldPassword = new System.Windows.Forms.TextBox();
             this.lblAccountinfo = new System.Windows.Forms.Label();
             this.btnOpslaan = new System.Windows.Forms.Button();
-            this.btnNietOpslaan = new System.Windows.Forms.Button();
             this.lblFunction = new System.Windows.Forms.Label();
             this.cbFunction = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -150,7 +149,7 @@
             // 
             // btnOpslaan
             // 
-            this.btnOpslaan.Location = new System.Drawing.Point(303, 398);
+            this.btnOpslaan.Location = new System.Drawing.Point(305, 296);
             this.btnOpslaan.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpslaan.Name = "btnOpslaan";
             this.btnOpslaan.Size = new System.Drawing.Size(91, 54);
@@ -158,17 +157,6 @@
             this.btnOpslaan.Text = "Opslaan";
             this.btnOpslaan.UseVisualStyleBackColor = true;
             this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
-            // 
-            // btnNietOpslaan
-            // 
-            this.btnNietOpslaan.Location = new System.Drawing.Point(16, 399);
-            this.btnNietOpslaan.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNietOpslaan.Name = "btnNietOpslaan";
-            this.btnNietOpslaan.Size = new System.Drawing.Size(91, 53);
-            this.btnNietOpslaan.TabIndex = 12;
-            this.btnNietOpslaan.Text = "Niet Opslaan";
-            this.btnNietOpslaan.UseVisualStyleBackColor = true;
-            this.btnNietOpslaan.Click += new System.EventHandler(this.btnNietOpslaan_Click);
             // 
             // lblFunction
             // 
@@ -187,7 +175,7 @@
             "Beheerder",
             "Bezoeker",
             "Medewerker",
-            "AccountBeheeder"});
+            "Accountbeheerder"});
             this.cbFunction.Location = new System.Drawing.Point(168, 230);
             this.cbFunction.Name = "cbFunction";
             this.cbFunction.Size = new System.Drawing.Size(224, 24);
@@ -197,10 +185,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 466);
+            this.ClientSize = new System.Drawing.Size(409, 370);
             this.Controls.Add(this.cbFunction);
             this.Controls.Add(this.lblFunction);
-            this.Controls.Add(this.btnNietOpslaan);
             this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.lblAccountinfo);
             this.Controls.Add(this.tbOldPassword);
@@ -236,7 +223,6 @@
         private System.Windows.Forms.TextBox tbOldPassword;
         private System.Windows.Forms.Label lblAccountinfo;
         private System.Windows.Forms.Button btnOpslaan;
-        private System.Windows.Forms.Button btnNietOpslaan;
         private System.Windows.Forms.Label lblFunction;
         private System.Windows.Forms.ComboBox cbFunction;
     }

@@ -57,10 +57,8 @@ namespace Forms_version_1._0
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            AccountForm window = new AccountForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
+            AccountForm window = new AccountForm();       
+            window.ShowDialog();      
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -84,21 +82,28 @@ namespace Forms_version_1._0
             if (CurrentAccount.Function == Function.Beheerder)
             {
                 btnAccountView.Visible = true;
+                btnBetalingStatus.Visible = false;
+                btnReserve.Visible = false;
             }
             else if(CurrentAccount.Function == Function.Accountbeheerder)
             {
                 btnAccountView.Visible = true;
+                btnBetalingStatus.Visible = false;
+                btnReserve.Visible = false;
+
             }
             else if(CurrentAccount.Function == Function.Medewerker)
             {
-
+                btnBetalingStatus.Visible = false;
+                btnReservePlace.Visible = false;
+                btnReserve.Visible = false;
             }
-            else
+            else if(CurrentAccount.Function == Function.Bezoeker)
             {
 
             }
         }
 
-      
+       
     }
 }

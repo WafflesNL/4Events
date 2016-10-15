@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0.Classes
 {
-    public class Materiaal
+    public class Material
     {
         public int Price { get; set; }
-        public int Amount { get; set; }
+     
         public string Name { get; set; }
-        public Materiaal(int price, int amount, string name)
+
+        public Material(int price, string name)
         {
-            this.Price = price;
-            this.Amount = amount;
+            this.Price = price;         
             this.Name = name;
         }
     }

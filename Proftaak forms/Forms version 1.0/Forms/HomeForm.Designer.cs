@@ -38,6 +38,7 @@
             this.btnReserve = new System.Windows.Forms.Button();
             this.btnReservePlace = new System.Windows.Forms.Button();
             this.btnAccountView = new System.Windows.Forms.Button();
+            this.btnCreateEvent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogOut
@@ -53,7 +54,7 @@
             // 
             // btnTijdlijn
             // 
-            this.btnTijdlijn.Location = new System.Drawing.Point(15, 178);
+            this.btnTijdlijn.Location = new System.Drawing.Point(16, 132);
             this.btnTijdlijn.Margin = new System.Windows.Forms.Padding(4);
             this.btnTijdlijn.Name = "btnTijdlijn";
             this.btnTijdlijn.Size = new System.Drawing.Size(172, 34);
@@ -138,11 +139,22 @@
             this.btnAccountView.Visible = false;
             this.btnAccountView.Click += new System.EventHandler(this.btnAccountWijzingen_Click);
             // 
+            // btnCreateEvent
+            // 
+            this.btnCreateEvent.Location = new System.Drawing.Point(16, 174);
+            this.btnCreateEvent.Name = "btnCreateEvent";
+            this.btnCreateEvent.Size = new System.Drawing.Size(171, 39);
+            this.btnCreateEvent.TabIndex = 9;
+            this.btnCreateEvent.Text = " Event aanmaken";
+            this.btnCreateEvent.UseVisualStyleBackColor = true;
+            this.btnCreateEvent.Click += new System.EventHandler(this.btnCreateEvent_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 426);
+            this.Controls.Add(this.btnCreateEvent);
             this.Controls.Add(this.btnAccountView);
             this.Controls.Add(this.btnReservePlace);
             this.Controls.Add(this.btnReserve);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.Button btnReserve;
         private System.Windows.Forms.Button btnReservePlace;
         private System.Windows.Forms.Button btnAccountView;
+        private System.Windows.Forms.Button btnCreateEvent;
     }
 }

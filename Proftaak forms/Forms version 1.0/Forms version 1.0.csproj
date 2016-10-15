@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Database\EventMangement\DatabaseCreateEvent.cs" />
+    <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventManagementForms\CreateEventForm.Designer.cs">
+      <DependentUpon>CreateEventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AccountManagementForms\AlterAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,12 +70,11 @@
     <Compile Include="Classes\Camping.cs" />
     <Compile Include="Classes\Database\DatabaseConnectie.cs" />
     <Compile Include="Classes\Event.cs" />
-    <Compile Include="Classes\Locatie.cs" />
-    <Compile Include="Classes\Materiaal.cs" />
+    <Compile Include="Classes\Material.cs" />
     <Compile Include="Classes\Plaats.cs" />
     <Compile Include="Classes\Post.cs" />
-    <Compile Include="Classes\Reservering.cs" />
-    <Compile Include="Classes\Tijdlijn.cs" />
+    <Compile Include="Classes\Reservation.cs" />
+    <Compile Include="Classes\TimeLine.cs" />
     <Compile Include="Classes\CurrentAccount.cs" />
     <Compile Include="Classes\Database\AccountManagement\DatabaseEditAccount.cs" />
     <Compile Include="Classes\Database\AccountManagement\DatabaseCreateAccount.cs" />
@@ -91,10 +97,10 @@
     <Compile Include="Forms\CampingOverzichtForm.Designer.cs">
       <DependentUpon>CampingOverzichtForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EventForm.cs">
+    <Compile Include="Forms\EventManagementForms\EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EventForm.Designer.cs">
+    <Compile Include="Forms\EventManagementForms\EventForm.Designer.cs">
       <DependentUpon>EventForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Filter.cs">
@@ -164,7 +170,10 @@
     <EmbeddedResource Include="Forms\CampingOverzichtForm.resx">
       <DependentUpon>CampingOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EventForm.resx">
+    <EmbeddedResource Include="Forms\EventManagementForms\CreateEventForm.resx">
+      <DependentUpon>CreateEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventManagementForms\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Filter.resx">

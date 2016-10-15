@@ -42,5 +42,28 @@ namespace Forms_version_1._0
             RegistreerForm Form = new RegistreerForm();
             Form.ShowDialog();
         }
+
+
+
+        //Method to get acces to a form for a specific account
+        private void GetAcces()
+        {
+            if (CurrentAccount.Function == Function.Beheerder)
+            {
+               //Homeform beheerder
+            }
+            else if (CurrentAccount.Function == Function.Accountbeheerder)
+            {
+               //Homeform accountbeheerder
+            }
+            else if (CurrentAccount.Function == Function.Medewerker)
+            {
+               //Homeform medewerker
+            }
+            else if (CurrentAccount.Function == Function.Bezoeker)
+            {
+                //Homeform bezoeker
+            }
+        }
     }
 }

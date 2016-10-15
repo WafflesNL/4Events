@@ -76,12 +76,19 @@ namespace Forms_version_1._0
             Form.ShowDialog();
         }
 
+        private void btnCreateEvent_Click(object sender, EventArgs e)
+        {
+            CreateEventForm Form = new CreateEventForm();
+            Form.ShowDialog();
+        }
+
         //Geeft toegang aan de gebruikers 
         private void GetAcces()
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {
                 btnAccountView.Visible = true;
+                btnCreateEvent.Visible = true;
                 btnBetalingStatus.Visible = false;
                 btnReserve.Visible = false;
             }
@@ -104,6 +111,6 @@ namespace Forms_version_1._0
             }
         }
 
-       
+     
     }
 }

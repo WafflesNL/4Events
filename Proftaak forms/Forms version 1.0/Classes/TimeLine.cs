@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0.Classes
 {
-    public class Tijdlijn
+    public class TimeLine
     {
         public string Eventname { get; set; }
         List<Post> Postlist = new List<Post>();
         public Event Event { get; set; }
 
-        public Tijdlijn(string eventname)
+        public TimeLine(string eventname)
         {
             this.Eventname = eventname;
         }

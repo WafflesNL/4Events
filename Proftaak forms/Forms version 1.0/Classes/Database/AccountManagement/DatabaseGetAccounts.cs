@@ -51,7 +51,47 @@ namespace Forms_version_1._0
             return AccountList;
         }
 
+        public static Account GetSingleAccount(int ID)
+        {
+            Account Account = null;
 
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "SELECT * FROM Account WHERE ID = @ID";
+                    cmd.Parameters.Add(new SqlParameter("ID", ID));
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {                      
+                        string Username = (reader["Gebruikersnaam"].ToString());
+                        string Password = (reader["Wachtwoord"].ToString());
+                        string Function = (reader["Functie"].ToString());
+                        string Name = (reader["Naam"].ToString());
+
+                         Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));                       
+                    }
+                    return Account;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return Account;
+        }
 
 
 

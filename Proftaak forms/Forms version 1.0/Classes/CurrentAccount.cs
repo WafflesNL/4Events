@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -107,12 +108,13 @@ namespace Forms_version_1._0
             }
         }
 
-        /*
-        private static bool GetEventID(int ID)
+        
+        public static List<Event> GetEvents(int ID)
         {
-
+            List<Event> EventList = DatabaseGetEvents.GetEvents();
+            return EventList;
         }
-        */
+        
 
         public static void UpdateAccount(Account account)
         {

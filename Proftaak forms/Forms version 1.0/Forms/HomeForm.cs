@@ -1,4 +1,5 @@
-﻿using Forms_version_1._0.Forms;
+﻿using Forms_version_1._0.Classes;
+using Forms_version_1._0.Forms;
 using Forms_version_1._0.Froms;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ namespace Forms_version_1._0
         public HomeForm()
         {
             InitializeComponent();
-            GetAcces();         
+            GetAcces();
+            LoadEvents();
         }
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
@@ -82,6 +84,14 @@ namespace Forms_version_1._0
             Form.ShowDialog();
         }
 
+        private void LoadEvents()
+        {
+            foreach (Event E in DatabaseGetEvents.GetEvents())
+            {
+                cbSelectEvent.Items.Add(E);
+            }
+        }
+        
         //Geeft toegang aan de gebruikers 
         private void GetAcces()
         {

@@ -13,6 +13,8 @@ namespace Forms_version_1._0
 {
     public partial class CreateEventForm : Form
     {
+        //stel er is een event op dezelfde locatie en dag dan controleert die hier niet op
+
         public CreateEventForm()
         {
             InitializeComponent();
@@ -24,13 +26,15 @@ namespace Forms_version_1._0
             {
                 Account account = new Account(CurrentAccount.ID, CurrentAccount.Name, CurrentAccount.UserName, CurrentAccount.Password, CurrentAccount.Function);
                 Event NewEvent = new Event(tbEventName.Text, tbEventDiscription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value, account);
-
+                NewEvent.GetCamping();
+                
                 if (NewEvent.CheckDateOutOfRange() == false)
                 {
                     MessageBox.Show("De datum moet twee weken van te voren zijn");
                 }              
                 else if (NewEvent.CreateEvent(NewEvent))
                 {
+                    NewEvent.CreateTimeLine();
                     MessageBox.Show("Een nieuwe event is succesvol aangemaakt");
                     this.Close();
                 }

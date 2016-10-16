@@ -13,7 +13,7 @@ namespace Forms_version_1._0
         public static bool CreateEvent(Event Event)
         {
             bool Check = false;
-            int ID = GetHighestID();
+            int ID = DatabaseGetHighestID.GetHighestID("Event");
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -24,14 +24,22 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "INSERT INTO Event (ID, Naam, Datum, Beschrijving, Locatie, AccountID) VALUES (@ID, @Name, @Date, @Discription, @location, @AccountID)";
+                    cmd.CommandText = "INSERT INTO Event (ID, Naam, Datum, Beschrijving, Locatie, Maxbezoekers, CampingID, AccountID) VALUES (@ID, @Name, @Date, @Discription, @location, @MaxVisitors, @CampingID, @AccountID)";
                     cmd.Parameters.Add(new SqlParameter("ID", ID ));
                     cmd.Parameters.Add(new SqlParameter("Name", Event.Name));
                     cmd.Parameters.Add(new SqlParameter("Date", Event.Date));
                     cmd.Parameters.Add(new SqlParameter("Discription", Event.Discription));
                     cmd.Parameters.Add(new SqlParameter("Location", Event.Location));
+                    cmd.Parameters.Add(new SqlParameter("MaxVisitors", Event.MaxVisitors));
                     cmd.Parameters.Add(new SqlParameter("AccountID", Event.Account.ID));
-                    
+                    if (Event.Camping == null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("CampingID", DBNull.Value));
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add(new SqlParameter("CampingID", Event.Camping.ID));
+                    }                 
                     cmd.ExecuteNonQuery();
 
                     Check = true;
@@ -51,9 +59,12 @@ namespace Forms_version_1._0
         }
 
 
-        private static int GetHighestID()
+   
+        
+
+        public static Camping GetCamping(string Locatie)
         {
-            int Check = 0;
+            Camping Camping = null;
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -64,12 +75,18 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT MAX(ID) AS Max FROM Event";
-                    
+                    cmd.CommandText = "SELECT * FROM Camping WHERE Locatie = @Locatie";
+                    cmd.Parameters.Add(new SqlParameter("Locatie", Locatie));
+
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        Check = (reader["Max"] != DBNull.Value) ? Convert.ToInt32(reader["Max"]) : 0;
+                        int ID = (Convert.ToInt32(reader["ID"].ToString()));
+                        string Name = (reader["Naam"].ToString());
+                        string Streetname = (reader["Straatnaam"].ToString());
+                        string Location = (reader["Locatie"].ToString());
+
+                        Camping = new Camping(ID, Name, Streetname, Location);
                     }
                 }
                 catch (SqlException e)
@@ -82,7 +99,7 @@ namespace Forms_version_1._0
                     DatabaseConnectie.CloseConnection();
                 }
             }
-            return Check + 1;
+            return Camping;
         }
 
 

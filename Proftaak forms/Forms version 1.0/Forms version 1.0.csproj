@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Database\EventMangement\DatabaseCreateEvent.cs" />
+    <Compile Include="Classes\Database\EventManagement\DatabaseCreateEvent.cs" />
+    <Compile Include="Classes\Database\DatabaseGetHighestID.cs" />
+    <Compile Include="Classes\Database\TimelineManagement\DatabaseCreateTimeline.cs" />
+    <Compile Include="Classes\Database\EventManagement\DatabaseGetEvents.cs" />
+    <Compile Include="Classes\Database\CampingManagement\DatabaseGetCamping.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

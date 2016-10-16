@@ -12,7 +12,7 @@ namespace Forms_version_1._0
         public static bool CreateAccount(Account Account)
         {
             bool Check = false;
-            int ID = GetHighestID();
+            int ID = DatabaseGetHighestID.GetHighestID("Account");
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -47,43 +47,6 @@ namespace Forms_version_1._0
 
             return Check;
         }
-
-
-        private static int GetHighestID()
-        {
-            int Check = 0;
-
-            if (DatabaseConnectie.OpenConnection())
-            {
-
-                try
-                {
-                    DatabaseConnectie.OpenConnection();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = DatabaseConnectie.connect;
-
-                    cmd.CommandText = "SELECT MAX(ID) AS Max FROM Account";                 
-                
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        Check = Convert.ToInt32(reader["Max"]);                   
-                    }
-                }
-                catch (SqlException e)
-                {
-                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
-
-                }
-                finally
-                {
-                    DatabaseConnectie.CloseConnection();
-                }
-            }
-            return Check + 1;
-        }
-
-
 
 
     }

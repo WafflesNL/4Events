@@ -65,6 +65,7 @@
             // 
             // cbSelectEvent
             // 
+            this.cbSelectEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelectEvent.FormattingEnabled = true;
             this.cbSelectEvent.Location = new System.Drawing.Point(16, 21);
             this.cbSelectEvent.Margin = new System.Windows.Forms.Padding(4);

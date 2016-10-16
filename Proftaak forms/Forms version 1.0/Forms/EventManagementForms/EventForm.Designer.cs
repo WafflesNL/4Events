@@ -130,18 +130,19 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 345);
+            this.btnSave.Location = new System.Drawing.Point(12, 350);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(83, 53);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
             // btnQuestOverview
             // 
-            this.btnQuestOverview.Location = new System.Drawing.Point(201, 334);
+            this.btnQuestOverview.Location = new System.Drawing.Point(201, 331);
             this.btnQuestOverview.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuestOverview.Name = "btnQuestOverview";
             this.btnQuestOverview.Size = new System.Drawing.Size(195, 31);
@@ -152,7 +153,7 @@
             // 
             // btnReservations
             // 
-            this.btnReservations.Location = new System.Drawing.Point(201, 373);
+            this.btnReservations.Location = new System.Drawing.Point(201, 370);
             this.btnReservations.Margin = new System.Windows.Forms.Padding(4);
             this.btnReservations.Name = "btnReservations";
             this.btnReservations.Size = new System.Drawing.Size(195, 31);
@@ -177,7 +178,7 @@
             // 
             // btnRental
             // 
-            this.btnRental.Location = new System.Drawing.Point(201, 295);
+            this.btnRental.Location = new System.Drawing.Point(201, 290);
             this.btnRental.Margin = new System.Windows.Forms.Padding(4);
             this.btnRental.Name = "btnRental";
             this.btnRental.Size = new System.Drawing.Size(195, 31);

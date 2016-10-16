@@ -10,6 +10,8 @@ namespace Forms_version_1._0.Classes
     {
         public List<Reservation> ReservationList = new List<Reservation>();
         public List<Material> materialList = new List<Material>();
+        public List<Account> presentList = new List<Account>();
+
         public TimeLine TimeLine { get; set; }
         public Account Account { get; set; }  
         public Camping Camping { get; set; }
@@ -21,18 +23,22 @@ namespace Forms_version_1._0.Classes
         public string Discription { get; set; }
         public string Location { get; set; }
 
-        //Material list and time line and Reservationlist need to be added
-        public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account) //moet materialList bij en tijdlijn
+        //To add a account
+        //Material list and Reservationlist need to be added
+        public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account) 
         {
             this.Name = Name;
             this.Discription = Discription;
             this.Location = Location;
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
-            this.Account = Account;         
+            this.Account = Account;
+            //this.materialList = materialList;
+            //this.ReservationList = ReservationList;      
         }
 
-        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping) //, List<Material> materialList
+        //To get a account
+        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping) 
         {
             this.ID = ID;
             this.Name = Name;
@@ -40,19 +46,33 @@ namespace Forms_version_1._0.Classes
             this.Location = Location;
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
-            this.Account = Account;           
-           //this.materialList = materialList;
+            this.Account = Account;
+            //this.materialList = materialList;
+            //this.ReservationList = ReservationList;
         }
 
-        public void EditEvent()
+        //To edit account
+        public Event(int ID, string Name, string Discription, string Location, int Maxvisitors, DateTime Date)
         {
-            
+            this.ID = ID;
+            this.Name = Name;
+            this.Discription = Discription;
+            this.Location = Location;
+            this.MaxVisitors = Maxvisitors;
+            this.Date = Date;
         }
+
+      
+        public bool EditEvent(Event Event)
+        {
+            bool Check = DatabaseEditEvent.EditEvent(Event); 
+            return Check;
+        }
+
 
         public bool CreateEvent(Event Event)
         {
             bool Check = DatabaseCreateEvent.CreateEvent(Event);
-
             return Check;
         }
 

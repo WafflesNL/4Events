@@ -51,7 +51,7 @@ namespace Forms_version_1._0
             return AccountList;
         }
 
-        public static Account GetSingleAccount(int ID)
+        public static Account GetSingleAccount(int ID) //kun ook where (hier ID kan een variabele worden)
         {
             Account Account = null;
 

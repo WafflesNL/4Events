@@ -24,24 +24,25 @@ namespace Forms_version_1._0
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
         {
-            TijdlijnForm window = new TijdlijnForm();
+            TijdlijnForm Form = new TijdlijnForm();
             this.Hide();
-            window.ShowDialog();
+            Form.ShowDialog();
             this.Close();
         }
 
         private void btnBetalingStatus_Click(object sender, EventArgs e)
         {
-            BetalingsForm window = new BetalingsForm();
-            window.ShowDialog();
+            BetalingsForm Form = new BetalingsForm();
+            Form.ShowDialog();
         }
 
         private void btnEventInfo_Click(object sender, EventArgs e)
         {
-            EventForm window = new EventForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
+            Event Event = cbSelectEvent.SelectedItem as Event;
+            EventForm Form = new EventForm();
+            Form.GetData(Event);
+            Form.ShowDialog();
+            LoadEvents();
         }
 
         private void btnReserveren_Click(object sender, EventArgs e)
@@ -51,41 +52,43 @@ namespace Forms_version_1._0
 
         private void btnPlaats_Click(object sender, EventArgs e)
         {
-            CampingOverzichtForm window = new CampingOverzichtForm();
+            CampingOverzichtForm Form = new CampingOverzichtForm();
             this.Hide();
-            window.ShowDialog();
+            Form.ShowDialog();
             this.Close();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            AccountForm window = new AccountForm();       
-            window.ShowDialog();      
+            AccountForm Form = new AccountForm();
+            Form.ShowDialog();      
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             CurrentAccount.RemovePropertys();
-            FormLogin window = new FormLogin();
+            FormLogin Form = new FormLogin();
             this.Hide();
-            window.ShowDialog();
+            Form.ShowDialog();
             this.Close();
         }
 
         private void btnAccountWijzingen_Click(object sender, EventArgs e)
-        {
+        {      
             AccountOverzichtForm Form = new AccountOverzichtForm();
-            Form.ShowDialog();
+            Form.ShowDialog();         
         }
 
         private void btnCreateEvent_Click(object sender, EventArgs e)
         {
             CreateEventForm Form = new CreateEventForm();
             Form.ShowDialog();
+            LoadEvents();
         }
 
         private void LoadEvents()
         {
+            cbSelectEvent.Items.Clear();
             foreach (Event E in DatabaseGetEvents.GetEvents())
             {
                 cbSelectEvent.Items.Add(E);
@@ -121,6 +124,10 @@ namespace Forms_version_1._0
             }
         }
 
-     
+
+        private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
+        {          
+            this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
+        }
     }
 }

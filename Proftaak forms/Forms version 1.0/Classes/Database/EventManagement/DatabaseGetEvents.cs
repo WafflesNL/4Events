@@ -37,7 +37,9 @@ namespace Forms_version_1._0
                         int CampingID = (reader["CampingID"] != DBNull.Value) ? Convert.ToInt32(reader["CampingID"]) : 0;
                         int AccountID = Convert.ToInt32(reader["AccountID"]);
 
-                        Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID);
+                        //moet reserveringlijst en materiaallijst nog bij
+
+                        Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID); //moet bij account horen
                         Camping Camping;
 
                         if (CampingID != 0)

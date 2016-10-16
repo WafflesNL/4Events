@@ -14,7 +14,7 @@ namespace Forms_version_1._0
     public partial class AccountOverzichtForm : Form
     {
         //Andere oplossing is nodig
-        public Account account = new Account("", "", "", Function.Bezoeker);
+        public Account account = new Account("", "", "", Function.Bezoeker); 
 
         public AccountOverzichtForm()
         {

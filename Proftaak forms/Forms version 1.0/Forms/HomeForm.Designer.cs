@@ -54,6 +54,7 @@
             // 
             // btnTijdlijn
             // 
+            this.btnTijdlijn.Enabled = false;
             this.btnTijdlijn.Location = new System.Drawing.Point(16, 132);
             this.btnTijdlijn.Margin = new System.Windows.Forms.Padding(4);
             this.btnTijdlijn.Name = "btnTijdlijn";
@@ -72,9 +73,11 @@
             this.cbSelectEvent.Name = "cbSelectEvent";
             this.cbSelectEvent.Size = new System.Drawing.Size(376, 24);
             this.cbSelectEvent.TabIndex = 2;
+            this.cbSelectEvent.SelectedIndexChanged += new System.EventHandler(this.cbSelectEvent_SelectedIndexChanged);
             // 
             // btnBetalingStatus
             // 
+            this.btnBetalingStatus.Enabled = false;
             this.btnBetalingStatus.Location = new System.Drawing.Point(224, 178);
             this.btnBetalingStatus.Margin = new System.Windows.Forms.Padding(4);
             this.btnBetalingStatus.Name = "btnBetalingStatus";
@@ -86,6 +89,7 @@
             // 
             // btnEventInfo
             // 
+            this.btnEventInfo.Enabled = false;
             this.btnEventInfo.Location = new System.Drawing.Point(15, 220);
             this.btnEventInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btnEventInfo.Name = "btnEventInfo";
@@ -108,6 +112,7 @@
             // 
             // btnReserve
             // 
+            this.btnReserve.Enabled = false;
             this.btnReserve.Location = new System.Drawing.Point(223, 220);
             this.btnReserve.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserve.Name = "btnReserve";

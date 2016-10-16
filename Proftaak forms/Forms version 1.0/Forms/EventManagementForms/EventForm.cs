@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Forms_version_1._0.Forms
 {
     public partial class EventForm : Form
     {
+        Event Event;
+
         public EventForm()
         {
             InitializeComponent();
+            GetAcces();
         }
 
         private void btnOverzicht_Click(object sender, EventArgs e)
@@ -25,36 +29,69 @@ namespace Forms_version_1._0.Forms
 
         private void btnReservering_Click(object sender, EventArgs e)
         {
-            ReserveringForm window = new ReserveringForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
+            ReserveringForm window = new ReserveringForm();          
+            window.ShowDialog();         
         }
-
-        private void btnNietOpslaan_Click(object sender, EventArgs e)
+     
+        private void btnOpslaan_Click(object sender, EventArgs e) //still in progress
         {
-            //Won't save changes to the Event.
-            HomeForm window = new HomeForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
-        }
+            //Saves changes to the Event.         
+            if (tbEventName.Text != "" && tbEventDiscription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "" && numQuantityVisitors.Value >= 5)
+            {            
+                Event NewEvent = new Event(Event.ID, tbEventName.Text, tbEventDiscription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value);              
 
-        private void btnOpslaan_Click(object sender, EventArgs e)
-        {
-            //Saves changes to the Event.
-            HomeForm window = new HomeForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
+                if (NewEvent.CheckDateOutOfRange() == false)
+                {
+                    MessageBox.Show("De datum moet twee weken van te voren zijn");
+                }
+                else if (NewEvent.EditEvent(NewEvent))
+                {                  
+                    MessageBox.Show("Het event is succesvol aangepast");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Er is iets fout gegaan probeer het opnieuw");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Niet alle gegevens zijn correct ingevuld");
+            }
         }
-
+       
         private void btnVerhuur_Click(object sender, EventArgs e)
         {
-            VerhuurForm window = new VerhuurForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
+           //Moet nog gemaakt worden
+        }
+
+
+        public void GetData(Event Event)
+        {
+            this.Event = Event;
+            tbEventName.Text = Event.Name;
+            tbEventDiscription.Text = Event.Discription;
+            cbLocation.Text = Event.Location;
+            dtpDateEvent.Value = Event.Date;
+            numQuantityVisitors.Value = Event.MaxVisitors;
+        }
+
+        private void GetAcces()
+        {
+            numQuantityVisitors.Enabled = false;
+
+            if (CurrentAccount.Function == Function.Beheerder)
+            {
+                btnSave.Visible = true;
+            }
+            else
+            {
+                tbEventName.Enabled = false;
+                tbEventDiscription.Enabled = false;
+                cbLocation.Enabled = false;
+                dtpDateEvent.Enabled = false;               
+                btnRental.Enabled = false;
+            }
         }
     }
 }

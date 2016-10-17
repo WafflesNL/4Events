@@ -90,6 +90,25 @@ namespace Forms_version_1._0
         }
 
         /// <summary>
+        /// Gets the name that belongs to the corresponding AccountID
+        /// </summary>
+        /// <returns>True if name exists false if not</returns>
+        private static bool GetName(int ID)
+        {
+            string Check = DatabaseLogin.GetString(ID, "Naam");
+            if (Check != "")
+            {
+                Name = Check;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
         /// Translate the string Function to the Enum Function
         /// </summary>
         /// <returns>The function that corresponds with the parameter</returns>
@@ -114,23 +133,26 @@ namespace Forms_version_1._0
             return function;
         }
 
-        /// <summary>
-        /// Gets the name that belongs to the corresponding AccountID
-        /// </summary>
-        /// <returns>True if name exists false if not</returns>
-        private static bool GetName(int ID)
+
+        public static Categorie TranslateCategorie(string ParameterCategorie)
         {
-            string Check = DatabaseLogin.GetString(ID, "Naam");
-            if (Check != "")
+            Categorie Categorie = Categorie.Normal;
+            switch (ParameterCategorie)
             {
-                Name = Check;
-                return true;
+                case "Green":
+                    Categorie = Categorie.Green;
+                    break;
+                case "Luxe":
+                    Categorie = Categorie.Luxe;
+                    break;
+                case "Normaal":
+                    Categorie = Categorie.Normal;
+                    break;            
             }
-            else
-            {
-                return false;
-            }
+            return Categorie;
         }
+
+      
 
         /// <summary>
         /// Gets all events from the database

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0.Classes
 {
-    public class Betaling
+    public class Payment 
     {
         public int Amount { get; set; }
-        public Reservation Reservering { get; set; }
-        public Betaling(Reservation reservering, int amount)
-        {
-            this.Reservering = reservering;
+        public bool Payed { get; set; }    
+
+        public Payment(int amount, bool Payed)
+        {        
             this.Amount = amount;
+            this.Payed = Payed;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Forms_version_1._0
                         int AccountID = Convert.ToInt32(reader["AccountID"]);
 
                         List<Account> AccountList = DatabaseGetAccounts.GetSpecificAccounts(ID);
-                        List<Reservation> ReservationList = new List<Reservation>();//werk
+                        List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);
                         List<Material> Material = new List<Material>();//werk
 
                         Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID); 

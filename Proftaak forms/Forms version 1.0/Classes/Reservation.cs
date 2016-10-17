@@ -8,17 +8,17 @@ namespace Forms_version_1._0.Classes
 {
     public class Reservation
     {
-        public Account Account { get; set; }
-        public Event Event { get; set; }
-        public Betaling Betaling { get; set; }
-        public Plaats Plaats { get; set; }
+        public List<Account> Accounts = new List<Account>();
 
-        public Reservation()
+        public int ID { get; set; }                       
+        public Payment Payment { get; set; }
+        public Place Place { get; set; }
+
+        public Reservation(int ID, Payment Payment, Place Place)
         {
-            this.Account = Account;
-            this.Event = Event;
-            this.Betaling = Betaling;
-            this.Plaats = Plaats;
+            this.ID = ID;
+            this.Payment = Payment;
+            this.Place = Place;
         }
     }
 }

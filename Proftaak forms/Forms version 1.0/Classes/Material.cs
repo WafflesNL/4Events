@@ -8,7 +8,7 @@ namespace Forms_version_1._0.Classes
 {
     public class Material
     {
-        string type;
+      
         public string Type { get; }
 
         public int Price { get; set; }

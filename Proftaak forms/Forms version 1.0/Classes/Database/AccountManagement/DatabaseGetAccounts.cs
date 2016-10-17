@@ -118,7 +118,7 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT * FROM Account Where EventID = @EventID";
+                    cmd.CommandText = "SELECT * FROM Account Where EventID = @EventID AND Functie = 'Bezoeker'";
                     cmd.Parameters.Add(new SqlParameter("EventID", EventID));
 
                     SqlDataReader reader = cmd.ExecuteReader();

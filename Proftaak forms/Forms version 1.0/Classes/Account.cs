@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         public string Username { get; set; }
         public string Password { get; set; }
         public Function Function { get; set; }
+        public int EventID { get; set; } //moet nog toegepast worden in methodes
 
         /// <summary>
         /// Used to get account information from the database

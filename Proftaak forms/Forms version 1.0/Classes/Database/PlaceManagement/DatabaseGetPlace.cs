@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0
 {
-    public static class DatabaseGetReservations
+    public static class DatabaseGetPlace
     {
-        public static List<Reservation> GetReservation(int EventID)
+        public static Place GetPlace(int PlaceID)
         {
-            List<Reservation> ReservationList = new List<Reservation>();
+            Place Place = null;
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -23,24 +23,22 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT * FROM Reservering Where EventID = @EventID";
-                    cmd.Parameters.Add(new SqlParameter("EventID", EventID));
+                    cmd.CommandText = "SELECT * FROM Plaats Where ID = @PlaceID";
+                    cmd.Parameters.Add(new SqlParameter("PlaceID", PlaceID));
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
                         int ID = Convert.ToInt32(reader["ID"]);
-                        int PlaceID = Convert.ToInt32(reader["PlaatsID"]);                      
-                        int Amount = Convert.ToInt32(reader["BetalingsBedrag"]);
-                        bool Status = Convert.ToBoolean(reader["BetalingStatus"]);
+                        string Terrain = (reader["Terrein"].ToString());
+                        int Space = Convert.ToInt32(reader["Oppervlakte"]);
+                        string Categorie = (reader["Categorie"].ToString());
 
-                        Place Place = DatabaseGetPlace.GetPlace(PlaceID);
-
-                        Reservation Reservation = new Reservation(ID, new Payment(Amount, Status), Place);
-                        //ReservationList.Add(Reservation);
+                        Place = new Place(ID, Terrain, Space, CurrentAccount.TranslateCategorie(Categorie));
+                        return Place;
                     }
-                    return ReservationList;
+                    return Place;
                 }
                 catch (SqlException e)
                 {
@@ -52,7 +50,7 @@ namespace Forms_version_1._0
                     DatabaseConnectie.CloseConnection();
                 }
             }
-            return ReservationList;
+            return Place;
         }
 
 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Enum\Categorie.cs" />
     <Compile Include="Classes\Database\EventManagement\DatabaseCreateEvent.cs" />
     <Compile Include="Classes\Database\DatabaseGetHighestID.cs" />
     <Compile Include="Classes\Database\TimelineManagement\DatabaseCreateTimeline.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Classes\Database\CampingManagement\DatabaseGetCamping.cs" />
     <Compile Include="Classes\Database\EventManagement\DatabaseEditEvent.cs" />
     <Compile Include="Classes\Database\ReservationManagement\DatabaseGetReservations.cs" />
+    <Compile Include="Classes\Database\PlaceManagement\DatabaseGetPlace.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,12 +74,12 @@
       <DependentUpon>AccountOverzichtForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Account.cs" />
-    <Compile Include="Classes\Betaling.cs" />
+    <Compile Include="Classes\Payment.cs" />
     <Compile Include="Classes\Camping.cs" />
     <Compile Include="Classes\Database\DatabaseConnectie.cs" />
     <Compile Include="Classes\Event.cs" />
     <Compile Include="Classes\Material.cs" />
-    <Compile Include="Classes\Plaats.cs" />
+    <Compile Include="Classes\Place.cs" />
     <Compile Include="Classes\Post.cs" />
     <Compile Include="Classes\Reservation.cs" />
     <Compile Include="Classes\TimeLine.cs" />

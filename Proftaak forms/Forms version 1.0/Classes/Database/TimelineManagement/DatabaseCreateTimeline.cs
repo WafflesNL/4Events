@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseCreateTimeline
     {
+        /// <summary>
+        /// When a Event is being creater so does a timeline
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
         public static bool CreateTimeline()
         {
             bool Check = false;
@@ -49,7 +53,10 @@ namespace Forms_version_1._0
             return Check;
         }
 
-
+        /// <summary>
+        /// Gets the latest created event ID
+        /// </summary>
+        /// <returns>If record exists return a int that is not 0 or negative</returns>
         private static int GetLatestEventID()
         {
             int Check = 0;

@@ -16,6 +16,11 @@ namespace Forms_version_1._0
         public static string Name { get; set; }
         //public static int EventID { get; set; }
 
+
+        /// <summary>
+        /// Checks if a account exist in the database 
+        /// </summary>
+        /// <returns>True if account exists false if not</returns>
         public static bool Login(string Password, string Username)
         {
             ID = DatabaseLogin.CheckUser(Password, Username);
@@ -29,7 +34,11 @@ namespace Forms_version_1._0
                 return false;
             }
         }
-  
+
+        /// <summary>
+        /// Checks if a account exist in the database 
+        /// </summary>
+        /// <returns>True if account exists false if not</returns>
         private static bool GetUserName(int ID)
         {
             string Check = DatabaseLogin.GetString(ID, "Gebruikersnaam");
@@ -43,7 +52,11 @@ namespace Forms_version_1._0
                 return false;
             }
         }
-        
+
+        /// <summary>
+        /// Gets the password that belongs to the corresponding AccountID
+        /// </summary>
+        /// <returns>True if password exists false if not</returns>
         private static bool GetPassword(int ID)
         {
             string Check = DatabaseLogin.GetString(ID, "Wachtwoord");
@@ -58,6 +71,10 @@ namespace Forms_version_1._0
             }
         }
 
+        /// <summary>
+        /// Gets the function that belongs to the corresponding AccountID
+        /// </summary>
+        /// <returns>True if function exists false if not</returns>
         private static bool GetFunction(int ID)
         {
             string Check = DatabaseLogin.GetString(ID, "Functie");
@@ -72,7 +89,10 @@ namespace Forms_version_1._0
             }
         }
 
-
+        /// <summary>
+        /// Translate the string Function to the Enum Function
+        /// </summary>
+        /// <returns>The function that corresponds with the parameter</returns>
         public static Function TranslateFunction(string ParameterFunction)
         {
             Function function = Function.Bezoeker;
@@ -94,6 +114,10 @@ namespace Forms_version_1._0
             return function;
         }
 
+        /// <summary>
+        /// Gets the name that belongs to the corresponding AccountID
+        /// </summary>
+        /// <returns>True if name exists false if not</returns>
         private static bool GetName(int ID)
         {
             string Check = DatabaseLogin.GetString(ID, "Naam");
@@ -108,14 +132,20 @@ namespace Forms_version_1._0
             }
         }
 
-        
-        public static List<Event> GetEvents(int ID)
+        /// <summary>
+        /// Gets all events from the database
+        /// </summary>
+        /// <returns>A list with all events that are currently active</returns>
+        public static List<Event> GetEvents()
         {
             List<Event> EventList = DatabaseGetEvents.GetEvents();
             return EventList;
         }
-        
 
+        /// <summary>
+        /// Gets the password that belongs to the corresponding AccountID
+        /// </summary>
+        /// <returns>Void</returns>
         public static void UpdateAccount(Account account)
         {
             UserName = account.Username;
@@ -124,6 +154,10 @@ namespace Forms_version_1._0
             Name = account.Name;
         }
 
+        /// <summary>
+        /// When user logs out resets the currentaccount data to default
+        /// </summary>
+        /// <returns>Void</returns>
         public static void RemovePropertys()
         {
             ID = 0;

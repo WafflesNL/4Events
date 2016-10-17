@@ -23,8 +23,15 @@ namespace Forms_version_1._0.Classes
         public string Discription { get; set; }
         public string Location { get; set; }
 
-        //To add a account
-        //Material list and Reservationlist need to be added
+        /// <summary>
+        /// Used to add a account to the databse
+        /// </summary>
+        /// <param name="Name"><param>
+        /// <param name="Discription"></param>
+        /// <param name="Location"></param> 
+        /// <param name="Maxvisitors"><param>
+        /// <param name="Date"></param>
+        /// <param name="Account"></param> 
         public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account) 
         {
             this.Name = Name;
@@ -37,7 +44,17 @@ namespace Forms_version_1._0.Classes
             //this.ReservationList = ReservationList;      
         }
 
-        //To get a account
+
+        /// <summary>
+        /// Used to get a account to the databse
+        /// </summary>
+        /// <param name=""><param>
+        /// <param name="Name"><param>
+        /// <param name="Discription"></param>
+        /// <param name="Location"></param> 
+        /// <param name="Maxvisitors"><param>
+        /// <param name="Date"></param>
+        /// <param name="Account"></param> 
         public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping) 
         {
             this.ID = ID;
@@ -62,20 +79,30 @@ namespace Forms_version_1._0.Classes
             this.Date = Date;
         }
 
-      
+        /// <summary>
+        /// Check if changes for Event are allowed in the database
+        /// </summary>
+        /// <returns>True if changes are allowed false if not</returns>
         public bool EditEvent(Event Event)
         {
             bool Check = DatabaseEditEvent.EditEvent(Event); 
             return Check;
         }
 
-
+        /// <summary>
+        /// Checks if the new event is allowed in the database
+        /// </summary>
+        /// <returns>True if changes are allowed false if not</returns>
         public bool CreateEvent(Event Event)
         {
             bool Check = DatabaseCreateEvent.CreateEvent(Event);
             return Check;
         }
 
+        /// <summary>
+        /// Checks if the date for an newly created event is valid
+        /// </summary>
+        /// <returns>True if date is valid false if not</returns>
         public bool CheckDateOutOfRange()
         {
             DateTime Date = DateTime.Now.AddDays(14);
@@ -89,6 +116,10 @@ namespace Forms_version_1._0.Classes
             }
         }
 
+        /// <summary>
+        /// Get the camping that belongs to an event 
+        /// </summary>
+        /// <returns>True if camping exist in databse false if not</returns>
         public bool GetCamping()
         {
             Camping Camping = DatabaseCreateEvent.GetCamping(this.Location);         
@@ -103,6 +134,10 @@ namespace Forms_version_1._0.Classes
             }         
         }
 
+        /// <summary>
+        ///  Creates a new timeline for a Event
+        /// </summary>
+        /// <returns>True if time line exist false if ot</returns>
         public bool CreateTimeLine()
         {
             TimeLine Timeline = new TimeLine();
@@ -110,6 +145,10 @@ namespace Forms_version_1._0.Classes
             return Check;
         }
 
+        /// <summary>
+        /// Tostring methods for event
+        /// </summary>
+        /// <returns>Object event to a string</returns>
         public override string ToString()
         {
             return Name;

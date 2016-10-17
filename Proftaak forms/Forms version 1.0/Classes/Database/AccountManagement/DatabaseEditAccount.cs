@@ -9,6 +9,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseEditAccount
     {
+        /// <summary>
+        /// Changes a account 
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
         public static bool EditAccount(Account Account)
         {
             bool Check = false;

@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseEditEvent
     {
+        /// <summary>
+        /// Changes the attributes for an Event
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
         public static bool EditEvent(Event Event)
         {
             bool Check = false;

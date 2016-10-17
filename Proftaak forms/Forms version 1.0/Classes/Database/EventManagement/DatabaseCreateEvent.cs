@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseCreateEvent
     {
+        /// <summary>
+        /// Creates a new event for the database
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
         public static bool CreateEvent(Event Event)
         {
             bool Check = false;
@@ -59,9 +63,11 @@ namespace Forms_version_1._0
         }
 
 
-   
-        
 
+        /// <summary>
+        /// Adds a camping to an event if the location of both are the same
+        /// </summary>
+        /// <returns>Returns a camping if this exist false if not</returns>
         public static Camping GetCamping(string Locatie)
         {
             Camping Camping = null;

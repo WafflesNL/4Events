@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseGetEvents
     {
+        /// <summary>
+        /// Gets every event from the database
+        /// </summary>
+        /// <returns>A list with all event</returns>
         public static List<Event> GetEvents()
         {
             List<Event> EventList = new List<Event>();

@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseGetCamping
     {
+        /// <summary>
+        /// Gets a camping from the database (the ID is a Foreign key from another table)
+        /// </summary>
+        /// <returns>Gets a camping that exists in the database null if not</returns>
         public static Camping GetSingleCamping(int ID)
         {
             Camping Camping = null;

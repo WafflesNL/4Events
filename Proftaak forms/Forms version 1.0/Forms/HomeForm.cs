@@ -89,7 +89,7 @@ namespace Forms_version_1._0
         private void LoadEvents()
         {
             cbSelectEvent.Items.Clear();
-            foreach (Event E in DatabaseGetEvents.GetEvents())
+            foreach (Event E in CurrentAccount.GetEvents()) //slechte code
             {
                 cbSelectEvent.Items.Add(E);
             }

@@ -9,7 +9,11 @@ using System.Data.SqlClient;
 namespace Forms_version_1._0
 {
     public static class DatabaseLogin
-    {      
+    {
+        /// <summary>
+        /// Check if a user exist in the database
+        /// </summary>
+        /// <returns>If record exists return a int that is not 0 or negative</returns>
         public static int CheckUser(string Password, string Username)
         {
             int Check = 0;

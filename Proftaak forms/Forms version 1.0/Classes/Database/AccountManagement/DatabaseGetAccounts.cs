@@ -9,6 +9,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseGetAccounts
     {
+        /// <summary>
+        /// Changes the attributes for an Event
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
         public static List<Account> GetAccounts()
         {
             List<Account> AccountList = new List<Account>();
@@ -51,6 +55,10 @@ namespace Forms_version_1._0
             return AccountList;
         }
 
+        /// <summary>
+        /// Gets a single Account
+        /// </summary>
+        /// <returns>If record exists return a int that is not 0 or negative</returns>
         public static Account GetSingleAccount(int ID) //kun ook where (hier ID kan een variabele worden)
         {
             Account Account = null;

@@ -9,6 +9,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseCreateAccount
     {
+        /// <summary>
+        /// Creates an account
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
         public static bool CreateAccount(Account Account)
         {
             bool Check = false;

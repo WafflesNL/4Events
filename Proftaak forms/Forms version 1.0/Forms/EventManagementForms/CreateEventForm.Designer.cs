@@ -57,9 +57,24 @@
             // numQuantityVisitors
             // 
             this.numQuantityVisitors.Location = new System.Drawing.Point(193, 250);
+            this.numQuantityVisitors.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numQuantityVisitors.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numQuantityVisitors.Name = "numQuantityVisitors";
             this.numQuantityVisitors.Size = new System.Drawing.Size(193, 22);
             this.numQuantityVisitors.TabIndex = 30;
+            this.numQuantityVisitors.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // btnRental
             // 

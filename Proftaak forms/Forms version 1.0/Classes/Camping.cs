@@ -13,6 +13,13 @@ namespace Forms_version_1._0.Classes
         public string Streetname { get; set; }
         public string Location { get; set; }
 
+        /// <summary>
+        /// Camping used to get a camping from the database
+        /// </summary>
+        /// <param name="ID">Identidication for an camping</param>
+        /// <param name="Name">Name of an camping<param>
+        /// <param name="Streetname">Name of the street where the camping is established</param>
+        /// <param name="Location">Name of the village or city where the camping is established</param>       
         public Camping(int? ID, string Name, string Streetname, string Location)
         {
             this.ID = ID;

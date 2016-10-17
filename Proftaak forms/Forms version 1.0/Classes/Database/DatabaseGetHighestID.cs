@@ -9,6 +9,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseGetHighestID
     {
+        /// <summary>
+        /// Gets Highest ID For a specific Table
+        /// </summary>
+        /// <returns>If record exists return a int that is not 0 or negative</returns>
         public static int GetHighestID(string TableName)
         {
             int Check = 0;

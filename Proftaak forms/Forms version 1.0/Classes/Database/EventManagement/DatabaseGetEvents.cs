@@ -17,10 +17,7 @@ namespace Forms_version_1._0
         public static List<Event> GetEvents()
         {
             List<Event> EventList = new List<Event>();
-
-            List<Account> AccountList = new List<Account>(); //moeten opgehaald worden via een andere query
-            List<Reservation> ReservationList = new List<Reservation>();
-
+        
             if (DatabaseConnectie.OpenConnection())
             {
 
@@ -44,9 +41,11 @@ namespace Forms_version_1._0
                         int CampingID = (reader["CampingID"] != DBNull.Value) ? Convert.ToInt32(reader["CampingID"]) : 0;
                         int AccountID = Convert.ToInt32(reader["AccountID"]);
 
-                        //moet reserveringlijst en materiaallijst nog bij
+                        List<Account> AccountList = DatabaseGetAccounts.GetSpecificAccounts(ID);
+                        List<Reservation> ReservationList = new List<Reservation>();//werk
+                        List<Material> Material = new List<Material>();//werk
 
-                        Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID); //moet bij account horen
+                        Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID); 
                         Camping Camping;
 
                         if (CampingID != 0)

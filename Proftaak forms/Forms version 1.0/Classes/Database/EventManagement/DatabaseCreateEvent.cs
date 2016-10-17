@@ -62,8 +62,6 @@ namespace Forms_version_1._0
             return Check;
         }
 
-
-
         /// <summary>
         /// Adds a camping to an event if the location of both are the same
         /// </summary>

@@ -70,19 +70,19 @@
             // 
             // tbEventName
             // 
-            this.tbEventName.Location = new System.Drawing.Point(199, 66);
+            this.tbEventName.Location = new System.Drawing.Point(181, 66);
             this.tbEventName.Margin = new System.Windows.Forms.Padding(4);
             this.tbEventName.Name = "tbEventName";
-            this.tbEventName.Size = new System.Drawing.Size(193, 22);
+            this.tbEventName.Size = new System.Drawing.Size(211, 22);
             this.tbEventName.TabIndex = 2;
             // 
             // tbEventDiscription
             // 
-            this.tbEventDiscription.Location = new System.Drawing.Point(199, 98);
+            this.tbEventDiscription.Location = new System.Drawing.Point(181, 98);
             this.tbEventDiscription.Margin = new System.Windows.Forms.Padding(4);
             this.tbEventDiscription.Multiline = true;
             this.tbEventDiscription.Name = "tbEventDiscription";
-            this.tbEventDiscription.Size = new System.Drawing.Size(193, 86);
+            this.tbEventDiscription.Size = new System.Drawing.Size(211, 86);
             this.tbEventDiscription.TabIndex = 3;
             // 
             // notifyIcon1
@@ -122,10 +122,10 @@
             // 
             // dtpDateEvent
             // 
-            this.dtpDateEvent.Location = new System.Drawing.Point(199, 224);
+            this.dtpDateEvent.Location = new System.Drawing.Point(181, 224);
             this.dtpDateEvent.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateEvent.Name = "dtpDateEvent";
-            this.dtpDateEvent.Size = new System.Drawing.Size(193, 22);
+            this.dtpDateEvent.Size = new System.Drawing.Size(211, 22);
             this.dtpDateEvent.TabIndex = 8;
             // 
             // btnSave
@@ -170,10 +170,10 @@
             "Eindhoven",
             "Amsterdam",
             "Denhaag"});
-            this.cbLocation.Location = new System.Drawing.Point(199, 192);
+            this.cbLocation.Location = new System.Drawing.Point(181, 192);
             this.cbLocation.Margin = new System.Windows.Forms.Padding(4);
             this.cbLocation.Name = "cbLocation";
-            this.cbLocation.Size = new System.Drawing.Size(193, 24);
+            this.cbLocation.Size = new System.Drawing.Size(211, 24);
             this.cbLocation.TabIndex = 13;
             // 
             // btnRental
@@ -189,7 +189,7 @@
             // 
             // numQuantityVisitors
             // 
-            this.numQuantityVisitors.Location = new System.Drawing.Point(199, 253);
+            this.numQuantityVisitors.Location = new System.Drawing.Point(181, 253);
             this.numQuantityVisitors.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -201,7 +201,7 @@
             0,
             0});
             this.numQuantityVisitors.Name = "numQuantityVisitors";
-            this.numQuantityVisitors.Size = new System.Drawing.Size(193, 22);
+            this.numQuantityVisitors.Size = new System.Drawing.Size(211, 22);
             this.numQuantityVisitors.TabIndex = 15;
             this.numQuantityVisitors.Value = new decimal(new int[] {
             5,

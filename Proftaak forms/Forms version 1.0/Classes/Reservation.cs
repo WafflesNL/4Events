@@ -13,7 +13,7 @@ namespace Forms_version_1._0.Classes
         public Betaling Betaling { get; set; }
         public Plaats Plaats { get; set; }
 
-        public Reservation(Account Account, Event Event, Betaling Betaling, Plaats Plaats)
+        public Reservation()
         {
             this.Account = Account;
             this.Event = Event;

@@ -18,6 +18,9 @@ namespace Forms_version_1._0
         {
             List<Event> EventList = new List<Event>();
 
+            List<Account> AccountList = new List<Account>(); //moeten opgehaald worden via een andere query
+            List<Reservation> ReservationList = new List<Reservation>();
+
             if (DatabaseConnectie.OpenConnection())
             {
 
@@ -55,7 +58,7 @@ namespace Forms_version_1._0
                             Camping = null;
                         }
 
-                        Event Event = new Event(ID, Name, Discription, Location, Maxvisitors, Date, Account, Camping);
+                        Event Event = new Event(ID, Name, Discription, Location, Maxvisitors, Date, Account, Camping, AccountList, ReservationList);
                         EventList.Add(Event);                 
                     }
                     return EventList;

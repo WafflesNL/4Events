@@ -12,6 +12,7 @@ namespace Forms_version_1._0.Classes
      
         public string Name { get; set; }
 
+        // material stuff
         public Material(int price, string name)
         {
             this.Price = price;         

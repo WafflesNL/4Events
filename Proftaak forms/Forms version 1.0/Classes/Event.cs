@@ -9,8 +9,8 @@ namespace Forms_version_1._0.Classes
     public class Event
     {
         public List<Reservation> ReservationList = new List<Reservation>();
-        public List<Material> materialList = new List<Material>();
-        public List<Account> presentList = new List<Account>();
+        public List<Material> MaterialList = new List<Material>();
+        public List<Account> PresentList = new List<Account>();
 
         public TimeLine TimeLine { get; set; }
         public Account Account { get; set; }  
@@ -40,8 +40,7 @@ namespace Forms_version_1._0.Classes
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
             this.Account = Account;
-            //this.materialList = materialList;
-            //this.ReservationList = ReservationList;      
+            //this.materialList = materialList;               
         }
 
 
@@ -55,7 +54,7 @@ namespace Forms_version_1._0.Classes
         /// <param name="Maxvisitors"><param>
         /// <param name="Date"></param>
         /// <param name="Account"></param> 
-        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping) 
+        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, List<Account> Presentlist, List<Reservation> ReservationList)
         {
             this.ID = ID;
             this.Name = Name;
@@ -64,8 +63,11 @@ namespace Forms_version_1._0.Classes
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
             this.Account = Account;
-            //this.materialList = materialList;
-            //this.ReservationList = ReservationList;
+            this.PresentList = Presentlist;
+            this.ReservationList = ReservationList;
+            //this.MaterialList = materialList;
+
+
         }
 
         /// <summary>

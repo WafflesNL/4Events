@@ -13,12 +13,12 @@ namespace Forms_version_1._0.Classes
         public Betaling Betaling { get; set; }
         public Plaats Plaats { get; set; }
 
-        public Reservation(Account account, Event event1, Betaling betaling, Plaats plaats)
+        public Reservation(Account Account, Event Event, Betaling Betaling, Plaats Plaats)
         {
-            this.Account = account;
-            this.Event = event1;
-            this.Betaling = betaling;
-            this.Plaats = plaats;
+            this.Account = Account;
+            this.Event = Event;
+            this.Betaling = Betaling;
+            this.Plaats = Plaats;
         }
     }
 }

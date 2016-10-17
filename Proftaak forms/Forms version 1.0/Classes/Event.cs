@@ -48,7 +48,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Used to get a account to the databse
         /// </summary>
-        /// <param name=""><param>
+        /// <param name="ID"><param>
         /// <param name="Name"><param>
         /// <param name="Discription"></param>
         /// <param name="Location"></param> 
@@ -68,7 +68,15 @@ namespace Forms_version_1._0.Classes
             //this.ReservationList = ReservationList;
         }
 
-        //To edit account
+        /// <summary>
+        /// Used to edit a account to the databse
+        /// </summary>
+        /// <param name="ID"><param>
+        /// <param name="Name"><param>
+        /// <param name="Discription"></param>
+        /// <param name="Location"></param> 
+        /// <param name="Maxvisitors"><param>
+        /// <param name="Date"></param>     
         public Event(int ID, string Name, string Discription, string Location, int Maxvisitors, DateTime Date)
         {
             this.ID = ID;

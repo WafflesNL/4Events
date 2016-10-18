@@ -19,8 +19,7 @@ namespace Forms_version_1._0
         {
             InitializeComponent();
             GetAcces();
-            LoadEvents();
-            ///sdsdfdsfsefsf
+            LoadEvents();           
         }
 
         private void btnTijdlijn_Click(object sender, EventArgs e)

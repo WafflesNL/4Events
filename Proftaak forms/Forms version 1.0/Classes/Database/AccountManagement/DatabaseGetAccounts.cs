@@ -31,13 +31,18 @@ namespace Forms_version_1._0
 
                     while (reader.Read())
                     {
-                        int ID = Convert.ToInt32(reader["ID"]);
+                       int ID = Convert.ToInt32(reader["ID"]);
                        string Username = (reader["Gebruikersnaam"].ToString());
                        string Password = (reader["Wachtwoord"].ToString());
                        string Function = (reader["Functie"].ToString());
                        string Name = (reader["Naam"].ToString());
+                       int? EventID = (reader["EventID"] != DBNull.Value) ? Convert.ToInt32(reader["EventID"]) : 0;
+                       if (EventID == 0)
+                       {
+                           EventID = null;
+                       }
 
-                       Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
+                        Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function), EventID);
                        AccountList.Add(Account);
                     }
                     return AccountList;
@@ -59,7 +64,7 @@ namespace Forms_version_1._0
         /// Gets a single Account
         /// </summary>
         /// <returns>If record exists return a int that is not 0 or negative</returns>
-        public static Account GetSingleAccount(int ID) //kun ook where (hier ID kan een variabele worden)
+        public static Account GetSingleAccount(int ID) 
         {
             Account Account = null;
 
@@ -83,8 +88,13 @@ namespace Forms_version_1._0
                         string Password = (reader["Wachtwoord"].ToString());
                         string Function = (reader["Functie"].ToString());
                         string Name = (reader["Naam"].ToString());
+                        int? EventID = (reader["EventID"] != DBNull.Value) ? Convert.ToInt32(reader["EventID"]) : 0;
+                        if (EventID == 0)
+                        {
+                            EventID = null;
+                        }
 
-                         Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));                       
+                        Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function), EventID);                       
                     }
                     return Account;
                 }
@@ -131,7 +141,7 @@ namespace Forms_version_1._0
                         string Function = (reader["Functie"].ToString());
                         string Name = (reader["Naam"].ToString());
 
-                        Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
+                        Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function), EventID);
                         AccountList.Add(Account);
                     }
                     return AccountList;

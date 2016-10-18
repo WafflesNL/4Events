@@ -7,7 +7,7 @@ using Forms_version_1._0;
 namespace _4EventsTest
 {
     [TestClass]
-    public class UnitTest1
+    public class DataConnectionTest
     {
         [TestMethod]
         public void DatabaseConnectionTest()

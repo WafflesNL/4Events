@@ -30,7 +30,7 @@
         {
             this.TijdlijnBox = new System.Windows.Forms.ListBox();
             this.btnPost = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPost = new System.Windows.Forms.TextBox();
             this.btnLike = new System.Windows.Forms.Button();
             this.lbLikes = new System.Windows.Forms.Label();
             this.lblNaam = new System.Windows.Forms.Label();
@@ -60,13 +60,13 @@
             this.btnPost.UseVisualStyleBackColor = true;
             this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
-            // textBox1
+            // txtPost
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 324);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 33);
-            this.textBox1.TabIndex = 2;
+            this.txtPost.Location = new System.Drawing.Point(12, 324);
+            this.txtPost.Multiline = true;
+            this.txtPost.Name = "txtPost";
+            this.txtPost.Size = new System.Drawing.Size(199, 33);
+            this.txtPost.TabIndex = 2;
             // 
             // btnLike
             // 
@@ -166,7 +166,7 @@
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.lbLikes);
             this.Controls.Add(this.btnLike);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPost);
             this.Controls.Add(this.btnPost);
             this.Controls.Add(this.TijdlijnBox);
             this.Name = "TijdlijnForm";
@@ -181,7 +181,7 @@
 
         private System.Windows.Forms.ListBox TijdlijnBox;
         private System.Windows.Forms.Button btnPost;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPost;
         private System.Windows.Forms.Button btnLike;
         private System.Windows.Forms.Label lbLikes;
         private System.Windows.Forms.Label lblNaam;

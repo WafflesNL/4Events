@@ -9,12 +9,12 @@ namespace Forms_version_1._0.Classes
 {
     public class TimeLine
     {     
-        List<Post> Postlist = new List<Post>();
+        public List<Post> Postlist = new List<Post>();
         public Event Event { get; set; }
 
-        public TimeLine(List<Post> Postlist)
+        public TimeLine()
         {
-            this.Postlist = Postlist;
+            
         }
 
         public void AddPost(Post post)

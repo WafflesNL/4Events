@@ -24,11 +24,11 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "INSERT INTO Post (ID, Text, Category, PostID, AccountID) VALUES (@ID, @Text, @Category, @PostID, @AccountID)";
+                    cmd.CommandText = "INSERT INTO Post (ID, Text, Category, AccountID) VALUES (@ID, @Text, @Category, @AccountID)";
                     cmd.Parameters.Add(new SqlParameter("ID", ID));
                     cmd.Parameters.Add(new SqlParameter("Text", Post.Text));
                     cmd.Parameters.Add(new SqlParameter("Category", Post.Category));
-                    cmd.Parameters.Add(new SqlParameter("PostID", Post.Postobj));
+                    //cmd.Parameters.Add(new SqlParameter("PostID", Post.Postobj));
                     cmd.Parameters.Add(new SqlParameter("AccountID", Post.AccountID));
                     cmd.ExecuteNonQuery();
 

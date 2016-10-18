@@ -9,17 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Forms_version_1._0.Forms
 {
     public partial class TijdlijnForm : Form
     {
-        TimeLine timeline;
-        string Posttext;
-        string Categorytext;
+        
+        TimeLine timeline = new TimeLine();
 
         public TijdlijnForm()
         {
-            
+            InitializeComponent();
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -42,8 +42,9 @@ namespace Forms_version_1._0.Forms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            Categorytext = cbCatergory.Text;
-            Posttext = txtPost.Text;
+            TimeLine newtimeline = timeline();
+            string Categorytext = cbCatergory.Text;
+            string Posttext = txtPost.Text;
             Post post = new Post(Posttext, Categorytext, CurrentAccount.ID);
             timeline.AddPost(post);
         }

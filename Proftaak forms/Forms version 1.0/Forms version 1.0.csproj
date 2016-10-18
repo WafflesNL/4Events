@@ -58,6 +58,7 @@
     <Compile Include="Classes\Database\EventManagement\DatabaseEditEvent.cs" />
     <Compile Include="Classes\Database\ReservationManagement\DatabaseGetReservations.cs" />
     <Compile Include="Classes\Database\PlaceManagement\DatabaseGetPlace.cs" />
+    <Compile Include="Classes\Enum\CategoryPost.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

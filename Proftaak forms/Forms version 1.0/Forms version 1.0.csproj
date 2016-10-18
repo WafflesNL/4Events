@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Database\TimelineManagement\DatabaseAddPost.cs" />
-    <Compile Include="Classes\Database\TimelineManagement\DatabaseEditPost.cs" />
-    <Compile Include="Classes\Database\TimelineManagement\DatabaseGetPost.cs" />
+    <Compile Include="Classes\Database\PostManagement\DatabaseAddPost.cs" />
+    <Compile Include="Classes\Database\PostManagement\DatabaseEditPost.cs" />
+    <Compile Include="Classes\Database\PostManagement\DatabaseGetPost.cs" />
     <Compile Include="Classes\Enum\Categorie.cs" />
     <Compile Include="Classes\Database\EventManagement\DatabaseCreateEvent.cs" />
     <Compile Include="Classes\Database\DatabaseGetHighestID.cs" />
@@ -59,6 +59,7 @@
     <Compile Include="Classes\Database\ReservationManagement\DatabaseGetReservations.cs" />
     <Compile Include="Classes\Database\PlaceManagement\DatabaseGetPlace.cs" />
     <Compile Include="Classes\Enum\CategoryPost.cs" />
+    <Compile Include="Classes\Database\TimelineManagement\DatabaseGetTimeLine.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

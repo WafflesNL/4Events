@@ -1,0 +1,51 @@
+﻿using Forms_version_1._0.Classes;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Forms_version_1._0.Classes.Database.TimelineManagement
+{
+    public static class DatabaseAddPost
+    {
+        public static bool AddPost(Post Post)
+        {
+            bool Check = false;
+            int ID = DatabaseGetHighestID.GetHighestID("Post");
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "INSERT INTO Event (ID, TijdlijnID, AccountID, PostID, Text, Datum, Likes, Rapportaties, Leesbaar) VALUES (@ID, @TijdlijnID, @AccountID, @PostID, @Text, @Datum, @Rapportaties, @Leesbaar, @Attachment)";
+                    cmd.Parameters.Add(new SqlParameter("ID", ID));
+                    cmd.Parameters.Add(new SqlParameter("Text", Post.Text));
+                    cmd.Parameters.Add(new SqlParameter("Category", Post.Category));
+                    cmd.Parameters.Add(new SqlParameter("PostID", Post.Postobj));
+                    cmd.Parameters.Add(new SqlParameter("AccountID", Post.Account));
+                    cmd.ExecuteNonQuery();
+
+                    Check = true;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                    Check = false;
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+
+            return Check;
+        }
+    }
+}

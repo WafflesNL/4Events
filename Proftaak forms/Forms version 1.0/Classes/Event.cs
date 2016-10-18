@@ -150,7 +150,7 @@ namespace Forms_version_1._0.Classes
         /// <returns>True if time line exist false if ot</returns>
         public bool CreateTimeLine()
         {
-            TimeLine Timeline = new TimeLine();
+            //TimeLine Timeline = new TimeLine();
             bool Check = DatabaseCreateTimeline.CreateTimeline();
             return Check;
         }

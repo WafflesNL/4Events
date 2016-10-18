@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Database\TimelineManagement\DatabaseAddPost.cs" />
+    <Compile Include="Classes\Database\TimelineManagement\DatabaseEditPost.cs" />
+    <Compile Include="Classes\Database\TimelineManagement\DatabaseGetPost.cs" />
     <Compile Include="Classes\Enum\Categorie.cs" />
     <Compile Include="Classes\Database\EventManagement\DatabaseCreateEvent.cs" />
     <Compile Include="Classes\Database\DatabaseGetHighestID.cs" />

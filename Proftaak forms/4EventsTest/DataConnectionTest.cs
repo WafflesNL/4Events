@@ -12,19 +12,19 @@ namespace _4EventsTest
         [TestMethod]
         public void DatabaseConnectionTest()
         {
-            bool Bool = DatabaseConnectie.OpenConnection();                                              
-            Assert.AreEqual(true, Bool);
+            bool Check = DatabaseConnectie.OpenConnection();                                              
+            Assert.AreEqual(true, Check);
 
         }
 
         [TestMethod]
         public void DataNameTest()
         {
-            string Bool = DatabaseLogin.GetString(1, "Gebruikersnaam");
-            Assert.AreEqual("Lin", Bool);
+            string Check = DatabaseLogin.GetString(1, "Gebruikersnaam");
+            Assert.AreEqual("Lin", Check);
 
-            string Bool2 = DatabaseLogin.GetString(1, "Naam");
-            Assert.AreEqual("Lin Lin", Bool2);
+            string Check2 = DatabaseLogin.GetString(1, "Naam");
+            Assert.AreEqual("Lin Lin", Check2);
 
         }
     }

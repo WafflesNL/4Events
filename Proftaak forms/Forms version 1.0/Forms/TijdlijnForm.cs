@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace Forms_version_1._0.Forms
 {
     public partial class TijdlijnForm : Form
     {
+        TimeLine timeline = new TimeLine();
         public TijdlijnForm()
         {
-            InitializeComponent();
+            
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -37,7 +39,8 @@ namespace Forms_version_1._0.Forms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            //Posts text and pictures(if added) tot the Timeline.
+            
+            timeline.AddPost(Post);
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

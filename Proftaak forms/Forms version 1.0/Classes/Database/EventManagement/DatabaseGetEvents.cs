@@ -43,7 +43,8 @@ namespace Forms_version_1._0
 
                         List<Account> AccountList = DatabaseGetAccounts.GetSpecificAccounts(ID);
                         List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);
-                        List<Material> Material = new List<Material>();//werk
+                        List<Material> Material = new List<Material>();//werk (id van event mee)               
+                        //TimeLine Timeline = new TimeLine();//werk
 
                         Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID); 
                         Camping Camping;

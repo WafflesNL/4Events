@@ -93,9 +93,9 @@ namespace Forms_version_1._0
             return Check;
         }
 
-        public static int GetInt(int ID, string Data)
+        public static int? GetInt(int ID, string Data)
         {
-            int Check = 0;
+            int? Check = 0;
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -115,7 +115,7 @@ namespace Forms_version_1._0
 
                     while (reader.Read())
                     {
-                        Check = Convert.ToInt32(reader[Data]);                      
+                        Check = (reader[Data] != DBNull.Value) ? Convert.ToInt32(reader[Data]) : 0;     //convert to null                  
                         return Check;
                     }
                 }

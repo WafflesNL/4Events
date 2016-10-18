@@ -14,7 +14,7 @@ namespace Forms_version_1._0
         public static string Password { get; set; }
         public static Function Function { get; set; }
         public static string Name { get; set; }
-        //public static int EventID { get; set; }
+        public static int? EventID { get; set; }
 
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Forms_version_1._0
         {
             ID = DatabaseLogin.CheckUser(Password, Username);
 
-            if (ID != 0 && GetUserName(ID) && GetPassword(ID) && GetName(ID) && GetFunction(ID))
+            if (ID != 0 && GetUserName(ID) && GetPassword(ID) && GetName(ID) && GetFunction(ID) && GetEventID(ID))
             {
                 return true;
             }
@@ -105,6 +105,29 @@ namespace Forms_version_1._0
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Gets the EventID that belongs to the corresponding AccountID
+        /// </summary>
+        /// <returns>True if EventID is bigger than 0 false if not</returns>
+        private static bool GetEventID(int ID)
+        {
+            int? Check = DatabaseLogin.GetInt(ID, "EventID");
+            if (Check == 0)
+            {
+                EventID = null;
+                return true;
+            }
+            else if (Check > 0)
+            {
+                EventID = Check;
+                return true;
+            }
+            else
+            {
+                return false;
+            }      
         }
 
 

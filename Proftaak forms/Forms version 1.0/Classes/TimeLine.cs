@@ -10,11 +10,16 @@ namespace Forms_version_1._0.Classes
     public class TimeLine
     {     
         public List<Post> Postlist = new List<Post>();
-        public Event Event { get; set; }
+        public int TimelineID { get; set; }
 
-        public TimeLine()
+        public TimeLine(int timelineID)
         {
             
+        }
+
+        public TimeLine(int timelineID, List<Post> Postlist)
+        {
+
         }
 
         public void AddPost(Post post)

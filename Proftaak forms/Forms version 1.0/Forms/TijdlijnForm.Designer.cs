@@ -37,7 +37,7 @@
             this.lblPost = new System.Windows.Forms.Label();
             this.btnAttach = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCatergory = new System.Windows.Forms.ComboBox();
             this.lblCategorie = new System.Windows.Forms.Label();
             this.btnTerug = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -125,13 +125,13 @@
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // comboBox1
+            // cbCatergory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(70, 363);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cbCatergory.FormattingEnabled = true;
+            this.cbCatergory.Location = new System.Drawing.Point(70, 363);
+            this.cbCatergory.Name = "cbCatergory";
+            this.cbCatergory.Size = new System.Drawing.Size(141, 21);
+            this.cbCatergory.TabIndex = 9;
             // 
             // lblCategorie
             // 
@@ -159,7 +159,7 @@
             this.ClientSize = new System.Drawing.Size(409, 433);
             this.Controls.Add(this.btnTerug);
             this.Controls.Add(this.lblCategorie);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbCatergory);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnAttach);
             this.Controls.Add(this.lblPost);
@@ -188,7 +188,7 @@
         private System.Windows.Forms.Label lblPost;
         private System.Windows.Forms.Button btnAttach;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCatergory;
         private System.Windows.Forms.Label lblCategorie;
         private System.Windows.Forms.Button btnTerug;
     }

@@ -13,7 +13,10 @@ namespace Forms_version_1._0.Forms
 {
     public partial class TijdlijnForm : Form
     {
-        TimeLine timeline = new TimeLine();
+        TimeLine timeline;
+        string Posttext;
+        string Categorytext;
+
         public TijdlijnForm()
         {
             
@@ -39,14 +42,21 @@ namespace Forms_version_1._0.Forms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            
-            timeline.AddPost(Post);
+            Categorytext = cbCatergory.Text;
+            Posttext = txtPost.Text;
+            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID);
+            timeline.AddPost(post);
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
             Filter window = new Filter();
             window.ShowDialog();
+        }
+
+        public void GetData(TimeLine timeline)
+        {
+            this.timeline = timeline;
         }
     }
 }

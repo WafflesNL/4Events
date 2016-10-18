@@ -48,3 +48,6 @@ C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debu
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.GenerateResource.Cache
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.pdb
+C:\Users\Gebruiker\Desktop\GitHub2\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.config
+C:\Users\Gebruiker\Desktop\GitHub2\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
+C:\Users\Gebruiker\Desktop\GitHub2\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb

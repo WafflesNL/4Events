@@ -60,6 +60,7 @@
     <Compile Include="Classes\Database\PlaceManagement\DatabaseGetPlace.cs" />
     <Compile Include="Classes\Enum\CategoryPost.cs" />
     <Compile Include="Classes\Database\TimelineManagement\DatabaseGetTimeLine.cs" />
+    <Compile Include="Classes\Database\MaterialManagement\DatabaseGetMaterial.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

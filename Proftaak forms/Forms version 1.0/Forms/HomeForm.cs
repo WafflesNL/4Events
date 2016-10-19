@@ -1,4 +1,5 @@
 ﻿using Forms_version_1._0.Classes;
+using Forms_version_1._0.Classes.Database.TimelineManagement;
 using Forms_version_1._0.Forms;
 using Forms_version_1._0.Froms;
 using System;
@@ -15,6 +16,8 @@ namespace Forms_version_1._0
 {
     public partial class HomeForm : Form
     {
+        //Post post = new Post
+        List<Post> poslst = new List<Post>();
         public HomeForm()
         {
             InitializeComponent();
@@ -24,6 +27,7 @@ namespace Forms_version_1._0
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
         {
+            //DatabaseAddPost.AddPost();
             Event Event = cbSelectEvent.SelectedItem as Event;
             TijdlijnForm Form = new TijdlijnForm();
             Form.GetData(Event);

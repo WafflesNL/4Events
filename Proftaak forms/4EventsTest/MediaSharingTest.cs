@@ -15,8 +15,7 @@ namespace _4EventsTest
             TimeLine timelinetest = new TimeLine(1);
             Post Post1 = new Post("Goeie Toelie", "Check", 1, 1);
             timelinetest.AddPost(Post1);
-            DatabaseGetPost.GetPost();           
-           // Assert.AreEqual("Goeie Toelie", )
+            DatabaseGetPost.GetPost();
 
         }
     }

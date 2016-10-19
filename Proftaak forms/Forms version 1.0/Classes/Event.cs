@@ -24,7 +24,7 @@ namespace Forms_version_1._0.Classes
         public string Location { get; set; }
 
         /// <summary>
-        /// Used to add a account to the databse
+        /// Used to add a account to the database
         /// </summary>
         /// <param name="Name"><param>
         /// <param name="Discription"></param>
@@ -45,7 +45,7 @@ namespace Forms_version_1._0.Classes
 
 
         /// <summary>
-        /// Used to get a account to the databse
+        /// Used to get a account to the database
         /// </summary>
         /// <param name="ID"><param>
         /// <param name="Name"><param>
@@ -54,7 +54,7 @@ namespace Forms_version_1._0.Classes
         /// <param name="Maxvisitors"><param>
         /// <param name="Date"></param>
         /// <param name="Account"></param> 
-        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, List<Account> Presentlist, List<Reservation> ReservationList)
+        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, List<Account> Presentlist, List<Reservation> ReservationList, TimeLine Timeline)
         {
             this.ID = ID;
             this.Name = Name;
@@ -65,13 +65,14 @@ namespace Forms_version_1._0.Classes
             this.Account = Account;
             this.PresentList = Presentlist;
             this.ReservationList = ReservationList;
+            this.TimeLine = Timeline;
             //this.MaterialList = materialList;
 
 
         }
 
         /// <summary>
-        /// Used to edit a account to the databse
+        /// Used to edit a account to the database
         /// </summary>
         /// <param name="ID"><param>
         /// <param name="Name"><param>

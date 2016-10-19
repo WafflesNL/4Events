@@ -14,12 +14,13 @@ namespace Forms_version_1._0.Classes
 
         public TimeLine(int timelineID)
         {
-            
+            this.TimelineID = timelineID;
         }
 
         public TimeLine(int timelineID, List<Post> Postlist)
         {
-
+            this.TimelineID = timelineID;
+            this.Postlist = Postlist;
         }
 
         public void AddPost(Post post)

@@ -22,7 +22,7 @@ namespace Forms_version_1._0.Forms
             InitializeComponent();
             //TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             //newtimeline.GetPost();
-            GetPosts();
+            
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -35,6 +35,7 @@ namespace Forms_version_1._0.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
+            GetPosts();
             //Likes selected Post.
         }
 

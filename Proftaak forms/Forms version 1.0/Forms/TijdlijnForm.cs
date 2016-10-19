@@ -14,12 +14,15 @@ namespace Forms_version_1._0.Forms
 {
     public partial class TijdlijnForm : Form
     {
-        
-        TimeLine timeline = new TimeLine();
+        Event newevent;
+        List<Post> Postlist = new List<Post>();
 
         public TijdlijnForm()
         {
             InitializeComponent();
+            //TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
+            //newtimeline.GetPost();
+            GetPosts();
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -42,11 +45,11 @@ namespace Forms_version_1._0.Forms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            TimeLine newtimeline = timeline();
+            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             string Categorytext = cbCatergory.Text;
             string Posttext = txtPost.Text;
-            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID);
-            timeline.AddPost(post);
+            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID);
+            newtimeline.AddPost(post);
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -55,9 +58,18 @@ namespace Forms_version_1._0.Forms
             window.ShowDialog();
         }
 
-        public void GetData(TimeLine timeline)
+        public void GetData(Event Event)
         {
-            this.timeline = timeline;
+            this.newevent = Event;
+        }
+
+        public void GetPosts()
+        {
+            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
+            foreach (Post E in newtimeline.GetPost())
+            {
+                TijdlijnBox.Items.Add(E);
+            }
         }
     }
 }

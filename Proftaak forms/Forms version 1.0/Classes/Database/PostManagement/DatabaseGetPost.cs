@@ -29,14 +29,18 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     while (reader.Read())
                     {
                         int ID = Convert.ToInt32(reader["ID"]);
-                        int TijdlijnID = Convert.ToInt32(reader["TijdlijnID"]);
+                        int TimelineID = Convert.ToInt32(reader["TijdlijnID"]);
                         int AccountID = Convert.ToInt32(reader["AccountID"]);
                         string PostID = (reader["PostID"].ToString());
+                        string Category = (reader["Categorie"].ToString());
                         string Text = (reader["Tekstinhoud"].ToString());
                         DateTime Date = Convert.ToDateTime(reader["Datum"]);
                         int Likes = Convert.ToInt32(reader["Likes"]);
                         int Reports = Convert.ToInt32(reader["Rapportaties"]);
                         bool Readable = (Convert.ToBoolean(reader["Leesbaar"]));
+
+                        Post GottenPost = new Post(Text, Category, AccountID, TimelineID);
+                        Postlist.Add(GottenPost);
                     }
                     return Postlist;
                 }

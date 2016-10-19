@@ -27,9 +27,10 @@ namespace Forms_version_1._0.Classes
             DatabaseAddPost.AddPost(post);
         }
 
-        public void GetPost(Post post)
+        public List<Post> GetPost()
         {
-
+            Postlist = DatabaseGetPost.GetPost();
+            return Postlist;
         }
     }
 }

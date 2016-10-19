@@ -24,8 +24,9 @@ namespace Forms_version_1._0
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
         {
+            Event Event = cbSelectEvent.SelectedItem as Event;
             TijdlijnForm Form = new TijdlijnForm();
-            this.Hide();
+            Form.GetData(Event);
             Form.ShowDialog();
             this.Close();
         }

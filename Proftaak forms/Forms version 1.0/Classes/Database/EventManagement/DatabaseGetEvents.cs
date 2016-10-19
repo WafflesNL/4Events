@@ -58,7 +58,7 @@ namespace Forms_version_1._0
                             Camping = null;
                         }
 
-                        Event Event = new Event(ID, Name, Discription, Location, Maxvisitors, Date, Account, Camping, AccountList, ReservationList);
+                        Event Event = new Event(ID, Name, Discription, Location, Maxvisitors, Date, Account, Camping, AccountList, ReservationList, Timeline);
                         EventList.Add(Event);                 
                     }
                     return EventList;

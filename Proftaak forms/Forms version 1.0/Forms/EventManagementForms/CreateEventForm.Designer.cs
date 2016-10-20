@@ -85,6 +85,7 @@
             this.btnRental.TabIndex = 29;
             this.btnRental.Text = "Verhuur";
             this.btnRental.UseVisualStyleBackColor = true;
+            this.btnRental.Click += new System.EventHandler(this.btnRental_Click);
             // 
             // cbLocation
             // 

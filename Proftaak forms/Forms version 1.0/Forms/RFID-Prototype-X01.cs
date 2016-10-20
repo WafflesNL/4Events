@@ -9,17 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Phidget21COM;
 
-namespace RFID_Reader_Prototype_X01
+namespace Forms_version_1._0.Forms
 {
     public partial class Form1 : Form
     {
         //RFID rf;
         PhidgetRFID rf;
+
+        //pakt de laatste tag die is gescant.
         string lastTag;
 
         public Form1()
         {
-            //rf = new RFID();
+            
             rf = new PhidgetRFID();
             rf.OnAttach += Rf_OnAttach;
             rf.OnDetach += Rf_OnDetach;

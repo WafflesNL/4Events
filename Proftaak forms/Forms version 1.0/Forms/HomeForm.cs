@@ -29,8 +29,7 @@ namespace Forms_version_1._0
         {
             //DatabaseAddPost.AddPost();
             Event Event = cbSelectEvent.SelectedItem as Event;
-            TijdlijnForm Form = new TijdlijnForm();
-            Form.GetData(Event);
+            TijdlijnForm Form = new TijdlijnForm(Event);
             Form.ShowDialog();
             this.Close();
         }

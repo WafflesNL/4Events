@@ -47,8 +47,6 @@ namespace Forms_version_1._0
             RefreshForm();
         }
 
-
-
         private void RefreshForm()
         {
             lbAccounts.Items.Clear();

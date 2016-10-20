@@ -15,14 +15,14 @@ namespace Forms_version_1._0.Forms
     public partial class TijdlijnForm : Form
     {
         Event newevent;
+        
         List<Post> Postlist = new List<Post>();
 
-        public TijdlijnForm()
+        public TijdlijnForm(Event Event)
         {
             InitializeComponent();
-            //TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
-            //newtimeline.GetPost();
-            
+            newevent = Event;
+            GetPosts();
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
@@ -35,7 +35,6 @@ namespace Forms_version_1._0.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
-            GetPosts();
             //Likes selected Post.
         }
 
@@ -59,10 +58,6 @@ namespace Forms_version_1._0.Forms
             window.ShowDialog();
         }
 
-        public void GetData(Event Event)
-        {
-            this.newevent = Event;
-        }
 
         public void GetPosts()
         {

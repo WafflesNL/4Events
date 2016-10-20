@@ -61,6 +61,7 @@
     <Compile Include="Classes\Enum\CategoryPost.cs" />
     <Compile Include="Classes\Database\TimelineManagement\DatabaseGetTimeLine.cs" />
     <Compile Include="Classes\Database\MaterialManagement\DatabaseGetMaterial.cs" />
+    <Compile Include="Classes\RFID.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,12 +123,6 @@
     </Compile>
     <Compile Include="Forms\Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\RFID-Prototype-X01.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RFID-Prototype-X01.designer.cs">
-      <DependentUpon>RFID-Prototype-X01.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GastenOverzichtForm.cs">
       <SubType>Form</SubType>
@@ -198,9 +193,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RFID-Prototype-X01.resx">
-      <DependentUpon>RFID-Prototype-X01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GastenOverzichtForm.resx">
       <DependentUpon>GastenOverzichtForm.cs</DependentUpon>

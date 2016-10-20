@@ -11,6 +11,7 @@ namespace Forms_version_1._0.Classes
     {     
         public List<Post> Postlist = new List<Post>();
         public int TimelineID { get; set; }
+        public bool Check { get; set; }
 
         public TimeLine(int timelineID)
         {
@@ -25,7 +26,7 @@ namespace Forms_version_1._0.Classes
 
         public void AddPost(Post post)
         {
-            DatabaseAddPost.AddPost(post);
+            Check = DatabaseAddPost.AddPost(post);
         }
 
         public List<Post> GetPost()

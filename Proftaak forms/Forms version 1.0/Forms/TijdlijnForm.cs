@@ -48,8 +48,13 @@ namespace Forms_version_1._0.Forms
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             string Categorytext = cbCatergory.Text;
             string Posttext = txtPost.Text;
-            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID);
+            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0);
             newtimeline.AddPost(post);
+            if (newtimeline.Check == true)
+            {
+                TijdlijnBox.Items.Clear();
+                GetPosts();
+            }
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

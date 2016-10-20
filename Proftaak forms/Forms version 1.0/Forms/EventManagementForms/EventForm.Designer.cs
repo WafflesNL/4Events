@@ -122,6 +122,7 @@
             // 
             // dtpDateEvent
             // 
+            this.dtpDateEvent.Enabled = false;
             this.dtpDateEvent.Location = new System.Drawing.Point(181, 224);
             this.dtpDateEvent.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateEvent.Name = "dtpDateEvent";

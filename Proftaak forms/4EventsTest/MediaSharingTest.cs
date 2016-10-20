@@ -13,8 +13,8 @@ namespace _4EventsTest
         public void DataNameTest()
         {
             TimeLine timelinetest = new TimeLine(1);
-            Post Post1 = new Post("Goeie Toelie", "Check", 1, 1);
-            timelinetest.AddPost(Post1);
+            //Post Post1 = new Post("Goeie Toelie", "Check", 1, 1, 1, );
+            //timelinetest.AddPost(Post1);
             DatabaseGetPost.GetPost();
 
         }

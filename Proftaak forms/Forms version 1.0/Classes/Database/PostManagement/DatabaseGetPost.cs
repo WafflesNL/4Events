@@ -39,7 +39,9 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         int Reports = Convert.ToInt32(reader["Rapportaties"]);
                         bool Readable = (Convert.ToBoolean(reader["Leesbaar"]));
 
-                        Post GottenPost = new Post(Text, Category, AccountID, TimelineID);
+                        Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID);
+
+                        Post GottenPost = new Post(Text, Category, AccountID, TimelineID, Likes, Account);
                         Postlist.Add(GottenPost);
                     }
                     return Postlist;

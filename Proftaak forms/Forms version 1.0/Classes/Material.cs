@@ -11,11 +11,11 @@ namespace Forms_version_1._0.Classes
         public int ID { get; set; }
         public string Type { get; set; }
         public int Price { get; set; }     
-        public int EventID { get; set; }
-        public int AccountID { get; set; }
+        public int? EventID { get; set; }
+        public int? AccountID { get; set; }
 
         
-        public Material(int ID, string Type, int Price, int EventID, int AccountID)
+        public Material(int ID, string Type, int Price, int? EventID, int? AccountID)
         {
             this.ID = ID;
             this.Type = Type;

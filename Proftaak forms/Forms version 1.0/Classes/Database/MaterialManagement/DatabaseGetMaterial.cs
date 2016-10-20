@@ -33,8 +33,16 @@ namespace Forms_version_1._0
                         int ID = Convert.ToInt32(reader["ID"]);
                         int Price = Convert.ToInt32(reader["Prijs"]);
                         string Type = (reader["Type"].ToString());
-                        int eventid = Convert.ToInt32(reader["EventID"]);
-                        int accountID = Convert.ToInt32(reader["AccountID"]);
+                        int? eventid = (reader["EventID"] != DBNull.Value) ? Convert.ToInt32(reader["EventID"]) : 0;
+                        int? accountID = (reader["AccountID"] != DBNull.Value) ? Convert.ToInt32(reader["AccountID"]) : 0;
+                        if (eventid == 0)
+                        {
+                            eventid = null;
+                        }
+                        if (accountID == 0)
+                        {
+                            accountID = null;
+                        }
 
                         Material Material = new Material(ID, Type, Price, eventid, accountID);
                         MaterialList.Add(Material);

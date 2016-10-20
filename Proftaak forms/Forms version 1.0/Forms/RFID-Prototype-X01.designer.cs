@@ -1,4 +1,4 @@
-﻿namespace RFID_Reader_Prototype_X01
+﻿namespace Forms_version_1._0.Forms
 {
     partial class Form1
     {

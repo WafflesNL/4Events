@@ -25,6 +25,15 @@ namespace Forms_version_1._0.Classes
             Accounts = new List<Account>();
         }
 
+        public Reservation(int ID, Payment Payment, Place Place)
+        {
+            this.ID = ID;
+            this.Payment = Payment;
+            this.Place = Place;
+
+            Accounts = new List<Account>();
+        }
+
         public void AddReservation()
         {
             Reservation Reservation = new Reservation(ID, Event, Payment, Place);

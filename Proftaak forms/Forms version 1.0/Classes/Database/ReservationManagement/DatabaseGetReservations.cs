@@ -35,6 +35,7 @@ namespace Forms_version_1._0
                         int Amount = Convert.ToInt32(reader["BetalingsBedrag"]);
                         bool Status = Convert.ToBoolean(reader["BetalingStatus"]);
 
+
                         Place Place = DatabaseGetPlace.GetPlace(PlaceID);
 
                         Reservation Reservation = new Reservation(ID, new Payment(Amount, Status), Place);

@@ -63,6 +63,7 @@
     <Compile Include="Classes\Database\TimelineManagement\DatabaseGetTimeLine.cs" />
     <Compile Include="Classes\Database\MaterialManagement\DatabaseGetMaterial.cs" />
     <Compile Include="Classes\RFID.cs" />
+    <Compile Include="Classes\Database\MaterialManagement\DatabaseUpdateMaterial.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

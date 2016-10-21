@@ -37,6 +37,7 @@ namespace Forms_version_1._0
                 else if (NewEvent.CreateEvent(NewEvent))
                 {
                     NewEvent.CreateTimeLine();
+
                     MessageBox.Show("Een nieuwe event is succesvol aangemaakt");                
                     this.Close();
                 }

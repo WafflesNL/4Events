@@ -25,7 +25,6 @@ namespace Forms_version_1._0
 
             MaterialForRental = new List<Material>();
             MaterialAvailable = new List<Material>();
-
             GetmaterialAvailable();
             RefreshForm();
         }

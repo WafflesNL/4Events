@@ -58,7 +58,9 @@ namespace Forms_version_1._0
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //een lijst van objecten materiaal moet terug gegeven worden aan het vorige form
 
+            this.Close();
         }
 
         private void GetmaterialAvailable()

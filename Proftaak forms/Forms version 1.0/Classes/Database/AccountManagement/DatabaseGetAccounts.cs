@@ -64,7 +64,7 @@ namespace Forms_version_1._0
         /// Gets a single Account
         /// </summary>
         /// <returns>If record exists return a int that is not 0 or negative</returns>
-        public static Account GetSingleAccount(int ID) 
+        public static Account GetSingleAccountID(int ID) 
         {
             Account Account = null;
 
@@ -115,7 +115,7 @@ namespace Forms_version_1._0
         /// Gets a specific account list (all accounts that are on a event)
         /// </summary>
         /// <returns>Accountlist from all users who are there at the moment</returns>
-        public static List<Account> GetSpecificAccounts(int EventID)
+        public static List<Account> GetAccountsEventID(int EventID)
         {
             List<Account> AccountList = new List<Account>();
 
@@ -164,7 +164,7 @@ namespace Forms_version_1._0
         /// </summary>
         /// <param name="AccountID">The AccountID int.</param>
         /// <returns></returns>
-        public static string GetSpecifiedAccountRFID(int AccountID)
+        public static string GetSingleAccountRFID(int AccountID)
         {
             string RFIDTag = "N/A";
 

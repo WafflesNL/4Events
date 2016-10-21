@@ -28,7 +28,7 @@ namespace Forms_version_1._0
 
                         cmd.ExecuteNonQuery();
 
-                        ;
+                        
                     }
                     catch (SqlException e)
                     {

@@ -10,6 +10,7 @@ namespace Forms_version_1._0.Classes
     {
         public List<Reservation> ReservationList = new List<Reservation>();
         public List<Account> PresentList = new List<Account>();
+        public List<Material> MaterialList = new List<Material>();
 
         public TimeLine TimeLine { get; set; }
         public Account Account { get; set; }  
@@ -31,7 +32,7 @@ namespace Forms_version_1._0.Classes
         /// <param name="Maxvisitors"><param>
         /// <param name="Date"></param>
         /// <param name="Account"></param> 
-        public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account) 
+        public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, List<Material> MaterialList) 
         {
             this.Name = Name;
             this.Discription = Discription;
@@ -39,7 +40,7 @@ namespace Forms_version_1._0.Classes
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
             this.Account = Account;
-                         
+            this.MaterialList = MaterialList;                       
         }
 
 

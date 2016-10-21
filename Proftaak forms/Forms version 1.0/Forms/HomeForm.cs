@@ -137,6 +137,7 @@ namespace Forms_version_1._0
         {          
             this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
             this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
+            this.btnTijdlijn.Enabled = this.cbSelectEvent.SelectedItem != null;
         }
     }
 }

@@ -157,7 +157,7 @@
             this.btnMaterial.TabIndex = 10;
             this.btnMaterial.Text = "Materiaalverhuur";
             this.btnMaterial.UseVisualStyleBackColor = true;
-            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
+           
             // 
             // HomeForm
             // 

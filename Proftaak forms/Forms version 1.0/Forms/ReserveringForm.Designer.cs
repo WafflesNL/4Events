@@ -67,6 +67,7 @@
             this.tbBedrag.Name = "tbBedrag";
             this.tbBedrag.Size = new System.Drawing.Size(170, 20);
             this.tbBedrag.TabIndex = 4;
+            this.tbBedrag.Text = "0";
             // 
             // label1
             // 

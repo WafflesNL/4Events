@@ -7,8 +7,14 @@ using Forms_version_1._0.Classes.Database;
 
 namespace Forms_version_1._0.Classes
 {
+    /// <summary>
+    /// Reservation class.
+    /// </summary>
     public class Reservation
     {
+        /// <summary>
+        /// The list of accounts contained in the reservation.
+        /// </summary>
         public List<Account> Accounts { get; set; }
         public int ID { get; set; }
         public Event Event { get; set; }
@@ -34,6 +40,16 @@ namespace Forms_version_1._0.Classes
             Accounts = new List<Account>();
         }
 
+        public Reservation()
+        {
+            Accounts = new List<Account>();
+            this.ID = DatabaseGetHighestID.GetHighestID("Reservation");
+        }
+
+        /// <summary>
+        /// Adds the reservation to the database.
+        /// </summary>
+        /// <returns>If the reservation was succesful returns a true</returns>
         public bool AddReservation()
         {
             Reservation Reservation = new Reservation(ID, Event, Payment, Place);

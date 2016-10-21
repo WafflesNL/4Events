@@ -148,6 +148,12 @@
     <Compile Include="Forms\OverzichtReserveringForm.Designer.cs">
       <DependentUpon>OverzichtReserveringForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReserveringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReserveringForm.Designer.cs">
+      <DependentUpon>ReserveringForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TijdlijnForm.cs">
       <SubType>Form</SubType>
     </Compile>

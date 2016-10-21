@@ -53,8 +53,12 @@ namespace Forms_version_1._0
         {
             //On Click puts a reservation for the selected event into your account and adds it to your cart.
             ReserveringForm Form = new ReserveringForm();
+
             this.Hide();
-            Form.ShowDialog();
+            using (Form)
+            {
+                Form.ShowDialog(this);
+            }
             this.Close();
         }
 

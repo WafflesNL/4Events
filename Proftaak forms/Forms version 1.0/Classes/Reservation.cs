@@ -27,8 +27,15 @@ namespace Forms_version_1._0.Classes
             this.Payment = Payment;
             this.Place = Place;
             this.Event = Event;
+        }
 
-            Accounts = new List<Account>();
+        public Reservation(int ID, Event Event, Payment Payment, Place Place, List<Account> accounts)
+        {
+            this.ID = ID;
+            this.Payment = Payment;
+            this.Place = Place;
+            this.Event = Event;
+            this.Accounts = accounts;
         }
 
         public Reservation(int ID, Payment Payment, Place Place)
@@ -36,14 +43,15 @@ namespace Forms_version_1._0.Classes
             this.ID = ID;
             this.Payment = Payment;
             this.Place = Place;
-
-            Accounts = new List<Account>();
+            this.Event = Event;
         }
 
         public Reservation()
         {
             Accounts = new List<Account>();
-            this.ID = DatabaseGetHighestID.GetHighestID("Reservation");
+            this.ID = DatabaseGetHighestID.GetHighestID("Reservering");
+
+            Payment = new Payment(0, false);
         }
 
         /// <summary>
@@ -52,7 +60,7 @@ namespace Forms_version_1._0.Classes
         /// <returns>If the reservation was succesful returns a true</returns>
         public bool AddReservation()
         {
-            Reservation Reservation = new Reservation(ID, Event, Payment, Place);
+            Reservation Reservation = new Reservation(ID, Event, Payment, Place, Accounts);
             if (DatabaseCreateReservation.CreateReservation(Reservation))
             {
                 return true;

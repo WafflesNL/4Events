@@ -19,7 +19,6 @@ namespace Forms_version_1._0.Forms
         public ReserveringForm()
         {
             reservation = new Reservation();
-            
 
             InitializeComponent();
 
@@ -29,7 +28,7 @@ namespace Forms_version_1._0.Forms
         private void RefreshForm()
         {
             List<Account> accountList = new List<Account>();
-            accountList = DatabaseGetAccounts.GetAccounts();
+            accountList = DatabaseGetAccounts.GetAccountsFunction(Function.Bezoeker);
 
             lbAccount.Items.Clear();
             foreach (Account A in accountList)
@@ -40,12 +39,34 @@ namespace Forms_version_1._0.Forms
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            foreach (var item in lbReserveringLijst.Items)
+            if (MessageBox.Show("Weet je zeker dat je wilt reserveren?", "teset", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                reservation.Accounts.Add((Account)item);
+                foreach (var item in lbReserveringLijst.Items)
+                {
+                    reservation.Accounts.Add((Account)item);
+                }
+
+                HomeForm parent = (HomeForm)this.Owner;
+                //reservation.Event = parent.GetSelectedEvent();
+
+                if (reservation.AddReservation())
+                {
+                    MessageBox.Show("Gereserveerd.");
+                }
+                else
+                {
+                    MessageBox.Show("Er is een fout opgetreden.");
+                }
+                
+            }
+            else
+            {
+                return;
             }
 
-            reservation.AddReservation();
+
+
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -77,6 +98,9 @@ namespace Forms_version_1._0.Forms
             //Adds the value of the reservation to the textbox;
             var totalEventPrice = lbReserveringLijst.Items.Count * EventPrice;
             tbBedrag.Text = Convert.ToString(totalEventPrice);
+            //And also to the reservation object.
+            reservation.Payment.Amount = totalEventPrice;
+            
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -91,6 +115,8 @@ namespace Forms_version_1._0.Forms
                 //Adds the value of the reservation to the textbox;
                 var totalEventPrice = lbReserveringLijst.Items.Count * EventPrice;
                 tbBedrag.Text = Convert.ToString(totalEventPrice);
+                //And also to the reservation object.
+                reservation.Payment.Amount = totalEventPrice;
             }
             else
             {

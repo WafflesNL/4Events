@@ -45,7 +45,7 @@ namespace Forms_version_1._0
                         cmd.Parameters.Add(new SqlParameter("CampingID", Event.Camping.ID));
                     }
 
-                    //DatabaseUpdateMaterial.UpdateMaterial(Event);
+                    DatabaseUpdateMaterial.UpdateMaterial(Event.MaterialList, ID);
                                 
                     cmd.ExecuteNonQuery();
 

@@ -42,8 +42,7 @@ namespace Forms_version_1._0
                         int AccountID = Convert.ToInt32(reader["AccountID"]);
 
                         List<Account> AccountList = DatabaseGetAccounts.GetAccountsEventID(ID);
-                        List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);
-                        List<Material> Material = DatabaseGetMaterial.GetMaterialforEvent(ID);
+                        List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);                       
                         TimeLine Timeline = DatabaseGetTimeLine.GetTimeline(ID);
 
                         Account Account = DatabaseGetAccounts.GetSingleAccountID(AccountID); 

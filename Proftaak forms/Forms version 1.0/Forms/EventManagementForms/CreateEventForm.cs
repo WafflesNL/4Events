@@ -49,6 +49,9 @@ namespace Forms_version_1._0
             }
         }
 
-    
+        private void btnRental_Click(object sender, EventArgs e)
+        {
+            //hier moet een lijst komen (pop up) van alle beschikbare materialen die voor een evenement gebruikt kunnnen worden.
+        }
     }
 }

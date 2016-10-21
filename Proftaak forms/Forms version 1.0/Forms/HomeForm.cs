@@ -140,6 +140,8 @@ namespace Forms_version_1._0
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
             this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
+            this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
+            this.btnTijdlijn.Enabled = this.cbSelectEvent.SelectedItem != null;
         }
 
         //With this method you can transfer the selected event to another form.

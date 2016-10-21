@@ -41,12 +41,12 @@ namespace Forms_version_1._0
                         int CampingID = (reader["CampingID"] != DBNull.Value) ? Convert.ToInt32(reader["CampingID"]) : 0;
                         int AccountID = Convert.ToInt32(reader["AccountID"]);
 
-                        List<Account> AccountList = DatabaseGetAccounts.GetSpecificAccounts(ID);
+                        List<Account> AccountList = DatabaseGetAccounts.GetAccountsEventID(ID);
                         List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);
                         List<Material> Material = DatabaseGetMaterial.GetMaterialforEvent(ID);
                         TimeLine Timeline = DatabaseGetTimeLine.GetTimeline(ID);
 
-                        Account Account = DatabaseGetAccounts.GetSingleAccount(AccountID); 
+                        Account Account = DatabaseGetAccounts.GetSingleAccountID(AccountID); 
                         Camping Camping;
 
                         if (CampingID != 0)

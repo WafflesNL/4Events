@@ -49,6 +49,7 @@
     <Compile Include="Classes\Database\PostManagement\DatabaseAddPost.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseEditPost.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseGetPost.cs" />
+    <Compile Include="Classes\Database\ReservationManagement\DatabaseCreateReservation.cs" />
     <Compile Include="Classes\Enum\Categorie.cs" />
     <Compile Include="Classes\Database\EventManagement\DatabaseCreateEvent.cs" />
     <Compile Include="Classes\Database\DatabaseGetHighestID.cs" />
@@ -214,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OverzichtReserveringForm.resx">
       <DependentUpon>OverzichtReserveringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReserveringForm.resx">
+      <DependentUpon>ReserveringForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TijdlijnForm.resx">
       <DependentUpon>TijdlijnForm.cs</DependentUpon>

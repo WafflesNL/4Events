@@ -8,8 +8,7 @@ namespace Forms_version_1._0.Classes
 {
     public class Reservation
     {
-        public List<Account> Accounts = new List<Account>();
-
+        public List<Account> Accounts { get; set; }
         public int ID { get; set; }                       
         public Payment Payment { get; set; }
         public Place Place { get; set; }
@@ -19,6 +18,13 @@ namespace Forms_version_1._0.Classes
             this.ID = ID;
             this.Payment = Payment;
             this.Place = Place;
+
+            Accounts = new List<Account>();
+        }
+
+        public void AddReservation(int ID, Payment payment, Place place, List<Account> reservationList)
+        {
+
         }
     }
 }

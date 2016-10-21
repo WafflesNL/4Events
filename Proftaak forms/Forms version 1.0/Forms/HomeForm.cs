@@ -136,6 +136,7 @@ namespace Forms_version_1._0
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
             this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
+            this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
         }
     }
 }

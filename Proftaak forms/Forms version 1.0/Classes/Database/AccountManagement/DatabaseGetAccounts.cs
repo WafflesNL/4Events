@@ -60,6 +60,55 @@ namespace Forms_version_1._0
             return AccountList;
         }
 
+        public static List<Account> GetAccountsFunction(Function AccountFuntion)
+        {
+            List<Account> AccountList = new List<Account>();
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "SELECT * FROM Account WHERE Functie = @Functie";
+
+                    cmd.Parameters.Add(new SqlParameter("Functie", AccountFuntion.ToString()));
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int ID = Convert.ToInt32(reader["ID"]);
+                        string Username = (reader["Gebruikersnaam"].ToString());
+                        string Password = (reader["Wachtwoord"].ToString());
+                        string Function = (reader["Functie"].ToString());
+                        string Name = (reader["Naam"].ToString());
+                        int? EventID = (reader["EventID"] != DBNull.Value) ? Convert.ToInt32(reader["EventID"]) : 0;
+                        if (EventID == 0)
+                        {
+                            EventID = null;
+                        }
+
+                        Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function), EventID);
+                        AccountList.Add(Account);
+                    }
+                    return AccountList;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return AccountList;
+        }
+
         /// <summary>
         /// Gets a single Account
         /// </summary>

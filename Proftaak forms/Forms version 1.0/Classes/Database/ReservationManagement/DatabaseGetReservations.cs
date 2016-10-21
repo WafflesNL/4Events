@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         public static List<Reservation> GetReservation(int EventID)
         {
             List<Reservation> ReservationList = new List<Reservation>();
+            Place Place;
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -31,12 +32,18 @@ namespace Forms_version_1._0
                     while (reader.Read())
                     {
                         int ID = Convert.ToInt32(reader["ID"]);
-                        int PlaceID = Convert.ToInt32(reader["PlaatsID"]);                      
+                        int PlaceID = (reader["PlaatsID"] != DBNull.Value) ? Convert.ToInt32(reader["PlaatsID"]) : 0;
                         int Amount = Convert.ToInt32(reader["BetalingsBedrag"]);
                         bool Status = Convert.ToBoolean(reader["BetalingStatus"]);
+                        if (PlaceID == 0)
+                        {
+                            Place = null;
+                        }
+                        else
+                        {
+                            Place = DatabaseGetPlace.GetPlace(PlaceID);
+                        }
 
-
-                        Place Place = DatabaseGetPlace.GetPlace(PlaceID);
 
                         Reservation Reservation = new Reservation(ID, new Payment(Amount, Status), Place);
                         //ReservationList.Add(Reservation);

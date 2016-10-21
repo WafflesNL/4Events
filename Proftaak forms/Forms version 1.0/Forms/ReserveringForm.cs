@@ -48,6 +48,7 @@ namespace Forms_version_1._0.Forms
 
                 HomeForm parent = (HomeForm)Owner;
                 reservation.Event = parent.GetSelectedEvent();
+                
 
                 if (reservation.AddReservation())
                 {

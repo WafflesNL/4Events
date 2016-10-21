@@ -10,6 +10,11 @@ namespace Forms_version_1._0
 {
     class DatabaseCreateReservation
     {
+        /// <summary>
+        /// Creates a new column in the reservation table.
+        /// </summary>
+        /// <param name="Reservation">The reservation to be added.</param>
+        /// <returns>Returns true if the reservation is added and false if it failed.</returns>
         public static bool CreateReservation(Reservation Reservation)
         {
             bool Check = false;
@@ -25,7 +30,7 @@ namespace Forms_version_1._0
                     cmd.Connection = DatabaseConnectie.connect;
 
                     cmd.CommandText = "INSERT INTO Reservering (ID, PlaatsID, EventID, BetalingBedrag, BetalingStatus) VALUES (@ID, @PlaatsID, @EventID, @BetalingBedrag, @BetalingStatus)";
-                    cmd.Parameters.Add(new SqlParameter("ID", Reservation.ID));
+                    cmd.Parameters.Add(new SqlParameter("@ID", Reservation.ID));
                     cmd.Parameters.Add(new SqlParameter("@PlaatsID", Reservation.Place));
                     cmd.Parameters.Add(new SqlParameter("@EventID", Reservation.Event.ID));
                     cmd.Parameters.Add(new SqlParameter("@BetalingBedrag", Reservation.Payment.Amount));
@@ -44,6 +49,16 @@ namespace Forms_version_1._0
                     cmd.Parameters.Add(new SqlParameter("@BetalingStatus", paymentStatus));
 
                     cmd.ExecuteNonQuery();
+
+                    foreach (var account in Reservation.Accounts)
+                    {
+                        cmd.CommandText = "INSERT INTO Account_Reservering (AccountID, ReserveringID) VALUES (@AccountID, @ReserveringID)";
+                        cmd.Parameters.Add(new SqlParameter("@AccountID", account.ID));
+                        cmd.Parameters.Add(new SqlParameter("@ReserveringID", Reservation.ID));
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    
 
                     Check = true;
                 }

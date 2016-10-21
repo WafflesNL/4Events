@@ -36,7 +36,7 @@ namespace Forms_version_1._0.Classes
 
         public List<Material> GetMaterialAvailableList()
         {
-            List<Material> MaterialList = new List<Material>();
+            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialAvailable();
             return MaterialList;
         }
 

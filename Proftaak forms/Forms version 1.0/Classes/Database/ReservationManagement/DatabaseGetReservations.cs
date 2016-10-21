@@ -33,7 +33,7 @@ namespace Forms_version_1._0
                     {
                         int ID = Convert.ToInt32(reader["ID"]);
                         int PlaceID = (reader["PlaatsID"] != DBNull.Value) ? Convert.ToInt32(reader["PlaatsID"]) : 0;
-                        int Amount = Convert.ToInt32(reader["BetalingsBedrag"]);
+                        int Amount = Convert.ToInt32(reader["BetalingBedrag"]);
                         bool Status = Convert.ToBoolean(reader["BetalingStatus"]);
                         if (PlaceID == 0)
                         {

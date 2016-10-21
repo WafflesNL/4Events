@@ -10,6 +10,7 @@ namespace Forms_version_1._0.Classes
 {
     public class Post
     {
+        public int ID { get; set; }
         public int TimeLineID { get; set; }
         public string Text { get; set; }
         public string Category { get; set; }
@@ -34,6 +35,11 @@ namespace Forms_version_1._0.Classes
             this.Category = category;
             this.TimeLineID = timelineID;
             this.Likes = likes;
+        }
+
+        public Post(int iD)
+        {
+            this.ID = iD;
         }
 
         public void DownloadPost()

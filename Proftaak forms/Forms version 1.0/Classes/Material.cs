@@ -34,14 +34,12 @@ namespace Forms_version_1._0.Classes
 
         }
 
-        public void Add()
+        public List<Material> GetMaterialAvailableList()
         {
-
+            List<Material> MaterialList = new List<Material>();
+            return MaterialList;
         }
 
-        public int CalculatePrice()
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }

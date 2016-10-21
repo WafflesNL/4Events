@@ -33,5 +33,37 @@ namespace Forms_version_1._0.Forms
                 lbAccount.Items.Add(A);
             }
         }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var toBeAddedItem = lbAccount.SelectedItem;
+
+            //Checks if the item is already in the list
+            foreach (var item in lbReserveringLijst.Items)
+            {
+                if(toBeAddedItem == item)
+                {
+                    MessageBox.Show("Account is al toegevoegd aan de reserveringslijst.");
+                    return;
+                }
+            }
+
+            lbReserveringLijst.Items.Add(toBeAddedItem);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,6 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbAccount = new System.Windows.Forms.ListBox();
             this.lblAccount = new System.Windows.Forms.Label();
+            this.lbReserveringLijst = new System.Windows.Forms.ListBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBack
@@ -44,6 +48,7 @@
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Terug";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAccept
             // 
@@ -53,6 +58,7 @@
             this.btnAccept.TabIndex = 1;
             this.btnAccept.Text = "Accepteer";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // tbBedrag
             // 
@@ -76,23 +82,64 @@
             this.lbAccount.FormattingEnabled = true;
             this.lbAccount.Location = new System.Drawing.Point(102, 12);
             this.lbAccount.Name = "lbAccount";
-            this.lbAccount.Size = new System.Drawing.Size(173, 160);
+            this.lbAccount.Size = new System.Drawing.Size(173, 69);
             this.lbAccount.TabIndex = 6;
             // 
             // lblAccount
             // 
             this.lblAccount.AutoSize = true;
-            this.lblAccount.Location = new System.Drawing.Point(12, 64);
+            this.lblAccount.Location = new System.Drawing.Point(9, 12);
             this.lblAccount.Name = "lblAccount";
             this.lblAccount.Size = new System.Drawing.Size(47, 13);
             this.lblAccount.TabIndex = 7;
             this.lblAccount.Text = "Account";
             // 
+            // lbReserveringLijst
+            // 
+            this.lbReserveringLijst.FormattingEnabled = true;
+            this.lbReserveringLijst.Location = new System.Drawing.Point(102, 116);
+            this.lbReserveringLijst.Name = "lbReserveringLijst";
+            this.lbReserveringLijst.Size = new System.Drawing.Size(170, 69);
+            this.lbReserveringLijst.TabIndex = 8;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(197, 87);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 9;
+            this.btnRemove.Text = "Verwijder";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(102, 87);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Voeg toe";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Reservering Lijst";
+            // 
             // ReserveringForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(287, 261);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.lbReserveringLijst);
             this.Controls.Add(this.lblAccount);
             this.Controls.Add(this.lbAccount);
             this.Controls.Add(this.label1);
@@ -114,5 +161,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbAccount;
         private System.Windows.Forms.Label lblAccount;
+        private System.Windows.Forms.ListBox lbReserveringLijst;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label2;
     }
 }

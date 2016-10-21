@@ -34,12 +34,16 @@ namespace Forms_version_1._0.Classes
             Accounts = new List<Account>();
         }
 
-        public void AddReservation()
+        public bool AddReservation()
         {
             Reservation Reservation = new Reservation(ID, Event, Payment, Place);
             if (DatabaseCreateReservation.CreateReservation(Reservation))
             {
-
+                return true;
+            }
+            else
+            {
+                return false;
             }
             
         }

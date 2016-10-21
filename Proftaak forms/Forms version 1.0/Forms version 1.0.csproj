@@ -167,6 +167,12 @@
       <DependentUpon>VerhuurForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Enum\Function.cs" />
+    <Compile Include="Forms\EventManagementForms\MateriaalEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventManagementForms\MateriaalEventForm.Designer.cs">
+      <DependentUpon>MateriaalEventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Database\DatabaseLogin.cs" />
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventManagementForms\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventManagementForms\MateriaalEventForm.resx">
+      <DependentUpon>MateriaalEventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>

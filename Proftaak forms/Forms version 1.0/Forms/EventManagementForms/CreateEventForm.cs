@@ -49,6 +49,10 @@ namespace Forms_version_1._0
             }
         }
 
-    
+        private void btnRental_Click(object sender, EventArgs e)
+        {
+            MateriaalEventForm Form = new MateriaalEventForm();
+            Form.ShowDialog();
+        }
     }
 }

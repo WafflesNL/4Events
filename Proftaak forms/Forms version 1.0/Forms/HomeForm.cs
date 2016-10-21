@@ -52,6 +52,10 @@ namespace Forms_version_1._0
         private void btnReserveren_Click(object sender, EventArgs e)
         {
             //On Click puts a reservation for the selected event into your account and adds it to your cart.
+            ReserveringForm Form = new ReserveringForm();
+            this.Hide();
+            Form.ShowDialog();
+            this.Close();
         }
 
         private void btnPlaats_Click(object sender, EventArgs e)
@@ -132,6 +136,8 @@ namespace Forms_version_1._0
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
             this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
+            this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
+            this.btnTijdlijn.Enabled = this.cbSelectEvent.SelectedItem != null;
         }
     }
 }

@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Forms_version_1._0.Classes;
+
+namespace Forms_version_1._0
+{
+    class DatabaseCreateReservation
+    {
+        public static bool CreateReservation(Reservation Reservation)
+        {
+            bool Check = false;
+            int ID = DatabaseGetHighestID.GetHighestID("Reservering");
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "INSERT INTO Reservering (ID, PlaatsID, EventID, BetalingBedrag, BetalingStatus) VALUES (@ID, @PlaatsID, @EventID, @BetalingBedrag, @BetalingStatus)";
+                    cmd.Parameters.Add(new SqlParameter("ID", Reservation.ID));
+                    cmd.Parameters.Add(new SqlParameter("@PlaatsID", Reservation.Place));
+                    cmd.Parameters.Add(new SqlParameter("@EventID", Reservation.Event.ID));
+                    cmd.Parameters.Add(new SqlParameter("@BetalingBedrag", Reservation.Payment.Amount));
+
+                    //Converts the bool to a bit for the database.
+                    int paymentStatus;
+                    if (Reservation.Payment.Payed)
+                    {
+                        paymentStatus = 1;
+                    }
+                    else
+                    {
+                        paymentStatus = 0;
+                    }
+
+                    cmd.Parameters.Add(new SqlParameter("@BetalingStatus", paymentStatus));
+
+                    cmd.ExecuteNonQuery();
+
+                    Check = true;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                    Check = false;
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+
+            return Check;
+        }
+
+
+    }
+
+}

@@ -8,17 +8,20 @@ namespace Forms_version_1._0.Classes
 {
     public class Material
     {
-      
-        public string Type { get; }
+        public int ID { get; set; }
+        public string Type { get; set; }
+        public double Price { get; set; }     
+        public int? EventID { get; set; }
+        public int? AccountID { get; set; }
 
-        public int Price { get; set; }
-     
-        public string Name { get; set; }
-
-        public Material(int price, string name)
+        
+        public Material(int ID, string Type, double Price, int? EventID, int? AccountID)
         {
-            this.Price = price;         
-            this.Name = name;
+            this.ID = ID;
+            this.Type = Type;
+            this.Price = Price;
+            this.EventID = EventID;
+            this.AccountID = AccountID;
         }
 
         public void GetAccount()
@@ -27,19 +30,20 @@ namespace Forms_version_1._0.Classes
         }
 
         public void Rent()
-
         {
 
         }
 
-        public void Add()
+        public List<Material> GetMaterialAvailableList()
         {
-
+            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialAvailable();
+            return MaterialList;
         }
 
-        public int CalculatePrice()
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return Type +  ", €" + Price;
         }
+
     }
 }

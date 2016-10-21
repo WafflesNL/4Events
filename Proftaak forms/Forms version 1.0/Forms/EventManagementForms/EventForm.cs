@@ -29,7 +29,7 @@ namespace Forms_version_1._0.Forms
 
         private void btnReservering_Click(object sender, EventArgs e)
         {
-            ReserveringForm window = new ReserveringForm();          
+            OverzichtReserveringForm window = new OverzichtReserveringForm();          
             window.ShowDialog();         
         }
      

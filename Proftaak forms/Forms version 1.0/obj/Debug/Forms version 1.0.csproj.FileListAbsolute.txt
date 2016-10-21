@@ -76,4 +76,3 @@ C:\Users\redma\Desktop\Git\4Events\4Events\Proftaak forms\Forms version 1.0\obj\
 C:\Users\redma\Desktop\Git\4Events\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.ResolveComReference.cache
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Interop.Phidget21COM.dll
-C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.Form1.resources

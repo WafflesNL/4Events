@@ -13,9 +13,8 @@ namespace Forms_version_1._0
 {
     public partial class MateriaalEventForm : Form
     {
-        List<Material> MaterialForRental = new List<Material>();
-
-        List<Material> MaterialAvailable = new List<Material>();
+        List<Material> MaterialForRental;
+        List<Material> MaterialAvailable;
 
         //moet veranderd worden later
         Material Mt = new Material(1, "Stoel", 50, null, null);
@@ -23,6 +22,10 @@ namespace Forms_version_1._0
         public MateriaalEventForm()
         {
             InitializeComponent();
+
+            MaterialForRental = new List<Material>();
+            MaterialAvailable = new List<Material>();
+
             GetmaterialAvailable();
             RefreshForm();
         }
@@ -32,8 +35,9 @@ namespace Forms_version_1._0
             if (lbMaterialAvailable.SelectedItem != null)
             {
                 Material Material = lbMaterialAvailable.SelectedItem as Material;
-                lbMaterialAvailable.Items.Remove(Material);
-                lbMaterialForEvent.Items.Add(Material);
+                MaterialAvailable.Remove(Material);
+                MaterialForRental.Add(Material);
+                RefreshForm();
             }
             else
             {
@@ -47,8 +51,9 @@ namespace Forms_version_1._0
             if (lbMaterialForEvent.SelectedItem != null)
             {
                 Material Material = lbMaterialForEvent.SelectedItem as Material;
-                lbMaterialForEvent.Items.Remove(Material);
-                lbMaterialAvailable.Items.Add(Material);
+                MaterialForRental.Remove(Material);
+                MaterialAvailable.Add(Material);
+                RefreshForm();
             }
             else
             {
@@ -58,9 +63,17 @@ namespace Forms_version_1._0
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //een lijst van objecten materiaal moet terug gegeven worden aan het vorige form
-
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Je kunt dit later niet aanpassen! Weet je zeker dat je dit wilt opslaan?", "Zeker?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CreateEventForm parent = (CreateEventForm)this.Owner;
+                parent.GetMaterialList(MaterialForRental);
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }                  
         }
 
         private void GetmaterialAvailable()

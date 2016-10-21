@@ -152,5 +152,11 @@ namespace Forms_version_1._0
             VerhuurForm verhuurform = new VerhuurForm();
             verhuurform.ShowDialog();
         }
+
+        //With this method you can transfer the selected event to another form.
+        public Event GetSelectedEvent()
+        {
+            return (Event)cbSelectEvent.SelectedItem;
+        }
     }
 }

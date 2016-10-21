@@ -14,6 +14,7 @@ namespace Forms_version_1._0.Forms
 {
     public partial class TijdlijnForm : Form
     {
+        char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
         Event newevent;
         
         List<Post> Postlist = new List<Post>();
@@ -35,7 +36,24 @@ namespace Forms_version_1._0.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
-            //Likes selected Post.
+            int ID;
+            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
+            if (TijdlijnBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteer een post");
+            }
+            else
+            {
+                ID = TijdlijnBox.SelectedIndex + 1;
+                Post post1 = new Post(ID);
+                newtimeline.LikePost(post1);
+                if (newtimeline.Check == true)
+                {
+                    TijdlijnBox.Items.Clear();
+                    GetPosts();
+                }
+            }
+            
         }
 
         private void btnAttach_Click(object sender, EventArgs e)

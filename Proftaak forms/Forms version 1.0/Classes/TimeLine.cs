@@ -34,5 +34,10 @@ namespace Forms_version_1._0.Classes
             Postlist = DatabaseGetPost.GetPost();
             return Postlist;
         }
+
+        public void LikePost(Post post)
+        {
+            Check = DatabaseEditPost.LikePost(post);
+        }
     }
 }

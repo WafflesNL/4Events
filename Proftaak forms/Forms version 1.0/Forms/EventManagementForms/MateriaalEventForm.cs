@@ -29,7 +29,16 @@ namespace Forms_version_1._0
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            if (lbMaterialAvailable.SelectedItem != null)
+            {
+                Material Material = lbMaterialAvailable.SelectedItem as Material;
+                lbMaterialAvailable.Items.Remove(Material);
+                lbMaterialForEvent.Items.Add(Material);
+            }
+            else
+            {
+                MessageBox.Show("Er is niets uit de lijst geselecteerd");
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

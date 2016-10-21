@@ -9,7 +9,6 @@ namespace Forms_version_1._0.Classes
     public class Event
     {
         public List<Reservation> ReservationList = new List<Reservation>();
-        public List<Material> MaterialList = new List<Material>();
         public List<Account> PresentList = new List<Account>();
 
         public TimeLine TimeLine { get; set; }
@@ -40,7 +39,7 @@ namespace Forms_version_1._0.Classes
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
             this.Account = Account;
-            //this.materialList = materialList;               
+                         
         }
 
 
@@ -156,6 +155,7 @@ namespace Forms_version_1._0.Classes
             return Check;
         }
 
+      
         /// <summary>
         /// Tostring methods for event
         /// </summary>

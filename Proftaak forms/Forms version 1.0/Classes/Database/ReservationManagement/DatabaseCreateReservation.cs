@@ -53,10 +53,13 @@ namespace Forms_version_1._0
                     foreach (var account in Reservation.Accounts)
                     {
                         cmd.CommandText = "INSERT INTO Account_Reservering (AccountID, ReserveringID) VALUES (@AccountID, @ReserveringID)";
-                        cmd.Parameters.Add(new SqlParameter("AccountID", account.ID));
-                        cmd.Parameters.Add(new SqlParameter("ReserveringID", Reservation.ID));
+                        var para1 = cmd.Parameters.Add(new SqlParameter("AccountID", account.ID));
+                        var para2 = cmd.Parameters.Add(new SqlParameter("ReserveringID", Reservation.ID));
 
                         cmd.ExecuteNonQuery();
+
+                        cmd.Parameters.Remove(para1);
+                        cmd.Parameters.Remove(para2);
                     }
                     
 

@@ -4,8 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Forms_version_1._0.Classes;
 
-namespace Forms_version_1._0.Classes.Database.ReservationManagement
+namespace Forms_version_1._0
 {
     class DatabaseCreateReservation
     {
@@ -23,12 +24,24 @@ namespace Forms_version_1._0.Classes.Database.ReservationManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "INSERT INTO Reservering (ID, Gebruikersnaam, Wachtwoord, Functie, Naam) VALUES (@ID, @UserName, @Password, @Function, @Name)";
-                    cmd.Parameters.Add(new SqlParameter("Name", Account.Name));
-                    cmd.Parameters.Add(new SqlParameter("UserName", Account.Username));
-                    cmd.Parameters.Add(new SqlParameter("Password", Account.Password));
-                    cmd.Parameters.Add(new SqlParameter("@ID", ID));
-                    cmd.Parameters.Add(new SqlParameter("Function", Account.Function.ToString()));
+                    cmd.CommandText = "INSERT INTO Reservering (ID, PlaatsID, EventID, BetalingBedrag, BetalingStatus) VALUES (@ID, @PlaatsID, @EventID, @BetalingBedrag, @BetalingStatus)";
+                    cmd.Parameters.Add(new SqlParameter("ID", Reservation.ID));
+                    cmd.Parameters.Add(new SqlParameter("@PlaatsID", Reservation.Place));
+                    cmd.Parameters.Add(new SqlParameter("@EventID", Reservation.Event.ID));
+                    cmd.Parameters.Add(new SqlParameter("@BetalingBedrag", Reservation.Payment.Amount));
+
+                    //Converts the bool to a bit for the database.
+                    int paymentStatus;
+                    if (Reservation.Payment.Payed)
+                    {
+                        paymentStatus = 1;
+                    }
+                    else
+                    {
+                        paymentStatus = 0;
+                    }
+
+                    cmd.Parameters.Add(new SqlParameter("@BetalingStatus", paymentStatus));
 
                     cmd.ExecuteNonQuery();
 

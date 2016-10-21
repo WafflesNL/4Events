@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Forms_version_1._0.Classes.Database.AccountReserveringManagement
+namespace Forms_version_1._0
 {
     class DatabaseGetAccountReservering
     {

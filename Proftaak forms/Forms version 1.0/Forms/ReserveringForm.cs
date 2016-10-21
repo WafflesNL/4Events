@@ -41,13 +41,20 @@ namespace Forms_version_1._0.Forms
         {
             if (MessageBox.Show("Weet je zeker dat je wilt reserveren?", "teset", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                HomeForm parent = (HomeForm)Owner;
+                reservation.Event = parent.GetSelectedEvent();
+
+                if (reservation.Event.MaxVisitors > DatabaseGetAccountReservering.GetReservationAmountReservation(reservation))
+                {
+                    MessageBox.Show("Er zitten al te veel bezoekers in dit event.");
+                    return;
+                }
+
                 foreach (var item in lbReserveringLijst.Items)
                 {
                     reservation.Accounts.Add((Account)item);
                 }
 
-                HomeForm parent = (HomeForm)Owner;
-                reservation.Event = parent.GetSelectedEvent();
                 
 
                 if (reservation.AddReservation())

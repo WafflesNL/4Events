@@ -1,6 +1,6 @@
 ﻿namespace Forms_version_1._0.Forms
 {
-    partial class ReserveringForm
+    partial class OverzichtReserveringForm
     {
         /// <summary>
         /// Required designer variable.

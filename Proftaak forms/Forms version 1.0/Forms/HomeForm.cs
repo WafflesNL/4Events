@@ -135,8 +135,6 @@ namespace Forms_version_1._0
 
             }
         }
-
-
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
             this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
@@ -148,6 +146,12 @@ namespace Forms_version_1._0
         public Event GetSelectedEvent()
         {
             return (Event)cbSelectEvent.SelectedItem;
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            VerhuurForm verhuurform = new VerhuurForm();
+            verhuurform.ShowDialog();
         }
     }
 }

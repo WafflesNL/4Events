@@ -45,7 +45,7 @@
             // btnLogOut
             // 
             this.btnLogOut.Location = new System.Drawing.Point(9, 299);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(68, 36);
             this.btnLogOut.TabIndex = 0;
@@ -141,7 +141,7 @@
             // btnCreateEvent
             // 
             this.btnCreateEvent.Location = new System.Drawing.Point(12, 141);
-            this.btnCreateEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateEvent.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateEvent.Name = "btnCreateEvent";
             this.btnCreateEvent.Size = new System.Drawing.Size(128, 32);
             this.btnCreateEvent.TabIndex = 9;
@@ -157,7 +157,7 @@
             this.btnMaterial.TabIndex = 10;
             this.btnMaterial.Text = "Materiaalverhuur";
             this.btnMaterial.UseVisualStyleBackColor = true;
-           
+            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
             // 
             // HomeForm
             // 
@@ -176,7 +176,7 @@
             this.Controls.Add(this.btnTijdlijn);
             this.Controls.Add(this.btnLogOut);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";

@@ -46,8 +46,8 @@ namespace Forms_version_1._0.Forms
                     reservation.Accounts.Add((Account)item);
                 }
 
-                HomeForm parent = (HomeForm)this.Owner;
-                //reservation.Event = parent.GetSelectedEvent();
+                HomeForm parent = (HomeForm)Owner;
+                reservation.Event = parent.GetSelectedEvent();
 
                 if (reservation.AddReservation())
                 {

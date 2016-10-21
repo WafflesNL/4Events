@@ -21,7 +21,7 @@ namespace Forms_version_1._0
         public HomeForm()
         {
             InitializeComponent();
-            GetAcces();
+            GetAccess();
             LoadEvents();           
         }
 
@@ -108,7 +108,7 @@ namespace Forms_version_1._0
         }
         
         //Geeft toegang aan de gebruikers 
-        private void GetAcces()
+        private void GetAccess()
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {
@@ -126,13 +126,15 @@ namespace Forms_version_1._0
             }
             else if(CurrentAccount.Function == Function.Medewerker)
             {
+                btnMaterial.Visible = true;
                 btnBetalingStatus.Visible = false;
                 btnReservePlace.Visible = false;
                 btnReserve.Visible = false;
+               
             }
             else if(CurrentAccount.Function == Function.Bezoeker)
             {
-
+                btnMaterial.Visible = false;
             }
         }
 
@@ -142,6 +144,13 @@ namespace Forms_version_1._0
             this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
             this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
             this.btnTijdlijn.Enabled = this.cbSelectEvent.SelectedItem != null;
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            Event Event = cbSelectEvent.SelectedItem as Event;
+            VerhuurForm verhuurform = new VerhuurForm();
+            verhuurform.ShowDialog();
         }
     }
 }

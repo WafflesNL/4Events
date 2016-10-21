@@ -43,7 +43,10 @@ namespace Forms_version_1._0
                     else
                     {
                         cmd.Parameters.Add(new SqlParameter("CampingID", Event.Camping.ID));
-                    }                 
+                    }
+
+                    //DatabaseUpdateMaterial.UpdateMaterial(Event);
+                                
                     cmd.ExecuteNonQuery();
 
                     Check = true;

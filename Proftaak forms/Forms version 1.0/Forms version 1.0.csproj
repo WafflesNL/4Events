@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.Phidget21COM">
+      <HintPath>obj\Debug\Interop.Phidget21COM.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +67,7 @@
     <Compile Include="Classes\Database\TimelineManagement\DatabaseGetTimeLine.cs" />
     <Compile Include="Classes\Database\MaterialManagement\DatabaseGetMaterial.cs" />
     <Compile Include="Classes\RFID.cs" />
+    <Compile Include="Classes\Database\MaterialManagement\DatabaseUpdateMaterial.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

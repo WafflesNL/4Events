@@ -19,14 +19,16 @@ namespace Forms_version_1._0
         {
             InitializeComponent();
             this.newevent = Event;
+            GetMaterialList();
+
         }
 
         private void btnRefresh_Click_1(object sender, EventArgs e)
         {
-            GetGuestList();
+            GetMaterialList();
         }
 
-        private void GetGuestList()
+        private void GetMaterialList()
         {
             lbMateriaal.Items.Clear();
             foreach (Material A in newevent.GetMaterialList())

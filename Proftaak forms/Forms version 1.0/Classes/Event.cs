@@ -164,6 +164,15 @@ namespace Forms_version_1._0.Classes
         public List<Material> GetMaterialList()
         {
             List<Material> MaterialList = DatabaseGetMaterial.GetMaterialforEvent(ID);
+
+            foreach (Material M in MaterialList)
+            {
+                if (M.AccountID != null)
+                {
+                    MaterialList.Remove(M);
+                }
+            }
+
             return MaterialList;
         }
 

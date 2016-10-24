@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Forms_version_1._0
 {
     public partial class MateriaalBeschikbaarForm : Form
     {
-        public MateriaalBeschikbaarForm()
+        Event newevent;
+
+        public MateriaalBeschikbaarForm(Event Event)
         {
             InitializeComponent();
+            this.newevent = Event;
         }
     }
 }

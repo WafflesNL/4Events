@@ -32,63 +32,57 @@
             this.lblNaam = new System.Windows.Forms.Label();
             this.lblBetalingsstatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnVerwijder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstReservering
             // 
             this.lstReservering.FormattingEnabled = true;
-            this.lstReservering.Location = new System.Drawing.Point(12, 32);
+            this.lstReservering.ItemHeight = 16;
+            this.lstReservering.Location = new System.Drawing.Point(16, 39);
+            this.lstReservering.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstReservering.Name = "lstReservering";
-            this.lstReservering.Size = new System.Drawing.Size(182, 277);
+            this.lstReservering.Size = new System.Drawing.Size(369, 340);
             this.lstReservering.TabIndex = 0;
             // 
             // lblNaam
             // 
             this.lblNaam.AutoSize = true;
-            this.lblNaam.Location = new System.Drawing.Point(13, 13);
+            this.lblNaam.Location = new System.Drawing.Point(17, 16);
+            this.lblNaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNaam.Name = "lblNaam";
-            this.lblNaam.Size = new System.Drawing.Size(35, 13);
+            this.lblNaam.Size = new System.Drawing.Size(45, 17);
             this.lblNaam.TabIndex = 1;
             this.lblNaam.Text = "Naam";
             // 
             // lblBetalingsstatus
             // 
             this.lblBetalingsstatus.AutoSize = true;
-            this.lblBetalingsstatus.Location = new System.Drawing.Point(89, 13);
+            this.lblBetalingsstatus.Location = new System.Drawing.Point(119, 16);
+            this.lblBetalingsstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBetalingsstatus.Name = "lblBetalingsstatus";
-            this.lblBetalingsstatus.Size = new System.Drawing.Size(78, 13);
+            this.lblBetalingsstatus.Size = new System.Drawing.Size(104, 17);
             this.lblBetalingsstatus.TabIndex = 2;
             this.lblBetalingsstatus.Text = "Betalingsstatus";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 13);
+            this.label1.Location = new System.Drawing.Point(201, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 3;
-            // 
-            // btnVerwijder
-            // 
-            this.btnVerwijder.Location = new System.Drawing.Point(200, 32);
-            this.btnVerwijder.Name = "btnVerwijder";
-            this.btnVerwijder.Size = new System.Drawing.Size(95, 23);
-            this.btnVerwijder.TabIndex = 4;
-            this.btnVerwijder.Text = "Verwijder";
-            this.btnVerwijder.UseVisualStyleBackColor = true;
-            this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
             // OverzichtReserveringForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 322);
-            this.Controls.Add(this.btnVerwijder);
+            this.ClientSize = new System.Drawing.Size(407, 396);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblBetalingsstatus);
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.lstReservering);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OverzichtReserveringForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Overzicht Reserveringen";
@@ -103,6 +97,5 @@
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.Label lblBetalingsstatus;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnVerwijder;
     }
 }

@@ -8,8 +8,7 @@ namespace Forms_version_1._0.Classes
 {
     public class Event
     {
-        public List<Reservation> ReservationList = new List<Reservation>();
-        public List<Account> PresentList = new List<Account>();
+        public List<Reservation> ReservationList = new List<Reservation>();    
         public List<Material> MaterialList = new List<Material>();
 
         public TimeLine TimeLine { get; set; }
@@ -24,7 +23,7 @@ namespace Forms_version_1._0.Classes
         public string Location { get; set; }
 
         /// <summary>
-        /// Used to add a account to the database
+        /// Used to add a Event to the database
         /// </summary>
         /// <param name="Name"><param>
         /// <param name="Discription"></param>
@@ -45,7 +44,7 @@ namespace Forms_version_1._0.Classes
 
 
         /// <summary>
-        /// Used to get a account to the database
+        /// Used to get a Event to the database
         /// </summary>
         /// <param name="ID"><param>
         /// <param name="Name"><param>
@@ -54,7 +53,7 @@ namespace Forms_version_1._0.Classes
         /// <param name="Maxvisitors"><param>
         /// <param name="Date"></param>
         /// <param name="Account"></param> 
-        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, List<Account> Presentlist, List<Reservation> ReservationList, TimeLine Timeline)
+        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, List<Reservation> ReservationList, TimeLine Timeline)
         {
             this.ID = ID;
             this.Name = Name;
@@ -63,7 +62,7 @@ namespace Forms_version_1._0.Classes
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
             this.Account = Account;
-            this.PresentList = Presentlist;
+         
             this.ReservationList = ReservationList;
             this.TimeLine = Timeline;
             //this.MaterialList = materialList;
@@ -72,7 +71,7 @@ namespace Forms_version_1._0.Classes
         }
 
         /// <summary>
-        /// Used to edit a account to the database
+        /// Used to edit a Event to the database
         /// </summary>
         /// <param name="ID"><param>
         /// <param name="Name"><param>
@@ -156,7 +155,12 @@ namespace Forms_version_1._0.Classes
             return Check;
         }
 
-      
+        public List<Account> GetGuestList()
+        {
+            List<Account> GuestList = DatabaseGetAccounts.GetAccountsEventID(ID);
+            return GuestList;
+        }
+
         /// <summary>
         /// Tostring methods for event
         /// </summary>

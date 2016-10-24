@@ -131,10 +131,10 @@
     <Compile Include="Forms\Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EventManagementForms\GastenOverzichtForm.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\GastenOverzichtForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EventManagementForms\GastenOverzichtForm.Designer.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\GastenOverzichtForm.Designer.cs">
       <DependentUpon>GastenOverzichtForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
@@ -149,10 +149,10 @@
     <Compile Include="Forms\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EventManagementForms\OverzichtReserveringForm.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\OverzichtReserveringForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EventManagementForms\OverzichtReserveringForm.Designer.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\OverzichtReserveringForm.Designer.cs">
       <DependentUpon>OverzichtReserveringForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ReserveringForm.cs">
@@ -180,10 +180,10 @@
     <Compile Include="Forms\EventManagementForms\MateriaalEventForm.Designer.cs">
       <DependentUpon>MateriaalEventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EventManagementForms\MateriaalBeschikbaarForm.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EventManagementForms\MateriaalBeschikbaarForm.Designer.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.Designer.cs">
       <DependentUpon>MateriaalBeschikbaarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -222,7 +222,7 @@
     <EmbeddedResource Include="Forms\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EventManagementForms\GastenOverzichtForm.resx">
+    <EmbeddedResource Include="Forms\EventManagementForms\DataForms\GastenOverzichtForm.resx">
       <DependentUpon>GastenOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeForm.resx">
@@ -234,7 +234,7 @@
     <EmbeddedResource Include="Forms\AccountManagementForms\RegistreerForm.resx">
       <DependentUpon>RegistreerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EventManagementForms\OverzichtReserveringForm.resx">
+    <EmbeddedResource Include="Forms\EventManagementForms\DataForms\OverzichtReserveringForm.resx">
       <DependentUpon>OverzichtReserveringForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReserveringForm.resx">
@@ -246,7 +246,7 @@
     <EmbeddedResource Include="Forms\VerhuurForm.resx">
       <DependentUpon>VerhuurForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EventManagementForms\MateriaalBeschikbaarForm.resx">
+    <EmbeddedResource Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.resx">
       <DependentUpon>MateriaalBeschikbaarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

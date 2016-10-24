@@ -22,19 +22,20 @@ namespace Forms_version_1._0.Forms
 
         private void btnOverzicht_Click(object sender, EventArgs e)
         {
-            GastenOverzichtForm  window = new GastenOverzichtForm();          //toon alle aanwezige gasten
-            window.ShowDialog();
+            GastenOverzichtForm Form = new GastenOverzichtForm(Event); 
+            Form.ShowDialog();
         }
 
         private void btnReservering_Click(object sender, EventArgs e)
         {
-            OverzichtReserveringForm window = new OverzichtReserveringForm();     //toon alle reserveringen     
-            window.ShowDialog();         
+            OverzichtReserveringForm Form = new OverzichtReserveringForm(Event);     
+            Form.ShowDialog();         
         }
 
         private void btnVerhuur_Click(object sender, EventArgs e)
         {
-            //Krijg alle materialen te zien die op dat moment verhuurt kunnen worden
+            MateriaalBeschikbaarForm Form = new MateriaalBeschikbaarForm(Event);
+            Form.ShowDialog();
         }
 
 

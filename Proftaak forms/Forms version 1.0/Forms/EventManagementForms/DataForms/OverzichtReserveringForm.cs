@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,15 @@ namespace Forms_version_1._0.Forms
 {
     public partial class OverzichtReserveringForm : Form
     {
-        public OverzichtReserveringForm()
+        Event newevent;
+
+        public OverzichtReserveringForm(Event Event)
         {
             InitializeComponent();
+            this.newevent = Event;
+
         }
 
-        private void btnVerwijder_Click(object sender, EventArgs e)
-        {
-            //Removes selected reservation from the list/database.
-        }
+       
     }
 }

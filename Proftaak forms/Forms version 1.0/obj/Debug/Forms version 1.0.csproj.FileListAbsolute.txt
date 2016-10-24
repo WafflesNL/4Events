@@ -123,3 +123,4 @@ C:\Users\Jordi\Source\Repos\4Events4\Proftaak forms\Forms version 1.0\obj\Debug\
 C:\Users\Jordi\Source\Repos\4Events4\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.VerhuurForm.resources
 C:\Users\Jordi\Source\Repos\4Events4\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Properties.Resources.resources
 C:\Users\Jordi\Source\Repos\4Events4\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.GenerateResource.Cache
+C:\Users\Gebruiker\Desktop\GitHub2\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.MateriaalBeschikbaarForm.resources

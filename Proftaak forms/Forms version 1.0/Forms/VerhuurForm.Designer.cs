@@ -30,7 +30,6 @@
         {
             this.lbMateriaal = new System.Windows.Forms.ListBox();
             this.btnVerhuur = new System.Windows.Forms.Button();
-            this.btnIndex = new System.Windows.Forms.Button();
             this.lblMatNaam = new System.Windows.Forms.Label();
             this.btnToevoegen = new System.Windows.Forms.Button();
             this.tbTotaal = new System.Windows.Forms.TextBox();
@@ -42,45 +41,40 @@
             // lbMateriaal
             // 
             this.lbMateriaal.FormattingEnabled = true;
-            this.lbMateriaal.Location = new System.Drawing.Point(12, 41);
+            this.lbMateriaal.ItemHeight = 16;
+            this.lbMateriaal.Location = new System.Drawing.Point(16, 50);
+            this.lbMateriaal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbMateriaal.Name = "lbMateriaal";
-            this.lbMateriaal.Size = new System.Drawing.Size(189, 277);
+            this.lbMateriaal.Size = new System.Drawing.Size(251, 340);
             this.lbMateriaal.TabIndex = 0;
             // 
             // btnVerhuur
             // 
-            this.btnVerhuur.Location = new System.Drawing.Point(220, 40);
+            this.btnVerhuur.Location = new System.Drawing.Point(293, 49);
+            this.btnVerhuur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerhuur.Name = "btnVerhuur";
-            this.btnVerhuur.Size = new System.Drawing.Size(82, 23);
+            this.btnVerhuur.Size = new System.Drawing.Size(109, 28);
             this.btnVerhuur.TabIndex = 1;
             this.btnVerhuur.Text = "Verhuur";
             this.btnVerhuur.UseVisualStyleBackColor = true;
             this.btnVerhuur.Click += new System.EventHandler(this.btnVerhuur_Click);
             // 
-            // btnIndex
-            // 
-            this.btnIndex.Location = new System.Drawing.Point(12, 324);
-            this.btnIndex.Name = "btnIndex";
-            this.btnIndex.Size = new System.Drawing.Size(82, 23);
-            this.btnIndex.TabIndex = 2;
-            this.btnIndex.Text = "Terug";
-            this.btnIndex.UseVisualStyleBackColor = true;
-            this.btnIndex.Click += new System.EventHandler(this.btnIndex_Click);
-            // 
             // lblMatNaam
             // 
             this.lblMatNaam.AutoSize = true;
-            this.lblMatNaam.Location = new System.Drawing.Point(9, 22);
+            this.lblMatNaam.Location = new System.Drawing.Point(12, 27);
+            this.lblMatNaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMatNaam.Name = "lblMatNaam";
-            this.lblMatNaam.Size = new System.Drawing.Size(50, 13);
+            this.lblMatNaam.Size = new System.Drawing.Size(66, 17);
             this.lblMatNaam.TabIndex = 3;
             this.lblMatNaam.Text = "Materiaal";
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(221, 69);
+            this.btnToevoegen.Location = new System.Drawing.Point(295, 85);
+            this.btnToevoegen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnToevoegen.Name = "btnToevoegen";
-            this.btnToevoegen.Size = new System.Drawing.Size(81, 23);
+            this.btnToevoegen.Size = new System.Drawing.Size(108, 28);
             this.btnToevoegen.TabIndex = 5;
             this.btnToevoegen.Text = "Toevoegen";
             this.btnToevoegen.UseVisualStyleBackColor = true;
@@ -88,16 +82,18 @@
             // 
             // tbTotaal
             // 
-            this.tbTotaal.Location = new System.Drawing.Point(221, 297);
+            this.tbTotaal.Location = new System.Drawing.Point(295, 366);
+            this.tbTotaal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTotaal.Name = "tbTotaal";
-            this.tbTotaal.Size = new System.Drawing.Size(83, 20);
+            this.tbTotaal.Size = new System.Drawing.Size(109, 22);
             this.tbTotaal.TabIndex = 7;
             // 
             // btnTotaal
             // 
-            this.btnTotaal.Location = new System.Drawing.Point(221, 268);
+            this.btnTotaal.Location = new System.Drawing.Point(295, 330);
+            this.btnTotaal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTotaal.Name = "btnTotaal";
-            this.btnTotaal.Size = new System.Drawing.Size(82, 23);
+            this.btnTotaal.Size = new System.Drawing.Size(109, 28);
             this.btnTotaal.TabIndex = 8;
             this.btnTotaal.Text = "Totaal";
             this.btnTotaal.UseVisualStyleBackColor = true;
@@ -105,9 +101,10 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(221, 98);
+            this.btnRefresh.Location = new System.Drawing.Point(295, 121);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(81, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(108, 28);
             this.btnRefresh.TabIndex = 9;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -116,25 +113,27 @@
             // lbSelected
             // 
             this.lbSelected.FormattingEnabled = true;
-            this.lbSelected.Location = new System.Drawing.Point(329, 40);
+            this.lbSelected.ItemHeight = 16;
+            this.lbSelected.Location = new System.Drawing.Point(439, 49);
+            this.lbSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbSelected.Name = "lbSelected";
-            this.lbSelected.Size = new System.Drawing.Size(189, 277);
+            this.lbSelected.Size = new System.Drawing.Size(251, 340);
             this.lbSelected.TabIndex = 10;
             // 
             // VerhuurForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 351);
+            this.ClientSize = new System.Drawing.Size(705, 432);
             this.Controls.Add(this.lbSelected);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnTotaal);
             this.Controls.Add(this.tbTotaal);
             this.Controls.Add(this.btnToevoegen);
             this.Controls.Add(this.lblMatNaam);
-            this.Controls.Add(this.btnIndex);
             this.Controls.Add(this.btnVerhuur);
             this.Controls.Add(this.lbMateriaal);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "VerhuurForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerhuurForm";
@@ -147,7 +146,6 @@
 
         private System.Windows.Forms.ListBox lbMateriaal;
         private System.Windows.Forms.Button btnVerhuur;
-        private System.Windows.Forms.Button btnIndex;
         private System.Windows.Forms.Label lblMatNaam;
         private System.Windows.Forms.Button btnToevoegen;
         private System.Windows.Forms.TextBox tbTotaal;

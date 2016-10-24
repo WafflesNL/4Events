@@ -53,7 +53,7 @@ namespace Forms_version_1._0.Classes
         /// <param name="Maxvisitors"><param>
         /// <param name="Date"></param>
         /// <param name="Account"></param> 
-        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, List<Reservation> ReservationList, TimeLine Timeline)
+        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, TimeLine Timeline)
         {
             this.ID = ID;
             this.Name = Name;
@@ -61,13 +61,8 @@ namespace Forms_version_1._0.Classes
             this.Location = Location;
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
-            this.Account = Account;
-         
-            this.ReservationList = ReservationList;
-            this.TimeLine = Timeline;
-            //this.MaterialList = materialList;
-
-
+            this.Account = Account;                  
+            this.TimeLine = Timeline;    
         }
 
         /// <summary>
@@ -178,9 +173,8 @@ namespace Forms_version_1._0.Classes
 
         public List<Reservation> GetReservationList()
         {
-            //List<Reservation> ReservationList = ;
-            //return ReservationList;
-            return null;
+            List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);
+            return ReservationList;        
         }
 
         /// <summary>

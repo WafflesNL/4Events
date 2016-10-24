@@ -19,9 +19,21 @@ namespace Forms_version_1._0.Forms
         {
             InitializeComponent();
             this.newevent = Event;
-
+            GetReservationList();
         }
 
-       
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            GetReservationList();
+        }
+
+        private void GetReservationList()
+        {
+            lbReservation.Items.Clear();
+            foreach (Reservation A in newevent.GetReservationList())
+            {
+                lbReservation.Items.Add(A);
+            }
+        }
     }
 }

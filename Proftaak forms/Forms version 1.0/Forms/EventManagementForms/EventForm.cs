@@ -85,7 +85,7 @@ namespace Forms_version_1._0.Forms
 
             if (CurrentAccount.Function == Function.Beheerder)
             {
-                btnSave.Visible = true;
+                btnSave.Visible = true;             
             }
             else
             {
@@ -93,7 +93,7 @@ namespace Forms_version_1._0.Forms
                 tbEventDiscription.Enabled = false;
                 cbLocation.Enabled = false;
                 dtpDateEvent.Enabled = false;               
-                btnRental.Enabled = false;
+                
             }
         }
     }

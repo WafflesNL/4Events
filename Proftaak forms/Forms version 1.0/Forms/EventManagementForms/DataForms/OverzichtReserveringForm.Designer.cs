@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstReservering = new System.Windows.Forms.ListBox();
+            this.lbReservation = new System.Windows.Forms.ListBox();
             this.lblNaam = new System.Windows.Forms.Label();
             this.lblBetalingsstatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lstReservering
+            // lbReservation
             // 
-            this.lstReservering.FormattingEnabled = true;
-            this.lstReservering.ItemHeight = 16;
-            this.lstReservering.Location = new System.Drawing.Point(16, 39);
-            this.lstReservering.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lstReservering.Name = "lstReservering";
-            this.lstReservering.Size = new System.Drawing.Size(369, 340);
-            this.lstReservering.TabIndex = 0;
+            this.lbReservation.FormattingEnabled = true;
+            this.lbReservation.ItemHeight = 16;
+            this.lbReservation.Location = new System.Drawing.Point(16, 39);
+            this.lbReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.lbReservation.Name = "lbReservation";
+            this.lbReservation.Size = new System.Drawing.Size(369, 340);
+            this.lbReservation.TabIndex = 0;
             // 
             // lblNaam
             // 
@@ -73,16 +74,27 @@
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 3;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(392, 39);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(108, 44);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // OverzichtReserveringForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 396);
+            this.ClientSize = new System.Drawing.Size(509, 396);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblBetalingsstatus);
             this.Controls.Add(this.lblNaam);
-            this.Controls.Add(this.lstReservering);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.lbReservation);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OverzichtReserveringForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Overzicht Reserveringen";
@@ -93,9 +105,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstReservering;
+        private System.Windows.Forms.ListBox lbReservation;
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.Label lblBetalingsstatus;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

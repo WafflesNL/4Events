@@ -46,7 +46,7 @@ namespace Forms_version_1._0
 
 
                         Reservation Reservation = new Reservation(ID, new Payment(Amount, Status), Place);
-                        //ReservationList.Add(Reservation);
+                        ReservationList.Add(Reservation);
                     }
                     return ReservationList;
                 }

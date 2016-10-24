@@ -30,6 +30,7 @@
         {
             this.lblMatNaam = new System.Windows.Forms.Label();
             this.lbMateriaal = new System.Windows.Forms.ListBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMatNaam
@@ -52,11 +53,22 @@
             this.lbMateriaal.Size = new System.Drawing.Size(350, 340);
             this.lbMateriaal.TabIndex = 4;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(370, 29);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(108, 44);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click_1);
+            // 
             // MateriaalBeschikbaarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 381);
+            this.ClientSize = new System.Drawing.Size(486, 381);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblMatNaam);
             this.Controls.Add(this.lbMateriaal);
             this.Name = "MateriaalBeschikbaarForm";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.Label lblMatNaam;
         private System.Windows.Forms.ListBox lbMateriaal;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

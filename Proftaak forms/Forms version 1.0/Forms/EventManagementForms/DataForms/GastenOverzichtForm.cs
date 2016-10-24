@@ -13,21 +13,29 @@ namespace Forms_version_1._0.Forms
 {
     public partial class GastenOverzichtForm : Form
     {
-        Event newEvent;
+        Event newevent;
 
         public GastenOverzichtForm(Event Event)
         {
             InitializeComponent();
-            this.newEvent = Event;
+            this.newevent = Event;
+            GetGuestList();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            GetGuestList();
+        }
+
+        private void GetGuestList()
         {
             lbGuestList.Items.Clear();
-            foreach (Account A in newEvent.GetGuestList()) 
+            foreach (Account A in newevent.GetGuestList())
             {
                 lbGuestList.Items.Add(A);
             }
         }
+
+
     }
 }

@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lbGuestList = new System.Windows.Forms.ListBox();
             this.lblNaam = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblAanwezig = new System.Windows.Forms.Label();
-            this.timerGuests = new System.Windows.Forms.Timer(this.components);
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbGuestList
@@ -76,16 +75,22 @@
             this.lblAanwezig.TabIndex = 5;
             this.lblAanwezig.Text = "Aanwezig";
             // 
-            // timerGuests
+            // btnRefresh
             // 
-            this.timerGuests.Enabled = true;
-            this.timerGuests.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btnRefresh.Location = new System.Drawing.Point(402, 31);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(108, 44);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // GastenOverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 386);
+            this.ClientSize = new System.Drawing.Size(522, 386);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblAanwezig);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblNaam);
@@ -105,6 +110,6 @@
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblAanwezig;
-        private System.Windows.Forms.Timer timerGuests;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

@@ -161,6 +161,19 @@ namespace Forms_version_1._0.Classes
             return GuestList;
         }
 
+        public List<Material> GetMaterialList()
+        {
+            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialforEvent(ID);
+            return MaterialList;
+        }
+
+        public List<Reservation> GetReservationList()
+        {
+            //List<Reservation> ReservationList = ;
+            //return ReservationList;
+            return null;
+        }
+
         /// <summary>
         /// Tostring methods for event
         /// </summary>

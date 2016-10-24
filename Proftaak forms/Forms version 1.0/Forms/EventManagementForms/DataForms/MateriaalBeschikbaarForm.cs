@@ -20,5 +20,21 @@ namespace Forms_version_1._0
             InitializeComponent();
             this.newevent = Event;
         }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            GetGuestList();
+        }
+
+        private void GetGuestList()
+        {
+            lbMateriaal.Items.Clear();
+            foreach (Material A in newevent.GetMaterialList())
+            {
+                lbMateriaal.Items.Add(A);
+            }
+        }
+
+      
     }
 }

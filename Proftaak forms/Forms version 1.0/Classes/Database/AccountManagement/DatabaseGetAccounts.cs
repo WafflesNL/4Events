@@ -10,7 +10,7 @@ namespace Forms_version_1._0
     public static class DatabaseGetAccounts
     {
         /// <summary>
-        /// Changes the attributes for an Event
+        /// Gets all account from the database
         /// </summary>
         /// <returns>True if Database allows the changes false if not</returns>
         public static List<Account> GetAccounts()
@@ -60,6 +60,11 @@ namespace Forms_version_1._0
             return AccountList;
         }
 
+        /// <summary>
+        /// Gets a single Account
+        /// </summary>
+        /// <param name = "AccountFuntion" > The AccountFunction Function</param>
+        /// <returns>A list of accounts</returns>
         public static List<Account> GetAccountsFunction(Function AccountFuntion)
         {
             List<Account> AccountList = new List<Account>();
@@ -112,6 +117,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets a single Account
         /// </summary>
+        /// <param name = "ID" > The EventID int</param>
         /// <returns>If record exists return a int that is not 0 or negative</returns>
         public static Account GetSingleAccountID(int ID) 
         {
@@ -163,6 +169,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets a specific account list (all accounts that are on a event)
         /// </summary>
+        /// <param name = "EventID" > The EventID int</param>
         /// <returns>Accountlist from all users who are there at the moment</returns>
         public static List<Account> GetAccountsEventID(int EventID)
         {
@@ -211,7 +218,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Returns the RFID string with the AccountID
         /// </summary>
-        /// <param name="AccountID">The AccountID int.</param>
+        /// <param name="AccountID">The AccountID int</param>
         /// <returns></returns>
         public static string GetSingleAccountRFID(int AccountID)
         {

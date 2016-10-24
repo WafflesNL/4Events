@@ -14,7 +14,6 @@ namespace Forms_version_1._0.Forms
     public partial class EventForm : Form
     {
         Event Event;
-
         public EventForm()
         {
             InitializeComponent();
@@ -23,16 +22,23 @@ namespace Forms_version_1._0.Forms
 
         private void btnOverzicht_Click(object sender, EventArgs e)
         {
-            GastenOverzichtForm  window = new GastenOverzichtForm();
+            GastenOverzichtForm  window = new GastenOverzichtForm();          //toon alle aanwezige gasten
             window.ShowDialog();
         }
 
         private void btnReservering_Click(object sender, EventArgs e)
         {
-            OverzichtReserveringForm window = new OverzichtReserveringForm();          
+            OverzichtReserveringForm window = new OverzichtReserveringForm();     //toon alle reserveringen     
             window.ShowDialog();         
         }
-     
+
+        private void btnVerhuur_Click(object sender, EventArgs e)
+        {
+            //Krijg alle materialen te zien die op dat moment verhuurt kunnen worden
+        }
+
+
+
         private void btnOpslaan_Click(object sender, EventArgs e) //still in progress
         {
             //Saves changes to the Event.         
@@ -60,11 +66,7 @@ namespace Forms_version_1._0.Forms
             }
         }
        
-        private void btnVerhuur_Click(object sender, EventArgs e)
-        {
-           //Moet nog gemaakt worden
-        }
-
+      
 
         public void GetData(Event Event)
         {

@@ -24,20 +24,27 @@ namespace Forms_version_1._0.Classes
             this.AccountID = AccountID;
         }
 
-        public void GetAccount()
-        {
-
-        }
-
         public void Rent()
         {
-
+            // add code to add selected items to accountid via form -> material -> database query
         }
 
         public List<Material> GetMaterialAvailableList()
         {
             List<Material> MaterialList = DatabaseGetMaterial.GetMaterialAvailable();
             return MaterialList;
+        }
+
+        public List<Material> GetMaterialForEvent(int eventid)
+        {   
+            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialforEvent(eventid);
+            return MaterialList;
+        }
+
+        public List<Account> GetAccounts(int eventid)
+        {
+            List<Account> AccountList = DatabaseGetAccounts.GetAccountsEventID(eventid);
+            return AccountList;
         }
 
         public override string ToString()

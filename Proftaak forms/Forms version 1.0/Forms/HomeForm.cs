@@ -22,7 +22,10 @@ namespace Forms_version_1._0
         {
             InitializeComponent();
             GetAcces();
-            LoadEvents();           
+            LoadEvents();
+            // selects an event by default, to avoid crashing in the HomeForm when no event is selected
+            // maybe add a few try-catches here and there
+            cbSelectEvent.SelectedIndex = 0;          
         }
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
@@ -107,7 +110,7 @@ namespace Forms_version_1._0
             }
         }
         
-        //Geeft toegang aan de gebruikers 
+        //Grants access to users
         private void GetAcces()
         {
             if (CurrentAccount.Function == Function.Beheerder)
@@ -150,7 +153,9 @@ namespace Forms_version_1._0
 
         private void btnMaterial_Click(object sender, EventArgs e)
         {
+            Event Event = cbSelectEvent.SelectedItem as Event;
             VerhuurForm verhuurform = new VerhuurForm();
+            verhuurform.GetData(Event);
             verhuurform.ShowDialog();
         }
     }

@@ -12,11 +12,15 @@ using System.Windows.Forms;
 namespace Forms_version_1._0.Forms
 {
     public partial class VerhuurForm : Form
-    {
+    {   Event Event;
+        Account account;
         Material material = new Material(1,"tomato",2, null,null);
+        List<Material> materiallist;
+        int totalprice;
         public VerhuurForm()
         {
             InitializeComponent();
+            
          
         }
 
@@ -28,25 +32,69 @@ namespace Forms_version_1._0.Forms
             this.Close();
         }
 
+        // rents the items
+        // still unfinished does nothing useful
         private void btnVerhuur_Click(object sender, EventArgs e)
-        {
-            //Adds selected Object to seperate list which will be saved untill user presser "Totaal".
+        { 
+            if (cbAccounts.SelectedItem != null)
+            {
+                material.Rent();
+                lbSelected.Items.Clear();
+            }
         }
 
         private void btnToevoegen_Click(object sender, EventArgs e)
         {
             //Adds selected Object to the main list. Meaning that it's been returned.
+            if (lbMateriaal.SelectedItem != null)
+            {   
+                lbSelected.Items.Add(lbMateriaal.SelectedItem);
+                materiallist.RemoveAt(lbMateriaal.SelectedIndex);
+                lbMateriaal.DataSource = null;
+                lbMateriaal.Items.Remove(lbMateriaal.SelectedItem);
+                lbMateriaal.DataSource = materiallist;
+            }
+
         }
 
         private void btnTotaal_Click(object sender, EventArgs e)
         {
-            //Checks seperate list and adds all the costs to see the total price.
+            totalprice = 0;
+            int price;
+            int index;
+            string substring;
+            //Checks the seperate list and adds all the costs to see the total price.
+            foreach (var items in lbSelected.Items)
+            {
+                string strings = items.ToString();
+                index = strings.IndexOf("€");
+                substring = strings.Substring(index + 1, strings.Length - 1);
+                price = Convert.ToInt32(substring);
+                totalprice += price;
+            }
+
+            tbTotaal.Text = totalprice.ToString();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             lbSelected.Items.Clear();
-            lbMateriaal.DataSource = material.GetMaterialAvailableList();
+            materiallist = material.GetMaterialForEvent(Event.ID);
+            lbMateriaal.DataSource = materiallist;
+        }
+
+        public void GetData(Event Event)
+        {
+            this.Event = Event;
+            lblEvent.Text = Event.Name;
+            cbAccounts.DataSource = material.GetAccounts(Event.ID);
+
+        }
+
+        private void cbAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Account account = cbAccounts.SelectedItem as Account;
+            this.account = account;
         }
     }
 }

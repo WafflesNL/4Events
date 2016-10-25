@@ -40,10 +40,7 @@ namespace Forms_version_1._0
                         int Maxvisitors = Convert.ToInt32(reader["Maxbezoekers"]);
                         int CampingID = (reader["CampingID"] != DBNull.Value) ? Convert.ToInt32(reader["CampingID"]) : 0;
                         int AccountID = Convert.ToInt32(reader["AccountID"]);
-
-                        List<Account> AccountList = DatabaseGetAccounts.GetAccountsEventID(ID);
-                        List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);
-                        List<Material> Material = DatabaseGetMaterial.GetMaterialforEvent(ID);
+                                                                
                         TimeLine Timeline = DatabaseGetTimeLine.GetTimeline(ID);
 
                         Account Account = DatabaseGetAccounts.GetSingleAccountID(AccountID); 
@@ -58,7 +55,7 @@ namespace Forms_version_1._0
                             Camping = null;
                         }
 
-                        Event Event = new Event(ID, Name, Discription, Location, Maxvisitors, Date, Account, Camping, AccountList, ReservationList, Timeline);
+                        Event Event = new Event(ID, Name, Discription, Location, Maxvisitors, Date, Account, Camping, Timeline);
                         EventList.Add(Event);                 
                     }
                     return EventList;

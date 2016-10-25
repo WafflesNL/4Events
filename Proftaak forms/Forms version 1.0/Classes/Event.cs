@@ -8,9 +8,8 @@ namespace Forms_version_1._0.Classes
 {
     public class Event
     {
-        public List<Reservation> ReservationList = new List<Reservation>();
+        public List<Reservation> ReservationList = new List<Reservation>();    
         public List<Material> MaterialList = new List<Material>();
-        public List<Account> PresentList = new List<Account>();
 
         public TimeLine TimeLine { get; set; }
         public Account Account { get; set; }  
@@ -24,7 +23,7 @@ namespace Forms_version_1._0.Classes
         public string Location { get; set; }
 
         /// <summary>
-        /// Used to add a account to the database
+        /// Used to add a Event to the database
         /// </summary>
         /// <param name="Name"><param>
         /// <param name="Discription"></param>
@@ -32,7 +31,7 @@ namespace Forms_version_1._0.Classes
         /// <param name="Maxvisitors"><param>
         /// <param name="Date"></param>
         /// <param name="Account"></param> 
-        public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account) 
+        public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, List<Material> MaterialList) 
         {
             this.Name = Name;
             this.Discription = Discription;
@@ -40,12 +39,12 @@ namespace Forms_version_1._0.Classes
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
             this.Account = Account;
-            //this.materialList = materialList;               
+            this.MaterialList = MaterialList;                       
         }
 
 
         /// <summary>
-        /// Used to get a account to the database
+        /// Used to get a Event to the database
         /// </summary>
         /// <param name="ID"><param>
         /// <param name="Name"><param>
@@ -54,7 +53,9 @@ namespace Forms_version_1._0.Classes
         /// <param name="Maxvisitors"><param>
         /// <param name="Date"></param>
         /// <param name="Account"></param> 
-        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, List<Account> Presentlist, List<Reservation> ReservationList, TimeLine Timeline)
+        /// <param name="Timlime"></param> 
+        /// <param name="Camping"></param> 
+        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, TimeLine Timeline)
         {
             this.ID = ID;
             this.Name = Name;
@@ -62,17 +63,12 @@ namespace Forms_version_1._0.Classes
             this.Location = Location;
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
-            this.Account = Account;
-            this.PresentList = Presentlist;
-            this.ReservationList = ReservationList;
-            this.TimeLine = Timeline;
-            //this.MaterialList = materialList;
-
-
+            this.Account = Account;                  
+            this.TimeLine = Timeline;    
         }
 
         /// <summary>
-        /// Used to edit a account to the database
+        /// Used to edit a Event to the database
         /// </summary>
         /// <param name="ID"><param>
         /// <param name="Name"><param>
@@ -154,6 +150,45 @@ namespace Forms_version_1._0.Classes
             //TimeLine Timeline = new TimeLine();
             bool Check = DatabaseCreateTimeline.CreateTimeline();
             return Check;
+        }
+
+        /// <summary>
+        /// Get a Guests list for a specific event (people who are present at an event)
+        /// </summary>
+        /// <returns>A list with all Accounts for a event<returns>
+        public List<Account> GetGuestList()
+        {
+            List<Account> GuestList = DatabaseGetAccounts.GetAccountsEventID(ID);
+            return GuestList;
+        }
+
+        /// <summary>
+        /// Get a Materials list for a specific event
+        /// </summary>
+        /// <returns>A list with all Materials for a event that are still free to rent<returns>
+        public List<Material> GetMaterialList()
+        {
+            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialforEvent(ID);
+
+            foreach (Material M in MaterialList)
+            {
+                if (M.AccountID != null)
+                {
+                    MaterialList.Remove(M);
+                }
+            }
+
+            return MaterialList;
+        }
+
+        /// <summary>
+        /// Get a reservation list for a specific event
+        /// </summary>
+        /// <returns>A list with all reservations for a event<returns>
+        public List<Reservation> GetReservationList()
+        {
+            List<Reservation> ReservationList = DatabaseGetReservations.GetReservation(ID);
+            return ReservationList;        
         }
 
         /// <summary>

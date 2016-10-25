@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Forms_version_1._0
         public string Username { get; set; }
         public string Password { get; set; }
         public Function Function { get; set; }
-        public int? EventID { get; set; } //moet nog toegepast worden in methodes
+        public int? EventID { get; set; } 
 
         /// <summary>
         /// Used to get account information from the database
@@ -95,7 +96,7 @@ namespace Forms_version_1._0
         {
             List<Account> AccountList = DatabaseGetAccounts.GetAccounts();
             return AccountList;
-        }
+        }    
 
         /// <summary>
         /// Tostring methods for Account

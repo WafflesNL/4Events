@@ -53,8 +53,12 @@ namespace Forms_version_1._0
         {
             //On Click puts a reservation for the selected event into your account and adds it to your cart.
             ReserveringForm Form = new ReserveringForm();
+
             this.Hide();
-            Form.ShowDialog();
+            using (Form)
+            {
+                Form.ShowDialog(this);
+            }
             this.Close();
         }
 
@@ -131,13 +135,23 @@ namespace Forms_version_1._0
 
             }
         }
-
-
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
             this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
             this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
             this.btnTijdlijn.Enabled = this.cbSelectEvent.SelectedItem != null;
+        }
+
+        //With this method you can transfer the selected event to another form.
+        public Event GetSelectedEvent()
+        {
+            return (Event)cbSelectEvent.SelectedItem;
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            VerhuurForm verhuurform = new VerhuurForm();
+            verhuurform.ShowDialog();
         }
     }
 }

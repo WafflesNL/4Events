@@ -10,6 +10,11 @@ namespace Forms_version_1._0
 {
     class DatabaseCreateReservation
     {
+        /// <summary>
+        /// Creates a new column in the reservation table.
+        /// </summary>
+        /// <param name="Reservation">The reservation to be added.</param>
+        /// <returns>Returns true if the reservation is added and false if it failed.</returns>
         public static bool CreateReservation(Reservation Reservation)
         {
             bool Check = false;
@@ -24,11 +29,11 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "INSERT INTO Reservering (ID, PlaatsID, EventID, BetalingBedrag, BetalingStatus) VALUES (@ID, @PlaatsID, @EventID, @BetalingBedrag, @BetalingStatus)";
+                    cmd.CommandText = "INSERT INTO Reservering (ID, PlaatsID, EventID, BetalingBedrag, BetalingStatus) VALUES (@ID, null, @EventID, @BetalingBedrag, @BetalingStatus)";
                     cmd.Parameters.Add(new SqlParameter("ID", Reservation.ID));
-                    cmd.Parameters.Add(new SqlParameter("@PlaatsID", Reservation.Place));
-                    cmd.Parameters.Add(new SqlParameter("@EventID", Reservation.Event.ID));
-                    cmd.Parameters.Add(new SqlParameter("@BetalingBedrag", Reservation.Payment.Amount));
+                    //cmd.Parameters.Add(new SqlParameter("PlaatsID", Reservation.Place));
+                    cmd.Parameters.Add(new SqlParameter("EventID", Reservation.Event.ID));
+                    cmd.Parameters.Add(new SqlParameter("BetalingBedrag", Reservation.Payment.Amount));
 
                     //Converts the bool to a bit for the database.
                     int paymentStatus;
@@ -41,9 +46,22 @@ namespace Forms_version_1._0
                         paymentStatus = 0;
                     }
 
-                    cmd.Parameters.Add(new SqlParameter("@BetalingStatus", paymentStatus));
+                    cmd.Parameters.Add(new SqlParameter("BetalingStatus", paymentStatus));
 
                     cmd.ExecuteNonQuery();
+
+                    foreach (var account in Reservation.Accounts)
+                    {
+                        cmd.CommandText = "INSERT INTO Account_Reservering (AccountID, ReserveringID) VALUES (@AccountID, @ReserveringID)";
+                        var para1 = cmd.Parameters.Add(new SqlParameter("AccountID", account.ID));
+                        var para2 = cmd.Parameters.Add(new SqlParameter("ReserveringID", Reservation.ID));
+
+                        cmd.ExecuteNonQuery();
+
+                        cmd.Parameters.Remove(para1);
+                        cmd.Parameters.Remove(para2);
+                    }
+                    
 
                     Check = true;
                 }

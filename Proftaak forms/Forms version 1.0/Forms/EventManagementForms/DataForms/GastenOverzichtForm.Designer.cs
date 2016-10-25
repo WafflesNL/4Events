@@ -28,80 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GastenOverzichtLijst = new System.Windows.Forms.ListBox();
+            this.lbGuestList = new System.Windows.Forms.ListBox();
             this.lblNaam = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.btnAanwezig = new System.Windows.Forms.Button();
-            this.btnNietAanwezig = new System.Windows.Forms.Button();
             this.lblAanwezig = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // GastenOverzichtLijst
+            // lbGuestList
             // 
-            this.GastenOverzichtLijst.FormattingEnabled = true;
-            this.GastenOverzichtLijst.Location = new System.Drawing.Point(12, 25);
-            this.GastenOverzichtLijst.Name = "GastenOverzichtLijst";
-            this.GastenOverzichtLijst.Size = new System.Drawing.Size(175, 225);
-            this.GastenOverzichtLijst.TabIndex = 0;
+            this.lbGuestList.FormattingEnabled = true;
+            this.lbGuestList.ItemHeight = 16;
+            this.lbGuestList.Location = new System.Drawing.Point(16, 31);
+            this.lbGuestList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbGuestList.Name = "lbGuestList";
+            this.lbGuestList.Size = new System.Drawing.Size(379, 340);
+            this.lbGuestList.TabIndex = 0;
             // 
             // lblNaam
             // 
             this.lblNaam.AutoSize = true;
-            this.lblNaam.Location = new System.Drawing.Point(9, 6);
+            this.lblNaam.Location = new System.Drawing.Point(12, 7);
+            this.lblNaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNaam.Name = "lblNaam";
-            this.lblNaam.Size = new System.Drawing.Size(35, 13);
+            this.lblNaam.Size = new System.Drawing.Size(45, 17);
             this.lblNaam.TabIndex = 1;
             this.lblNaam.Text = "Naam";
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(50, 6);
+            this.lblStatus.Location = new System.Drawing.Point(67, 7);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(78, 13);
+            this.lblStatus.Size = new System.Drawing.Size(104, 17);
             this.lblStatus.TabIndex = 2;
             this.lblStatus.Text = "Betalingsstatus";
-            // 
-            // btnAanwezig
-            // 
-            this.btnAanwezig.Location = new System.Drawing.Point(193, 25);
-            this.btnAanwezig.Name = "btnAanwezig";
-            this.btnAanwezig.Size = new System.Drawing.Size(99, 25);
-            this.btnAanwezig.TabIndex = 3;
-            this.btnAanwezig.Text = "Aanwezig";
-            this.btnAanwezig.UseVisualStyleBackColor = true;
-            this.btnAanwezig.Click += new System.EventHandler(this.btnAanwezig_Click);
-            // 
-            // btnNietAanwezig
-            // 
-            this.btnNietAanwezig.Location = new System.Drawing.Point(193, 56);
-            this.btnNietAanwezig.Name = "btnNietAanwezig";
-            this.btnNietAanwezig.Size = new System.Drawing.Size(99, 25);
-            this.btnNietAanwezig.TabIndex = 4;
-            this.btnNietAanwezig.Text = "Niet Aanwezig";
-            this.btnNietAanwezig.UseVisualStyleBackColor = true;
-            this.btnNietAanwezig.Click += new System.EventHandler(this.btnNietAanwezig_Click);
             // 
             // lblAanwezig
             // 
             this.lblAanwezig.AutoSize = true;
-            this.lblAanwezig.Location = new System.Drawing.Point(134, 6);
+            this.lblAanwezig.Location = new System.Drawing.Point(179, 7);
+            this.lblAanwezig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAanwezig.Name = "lblAanwezig";
-            this.lblAanwezig.Size = new System.Drawing.Size(53, 13);
+            this.lblAanwezig.Size = new System.Drawing.Size(68, 17);
             this.lblAanwezig.TabIndex = 5;
             this.lblAanwezig.Text = "Aanwezig";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(402, 31);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(108, 44);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // GastenOverzichtForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 262);
+            this.ClientSize = new System.Drawing.Size(522, 386);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblAanwezig);
-            this.Controls.Add(this.btnNietAanwezig);
-            this.Controls.Add(this.btnAanwezig);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblNaam);
-            this.Controls.Add(this.GastenOverzichtLijst);
+            this.Controls.Add(this.lbGuestList);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GastenOverzichtForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GastenOverzichtForm";
@@ -112,11 +106,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox GastenOverzichtLijst;
+        private System.Windows.Forms.ListBox lbGuestList;
         private System.Windows.Forms.Label lblNaam;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Button btnAanwezig;
-        private System.Windows.Forms.Button btnNietAanwezig;
         private System.Windows.Forms.Label lblAanwezig;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

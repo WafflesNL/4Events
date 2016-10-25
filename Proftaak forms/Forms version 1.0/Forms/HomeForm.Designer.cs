@@ -39,14 +39,15 @@
             this.btnReservePlace = new System.Windows.Forms.Button();
             this.btnAccountView = new System.Windows.Forms.Button();
             this.btnCreateEvent = new System.Windows.Forms.Button();
+            this.btnMaterial = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(12, 368);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogOut.Location = new System.Drawing.Point(9, 299);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(91, 44);
+            this.btnLogOut.Size = new System.Drawing.Size(68, 36);
             this.btnLogOut.TabIndex = 0;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -55,10 +56,9 @@
             // btnTijdlijn
             // 
             this.btnTijdlijn.Enabled = false;
-            this.btnTijdlijn.Location = new System.Drawing.Point(16, 132);
-            this.btnTijdlijn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTijdlijn.Location = new System.Drawing.Point(12, 107);
             this.btnTijdlijn.Name = "btnTijdlijn";
-            this.btnTijdlijn.Size = new System.Drawing.Size(172, 34);
+            this.btnTijdlijn.Size = new System.Drawing.Size(129, 28);
             this.btnTijdlijn.TabIndex = 1;
             this.btnTijdlijn.Text = "Naar Tijdlijn";
             this.btnTijdlijn.UseVisualStyleBackColor = true;
@@ -68,20 +68,18 @@
             // 
             this.cbSelectEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelectEvent.FormattingEnabled = true;
-            this.cbSelectEvent.Location = new System.Drawing.Point(16, 21);
-            this.cbSelectEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSelectEvent.Location = new System.Drawing.Point(12, 17);
             this.cbSelectEvent.Name = "cbSelectEvent";
-            this.cbSelectEvent.Size = new System.Drawing.Size(376, 24);
+            this.cbSelectEvent.Size = new System.Drawing.Size(283, 21);
             this.cbSelectEvent.TabIndex = 2;
             this.cbSelectEvent.SelectedIndexChanged += new System.EventHandler(this.cbSelectEvent_SelectedIndexChanged);
             // 
             // btnBetalingStatus
             // 
             this.btnBetalingStatus.Enabled = false;
-            this.btnBetalingStatus.Location = new System.Drawing.Point(224, 178);
-            this.btnBetalingStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBetalingStatus.Location = new System.Drawing.Point(168, 145);
             this.btnBetalingStatus.Name = "btnBetalingStatus";
-            this.btnBetalingStatus.Size = new System.Drawing.Size(172, 34);
+            this.btnBetalingStatus.Size = new System.Drawing.Size(129, 28);
             this.btnBetalingStatus.TabIndex = 3;
             this.btnBetalingStatus.Text = "Betalingsstatus";
             this.btnBetalingStatus.UseVisualStyleBackColor = true;
@@ -90,10 +88,9 @@
             // btnEventInfo
             // 
             this.btnEventInfo.Enabled = false;
-            this.btnEventInfo.Location = new System.Drawing.Point(15, 220);
-            this.btnEventInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEventInfo.Location = new System.Drawing.Point(11, 179);
             this.btnEventInfo.Name = "btnEventInfo";
-            this.btnEventInfo.Size = new System.Drawing.Size(172, 34);
+            this.btnEventInfo.Size = new System.Drawing.Size(129, 28);
             this.btnEventInfo.TabIndex = 4;
             this.btnEventInfo.Text = "Eventinformatie";
             this.btnEventInfo.UseVisualStyleBackColor = true;
@@ -101,10 +98,9 @@
             // 
             // btnAccount
             // 
-            this.btnAccount.Location = new System.Drawing.Point(227, 368);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccount.Location = new System.Drawing.Point(170, 299);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(169, 44);
+            this.btnAccount.Size = new System.Drawing.Size(127, 36);
             this.btnAccount.TabIndex = 5;
             this.btnAccount.Text = "Accountinformatie";
             this.btnAccount.UseVisualStyleBackColor = true;
@@ -113,10 +109,9 @@
             // btnReserve
             // 
             this.btnReserve.Enabled = false;
-            this.btnReserve.Location = new System.Drawing.Point(223, 220);
-            this.btnReserve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReserve.Location = new System.Drawing.Point(167, 179);
             this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(172, 34);
+            this.btnReserve.Size = new System.Drawing.Size(129, 28);
             this.btnReserve.TabIndex = 6;
             this.btnReserve.Text = "Reserveren";
             this.btnReserve.UseVisualStyleBackColor = true;
@@ -124,10 +119,9 @@
             // 
             // btnReservePlace
             // 
-            this.btnReservePlace.Location = new System.Drawing.Point(16, 262);
-            this.btnReservePlace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReservePlace.Location = new System.Drawing.Point(12, 213);
             this.btnReservePlace.Name = "btnReservePlace";
-            this.btnReservePlace.Size = new System.Drawing.Size(172, 34);
+            this.btnReservePlace.Size = new System.Drawing.Size(129, 28);
             this.btnReservePlace.TabIndex = 7;
             this.btnReservePlace.Text = "Plaats Reserveren";
             this.btnReservePlace.UseVisualStyleBackColor = true;
@@ -135,10 +129,9 @@
             // 
             // btnAccountView
             // 
-            this.btnAccountView.Location = new System.Drawing.Point(224, 262);
-            this.btnAccountView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccountView.Location = new System.Drawing.Point(168, 213);
             this.btnAccountView.Name = "btnAccountView";
-            this.btnAccountView.Size = new System.Drawing.Size(171, 34);
+            this.btnAccountView.Size = new System.Drawing.Size(128, 28);
             this.btnAccountView.TabIndex = 8;
             this.btnAccountView.Text = "Account overzicht";
             this.btnAccountView.UseVisualStyleBackColor = true;
@@ -147,20 +140,31 @@
             // 
             // btnCreateEvent
             // 
-            this.btnCreateEvent.Location = new System.Drawing.Point(16, 174);
-            this.btnCreateEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateEvent.Location = new System.Drawing.Point(12, 141);
+            this.btnCreateEvent.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateEvent.Name = "btnCreateEvent";
-            this.btnCreateEvent.Size = new System.Drawing.Size(171, 39);
+            this.btnCreateEvent.Size = new System.Drawing.Size(128, 32);
             this.btnCreateEvent.TabIndex = 9;
             this.btnCreateEvent.Text = " Event aanmaken";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
             this.btnCreateEvent.Click += new System.EventHandler(this.btnCreateEvent_Click);
             // 
+            // btnMaterial
+            // 
+            this.btnMaterial.Location = new System.Drawing.Point(168, 107);
+            this.btnMaterial.Name = "btnMaterial";
+            this.btnMaterial.Size = new System.Drawing.Size(127, 28);
+            this.btnMaterial.TabIndex = 10;
+            this.btnMaterial.Text = "Materiaalverhuur";
+            this.btnMaterial.UseVisualStyleBackColor = true;
+            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
+            // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 426);
+            this.ClientSize = new System.Drawing.Size(307, 346);
+            this.Controls.Add(this.btnMaterial);
             this.Controls.Add(this.btnCreateEvent);
             this.Controls.Add(this.btnAccountView);
             this.Controls.Add(this.btnReservePlace);
@@ -172,7 +176,7 @@
             this.Controls.Add(this.btnTijdlijn);
             this.Controls.Add(this.btnLogOut);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
@@ -192,5 +196,6 @@
         private System.Windows.Forms.Button btnReservePlace;
         private System.Windows.Forms.Button btnAccountView;
         private System.Windows.Forms.Button btnCreateEvent;
+        private System.Windows.Forms.Button btnMaterial;
     }
 }

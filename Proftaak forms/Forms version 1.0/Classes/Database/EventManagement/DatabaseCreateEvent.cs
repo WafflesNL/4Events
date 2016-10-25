@@ -43,9 +43,11 @@ namespace Forms_version_1._0
                     else
                     {
                         cmd.Parameters.Add(new SqlParameter("CampingID", Event.Camping.ID));
-                    }                 
+                    }
+                                               
                     cmd.ExecuteNonQuery();
 
+                    DatabaseUpdateMaterial.UpdateMaterial(Event.MaterialList, ID);
                     Check = true;
                 }
                 catch (SqlException e)

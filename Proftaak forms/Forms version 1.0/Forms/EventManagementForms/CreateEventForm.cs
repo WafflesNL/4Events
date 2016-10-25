@@ -14,18 +14,20 @@ namespace Forms_version_1._0
     public partial class CreateEventForm : Form
     {
         //stel er is een event op dezelfde locatie en dag dan controleert die hier niet op
+        List<Material> MaterialList = new List<Material>();
 
         public CreateEventForm()
         {
             InitializeComponent();
         }
 
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (tbEventName.Text != "" && tbEventDiscription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "")
             {
                 Account account = new Account(CurrentAccount.ID, CurrentAccount.Name, CurrentAccount.UserName, CurrentAccount.Password, CurrentAccount.Function);
-                Event NewEvent = new Event(tbEventName.Text, tbEventDiscription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value, account);
+                Event NewEvent = new Event(tbEventName.Text, tbEventDiscription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value, account, MaterialList);
                 NewEvent.GetCamping();
                 
                 if (NewEvent.CheckDateOutOfRange() == false)
@@ -51,9 +53,16 @@ namespace Forms_version_1._0
 
         private void btnRental_Click(object sender, EventArgs e)
         {
-            MateriaalEventForm Form = new MateriaalEventForm();
-            Form.ShowDialog();
-            
+            using (MateriaalEventForm Fm = new MateriaalEventForm())
+            {            
+                Fm.ShowDialog(this);        
+            }
+            btnRental.Enabled = false;                                              
+        }
+
+        public void GetMaterialList(List<Material> MaterialList)
+        {
+           this.MaterialList = MaterialList;
         }
     }
 }

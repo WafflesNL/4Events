@@ -14,7 +14,6 @@ namespace Forms_version_1._0.Forms
     public partial class EventForm : Form
     {
         Event Event;
-
         public EventForm()
         {
             InitializeComponent();
@@ -23,16 +22,24 @@ namespace Forms_version_1._0.Forms
 
         private void btnOverzicht_Click(object sender, EventArgs e)
         {
-            GastenOverzichtForm  window = new GastenOverzichtForm();
-            window.ShowDialog();
+            GastenOverzichtForm Form = new GastenOverzichtForm(Event); 
+            Form.ShowDialog();
         }
 
         private void btnReservering_Click(object sender, EventArgs e)
         {
-            OverzichtReserveringForm window = new OverzichtReserveringForm();          
-            window.ShowDialog();         
+            OverzichtReserveringForm Form = new OverzichtReserveringForm(Event);     
+            Form.ShowDialog();         
         }
-     
+
+        private void btnVerhuur_Click(object sender, EventArgs e)
+        {
+            MateriaalBeschikbaarForm Form = new MateriaalBeschikbaarForm(Event);
+            Form.ShowDialog();
+        }
+
+
+
         private void btnOpslaan_Click(object sender, EventArgs e) //still in progress
         {
             //Saves changes to the Event.         
@@ -60,11 +67,7 @@ namespace Forms_version_1._0.Forms
             }
         }
        
-        private void btnVerhuur_Click(object sender, EventArgs e)
-        {
-           //Moet nog gemaakt worden
-        }
-
+      
 
         public void GetData(Event Event)
         {
@@ -82,7 +85,7 @@ namespace Forms_version_1._0.Forms
 
             if (CurrentAccount.Function == Function.Beheerder)
             {
-                btnSave.Visible = true;
+                btnSave.Visible = true;             
             }
             else
             {
@@ -90,7 +93,7 @@ namespace Forms_version_1._0.Forms
                 tbEventDiscription.Enabled = false;
                 cbLocation.Enabled = false;
                 dtpDateEvent.Enabled = false;               
-                btnRental.Enabled = false;
+                
             }
         }
     }

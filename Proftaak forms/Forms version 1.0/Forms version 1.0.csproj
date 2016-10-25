@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.Phidget21COM">
+      <HintPath>obj\Debug\Interop.Phidget21COM.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Database\AccountReserveringManagement\DatabaseGetAccountReservering.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseAddPost.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseEditPost.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseGetPost.cs" />
@@ -63,6 +68,7 @@
     <Compile Include="Classes\Database\TimelineManagement\DatabaseGetTimeLine.cs" />
     <Compile Include="Classes\Database\MaterialManagement\DatabaseGetMaterial.cs" />
     <Compile Include="Classes\RFID.cs" />
+    <Compile Include="Classes\Database\MaterialManagement\DatabaseUpdateMaterial.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,10 +131,10 @@
     <Compile Include="Forms\Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GastenOverzichtForm.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\GastenOverzichtForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GastenOverzichtForm.Designer.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\GastenOverzichtForm.Designer.cs">
       <DependentUpon>GastenOverzichtForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
@@ -143,10 +149,10 @@
     <Compile Include="Forms\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OverzichtReserveringForm.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\OverzichtReserveringForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OverzichtReserveringForm.Designer.cs">
+    <Compile Include="Forms\EventManagementForms\DataForms\OverzichtReserveringForm.Designer.cs">
       <DependentUpon>OverzichtReserveringForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ReserveringForm.cs">
@@ -173,6 +179,12 @@
     </Compile>
     <Compile Include="Forms\EventManagementForms\MateriaalEventForm.Designer.cs">
       <DependentUpon>MateriaalEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.Designer.cs">
+      <DependentUpon>MateriaalBeschikbaarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,7 +222,7 @@
     <EmbeddedResource Include="Forms\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GastenOverzichtForm.resx">
+    <EmbeddedResource Include="Forms\EventManagementForms\DataForms\GastenOverzichtForm.resx">
       <DependentUpon>GastenOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeForm.resx">
@@ -222,7 +234,7 @@
     <EmbeddedResource Include="Forms\AccountManagementForms\RegistreerForm.resx">
       <DependentUpon>RegistreerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OverzichtReserveringForm.resx">
+    <EmbeddedResource Include="Forms\EventManagementForms\DataForms\OverzichtReserveringForm.resx">
       <DependentUpon>OverzichtReserveringForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReserveringForm.resx">
@@ -233,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VerhuurForm.resx">
       <DependentUpon>VerhuurForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.resx">
+      <DependentUpon>MateriaalBeschikbaarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

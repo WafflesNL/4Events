@@ -10,6 +10,11 @@ namespace Forms_version_1._0
 {
     public static class DatabaseGetMaterial
     {
+        /// <summary>
+        /// Get all materials that are linked with a event
+        /// </summary>
+        /// <param name="EventID">EventID int</param>
+        /// <returns>A list of materials that is linked with the event</returns>
         public static List<Material> GetMaterialforEvent(int EventID)
         {
             List<Material> MaterialList = new List<Material>();
@@ -62,6 +67,10 @@ namespace Forms_version_1._0
             return MaterialList;
         }
 
+        /// <summary>
+        /// Gets a materials that haven't been linked to an event yet
+        /// </summary>     
+        /// <returns>A list of materials</returns>
         public static List<Material> GetMaterialAvailable()
         {
             List<Material> MaterialList = new List<Material>();

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Forms_version_1._0.Classes.Enum;
 
 
 namespace Forms_version_1._0.Forms
@@ -16,12 +18,16 @@ namespace Forms_version_1._0.Forms
     {
         char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
         Event newevent;
-        
+        Post postAttach;
         List<Post> Postlist = new List<Post>();
 
         public TijdlijnForm(Event Event)
         {
             InitializeComponent();
+            foreach (var item in Enum.GetValues(typeof(Category)))
+            {
+                cbCatergory.Items.Add(item);
+            }       
             newevent = Event;
             GetPosts();
         }
@@ -58,20 +64,46 @@ namespace Forms_version_1._0.Forms
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
-            //Opens Photo Library to add a picture or film to the Post.
+            if (cbCatergory.Text != null && txtPost.Text != null)
+            {
+                TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
+                string Categorytext = cbCatergory.Text;
+                string Posttext = txtPost.Text;
+                postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.GetFile());
+            }
+            else
+            {
+                MessageBox.Show("Please enter Category and Text");
+            }
         }
 
         private void btnPost_Click(object sender, EventArgs e)
         {
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
-            string Categorytext = cbCatergory.Text;
-            string Posttext = txtPost.Text;
-            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0);
-            newtimeline.AddPost(post);
-            if (newtimeline.Check == true)
+            if (cbCatergory.Text != null && txtPost.Text != null)
             {
-                TijdlijnBox.Items.Clear();
-                GetPosts();
+                if (postAttach != null)
+                {
+                    newtimeline.AddPost(postAttach);
+                }
+
+                else
+                {
+                    string Categorytext = cbCatergory.Text;
+                    string Posttext = txtPost.Text;
+                    Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0);
+                    newtimeline.AddPost(post);
+                }
+
+                    if (newtimeline.Check == true)
+                    {
+                        TijdlijnBox.Items.Clear();
+                        GetPosts();
+                    }                
+            }
+            else
+            {
+                MessageBox.Show("Please enter Category and Text");
             }
         }
 

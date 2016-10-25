@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Forms_version_1._0.Classes.Database.TimelineManagement;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Forms_version_1._0.Classes
 {
@@ -38,6 +40,35 @@ namespace Forms_version_1._0.Classes
         public void LikePost(Post post)
         {
             Check = DatabaseEditPost.LikePost(post);
+        }
+
+        public byte[] GetFile()
+        {
+            byte[] TempFile;
+            Stream stream;
+            OpenFileDialog ofD = new OpenFileDialog();
+            ofD.InitialDirectory = "c:\\";
+            ofD.Filter = "Images (*.jpeg)|*.Jpeg|Images(*.png) | *.png |Videos (*.mp4)|*.mp4|All files (*.*)|*.*";
+            ofD.FilterIndex = 2;
+            ofD.RestoreDirectory = true;
+            if (ofD.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((stream = ofD.OpenFile()) != null)
+                    {
+                        using (stream)
+                        {
+                                return TempFile = File.ReadAllBytes(ofD.FileName);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
+            return TempFile = null;
         }
     }
 }

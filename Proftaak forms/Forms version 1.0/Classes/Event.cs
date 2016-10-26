@@ -63,7 +63,8 @@ namespace Forms_version_1._0.Classes
             this.Location = Location;
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
-            this.Account = Account;                  
+            this.Account = Account;
+            this.Camping = Camping;                 
             this.TimeLine = Timeline;    
         }
 

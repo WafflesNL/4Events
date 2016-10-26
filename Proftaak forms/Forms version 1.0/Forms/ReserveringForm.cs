@@ -64,7 +64,7 @@ namespace Forms_version_1._0.Forms
         private void Button_Click(object sender, EventArgs e)
         {
             //activeert alleen bij camping!
-            MessageBox.Show("Plaats geselecteerd.");
+            MessageBox.Show(currentEvent.Camping.ID.ToString());
             
         }
 

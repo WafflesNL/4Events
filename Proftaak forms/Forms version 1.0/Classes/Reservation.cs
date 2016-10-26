@@ -63,11 +63,11 @@ namespace Forms_version_1._0.Classes
             Reservation Reservation = new Reservation(ID, Event, Payment, Place, Accounts);
             if (DatabaseCreateReservation.CreateReservation(Reservation))
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
             
         }
@@ -76,11 +76,11 @@ namespace Forms_version_1._0.Classes
         {
             if (Event.MaxVisitors > DatabaseGetAccountReservering.GetReservationAmountReservation(this))
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

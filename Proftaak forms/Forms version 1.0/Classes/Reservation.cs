@@ -63,11 +63,11 @@ namespace Forms_version_1._0.Classes
             Reservation Reservation = new Reservation(ID, Event, Payment, Place, Accounts);
             if (DatabaseCreateReservation.CreateReservation(Reservation))
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
             
         }

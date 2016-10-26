@@ -42,7 +42,6 @@ namespace Forms_version_1._0.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
-            string bob = TijdlijnBox.SelectedItem.ToString();
             int ID;
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             if (TijdlijnBox.SelectedIndex == -1)
@@ -65,12 +64,20 @@ namespace Forms_version_1._0.Forms
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
-            if (cbCatergory.Text != null && txtPost.Text != null)
+            if (cbCatergory.Text != null && txtPost.Text != "")
             {
                 TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
                 string Categorytext = cbCatergory.Text;
                 string Posttext = txtPost.Text;
-                postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile());
+                if (Posttext.Length < 90)
+                {
+                    postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile());
+                    newtimeline.AddPost(postAttach);
+                }
+                else
+                {
+                    MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
+                }
             }
             else
             {
@@ -81,7 +88,7 @@ namespace Forms_version_1._0.Forms
         private void btnPost_Click(object sender, EventArgs e)
         {
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
-            if (cbCatergory.Text != null && txtPost.Text != null)
+            if (cbCatergory.Text != null && txtPost.Text != "")
             {
                 if (postAttach != null)
                 {
@@ -92,8 +99,16 @@ namespace Forms_version_1._0.Forms
                 {
                     string Categorytext = cbCatergory.Text;
                     string Posttext = txtPost.Text;
-                    Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0);
-                    newtimeline.AddPost(post);
+                    if (Posttext.Length < 90)
+                    {
+                        Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0);
+                        newtimeline.AddPost(post);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
+                    }
+
                 }
 
                     if (newtimeline.Check == true)
@@ -102,11 +117,7 @@ namespace Forms_version_1._0.Forms
                         GetPosts();
                         cbCatergory.Text = null;
                         txtPost.Text = null;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Post Mislukt");
-                    }           
+                    }        
             }
             else
             {
@@ -116,11 +127,16 @@ namespace Forms_version_1._0.Forms
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            Filter window = new Filter();
+            FilterClass FC = new FilterClass();
+            Filter window = new Filter();            
             window.ShowDialog();
+            TijdlijnBox.Items.Clear();
+            foreach (Post E in window.Filerlst)
+            {
+                //TijdlijnBox.Items.Clear();
+                TijdlijnBox.Items.Add(E);
+            }
         }
-
-
         public void GetPosts()
         {
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
@@ -130,11 +146,32 @@ namespace Forms_version_1._0.Forms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDownload_Click(object sender, EventArgs e)
         {
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             Post post = TijdlijnBox.SelectedItem as Post;
             newtimeline.GetFile(post);
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            int ID;
+            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
+            if (TijdlijnBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteer een post");
+            }
+            else
+            {
+                ID = TijdlijnBox.SelectedIndex + 1;
+                Post post1 = new Post(ID);
+                newtimeline.ReportPost(post1);
+                if (newtimeline.Check == true)
+                {
+                    TijdlijnBox.Items.Clear();
+                    GetPosts();
+                }
+            }
         }
     }
 }

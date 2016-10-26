@@ -85,7 +85,7 @@ namespace Forms_version_1._0.Classes
                 Name = Name.Insert(Name.Length, " ");
                 Length = Name.Length;
             }
-            return  Name + Text +  Likes + Attachment; 
+            return  Name + Text.PadRight(90) +  Likes.ToString().PadRight(12) + Attachment; 
         }
     }
 }

@@ -33,13 +33,25 @@ namespace Forms_version_1._0.Classes
 
         public List<Post> GetPost()
         {
-            Postlist = DatabaseGetPost.GetPost();
+            if (CurrentAccount.ID == 3)
+            {
+                Postlist = DatabaseGetPost.GetPost();
+            }
+            else
+            {
+                Postlist = DatabaseGetPost.GetSafePost();
+            }
             return Postlist;
         }
 
         public void LikePost(Post post)
         {
             Check = DatabaseEditPost.LikePost(post);
+        }
+
+        public void ReportPost(Post post)
+        {
+            Check = DatabaseEditPost.ReportPost(post);
         }
 
         public byte[] AddFile()

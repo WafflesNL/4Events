@@ -43,5 +43,39 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
 
             return Check;
         }
+
+        public static bool ReportPost(Post Post)
+        {
+            bool Check = false;
+            int ID = DatabaseGetHighestID.GetHighestID("Post");
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "UPDATE Post SET Rapportaties = (Rapportaties + 1) WHERE ID = @ID"; ;
+                    cmd.Parameters.Add(new SqlParameter("ID", Post.ID));
+                    cmd.ExecuteNonQuery();
+
+                    Check = true;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                    Check = false;
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+
+            return Check;
+        }
     }
 }

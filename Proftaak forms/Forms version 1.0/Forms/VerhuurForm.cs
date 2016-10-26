@@ -15,8 +15,9 @@ namespace Forms_version_1._0.Forms
     {   Event Event;
         Account account;
         Material material = new Material(1,"tomato",2, null,null);
-        List<Material> materiallist;
-        int totalprice;
+        List<Material> materiallist = new List<Material>();
+        List<Material> selectedlist = new List<Material>();
+     
         public VerhuurForm()
         {
             InitializeComponent();
@@ -38,8 +39,10 @@ namespace Forms_version_1._0.Forms
         { 
             if (cbAccounts.SelectedItem != null)
             {
-                material.Rent();
+                Account account = cbAccounts.SelectedItem as Account;
+                material.Rent(selectedlist, account.ID);
                 lbSelected.Items.Clear();
+                selectedlist.Clear();
             }
         }
 
@@ -47,8 +50,11 @@ namespace Forms_version_1._0.Forms
         {
             //Adds selected Object to the main list. Meaning that it's been returned.
             if (lbMateriaal.SelectedItem != null)
-            {   
+            {
+                Material material = lbMateriaal.SelectedItem as Material;
                 lbSelected.Items.Add(lbMateriaal.SelectedItem);
+                selectedlist.Add(material);
+
                 materiallist.RemoveAt(lbMateriaal.SelectedIndex);
                 lbMateriaal.DataSource = null;
                 lbMateriaal.Items.Remove(lbMateriaal.SelectedItem);
@@ -57,23 +63,11 @@ namespace Forms_version_1._0.Forms
 
         }
 
+        //Checks the seperate list and adds all the costs to see the total price.
         private void btnTotaal_Click(object sender, EventArgs e)
         {
-            totalprice = 0;
-            int price;
-            int index;
-            string substring;
-            //Checks the seperate list and adds all the costs to see the total price.
-            foreach (var items in lbSelected.Items)
-            {
-                string strings = items.ToString();
-                index = strings.IndexOf("€");
-                substring = strings.Substring(index + 1, strings.Length - 1);
-                price = Convert.ToInt32(substring);
-                totalprice += price;
-            }
-
-            tbTotaal.Text = totalprice.ToString();
+            
+            tbTotaal.Text = material.TotalPrice(selectedlist).ToString();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -89,12 +83,6 @@ namespace Forms_version_1._0.Forms
             lblEvent.Text = Event.Name;
             cbAccounts.DataSource = material.GetAccounts(Event.ID);
 
-        }
-
-        private void cbAccounts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Account account = cbAccounts.SelectedItem as Account;
-            this.account = account;
         }
     }
 }

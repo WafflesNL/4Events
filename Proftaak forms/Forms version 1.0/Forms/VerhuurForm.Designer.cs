@@ -127,7 +127,6 @@
             this.cbAccounts.Name = "cbAccounts";
             this.cbAccounts.Size = new System.Drawing.Size(133, 21);
             this.cbAccounts.TabIndex = 12;
-            this.cbAccounts.SelectedIndexChanged += new System.EventHandler(this.cbAccounts_SelectedIndexChanged);
             // 
             // VerhuurForm
             // 

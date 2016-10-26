@@ -72,6 +72,18 @@ namespace Forms_version_1._0.Classes
             
         }
 
+        public bool MoreThanMaxVisitors()
+        {
+            if (Event.MaxVisitors > DatabaseGetAccountReservering.GetReservationAmountReservation(this))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public override string ToString()
         {
             return base.ToString();

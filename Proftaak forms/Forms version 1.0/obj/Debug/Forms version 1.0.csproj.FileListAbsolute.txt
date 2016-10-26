@@ -124,3 +124,7 @@ C:\Users\Jordi\Source\Repos\4Events4\Proftaak forms\Forms version 1.0\obj\Debug\
 C:\Users\Jordi\Source\Repos\4Events4\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Properties.Resources.resources
 C:\Users\Jordi\Source\Repos\4Events4\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.GenerateResource.Cache
 C:\Users\Gebruiker\Desktop\GitHub2\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.MateriaalBeschikbaarForm.resources
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.ResolveComReference.cache
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.MateriaalEventForm.resources
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.OverzichtReserveringForm.resources
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.MateriaalBeschikbaarForm.resources

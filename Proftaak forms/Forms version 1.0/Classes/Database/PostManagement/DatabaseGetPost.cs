@@ -13,6 +13,8 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         public static List<Post> GetPost()
         {
             List<Post> Postlist = new List<Post>();
+            byte[] File;
+            string Attachment;
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -38,10 +40,20 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         int Likes = Convert.ToInt32(reader["Likes"]);
                         int Reports = Convert.ToInt32(reader["Rapportaties"]);
                         bool Readable = (Convert.ToBoolean(reader["Leesbaar"]));
+                        if (reader["Bestand"] != DBNull.Value)
+                        {
+                            Attachment = "Bijlage";
+                            File = (byte[])reader["Bestand"];
+                        }
+                        else
+                        {
+                            Attachment = null;
+                            File = null;
+                        }
 
                         Account Account = DatabaseGetAccounts.GetSingleAccountID(AccountID);
 
-                        Post GottenPost = new Post(Text, Category, AccountID, TimelineID, Likes, Account);
+                        Post GottenPost = new Post(Text, Category, AccountID, TimelineID, Likes, Account, File, Attachment);
                         Postlist.Add(GottenPost);
                     }
                     return Postlist;

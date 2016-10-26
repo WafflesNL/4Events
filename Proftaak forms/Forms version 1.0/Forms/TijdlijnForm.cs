@@ -42,6 +42,7 @@ namespace Forms_version_1._0.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
+            string bob = TijdlijnBox.SelectedItem.ToString();
             int ID;
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             if (TijdlijnBox.SelectedIndex == -1)
@@ -69,7 +70,7 @@ namespace Forms_version_1._0.Forms
                 TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
                 string Categorytext = cbCatergory.Text;
                 string Posttext = txtPost.Text;
-                postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.GetFile());
+                postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile());
             }
             else
             {
@@ -99,7 +100,13 @@ namespace Forms_version_1._0.Forms
                     {
                         TijdlijnBox.Items.Clear();
                         GetPosts();
-                    }                
+                        cbCatergory.Text = null;
+                        txtPost.Text = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Post Mislukt");
+                    }           
             }
             else
             {
@@ -121,6 +128,13 @@ namespace Forms_version_1._0.Forms
             {
                 TijdlijnBox.Items.Add(E);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
+            Post post = TijdlijnBox.SelectedItem as Post;
+            newtimeline.GetFile(post);
         }
     }
 }

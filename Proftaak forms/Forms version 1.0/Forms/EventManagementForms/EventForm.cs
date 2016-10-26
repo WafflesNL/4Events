@@ -46,12 +46,8 @@ namespace Forms_version_1._0.Forms
             if (tbEventName.Text != "" && tbEventDiscription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "" && numQuantityVisitors.Value >= 5)
             {            
                 Event NewEvent = new Event(Event.ID, tbEventName.Text, tbEventDiscription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value);              
-
-                if (NewEvent.CheckDateOutOfRange() == false)
-                {
-                    MessageBox.Show("De datum moet twee weken van te voren zijn");
-                }
-                else if (NewEvent.EditEvent(NewEvent))
+             
+                if (NewEvent.EditEvent(NewEvent))
                 {                  
                     MessageBox.Show("Het event is succesvol aangepast");
                     this.Close();

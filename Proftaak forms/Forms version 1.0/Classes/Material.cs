@@ -1,4 +1,4 @@
-﻿using Forms_version_1._0.Classes.Database.MaterialManagement;
+﻿using Forms_version_1._0.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +42,7 @@ namespace Forms_version_1._0.Classes
 
             return totalprice;
         }
+
         public List<Material> GetMaterialAvailableList()
         {
             List<Material> MaterialList = DatabaseGetMaterial.GetMaterialAvailable();

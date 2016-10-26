@@ -102,8 +102,8 @@ namespace Forms_version_1._0
         private void btnMaterial_Click(object sender, EventArgs e)
         {
             Event Event = cbSelectEvent.SelectedItem as Event;
-           // VerhuurForm verhuurform = new VerhuurForm(Event);        
-           // verhuurform.ShowDialog();
+            VerhuurForm verhuurform = new VerhuurForm(Event);        
+            verhuurform.ShowDialog();
         }
 
         private void LoadEvents()

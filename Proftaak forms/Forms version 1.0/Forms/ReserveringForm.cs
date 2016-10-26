@@ -17,6 +17,7 @@ namespace Forms_version_1._0.Forms
         private Reservation reservation;
         private Event currentEvent;
         List<Place> placeList;
+        List<Reservation> reservationList;
 
         public ReserveringForm(Event currentEvent)
         {
@@ -24,6 +25,7 @@ namespace Forms_version_1._0.Forms
 
             reservation = new Reservation();
             placeList = currentEvent.Camping.GetPlaces();
+            reservationList = currentEvent.GetReservationList();
 
             InitializeComponent();
             RefreshForm();
@@ -65,9 +67,21 @@ namespace Forms_version_1._0.Forms
 
         private void Button_Click(object sender, EventArgs e)
         {
-            //activeert alleen bij camping!
-            MessageBox.Show("Placeholder");
-            
+            int placeID = Convert.ToInt32(sender.ToString().Remove(0, 35));
+
+            if (placeList[placeID] == reservation.Place)
+            {
+                reservation.Place = null;
+                MessageBox.Show("Plaats selectie verwijderd.", "Melding");
+                tbGeselecteerdePlaats.Text = "Geen";
+            }
+            else
+            {
+                reservation.Place = placeList[placeID];
+                tbGeselecteerdePlaats.Text = "" + placeID;
+            }
+
+
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -186,6 +200,24 @@ namespace Forms_version_1._0.Forms
                         {
                             c.BackColor = DefaultBackColor;
                             c.ForeColor = DefaultForeColor;
+
+                            int placeID = Convert.ToInt32(c.Text);
+                            int actualID = placeList[placeID - 1].ID;
+
+                            // Not optimal
+                            foreach (var currentReservation in reservationList)
+                            {
+                                if(currentReservation.Place != null)
+                                {
+                                    if (actualID == currentReservation.Place.ID)
+                                    {
+                                        c.BackColor = Color.DarkGray;
+                                        c.ForeColor = Color.LightGray;
+                                    }
+                                }
+
+                                
+                            }
                         }
                     }
                     break;

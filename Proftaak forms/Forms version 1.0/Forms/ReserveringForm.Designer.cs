@@ -82,6 +82,8 @@
             this.btnPlaats1 = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbGeselecteerdePlaats = new System.Windows.Forms.TextBox();
             this.gbAccount.SuspendLayout();
             this.gbCamping.SuspendLayout();
             this.SuspendLayout();
@@ -199,6 +201,8 @@
             // 
             // gbCamping
             // 
+            this.gbCamping.Controls.Add(this.tbGeselecteerdePlaats);
+            this.gbCamping.Controls.Add(this.label4);
             this.gbCamping.Controls.Add(this.label3);
             this.gbCamping.Controls.Add(this.cbFilter);
             this.gbCamping.Controls.Add(this.btnPlaats33);
@@ -627,11 +631,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(428, 32);
+            this.label3.Location = new System.Drawing.Point(411, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 41;
             this.label3.Text = "Filter plaatsen op";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(411, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Geselecteerde Plaats";
+            // 
+            // tbGeselecteerdePlaats
+            // 
+            this.tbGeselecteerdePlaats.Enabled = false;
+            this.tbGeselecteerdePlaats.Location = new System.Drawing.Point(411, 99);
+            this.tbGeselecteerdePlaats.Name = "tbGeselecteerdePlaats";
+            this.tbGeselecteerdePlaats.Size = new System.Drawing.Size(121, 20);
+            this.tbGeselecteerdePlaats.TabIndex = 43;
+            this.tbGeselecteerdePlaats.Text = "Geen";
             // 
             // ReserveringForm
             // 
@@ -706,5 +728,7 @@
         private System.Windows.Forms.Button btnPlaats1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.TextBox tbGeselecteerdePlaats;
+        private System.Windows.Forms.Label label4;
     }
 }

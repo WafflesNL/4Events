@@ -19,6 +19,7 @@ namespace Forms_version_1._0.Forms
         public ReserveringForm()
         {
             reservation = new Reservation();
+            
 
             InitializeComponent();
 
@@ -35,6 +36,35 @@ namespace Forms_version_1._0.Forms
             {
                 lbAccount.Items.Add(A);
             }
+
+            //camping
+            foreach (Control c in this.Controls)
+            {
+                if(c is GroupBox)
+                {
+                    if(c.Text == "Camping")
+                    {
+                        foreach (Control gbControl in c.Controls)
+                        {
+                            if (gbControl is Button)
+                            {
+                                gbControl.Click += Button_Click;
+
+                                //De naam van de plaats
+                                gbControl.Text = gbControl.Text.Remove(0, 6);
+                                gbControl.Text += " Plaats";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            //activeert alleen bij camping!
+            MessageBox.Show("Plaats geselecteerd.");
+            
         }
 
         private void btnAccept_Click(object sender, EventArgs e)

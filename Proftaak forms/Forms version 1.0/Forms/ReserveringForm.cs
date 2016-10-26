@@ -15,11 +15,12 @@ namespace Forms_version_1._0.Forms
     public partial class ReserveringForm : Form
     {
         private Reservation reservation;
+        private Event currentEvent;
 
         public ReserveringForm(Event currentEvent)
         {
             reservation = new Reservation();
-            
+            this.currentEvent = currentEvent;
 
             InitializeComponent();
 
@@ -71,8 +72,7 @@ namespace Forms_version_1._0.Forms
         {
             if (MessageBox.Show("Weet je zeker dat je wilt reserveren?", "teset", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                HomeForm parent = (HomeForm)Owner;
-                reservation.Event = parent.GetSelectedEvent();
+                reservation.Event = currentEvent;
 
                 if (reservation.MoreThanMaxVisitors())
                 {

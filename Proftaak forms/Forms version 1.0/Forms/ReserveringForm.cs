@@ -44,7 +44,7 @@ namespace Forms_version_1._0.Forms
                 HomeForm parent = (HomeForm)Owner;
                 reservation.Event = parent.GetSelectedEvent();
 
-                if (reservation.Event.MaxVisitors > DatabaseGetAccountReservering.GetReservationAmountReservation(reservation))
+                if (reservation.MoreThanMaxVisitors())
                 {
                     MessageBox.Show("Er zitten al te veel bezoekers in dit event.");
                     return;

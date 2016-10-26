@@ -16,7 +16,7 @@ namespace Forms_version_1._0.Forms
     {
         private Reservation reservation;
 
-        public ReserveringForm()
+        public ReserveringForm(Event currentEvent)
         {
             reservation = new Reservation();
             

@@ -18,6 +18,7 @@ namespace Forms_version_1._0.Classes
         public int Likes { get; set; }
         public Account Account { get; set; }
         public byte[] File { get; set; }
+        public string Attachment { get; set; }
 
         public Post(string text, string category, int accountID, int timelineID, int likes, Account account)
         {
@@ -48,6 +49,18 @@ namespace Forms_version_1._0.Classes
             this.File = file;
         }
 
+        public Post(string text, string category, int accountID, int timelineID, int likes, Account account, byte[] file, string attachment)
+        {
+            this.AccountID = accountID;
+            this.Text = text;
+            this.Category = category;
+            this.TimeLineID = timelineID;
+            this.Likes = likes;
+            this.Account = account;
+            this.File = file;
+            this.Attachment = attachment;
+        }
+
         public Post(int iD)
         {
             this.ID = iD;
@@ -65,7 +78,14 @@ namespace Forms_version_1._0.Classes
 
         public override string ToString()
         {
-            return Account.Name +  Text +  Likes; 
+            int Length;
+            string Name = Account.Name;
+            for (Length = Name.Length; Length < 20;)
+            {
+                Name = Name.Insert(Name.Length, " ");
+                Length = Name.Length;
+            }
+            return  Name + Text +  Likes + Attachment; 
         }
     }
 }

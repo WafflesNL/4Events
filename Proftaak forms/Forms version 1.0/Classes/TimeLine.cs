@@ -42,13 +42,13 @@ namespace Forms_version_1._0.Classes
             Check = DatabaseEditPost.LikePost(post);
         }
 
-        public byte[] GetFile()
+        public byte[] AddFile()
         {
             byte[] TempFile;
             Stream stream;
             OpenFileDialog ofD = new OpenFileDialog();
             ofD.InitialDirectory = "c:\\";
-            ofD.Filter = "Images (*.jpeg)|*.Jpeg|Images(*.png) | *.png |Videos (*.mp4)|*.mp4|All files (*.*)|*.*";
+            ofD.Filter = "Image Files (*.jpg)|*.Jpg|Image Files (*.png)|*.png |Video Files (*.mp4)|*.mp4|All files (*.*)|*.*";
             ofD.FilterIndex = 2;
             ofD.RestoreDirectory = true;
             if (ofD.ShowDialog() == DialogResult.OK)
@@ -69,6 +69,19 @@ namespace Forms_version_1._0.Classes
                 }
             }
             return TempFile = null;
+        }
+
+        public void GetFile(Post post)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = "Download";
+            // set filters - this can be done in properties as well
+            sfd.Filter = "Image Files (*.jpg)|*.jpg|Image Files (*.png)|*.png|Video Files (*.mp4)|*.mp4|All files (*.*)|*.*";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                sfd.InitialDirectory = @"\Desktop";
+                File.WriteAllBytes(sfd.InitialDirectory, post.File);
+            }           
         }
     }
 }

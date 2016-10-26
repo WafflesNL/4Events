@@ -86,7 +86,7 @@ namespace Forms_version_1._0.Classes
 
         public override string ToString()
         {
-            return base.ToString();
+            return Event.Name;
         }
     }
 }

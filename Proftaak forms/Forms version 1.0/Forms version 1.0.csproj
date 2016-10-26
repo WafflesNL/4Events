@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Database\AccountReserveringManagement\DatabaseGetAccountReservering.cs" />
-    <Compile Include="Classes\Database\MaterialManagement\DatabaseUpdateMaterialAccount.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseAddPost.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseEditPost.cs" />
     <Compile Include="Classes\Database\PostManagement\DatabaseGetPost.cs" />

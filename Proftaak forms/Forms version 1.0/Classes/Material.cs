@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_version_1._0.Classes.Database.MaterialManagement;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,20 +25,39 @@ namespace Forms_version_1._0.Classes
             this.AccountID = AccountID;
         }
 
-        public void GetAccount()
+        public void Rent(List<Material> list, int AccountID)
         {
-
+            // add code to add selected items to accountid via form -> material -> database query
+            DatabaseUpdateAccountMaterial.UpdateMaterial(list, AccountID);
         }
 
-        public void Rent()
+        public double TotalPrice(List<Material> list)
         {
+            double totalprice = 0;
 
+            foreach (Material items in list)
+            {
+                totalprice += items.Price;
+            }
+
+            return totalprice;
         }
-
         public List<Material> GetMaterialAvailableList()
         {
             List<Material> MaterialList = DatabaseGetMaterial.GetMaterialAvailable();
             return MaterialList;
+        }
+
+        public List<Material> GetMaterialForEvent(int eventid)
+        {   
+            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialforEventNoAccount(eventid);
+            return MaterialList;
+        }
+
+        public List<Account> GetAccounts(int eventid)
+        {
+            List<Account> AccountList = DatabaseGetAccounts.GetAccountsEventID(eventid);
+            return AccountList;
         }
 
         public override string ToString()

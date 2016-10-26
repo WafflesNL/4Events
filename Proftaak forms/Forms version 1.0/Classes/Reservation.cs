@@ -76,17 +76,17 @@ namespace Forms_version_1._0.Classes
         {
             if (Event.MaxVisitors > DatabaseGetAccountReservering.GetReservationAmountReservation(this))
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return Event.Name;
         }
     }
 }

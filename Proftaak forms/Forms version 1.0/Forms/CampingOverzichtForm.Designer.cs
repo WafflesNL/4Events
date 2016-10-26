@@ -77,289 +77,330 @@
             // 
             // tbPlaats2
             // 
-            this.tbPlaats2.Location = new System.Drawing.Point(263, 17);
+            this.tbPlaats2.Location = new System.Drawing.Point(351, 21);
+            this.tbPlaats2.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats2.Name = "tbPlaats2";
-            this.tbPlaats2.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats2.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats2.TabIndex = 0;
             // 
             // tbPlaats3
             // 
-            this.tbPlaats3.Location = new System.Drawing.Point(307, 17);
+            this.tbPlaats3.Location = new System.Drawing.Point(409, 21);
+            this.tbPlaats3.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats3.Name = "tbPlaats3";
-            this.tbPlaats3.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats3.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats3.TabIndex = 1;
             // 
             // tbPlaats4
             // 
-            this.tbPlaats4.Location = new System.Drawing.Point(351, 17);
+            this.tbPlaats4.Location = new System.Drawing.Point(468, 21);
+            this.tbPlaats4.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats4.Name = "tbPlaats4";
-            this.tbPlaats4.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats4.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats4.TabIndex = 2;
             // 
             // tbPlaats5
             // 
-            this.tbPlaats5.Location = new System.Drawing.Point(395, 17);
+            this.tbPlaats5.Location = new System.Drawing.Point(527, 21);
+            this.tbPlaats5.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats5.Name = "tbPlaats5";
-            this.tbPlaats5.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats5.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats5.TabIndex = 3;
             // 
             // tbPlaats6
             // 
-            this.tbPlaats6.Location = new System.Drawing.Point(468, 17);
+            this.tbPlaats6.Location = new System.Drawing.Point(624, 21);
+            this.tbPlaats6.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats6.Name = "tbPlaats6";
-            this.tbPlaats6.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats6.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats6.TabIndex = 4;
             // 
             // tbPlaats7
             // 
-            this.tbPlaats7.Location = new System.Drawing.Point(512, 17);
+            this.tbPlaats7.Location = new System.Drawing.Point(683, 21);
+            this.tbPlaats7.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats7.Name = "tbPlaats7";
-            this.tbPlaats7.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats7.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats7.TabIndex = 5;
             // 
             // tbPlaats8
             // 
-            this.tbPlaats8.Location = new System.Drawing.Point(556, 17);
+            this.tbPlaats8.Location = new System.Drawing.Point(741, 21);
+            this.tbPlaats8.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats8.Name = "tbPlaats8";
-            this.tbPlaats8.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats8.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats8.TabIndex = 6;
             // 
             // tbPlaats9
             // 
-            this.tbPlaats9.Location = new System.Drawing.Point(600, 17);
+            this.tbPlaats9.Location = new System.Drawing.Point(800, 21);
+            this.tbPlaats9.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats9.Name = "tbPlaats9";
-            this.tbPlaats9.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats9.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats9.TabIndex = 7;
             // 
             // tbPlaats10
             // 
-            this.tbPlaats10.Location = new System.Drawing.Point(644, 17);
+            this.tbPlaats10.Location = new System.Drawing.Point(859, 21);
+            this.tbPlaats10.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats10.Name = "tbPlaats10";
-            this.tbPlaats10.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats10.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats10.TabIndex = 8;
             // 
             // tbPlaats1
             // 
-            this.tbPlaats1.Location = new System.Drawing.Point(219, 17);
+            this.tbPlaats1.Location = new System.Drawing.Point(292, 21);
+            this.tbPlaats1.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats1.Name = "tbPlaats1";
-            this.tbPlaats1.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats1.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats1.TabIndex = 10;
             // 
             // tbPlaats11
             // 
-            this.tbPlaats11.Location = new System.Drawing.Point(219, 68);
+            this.tbPlaats11.Location = new System.Drawing.Point(292, 84);
+            this.tbPlaats11.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats11.Name = "tbPlaats11";
-            this.tbPlaats11.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats11.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats11.TabIndex = 11;
             // 
             // tbPlaats12
             // 
-            this.tbPlaats12.Location = new System.Drawing.Point(263, 68);
+            this.tbPlaats12.Location = new System.Drawing.Point(351, 84);
+            this.tbPlaats12.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats12.Name = "tbPlaats12";
-            this.tbPlaats12.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats12.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats12.TabIndex = 12;
             // 
             // tbPlaats13
             // 
-            this.tbPlaats13.Location = new System.Drawing.Point(307, 68);
+            this.tbPlaats13.Location = new System.Drawing.Point(409, 84);
+            this.tbPlaats13.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats13.Name = "tbPlaats13";
-            this.tbPlaats13.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats13.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats13.TabIndex = 13;
             // 
             // tbPlaats14
             // 
-            this.tbPlaats14.Location = new System.Drawing.Point(351, 68);
+            this.tbPlaats14.Location = new System.Drawing.Point(468, 84);
+            this.tbPlaats14.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats14.Name = "tbPlaats14";
-            this.tbPlaats14.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats14.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats14.TabIndex = 14;
             // 
             // tbPlaats15
             // 
-            this.tbPlaats15.Location = new System.Drawing.Point(395, 68);
+            this.tbPlaats15.Location = new System.Drawing.Point(527, 84);
+            this.tbPlaats15.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats15.Name = "tbPlaats15";
-            this.tbPlaats15.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats15.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats15.TabIndex = 15;
             // 
             // tbPlaats16
             // 
-            this.tbPlaats16.Location = new System.Drawing.Point(468, 68);
+            this.tbPlaats16.Location = new System.Drawing.Point(624, 84);
+            this.tbPlaats16.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats16.Name = "tbPlaats16";
-            this.tbPlaats16.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats16.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats16.TabIndex = 16;
             // 
             // tbPlaats17
             // 
-            this.tbPlaats17.Location = new System.Drawing.Point(512, 68);
+            this.tbPlaats17.Location = new System.Drawing.Point(683, 84);
+            this.tbPlaats17.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats17.Name = "tbPlaats17";
-            this.tbPlaats17.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats17.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats17.TabIndex = 17;
             // 
             // tbPlaats18
             // 
-            this.tbPlaats18.Location = new System.Drawing.Point(556, 68);
+            this.tbPlaats18.Location = new System.Drawing.Point(741, 84);
+            this.tbPlaats18.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats18.Name = "tbPlaats18";
-            this.tbPlaats18.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats18.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats18.TabIndex = 18;
             // 
             // tbPlaats19
             // 
-            this.tbPlaats19.Location = new System.Drawing.Point(600, 68);
+            this.tbPlaats19.Location = new System.Drawing.Point(800, 84);
+            this.tbPlaats19.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats19.Name = "tbPlaats19";
-            this.tbPlaats19.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats19.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats19.TabIndex = 19;
             // 
             // tbPlaats20
             // 
-            this.tbPlaats20.Location = new System.Drawing.Point(644, 68);
+            this.tbPlaats20.Location = new System.Drawing.Point(859, 84);
+            this.tbPlaats20.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats20.Name = "tbPlaats20";
-            this.tbPlaats20.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats20.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats20.TabIndex = 20;
             // 
             // tbPlaats40
             // 
-            this.tbPlaats40.Location = new System.Drawing.Point(644, 170);
+            this.tbPlaats40.Location = new System.Drawing.Point(859, 209);
+            this.tbPlaats40.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats40.Name = "tbPlaats40";
-            this.tbPlaats40.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats40.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats40.TabIndex = 40;
             // 
             // tbPlaats39
             // 
-            this.tbPlaats39.Location = new System.Drawing.Point(600, 170);
+            this.tbPlaats39.Location = new System.Drawing.Point(800, 209);
+            this.tbPlaats39.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats39.Name = "tbPlaats39";
-            this.tbPlaats39.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats39.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats39.TabIndex = 39;
             // 
             // tbPlaats38
             // 
-            this.tbPlaats38.Location = new System.Drawing.Point(556, 170);
+            this.tbPlaats38.Location = new System.Drawing.Point(741, 209);
+            this.tbPlaats38.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats38.Name = "tbPlaats38";
-            this.tbPlaats38.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats38.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats38.TabIndex = 38;
             // 
             // tbPlaats37
             // 
-            this.tbPlaats37.Location = new System.Drawing.Point(512, 170);
+            this.tbPlaats37.Location = new System.Drawing.Point(683, 209);
+            this.tbPlaats37.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats37.Name = "tbPlaats37";
-            this.tbPlaats37.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats37.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats37.TabIndex = 37;
             // 
             // tbPlaats36
             // 
-            this.tbPlaats36.Location = new System.Drawing.Point(468, 170);
+            this.tbPlaats36.Location = new System.Drawing.Point(624, 209);
+            this.tbPlaats36.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats36.Name = "tbPlaats36";
-            this.tbPlaats36.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats36.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats36.TabIndex = 36;
             // 
             // tbPlaats35
             // 
-            this.tbPlaats35.Location = new System.Drawing.Point(395, 170);
+            this.tbPlaats35.Location = new System.Drawing.Point(527, 209);
+            this.tbPlaats35.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats35.Name = "tbPlaats35";
-            this.tbPlaats35.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats35.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats35.TabIndex = 35;
             // 
             // tbPlaats34
             // 
-            this.tbPlaats34.Location = new System.Drawing.Point(351, 170);
+            this.tbPlaats34.Location = new System.Drawing.Point(468, 209);
+            this.tbPlaats34.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats34.Name = "tbPlaats34";
-            this.tbPlaats34.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats34.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats34.TabIndex = 34;
             // 
             // tbPlaats33
             // 
-            this.tbPlaats33.Location = new System.Drawing.Point(307, 170);
+            this.tbPlaats33.Location = new System.Drawing.Point(409, 209);
+            this.tbPlaats33.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats33.Name = "tbPlaats33";
-            this.tbPlaats33.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats33.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats33.TabIndex = 33;
             // 
             // tbPlaats32
             // 
-            this.tbPlaats32.Location = new System.Drawing.Point(263, 170);
+            this.tbPlaats32.Location = new System.Drawing.Point(351, 209);
+            this.tbPlaats32.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats32.Name = "tbPlaats32";
-            this.tbPlaats32.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats32.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats32.TabIndex = 32;
             // 
             // tbPlaats31
             // 
-            this.tbPlaats31.Location = new System.Drawing.Point(219, 170);
+            this.tbPlaats31.Location = new System.Drawing.Point(292, 209);
+            this.tbPlaats31.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats31.Name = "tbPlaats31";
-            this.tbPlaats31.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats31.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats31.TabIndex = 31;
             // 
             // tbPlaats21
             // 
-            this.tbPlaats21.Location = new System.Drawing.Point(219, 119);
+            this.tbPlaats21.Location = new System.Drawing.Point(292, 146);
+            this.tbPlaats21.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats21.Name = "tbPlaats21";
-            this.tbPlaats21.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats21.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats21.TabIndex = 30;
             // 
             // tbPlaats30
             // 
-            this.tbPlaats30.Location = new System.Drawing.Point(644, 119);
+            this.tbPlaats30.Location = new System.Drawing.Point(859, 146);
+            this.tbPlaats30.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats30.Name = "tbPlaats30";
-            this.tbPlaats30.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats30.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats30.TabIndex = 29;
             // 
             // tbPlaats29
             // 
-            this.tbPlaats29.Location = new System.Drawing.Point(600, 119);
+            this.tbPlaats29.Location = new System.Drawing.Point(800, 146);
+            this.tbPlaats29.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats29.Name = "tbPlaats29";
-            this.tbPlaats29.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats29.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats29.TabIndex = 28;
             // 
             // tbPlaats28
             // 
-            this.tbPlaats28.Location = new System.Drawing.Point(556, 119);
+            this.tbPlaats28.Location = new System.Drawing.Point(741, 146);
+            this.tbPlaats28.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats28.Name = "tbPlaats28";
-            this.tbPlaats28.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats28.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats28.TabIndex = 27;
             // 
             // tbPlaats27
             // 
-            this.tbPlaats27.Location = new System.Drawing.Point(512, 119);
+            this.tbPlaats27.Location = new System.Drawing.Point(683, 146);
+            this.tbPlaats27.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats27.Name = "tbPlaats27";
-            this.tbPlaats27.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats27.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats27.TabIndex = 26;
             // 
             // tbPlaats26
             // 
-            this.tbPlaats26.Location = new System.Drawing.Point(468, 119);
+            this.tbPlaats26.Location = new System.Drawing.Point(624, 146);
+            this.tbPlaats26.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats26.Name = "tbPlaats26";
-            this.tbPlaats26.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats26.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats26.TabIndex = 25;
             // 
             // tbPlaats25
             // 
-            this.tbPlaats25.Location = new System.Drawing.Point(395, 119);
+            this.tbPlaats25.Location = new System.Drawing.Point(527, 146);
+            this.tbPlaats25.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats25.Name = "tbPlaats25";
-            this.tbPlaats25.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats25.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats25.TabIndex = 24;
             // 
             // tbPlaats24
             // 
-            this.tbPlaats24.Location = new System.Drawing.Point(351, 119);
+            this.tbPlaats24.Location = new System.Drawing.Point(468, 146);
+            this.tbPlaats24.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats24.Name = "tbPlaats24";
-            this.tbPlaats24.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats24.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats24.TabIndex = 23;
             // 
             // tbPlaats23
             // 
-            this.tbPlaats23.Location = new System.Drawing.Point(307, 119);
+            this.tbPlaats23.Location = new System.Drawing.Point(409, 146);
+            this.tbPlaats23.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats23.Name = "tbPlaats23";
-            this.tbPlaats23.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats23.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats23.TabIndex = 22;
             // 
             // tbPlaats22
             // 
-            this.tbPlaats22.Location = new System.Drawing.Point(263, 119);
+            this.tbPlaats22.Location = new System.Drawing.Point(351, 146);
+            this.tbPlaats22.Margin = new System.Windows.Forms.Padding(4);
             this.tbPlaats22.Name = "tbPlaats22";
-            this.tbPlaats22.Size = new System.Drawing.Size(38, 20);
+            this.tbPlaats22.Size = new System.Drawing.Size(49, 22);
             this.tbPlaats22.TabIndex = 21;
             // 
             // btnVerwijder
             // 
-            this.btnVerwijder.Location = new System.Drawing.Point(10, 14);
+            this.btnVerwijder.Location = new System.Drawing.Point(13, 17);
+            this.btnVerwijder.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerwijder.Name = "btnVerwijder";
-            this.btnVerwijder.Size = new System.Drawing.Size(103, 44);
+            this.btnVerwijder.Size = new System.Drawing.Size(137, 54);
             this.btnVerwijder.TabIndex = 41;
             this.btnVerwijder.Text = "Verwijder Reservering";
             this.btnVerwijder.UseVisualStyleBackColor = true;
@@ -367,9 +408,10 @@
             // 
             // btnReserveer
             // 
-            this.btnReserveer.Location = new System.Drawing.Point(119, 15);
+            this.btnReserveer.Location = new System.Drawing.Point(159, 18);
+            this.btnReserveer.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserveer.Name = "btnReserveer";
-            this.btnReserveer.Size = new System.Drawing.Size(75, 23);
+            this.btnReserveer.Size = new System.Drawing.Size(100, 28);
             this.btnReserveer.TabIndex = 42;
             this.btnReserveer.Text = "Reserveer";
             this.btnReserveer.UseVisualStyleBackColor = true;
@@ -377,9 +419,10 @@
             // 
             // btnTerug
             // 
-            this.btnTerug.Location = new System.Drawing.Point(10, 172);
+            this.btnTerug.Location = new System.Drawing.Point(13, 212);
+            this.btnTerug.Margin = new System.Windows.Forms.Padding(4);
             this.btnTerug.Name = "btnTerug";
-            this.btnTerug.Size = new System.Drawing.Size(75, 23);
+            this.btnTerug.Size = new System.Drawing.Size(100, 28);
             this.btnTerug.TabIndex = 43;
             this.btnTerug.Text = "Terug";
             this.btnTerug.UseVisualStyleBackColor = true;
@@ -387,9 +430,10 @@
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(10, 64);
+            this.btnFilter.Location = new System.Drawing.Point(13, 79);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(4);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(103, 23);
+            this.btnFilter.Size = new System.Drawing.Size(137, 28);
             this.btnFilter.TabIndex = 44;
             this.btnFilter.Text = "Filter Op";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -398,16 +442,17 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 93);
+            this.comboBox1.Location = new System.Drawing.Point(16, 114);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 21);
+            this.comboBox1.Size = new System.Drawing.Size(241, 24);
             this.comboBox1.TabIndex = 45;
             // 
             // CampingOverzichtForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 209);
+            this.ClientSize = new System.Drawing.Size(923, 246);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnTerug);
@@ -453,6 +498,7 @@
             this.Controls.Add(this.tbPlaats4);
             this.Controls.Add(this.tbPlaats3);
             this.Controls.Add(this.tbPlaats2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CampingOverzichtForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CampingOverzichtForm";

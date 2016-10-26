@@ -15,10 +15,12 @@ namespace Forms_version_1._0.Forms
     public partial class ReserveringForm : Form
     {
         private Reservation reservation;
+        private Event currentEvent;
 
-        public ReserveringForm()
+        public ReserveringForm(Event currentEvent)
         {
             reservation = new Reservation();
+            this.currentEvent = currentEvent;
 
             InitializeComponent();
 
@@ -35,14 +37,42 @@ namespace Forms_version_1._0.Forms
             {
                 lbAccount.Items.Add(A);
             }
+
+            //camping
+            foreach (Control c in this.Controls)
+            {
+                if(c is GroupBox)
+                {
+                    if(c.Text == "Camping")
+                    {
+                        foreach (Control gbControl in c.Controls)
+                        {
+                            if (gbControl is Button)
+                            {
+                                gbControl.Click += Button_Click;
+
+                                //De naam van de plaats
+                                gbControl.Text = gbControl.Text.Remove(0, 6);
+                                gbControl.Text += " Plaats";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            //activeert alleen bij camping!
+            MessageBox.Show("Plaats geselecteerd.");
+            
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Weet je zeker dat je wilt reserveren?", "teset", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                HomeForm parent = (HomeForm)Owner;
-                reservation.Event = parent.GetSelectedEvent();
+                reservation.Event = currentEvent;
 
                 if (reservation.MoreThanMaxVisitors())
                 {
@@ -79,9 +109,6 @@ namespace Forms_version_1._0.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            HomeForm Form = new HomeForm();
-            this.Hide();
-            Form.ShowDialog();
             this.Close();
         }
 

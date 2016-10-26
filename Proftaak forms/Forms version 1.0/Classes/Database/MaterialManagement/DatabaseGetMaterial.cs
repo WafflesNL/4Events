@@ -48,6 +48,7 @@ namespace Forms_version_1._0
                         {
                             accountID = null;
                         }
+                        
 
                         Material Material = new Material(ID, Type, Price, eventid, accountID);
                         MaterialList.Add(Material);
@@ -100,6 +101,7 @@ namespace Forms_version_1._0
                         {
                             accountID = null;
                         }
+                       
 
                         Material Material = new Material(ID, Type, Price, eventid, accountID);
                         MaterialList.Add(Material);
@@ -153,7 +155,7 @@ namespace Forms_version_1._0
                         {
                             accountID = null;
                         }
-                        Price = Price / 100;
+                       
 
                         Material Material = new Material(ID, Type, Price, eventid, accountID);
                         MaterialList.Add(Material);

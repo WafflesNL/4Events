@@ -1,4 +1,4 @@
-﻿using Forms_version_1._0.Classes.Database.MaterialManagement;
+﻿using Forms_version_1._0.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace Forms_version_1._0.Classes
         public void Rent(List<Material> list, int AccountID)
         {
             // add code to add selected items to accountid via form -> material -> database query
-            DatabaseUpdateAccountMaterial.UpdateMaterial(list, AccountID);
+            DatabaseUpdateMaterial.UpdateAccount(list, AccountID);
         }
 
         public double TotalPrice(List<Material> list)
@@ -42,6 +42,7 @@ namespace Forms_version_1._0.Classes
 
             return totalprice;
         }
+
         public List<Material> GetMaterialAvailableList()
         {
             List<Material> MaterialList = DatabaseGetMaterial.GetMaterialAvailable();

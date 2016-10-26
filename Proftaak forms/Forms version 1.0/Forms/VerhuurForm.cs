@@ -12,77 +12,86 @@ using System.Windows.Forms;
 namespace Forms_version_1._0.Forms
 {
     public partial class VerhuurForm : Form
-    {   Event Event;
-        Account account;
+    {
+        Event Event;  
         Material material = new Material(1,"tomato",2, null,null);
+
         List<Material> materiallist = new List<Material>();
         List<Material> selectedlist = new List<Material>();
      
-        public VerhuurForm()
+        public VerhuurForm(Event Event)
         {
             InitializeComponent();
-            
-         
+            this.Event = Event;
+            GetData();
+            Refresform();
         }
-
-        private void btnIndex_Click(object sender, EventArgs e)
-        {
-            EventForm window = new EventForm();
-            this.Hide();
-            window.ShowDialog();
-            this.Close();
-        }
-
-        // rents the items
-        // still unfinished does nothing useful
+    
+        //Koppelt een material aan een account       
         private void btnVerhuur_Click(object sender, EventArgs e)
         { 
             if (cbAccounts.SelectedItem != null)
             {
                 Account account = cbAccounts.SelectedItem as Account;
-                material.Rent(selectedlist, account.ID);
-                lbSelected.Items.Clear();
+                material.Rent(selectedlist, account.ID);           
                 selectedlist.Clear();
             }
+            Refresform();
         }
+    
 
         private void btnToevoegen_Click(object sender, EventArgs e)
-        {
-            //Adds selected Object to the main list. Meaning that it's been returned.
+        {          
             if (lbMateriaal.SelectedItem != null)
             {
                 Material material = lbMateriaal.SelectedItem as Material;
-                lbSelected.Items.Add(lbMateriaal.SelectedItem);
-                selectedlist.Add(material);
-
-                materiallist.RemoveAt(lbMateriaal.SelectedIndex);
-                lbMateriaal.DataSource = null;
-                lbMateriaal.Items.Remove(lbMateriaal.SelectedItem);
-                lbMateriaal.DataSource = materiallist;
+                materiallist.Remove(material);
+                selectedlist.Add(material);                         
             }
+            Refresform();
+        }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (lbSelected.SelectedItem != null)
+            {
+                Material material = lbMateriaal.SelectedItem as Material;
+                selectedlist.Remove(material);
+                materiallist.Add(material);           
+            }
+            Refresform();
         }
 
         //Checks the seperate list and adds all the costs to see the total price.
         private void btnTotaal_Click(object sender, EventArgs e)
-        {
-            
+        {         
             tbTotaal.Text = material.TotalPrice(selectedlist).ToString();
         }
+  
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
+        private void Refresform()
+        {           
+            lbMateriaal.Items.Clear();
+            foreach (Material M in materiallist)
+            {
+                lbMateriaal.Items.Add(M);
+            }
+
             lbSelected.Items.Clear();
-            materiallist = material.GetMaterialForEvent(Event.ID);
-            lbMateriaal.DataSource = materiallist;
+            foreach (Material M2 in selectedlist)
+            {
+                lbSelected.Items.Add(M2);
+            }         
         }
 
-        public void GetData(Event Event)
-        {
-            this.Event = Event;
+
+        public void GetData()
+        {           
             lblEvent.Text = Event.Name;
-            cbAccounts.DataSource = material.GetAccounts(Event.ID);
-
+            materiallist = Event.GetMaterialList();
+            cbAccounts.DataSource = Event.GetGuestList();
         }
+
+       
     }
 }

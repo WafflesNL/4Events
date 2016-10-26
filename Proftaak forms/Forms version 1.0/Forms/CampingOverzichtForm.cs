@@ -15,13 +15,20 @@ namespace Forms_version_1._0.Forms
         public CampingOverzichtForm()
         {
             InitializeComponent();
+
+            foreach (var button in Controls.OfType<Button>())
+            {
+                button.Click += Button_Click;
+            }
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
         {
-            HomeForm window = new HomeForm();
-            this.Hide();
-            window.ShowDialog();
             this.Close();
         }
 
@@ -39,5 +46,7 @@ namespace Forms_version_1._0.Forms
         {
             //Reserves the selected spot.
         }
+
+
     }
 }

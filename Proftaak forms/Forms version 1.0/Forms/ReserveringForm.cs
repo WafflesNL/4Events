@@ -79,9 +79,6 @@ namespace Forms_version_1._0.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            HomeForm Form = new HomeForm();
-            this.Hide();
-            Form.ShowDialog();
             this.Close();
         }
 

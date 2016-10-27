@@ -19,6 +19,7 @@ namespace Forms_version_1._0.Forms
         char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
         Event newevent;
         Post postAttach;
+        //zet hier tijdlijn neer aangezien je het in elk event ongeveer gebruikt
         List<Post> Postlist = new List<Post>();
 
         public TijdlijnForm(Event Event)
@@ -33,10 +34,7 @@ namespace Forms_version_1._0.Forms
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
-        {
-            HomeForm window = new HomeForm();
-            this.Hide();
-            window.ShowDialog();
+        {      
             this.Close();
         }
 
@@ -44,15 +42,16 @@ namespace Forms_version_1._0.Forms
         {
             int ID;
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
-            if (TijdlijnBox.SelectedIndex == -1)
+            if (TijdlijnBox.SelectedItem == null)
             {
                 MessageBox.Show("Selecteer een post");
             }
             else
             {
-                ID = TijdlijnBox.SelectedIndex + 1;
+                ID = TijdlijnBox.SelectedIndex + 1; //hier kun je een methode van maken en in post neer zetten
                 Post post1 = new Post(ID);
-                newtimeline.LikePost(post1);
+                newtimeline.LikePost(post1); //like post zou eigenlijk op een manier terug moeten komen in de klasse post net als rapporteren
+
                 if (newtimeline.Check == true)
                 {
                     TijdlijnBox.Items.Clear();
@@ -62,7 +61,7 @@ namespace Forms_version_1._0.Forms
             
         }
 
-        private void btnAttach_Click(object sender, EventArgs e)
+        private void btnAttach_Click(object sender, EventArgs e) //bestand aan een post
         {
             if (cbCatergory.Text != null && txtPost.Text != "")
             {
@@ -72,7 +71,7 @@ namespace Forms_version_1._0.Forms
                 if (Posttext.Length < 90)
                 {
                     postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile());
-                    newtimeline.AddPost(postAttach);
+                    newtimeline.AddPost(postAttach); //hier insert je een post
                 }
                 else
                 {
@@ -85,24 +84,23 @@ namespace Forms_version_1._0.Forms
             }
         }
 
-        private void btnPost_Click(object sender, EventArgs e)
+        private void btnPost_Click(object sender, EventArgs e) //maakt een nieuwe post aan
         {
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             if (cbCatergory.Text != null && txtPost.Text != "")
             {
                 if (postAttach != null)
                 {
-                    newtimeline.AddPost(postAttach);
+                    newtimeline.AddPost(postAttach); //hier insert je een post
                 }
-
                 else
                 {
                     string Categorytext = cbCatergory.Text;
                     string Posttext = txtPost.Text;
                     if (Posttext.Length < 90)
                     {
-                        Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0);
-                        newtimeline.AddPost(post);
+                        Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newtimeline.TimelineID, 0);
+                        newtimeline.AddPost(post); //hier insert je een post
                     }
                     else
                     {
@@ -111,7 +109,7 @@ namespace Forms_version_1._0.Forms
 
                 }
 
-                    if (newtimeline.Check == true)
+                    if (newtimeline.Check)
                     {
                         TijdlijnBox.Items.Clear();
                         GetPosts();
@@ -136,6 +134,7 @@ namespace Forms_version_1._0.Forms
                 TijdlijnBox.Items.Add(E);
             }
         }
+
         public void GetPosts()
         {
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
@@ -144,6 +143,7 @@ namespace Forms_version_1._0.Forms
                 TijdlijnBox.Items.Add(E);
             }
         }
+
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
@@ -164,6 +164,7 @@ namespace Forms_version_1._0.Forms
                 }
             }
         }
+
 
         private void btnReport_Click(object sender, EventArgs e)
         {

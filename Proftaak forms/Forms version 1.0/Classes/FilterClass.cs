@@ -20,10 +20,9 @@ namespace Forms_version_1._0.Classes
         {
             return Filterlist = DatabaseGetPost.GetAll(naam, woord, categorie);
         }
-        public List<Post> GetName()
+        public List<Post> GetName(string naam)
         {
-            return null;
-           // return Filterlist = DatabaseGetPost.GetName();
+            return Filterlist = DatabaseGetPost.GetName(naam);
         }
 
         public List<Post> GetWord()

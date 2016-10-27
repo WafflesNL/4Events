@@ -36,7 +36,8 @@ namespace Forms_version_1._0.Forms
             //Just Name
             else if (tbName.Text != "" && tbWoord.Text == "" && cbCat == null)
             {
-                //FC.GetName();
+                Filerlst = FC.GetName(tbName.Text);
+                this.Close();
             }
             //Just Word
             else if (tbName.Text == "" && tbWoord.Text != "" && cbCat == null)

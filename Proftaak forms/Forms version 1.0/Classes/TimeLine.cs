@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Forms_version_1._0.Classes.Database.TimelineManagement;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Forms_version_1._0.Classes
 {
@@ -60,7 +61,7 @@ namespace Forms_version_1._0.Classes
             Stream stream;
             OpenFileDialog ofD = new OpenFileDialog();
             ofD.InitialDirectory = "c:\\";
-            ofD.Filter = "Image Files (*.jpg)|*.Jpg|Image Files (*.png)|*.png |Video Files (*.mp4)|*.mp4|All files (*.*)|*.*";
+            ofD.Filter = "Image Files (*.jpg)|*.Jpg|Image Files (*.png)|*.png";
             ofD.FilterIndex = 2;
             ofD.RestoreDirectory = true;
             if (ofD.ShowDialog() == DialogResult.OK)
@@ -83,17 +84,14 @@ namespace Forms_version_1._0.Classes
             return TempFile = null;
         }
 
-        public void GetFile(Post post)
+        public static Bitmap ByteToImage(byte[] postbyte)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = "Download";
-            // set filters - this can be done in properties as well
-            sfd.Filter = "Image Files (*.jpg)|*.jpg|Image Files (*.png)|*.png|Video Files (*.mp4)|*.mp4|All files (*.*)|*.*";
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                sfd.InitialDirectory = @"\Desktop";
-                File.WriteAllBytes(sfd.InitialDirectory, post.File);
-            }           
+            MemoryStream mStream = new MemoryStream();
+            mStream.Write(postbyte, 0, Convert.ToInt32(postbyte.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+
         }
     }
 }

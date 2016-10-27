@@ -169,16 +169,7 @@ namespace Forms_version_1._0.Classes
         /// <returns>A list with all Materials for a event that are still free to rent<returns>
         public List<Material> GetMaterialList()
         {
-            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialforEvent(ID);
-
-            foreach (Material M in MaterialList)
-            {
-                if (M.AccountID != null)
-                {
-                    MaterialList.Remove(M);
-                }
-            }
-
+            List<Material> MaterialList = DatabaseGetMaterial.GetMaterialforEventNoAccount(ID);      
             return MaterialList;
         }
 

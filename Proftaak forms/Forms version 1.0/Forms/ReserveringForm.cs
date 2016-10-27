@@ -16,56 +16,72 @@ namespace Forms_version_1._0.Forms
     {
         private Reservation reservation;
         private Event currentEvent;
+        List<Place> placeList;
+        List<Reservation> reservationList;
 
         public ReserveringForm(Event currentEvent)
         {
-            reservation = new Reservation();
             this.currentEvent = currentEvent;
 
-            InitializeComponent();
+            reservation = new Reservation();
+            placeList = currentEvent.Camping.GetPlaces();
+            reservationList = currentEvent.GetReservationList();
 
+            InitializeComponent();
             RefreshForm();
         }
 
         private void RefreshForm()
         {
             List<Account> accountList = new List<Account>();
+
+            // This database call needs to be taken out of the form and into another class!
             accountList = DatabaseGetAccounts.GetAccountsFunction(Function.Bezoeker);
+
+            if(currentEvent.Camping != null)
+            {
+                foreach (Control c in gbCamping.Controls)
+                {
+                    if (c is Button)
+                    {
+                        c.Click += Button_Click;
+                        c.Text = c.Text.Remove(0, 6);
+                        int placeID = Convert.ToInt32(c.Text);
+                    }
+                }
+            }
+
+            else
+            {
+                gbCamping.Enabled = false;
+            }
+            
 
             lbAccount.Items.Clear();
             foreach (Account A in accountList)
             {
                 lbAccount.Items.Add(A);
             }
-
-            //camping
-            foreach (Control c in this.Controls)
-            {
-                if(c is GroupBox)
-                {
-                    if(c.Text == "Camping")
-                    {
-                        foreach (Control gbControl in c.Controls)
-                        {
-                            if (gbControl is Button)
-                            {
-                                gbControl.Click += Button_Click;
-
-                                //De naam van de plaats
-                                gbControl.Text = gbControl.Text.Remove(0, 6);
-                                gbControl.Text += " Plaats";
-                            }
-                        }
-                    }
-                }
-            }
+            
         }
 
         private void Button_Click(object sender, EventArgs e)
         {
-            //activeert alleen bij camping!
-            MessageBox.Show("Plaats geselecteerd.");
-            
+            int placeID = Convert.ToInt32(sender.ToString().Remove(0, 35));
+
+            if (placeList[placeID] == reservation.Place)
+            {
+                reservation.Place = null;
+                MessageBox.Show("Plaats selectie verwijderd.", "Melding");
+                tbGeselecteerdePlaats.Text = "Geen";
+            }
+            else
+            {
+                reservation.Place = placeList[placeID];
+                tbGeselecteerdePlaats.Text = "" + placeID;
+            }
+
+
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -159,6 +175,111 @@ namespace Forms_version_1._0.Forms
             }
 
             
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbFilter.SelectedIndex)
+            {
+                // No filter
+                case (0):
+                    foreach (Control c in gbCamping.Controls)
+                    {
+                        if (c is Button)
+                        {
+                            c.BackColor = DefaultBackColor;
+                            c.ForeColor = DefaultForeColor;
+                        }
+                    }
+                    break;
+                // Reservation
+                case (1):
+                    foreach (Control c in gbCamping.Controls)
+                    {
+                        if (c is Button)
+                        {
+                            c.BackColor = DefaultBackColor;
+                            c.ForeColor = DefaultForeColor;
+
+                            int placeID = Convert.ToInt32(c.Text);
+                            int actualID = placeList[placeID - 1].ID;
+
+                            // Not optimal
+                            foreach (var currentReservation in reservationList)
+                            {
+                                if(currentReservation.Place != null)
+                                {
+                                    if (actualID == currentReservation.Place.ID)
+                                    {
+                                        c.BackColor = Color.DarkGray;
+                                        c.ForeColor = Color.LightGray;
+                                    }
+                                }
+
+                                
+                            }
+                        }
+                    }
+                    break;
+                // Category: Green
+                case (2):
+                    foreach (Control c in gbCamping.Controls)
+                    {
+                        if (c is Button)
+                        {
+                            c.BackColor = DefaultBackColor;
+                            c.ForeColor = DefaultForeColor;
+
+                            int placeID = Convert.ToInt32(c.Text);
+
+                            if (placeList[placeID - 1].Categorie != Categorie.Green)
+                            {
+                                c.BackColor = Color.DarkGray;
+                                c.ForeColor = Color.LightGray;
+                            }
+                        }
+                    }
+                    break;
+                // Category: Luxe
+                case (3):
+                    foreach (Control c in gbCamping.Controls)
+                    {
+                        if (c is Button)
+                        {
+                            c.BackColor = DefaultBackColor;
+                            c.ForeColor = DefaultForeColor;
+
+                            int placeID = Convert.ToInt32(c.Text);
+
+                            if (placeList[placeID - 1].Categorie != Categorie.Luxe)
+                            {
+                                c.BackColor = Color.DarkGray;
+                                c.ForeColor = Color.LightGray;
+                            }
+                        }
+                    }
+                    break;
+                // Category: Normal
+                case (4):
+                    foreach (Control c in gbCamping.Controls)
+                    {
+                        if (c is Button)
+                        {
+                            c.BackColor = DefaultBackColor;
+                            c.ForeColor = DefaultForeColor;
+
+                            int placeID = Convert.ToInt32(c.Text);
+
+                            if (placeList[placeID - 1].Categorie != Categorie.Normal)
+                            {
+                                c.BackColor = Color.DarkGray;
+                                c.ForeColor = Color.LightGray;
+                            }
+                        }
+                    }
+                    break;
+                
+            }
         }
     }
 }

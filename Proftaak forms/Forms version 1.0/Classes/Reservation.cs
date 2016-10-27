@@ -43,7 +43,6 @@ namespace Forms_version_1._0.Classes
             this.ID = ID;
             this.Payment = Payment;
             this.Place = Place;
-            this.Event = Event;
         }
 
         public Reservation()

@@ -28,9 +28,14 @@ namespace Forms_version_1._0.Classes
             this.Location = Location;
         }
 
-        public void GetPlaces()
+        /// <summary>
+        /// Sends a database request to get all places
+        /// </summary>
+        /// <returns>Returns all places in the Camping as a List<Place></returns>
+        public List<Place> GetPlaces()
         {
-
+            List<Place> placeList = DatabaseGetPlace.GetPlacesCamping(ID);
+            return placeList;
         }
     }
 }

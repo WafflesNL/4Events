@@ -40,38 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gbAccount = new System.Windows.Forms.GroupBox();
             this.gbCamping = new System.Windows.Forms.GroupBox();
-            this.btnPlaats1 = new System.Windows.Forms.Button();
-            this.btnPlaats2 = new System.Windows.Forms.Button();
-            this.btnPlaats3 = new System.Windows.Forms.Button();
-            this.btnPlaats4 = new System.Windows.Forms.Button();
-            this.btnPlaats5 = new System.Windows.Forms.Button();
-            this.btnPlaats6 = new System.Windows.Forms.Button();
-            this.btnPlaats7 = new System.Windows.Forms.Button();
-            this.btnPlaats8 = new System.Windows.Forms.Button();
-            this.btnPlaats9 = new System.Windows.Forms.Button();
-            this.btnPlaats10 = new System.Windows.Forms.Button();
-            this.btnPlaats11 = new System.Windows.Forms.Button();
-            this.btnPlaats12 = new System.Windows.Forms.Button();
-            this.btnPlaats13 = new System.Windows.Forms.Button();
-            this.btnPlaats14 = new System.Windows.Forms.Button();
-            this.btnPlaats15 = new System.Windows.Forms.Button();
-            this.btnPlaats16 = new System.Windows.Forms.Button();
-            this.btnPlaats17 = new System.Windows.Forms.Button();
-            this.btnPlaats18 = new System.Windows.Forms.Button();
-            this.btnPlaats19 = new System.Windows.Forms.Button();
-            this.btnPlaats20 = new System.Windows.Forms.Button();
-            this.btnPlaats21 = new System.Windows.Forms.Button();
-            this.btnPlaats22 = new System.Windows.Forms.Button();
-            this.btnPlaats23 = new System.Windows.Forms.Button();
-            this.btnPlaats24 = new System.Windows.Forms.Button();
-            this.btnPlaats25 = new System.Windows.Forms.Button();
-            this.btnPlaats26 = new System.Windows.Forms.Button();
-            this.btnPlaats27 = new System.Windows.Forms.Button();
-            this.btnPlaats28 = new System.Windows.Forms.Button();
-            this.btnPlaats29 = new System.Windows.Forms.Button();
-            this.btnPlaats30 = new System.Windows.Forms.Button();
-            this.btnPlaats31 = new System.Windows.Forms.Button();
-            this.btnPlaats32 = new System.Windows.Forms.Button();
             this.btnPlaats33 = new System.Windows.Forms.Button();
             this.btnPlaats34 = new System.Windows.Forms.Button();
             this.btnPlaats35 = new System.Windows.Forms.Button();
@@ -80,6 +48,42 @@
             this.btnPlaats38 = new System.Windows.Forms.Button();
             this.btnPlaats39 = new System.Windows.Forms.Button();
             this.btnPlaats40 = new System.Windows.Forms.Button();
+            this.btnPlaats25 = new System.Windows.Forms.Button();
+            this.btnPlaats26 = new System.Windows.Forms.Button();
+            this.btnPlaats27 = new System.Windows.Forms.Button();
+            this.btnPlaats28 = new System.Windows.Forms.Button();
+            this.btnPlaats29 = new System.Windows.Forms.Button();
+            this.btnPlaats30 = new System.Windows.Forms.Button();
+            this.btnPlaats31 = new System.Windows.Forms.Button();
+            this.btnPlaats32 = new System.Windows.Forms.Button();
+            this.btnPlaats17 = new System.Windows.Forms.Button();
+            this.btnPlaats18 = new System.Windows.Forms.Button();
+            this.btnPlaats19 = new System.Windows.Forms.Button();
+            this.btnPlaats20 = new System.Windows.Forms.Button();
+            this.btnPlaats21 = new System.Windows.Forms.Button();
+            this.btnPlaats22 = new System.Windows.Forms.Button();
+            this.btnPlaats23 = new System.Windows.Forms.Button();
+            this.btnPlaats24 = new System.Windows.Forms.Button();
+            this.btnPlaats9 = new System.Windows.Forms.Button();
+            this.btnPlaats10 = new System.Windows.Forms.Button();
+            this.btnPlaats11 = new System.Windows.Forms.Button();
+            this.btnPlaats12 = new System.Windows.Forms.Button();
+            this.btnPlaats13 = new System.Windows.Forms.Button();
+            this.btnPlaats14 = new System.Windows.Forms.Button();
+            this.btnPlaats15 = new System.Windows.Forms.Button();
+            this.btnPlaats16 = new System.Windows.Forms.Button();
+            this.btnPlaats8 = new System.Windows.Forms.Button();
+            this.btnPlaats7 = new System.Windows.Forms.Button();
+            this.btnPlaats6 = new System.Windows.Forms.Button();
+            this.btnPlaats5 = new System.Windows.Forms.Button();
+            this.btnPlaats4 = new System.Windows.Forms.Button();
+            this.btnPlaats3 = new System.Windows.Forms.Button();
+            this.btnPlaats2 = new System.Windows.Forms.Button();
+            this.btnPlaats1 = new System.Windows.Forms.Button();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbGeselecteerdePlaats = new System.Windows.Forms.TextBox();
             this.gbAccount.SuspendLayout();
             this.gbCamping.SuspendLayout();
             this.SuspendLayout();
@@ -197,6 +201,10 @@
             // 
             // gbCamping
             // 
+            this.gbCamping.Controls.Add(this.tbGeselecteerdePlaats);
+            this.gbCamping.Controls.Add(this.label4);
+            this.gbCamping.Controls.Add(this.label3);
+            this.gbCamping.Controls.Add(this.cbFilter);
             this.gbCamping.Controls.Add(this.btnPlaats33);
             this.gbCamping.Controls.Add(this.btnPlaats34);
             this.gbCamping.Controls.Add(this.btnPlaats35);
@@ -239,298 +247,10 @@
             this.gbCamping.Controls.Add(this.btnPlaats1);
             this.gbCamping.Location = new System.Drawing.Point(299, 12);
             this.gbCamping.Name = "gbCamping";
-            this.gbCamping.Size = new System.Drawing.Size(418, 276);
+            this.gbCamping.Size = new System.Drawing.Size(540, 276);
             this.gbCamping.TabIndex = 13;
             this.gbCamping.TabStop = false;
             this.gbCamping.Text = "Camping";
-            // 
-            // btnPlaats1
-            // 
-            this.btnPlaats1.Location = new System.Drawing.Point(6, 27);
-            this.btnPlaats1.Name = "btnPlaats1";
-            this.btnPlaats1.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats1.TabIndex = 0;
-            this.btnPlaats1.Text = "button1";
-            this.btnPlaats1.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats2
-            // 
-            this.btnPlaats2.Location = new System.Drawing.Point(6, 56);
-            this.btnPlaats2.Name = "btnPlaats2";
-            this.btnPlaats2.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats2.TabIndex = 1;
-            this.btnPlaats2.Text = "button2";
-            this.btnPlaats2.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats3
-            // 
-            this.btnPlaats3.Location = new System.Drawing.Point(6, 85);
-            this.btnPlaats3.Name = "btnPlaats3";
-            this.btnPlaats3.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats3.TabIndex = 2;
-            this.btnPlaats3.Text = "button3";
-            this.btnPlaats3.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats4
-            // 
-            this.btnPlaats4.Location = new System.Drawing.Point(6, 114);
-            this.btnPlaats4.Name = "btnPlaats4";
-            this.btnPlaats4.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats4.TabIndex = 3;
-            this.btnPlaats4.Text = "button4";
-            this.btnPlaats4.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats5
-            // 
-            this.btnPlaats5.Location = new System.Drawing.Point(6, 143);
-            this.btnPlaats5.Name = "btnPlaats5";
-            this.btnPlaats5.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats5.TabIndex = 4;
-            this.btnPlaats5.Text = "button5";
-            this.btnPlaats5.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats6
-            // 
-            this.btnPlaats6.Location = new System.Drawing.Point(6, 172);
-            this.btnPlaats6.Name = "btnPlaats6";
-            this.btnPlaats6.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats6.TabIndex = 5;
-            this.btnPlaats6.Text = "button6";
-            this.btnPlaats6.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats7
-            // 
-            this.btnPlaats7.Location = new System.Drawing.Point(6, 201);
-            this.btnPlaats7.Name = "btnPlaats7";
-            this.btnPlaats7.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats7.TabIndex = 6;
-            this.btnPlaats7.Text = "button7";
-            this.btnPlaats7.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats8
-            // 
-            this.btnPlaats8.Location = new System.Drawing.Point(6, 230);
-            this.btnPlaats8.Name = "btnPlaats8";
-            this.btnPlaats8.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats8.TabIndex = 7;
-            this.btnPlaats8.Text = "button8";
-            this.btnPlaats8.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats9
-            // 
-            this.btnPlaats9.Location = new System.Drawing.Point(87, 230);
-            this.btnPlaats9.Name = "btnPlaats9";
-            this.btnPlaats9.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats9.TabIndex = 15;
-            this.btnPlaats9.Text = "button9";
-            this.btnPlaats9.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats10
-            // 
-            this.btnPlaats10.Location = new System.Drawing.Point(87, 201);
-            this.btnPlaats10.Name = "btnPlaats10";
-            this.btnPlaats10.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats10.TabIndex = 14;
-            this.btnPlaats10.Text = "button10";
-            this.btnPlaats10.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats11
-            // 
-            this.btnPlaats11.Location = new System.Drawing.Point(87, 172);
-            this.btnPlaats11.Name = "btnPlaats11";
-            this.btnPlaats11.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats11.TabIndex = 13;
-            this.btnPlaats11.Text = "button11";
-            this.btnPlaats11.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats12
-            // 
-            this.btnPlaats12.Location = new System.Drawing.Point(87, 143);
-            this.btnPlaats12.Name = "btnPlaats12";
-            this.btnPlaats12.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats12.TabIndex = 12;
-            this.btnPlaats12.Text = "button12";
-            this.btnPlaats12.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats13
-            // 
-            this.btnPlaats13.Location = new System.Drawing.Point(87, 114);
-            this.btnPlaats13.Name = "btnPlaats13";
-            this.btnPlaats13.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats13.TabIndex = 11;
-            this.btnPlaats13.Text = "button13";
-            this.btnPlaats13.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats14
-            // 
-            this.btnPlaats14.Location = new System.Drawing.Point(87, 85);
-            this.btnPlaats14.Name = "btnPlaats14";
-            this.btnPlaats14.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats14.TabIndex = 10;
-            this.btnPlaats14.Text = "button14";
-            this.btnPlaats14.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats15
-            // 
-            this.btnPlaats15.Location = new System.Drawing.Point(87, 56);
-            this.btnPlaats15.Name = "btnPlaats15";
-            this.btnPlaats15.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats15.TabIndex = 9;
-            this.btnPlaats15.Text = "button15";
-            this.btnPlaats15.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats16
-            // 
-            this.btnPlaats16.Location = new System.Drawing.Point(87, 27);
-            this.btnPlaats16.Name = "btnPlaats16";
-            this.btnPlaats16.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats16.TabIndex = 8;
-            this.btnPlaats16.Text = "button16";
-            this.btnPlaats16.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats17
-            // 
-            this.btnPlaats17.Location = new System.Drawing.Point(168, 230);
-            this.btnPlaats17.Name = "btnPlaats17";
-            this.btnPlaats17.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats17.TabIndex = 23;
-            this.btnPlaats17.Text = "button17";
-            this.btnPlaats17.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats18
-            // 
-            this.btnPlaats18.Location = new System.Drawing.Point(168, 201);
-            this.btnPlaats18.Name = "btnPlaats18";
-            this.btnPlaats18.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats18.TabIndex = 22;
-            this.btnPlaats18.Text = "button18";
-            this.btnPlaats18.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats19
-            // 
-            this.btnPlaats19.Location = new System.Drawing.Point(168, 172);
-            this.btnPlaats19.Name = "btnPlaats19";
-            this.btnPlaats19.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats19.TabIndex = 21;
-            this.btnPlaats19.Text = "button19";
-            this.btnPlaats19.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats20
-            // 
-            this.btnPlaats20.Location = new System.Drawing.Point(168, 143);
-            this.btnPlaats20.Name = "btnPlaats20";
-            this.btnPlaats20.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats20.TabIndex = 20;
-            this.btnPlaats20.Text = "button20";
-            this.btnPlaats20.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats21
-            // 
-            this.btnPlaats21.Location = new System.Drawing.Point(168, 114);
-            this.btnPlaats21.Name = "btnPlaats21";
-            this.btnPlaats21.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats21.TabIndex = 19;
-            this.btnPlaats21.Text = "button21";
-            this.btnPlaats21.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats22
-            // 
-            this.btnPlaats22.Location = new System.Drawing.Point(168, 85);
-            this.btnPlaats22.Name = "btnPlaats22";
-            this.btnPlaats22.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats22.TabIndex = 18;
-            this.btnPlaats22.Text = "button22";
-            this.btnPlaats22.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats23
-            // 
-            this.btnPlaats23.Location = new System.Drawing.Point(168, 56);
-            this.btnPlaats23.Name = "btnPlaats23";
-            this.btnPlaats23.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats23.TabIndex = 17;
-            this.btnPlaats23.Text = "button23";
-            this.btnPlaats23.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats24
-            // 
-            this.btnPlaats24.Location = new System.Drawing.Point(168, 27);
-            this.btnPlaats24.Name = "btnPlaats24";
-            this.btnPlaats24.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats24.TabIndex = 16;
-            this.btnPlaats24.Text = "button24";
-            this.btnPlaats24.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats25
-            // 
-            this.btnPlaats25.Location = new System.Drawing.Point(249, 230);
-            this.btnPlaats25.Name = "btnPlaats25";
-            this.btnPlaats25.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats25.TabIndex = 31;
-            this.btnPlaats25.Text = "button25";
-            this.btnPlaats25.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats26
-            // 
-            this.btnPlaats26.Location = new System.Drawing.Point(249, 201);
-            this.btnPlaats26.Name = "btnPlaats26";
-            this.btnPlaats26.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats26.TabIndex = 30;
-            this.btnPlaats26.Text = "button26";
-            this.btnPlaats26.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats27
-            // 
-            this.btnPlaats27.Location = new System.Drawing.Point(249, 172);
-            this.btnPlaats27.Name = "btnPlaats27";
-            this.btnPlaats27.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats27.TabIndex = 29;
-            this.btnPlaats27.Text = "button27";
-            this.btnPlaats27.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats28
-            // 
-            this.btnPlaats28.Location = new System.Drawing.Point(249, 143);
-            this.btnPlaats28.Name = "btnPlaats28";
-            this.btnPlaats28.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats28.TabIndex = 28;
-            this.btnPlaats28.Text = "button28";
-            this.btnPlaats28.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats29
-            // 
-            this.btnPlaats29.Location = new System.Drawing.Point(249, 114);
-            this.btnPlaats29.Name = "btnPlaats29";
-            this.btnPlaats29.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats29.TabIndex = 27;
-            this.btnPlaats29.Text = "button29";
-            this.btnPlaats29.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats30
-            // 
-            this.btnPlaats30.Location = new System.Drawing.Point(249, 85);
-            this.btnPlaats30.Name = "btnPlaats30";
-            this.btnPlaats30.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats30.TabIndex = 26;
-            this.btnPlaats30.Text = "button30";
-            this.btnPlaats30.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats31
-            // 
-            this.btnPlaats31.Location = new System.Drawing.Point(249, 56);
-            this.btnPlaats31.Name = "btnPlaats31";
-            this.btnPlaats31.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats31.TabIndex = 25;
-            this.btnPlaats31.Text = "button31";
-            this.btnPlaats31.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaats32
-            // 
-            this.btnPlaats32.Location = new System.Drawing.Point(249, 27);
-            this.btnPlaats32.Name = "btnPlaats32";
-            this.btnPlaats32.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaats32.TabIndex = 24;
-            this.btnPlaats32.Text = "button32";
-            this.btnPlaats32.UseVisualStyleBackColor = true;
             // 
             // btnPlaats33
             // 
@@ -604,11 +324,342 @@
             this.btnPlaats40.Text = "button40";
             this.btnPlaats40.UseVisualStyleBackColor = true;
             // 
+            // btnPlaats25
+            // 
+            this.btnPlaats25.Location = new System.Drawing.Point(249, 230);
+            this.btnPlaats25.Name = "btnPlaats25";
+            this.btnPlaats25.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats25.TabIndex = 31;
+            this.btnPlaats25.Text = "button25";
+            this.btnPlaats25.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats26
+            // 
+            this.btnPlaats26.Location = new System.Drawing.Point(249, 201);
+            this.btnPlaats26.Name = "btnPlaats26";
+            this.btnPlaats26.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats26.TabIndex = 30;
+            this.btnPlaats26.Text = "button26";
+            this.btnPlaats26.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats27
+            // 
+            this.btnPlaats27.Location = new System.Drawing.Point(249, 172);
+            this.btnPlaats27.Name = "btnPlaats27";
+            this.btnPlaats27.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats27.TabIndex = 29;
+            this.btnPlaats27.Text = "button27";
+            this.btnPlaats27.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats28
+            // 
+            this.btnPlaats28.Location = new System.Drawing.Point(249, 143);
+            this.btnPlaats28.Name = "btnPlaats28";
+            this.btnPlaats28.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats28.TabIndex = 28;
+            this.btnPlaats28.Text = "button28";
+            this.btnPlaats28.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats29
+            // 
+            this.btnPlaats29.Location = new System.Drawing.Point(249, 114);
+            this.btnPlaats29.Name = "btnPlaats29";
+            this.btnPlaats29.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats29.TabIndex = 27;
+            this.btnPlaats29.Text = "button29";
+            this.btnPlaats29.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats30
+            // 
+            this.btnPlaats30.Location = new System.Drawing.Point(249, 85);
+            this.btnPlaats30.Name = "btnPlaats30";
+            this.btnPlaats30.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats30.TabIndex = 26;
+            this.btnPlaats30.Text = "button30";
+            this.btnPlaats30.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats31
+            // 
+            this.btnPlaats31.Location = new System.Drawing.Point(249, 56);
+            this.btnPlaats31.Name = "btnPlaats31";
+            this.btnPlaats31.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats31.TabIndex = 25;
+            this.btnPlaats31.Text = "button31";
+            this.btnPlaats31.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats32
+            // 
+            this.btnPlaats32.Location = new System.Drawing.Point(249, 27);
+            this.btnPlaats32.Name = "btnPlaats32";
+            this.btnPlaats32.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats32.TabIndex = 24;
+            this.btnPlaats32.Text = "button32";
+            this.btnPlaats32.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats17
+            // 
+            this.btnPlaats17.Location = new System.Drawing.Point(168, 230);
+            this.btnPlaats17.Name = "btnPlaats17";
+            this.btnPlaats17.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats17.TabIndex = 23;
+            this.btnPlaats17.Text = "button17";
+            this.btnPlaats17.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats18
+            // 
+            this.btnPlaats18.Location = new System.Drawing.Point(168, 201);
+            this.btnPlaats18.Name = "btnPlaats18";
+            this.btnPlaats18.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats18.TabIndex = 22;
+            this.btnPlaats18.Text = "button18";
+            this.btnPlaats18.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats19
+            // 
+            this.btnPlaats19.Location = new System.Drawing.Point(168, 172);
+            this.btnPlaats19.Name = "btnPlaats19";
+            this.btnPlaats19.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats19.TabIndex = 21;
+            this.btnPlaats19.Text = "button19";
+            this.btnPlaats19.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats20
+            // 
+            this.btnPlaats20.Location = new System.Drawing.Point(168, 143);
+            this.btnPlaats20.Name = "btnPlaats20";
+            this.btnPlaats20.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats20.TabIndex = 20;
+            this.btnPlaats20.Text = "button20";
+            this.btnPlaats20.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats21
+            // 
+            this.btnPlaats21.Location = new System.Drawing.Point(168, 114);
+            this.btnPlaats21.Name = "btnPlaats21";
+            this.btnPlaats21.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats21.TabIndex = 19;
+            this.btnPlaats21.Text = "button21";
+            this.btnPlaats21.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats22
+            // 
+            this.btnPlaats22.Location = new System.Drawing.Point(168, 85);
+            this.btnPlaats22.Name = "btnPlaats22";
+            this.btnPlaats22.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats22.TabIndex = 18;
+            this.btnPlaats22.Text = "button22";
+            this.btnPlaats22.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats23
+            // 
+            this.btnPlaats23.Location = new System.Drawing.Point(168, 56);
+            this.btnPlaats23.Name = "btnPlaats23";
+            this.btnPlaats23.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats23.TabIndex = 17;
+            this.btnPlaats23.Text = "button23";
+            this.btnPlaats23.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats24
+            // 
+            this.btnPlaats24.Location = new System.Drawing.Point(168, 27);
+            this.btnPlaats24.Name = "btnPlaats24";
+            this.btnPlaats24.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats24.TabIndex = 16;
+            this.btnPlaats24.Text = "button24";
+            this.btnPlaats24.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats9
+            // 
+            this.btnPlaats9.Location = new System.Drawing.Point(87, 230);
+            this.btnPlaats9.Name = "btnPlaats9";
+            this.btnPlaats9.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats9.TabIndex = 15;
+            this.btnPlaats9.Text = "button9";
+            this.btnPlaats9.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats10
+            // 
+            this.btnPlaats10.Location = new System.Drawing.Point(87, 201);
+            this.btnPlaats10.Name = "btnPlaats10";
+            this.btnPlaats10.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats10.TabIndex = 14;
+            this.btnPlaats10.Text = "button10";
+            this.btnPlaats10.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats11
+            // 
+            this.btnPlaats11.Location = new System.Drawing.Point(87, 172);
+            this.btnPlaats11.Name = "btnPlaats11";
+            this.btnPlaats11.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats11.TabIndex = 13;
+            this.btnPlaats11.Text = "button11";
+            this.btnPlaats11.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats12
+            // 
+            this.btnPlaats12.Location = new System.Drawing.Point(87, 143);
+            this.btnPlaats12.Name = "btnPlaats12";
+            this.btnPlaats12.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats12.TabIndex = 12;
+            this.btnPlaats12.Text = "button12";
+            this.btnPlaats12.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats13
+            // 
+            this.btnPlaats13.Location = new System.Drawing.Point(87, 114);
+            this.btnPlaats13.Name = "btnPlaats13";
+            this.btnPlaats13.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats13.TabIndex = 11;
+            this.btnPlaats13.Text = "button13";
+            this.btnPlaats13.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats14
+            // 
+            this.btnPlaats14.Location = new System.Drawing.Point(87, 85);
+            this.btnPlaats14.Name = "btnPlaats14";
+            this.btnPlaats14.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats14.TabIndex = 10;
+            this.btnPlaats14.Text = "button14";
+            this.btnPlaats14.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats15
+            // 
+            this.btnPlaats15.Location = new System.Drawing.Point(87, 56);
+            this.btnPlaats15.Name = "btnPlaats15";
+            this.btnPlaats15.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats15.TabIndex = 9;
+            this.btnPlaats15.Text = "button15";
+            this.btnPlaats15.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats16
+            // 
+            this.btnPlaats16.Location = new System.Drawing.Point(87, 27);
+            this.btnPlaats16.Name = "btnPlaats16";
+            this.btnPlaats16.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats16.TabIndex = 8;
+            this.btnPlaats16.Text = "button16";
+            this.btnPlaats16.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats8
+            // 
+            this.btnPlaats8.Location = new System.Drawing.Point(6, 230);
+            this.btnPlaats8.Name = "btnPlaats8";
+            this.btnPlaats8.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats8.TabIndex = 7;
+            this.btnPlaats8.Text = "button8";
+            this.btnPlaats8.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats7
+            // 
+            this.btnPlaats7.Location = new System.Drawing.Point(6, 201);
+            this.btnPlaats7.Name = "btnPlaats7";
+            this.btnPlaats7.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats7.TabIndex = 6;
+            this.btnPlaats7.Text = "button7";
+            this.btnPlaats7.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats6
+            // 
+            this.btnPlaats6.Location = new System.Drawing.Point(6, 172);
+            this.btnPlaats6.Name = "btnPlaats6";
+            this.btnPlaats6.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats6.TabIndex = 5;
+            this.btnPlaats6.Text = "button6";
+            this.btnPlaats6.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats5
+            // 
+            this.btnPlaats5.Location = new System.Drawing.Point(6, 143);
+            this.btnPlaats5.Name = "btnPlaats5";
+            this.btnPlaats5.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats5.TabIndex = 4;
+            this.btnPlaats5.Text = "button5";
+            this.btnPlaats5.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats4
+            // 
+            this.btnPlaats4.Location = new System.Drawing.Point(6, 114);
+            this.btnPlaats4.Name = "btnPlaats4";
+            this.btnPlaats4.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats4.TabIndex = 3;
+            this.btnPlaats4.Text = "button4";
+            this.btnPlaats4.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats3
+            // 
+            this.btnPlaats3.Location = new System.Drawing.Point(6, 85);
+            this.btnPlaats3.Name = "btnPlaats3";
+            this.btnPlaats3.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats3.TabIndex = 2;
+            this.btnPlaats3.Text = "button3";
+            this.btnPlaats3.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats2
+            // 
+            this.btnPlaats2.Location = new System.Drawing.Point(6, 56);
+            this.btnPlaats2.Name = "btnPlaats2";
+            this.btnPlaats2.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats2.TabIndex = 1;
+            this.btnPlaats2.Text = "button2";
+            this.btnPlaats2.UseVisualStyleBackColor = true;
+            // 
+            // btnPlaats1
+            // 
+            this.btnPlaats1.Location = new System.Drawing.Point(6, 27);
+            this.btnPlaats1.Name = "btnPlaats1";
+            this.btnPlaats1.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaats1.TabIndex = 0;
+            this.btnPlaats1.Text = "button1";
+            this.btnPlaats1.UseVisualStyleBackColor = true;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.cbFilter.Items.AddRange(new object[] {
+            "Filter niet",
+            "Gereserveerd",
+            "Categorie: Green",
+            "Categorie: Luxe",
+            "Categorie: Normaal"});
+            this.cbFilter.Location = new System.Drawing.Point(411, 48);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter.TabIndex = 40;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(411, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Filter plaatsen op";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(411, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Geselecteerde Plaats";
+            // 
+            // tbGeselecteerdePlaats
+            // 
+            this.tbGeselecteerdePlaats.Enabled = false;
+            this.tbGeselecteerdePlaats.Location = new System.Drawing.Point(411, 99);
+            this.tbGeselecteerdePlaats.Name = "tbGeselecteerdePlaats";
+            this.tbGeselecteerdePlaats.Size = new System.Drawing.Size(121, 20);
+            this.tbGeselecteerdePlaats.TabIndex = 43;
+            this.tbGeselecteerdePlaats.Text = "Geen";
+            // 
             // ReserveringForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 301);
+            this.ClientSize = new System.Drawing.Size(851, 301);
             this.Controls.Add(this.gbCamping);
             this.Controls.Add(this.gbAccount);
             this.Name = "ReserveringForm";
@@ -616,6 +667,7 @@
             this.gbAccount.ResumeLayout(false);
             this.gbAccount.PerformLayout();
             this.gbCamping.ResumeLayout(false);
+            this.gbCamping.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -674,5 +726,9 @@
         private System.Windows.Forms.Button btnPlaats3;
         private System.Windows.Forms.Button btnPlaats2;
         private System.Windows.Forms.Button btnPlaats1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.TextBox tbGeselecteerdePlaats;
+        private System.Windows.Forms.Label label4;
     }
 }

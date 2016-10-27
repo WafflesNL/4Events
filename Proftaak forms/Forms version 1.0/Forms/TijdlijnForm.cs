@@ -71,7 +71,6 @@ namespace Forms_version_1._0.Forms
                 if (Posttext.Length < 90)
                 {
                     postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile());
-                    newtimeline.AddPost(postAttach); //hier insert je een post
                 }
                 else
                 {
@@ -125,12 +124,11 @@ namespace Forms_version_1._0.Forms
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            FilterClass FC = new FilterClass();
             Filter window = new Filter();            
             window.ShowDialog();
+            TijdlijnBox.Items.Clear();
             foreach (Post E in window.Filerlst)
-            {
-                TijdlijnBox.Items.Clear();
+            {               
                 TijdlijnBox.Items.Add(E);
             }
         }
@@ -185,6 +183,19 @@ namespace Forms_version_1._0.Forms
                     GetPosts();
                 }
             }
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
+            Post post = TijdlijnBox.SelectedItem as Post;
+            pcbAttach.Image = TimeLine.ByteToImage(post.File);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            TijdlijnBox.Items.Clear();
+            GetPosts();
         }
     }
 }

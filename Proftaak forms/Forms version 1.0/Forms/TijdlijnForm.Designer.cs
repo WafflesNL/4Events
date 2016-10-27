@@ -44,6 +44,8 @@
             this.lblAttach = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.pcbAttach = new System.Windows.Forms.PictureBox();
+            this.btnShow = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAttach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,7 +183,7 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(849, 534);
+            this.btnReport.Location = new System.Drawing.Point(849, 561);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(75, 23);
             this.btnReport.TabIndex = 14;
@@ -198,11 +200,33 @@
             this.pcbAttach.TabIndex = 15;
             this.pcbAttach.TabStop = false;
             // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(849, 532);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(75, 23);
+            this.btnShow.TabIndex = 16;
+            this.btnShow.Text = "Show Image";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(217, 516);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(182, 23);
+            this.btnRemove.TabIndex = 17;
+            this.btnRemove.Text = "Verwijder Filter";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // TijdlijnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 647);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.pcbAttach);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.lblAttach);
@@ -246,5 +270,7 @@
         private System.Windows.Forms.Label lblAttach;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.PictureBox pcbAttach;
+        private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

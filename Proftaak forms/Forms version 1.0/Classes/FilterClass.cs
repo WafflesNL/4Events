@@ -25,33 +25,28 @@ namespace Forms_version_1._0.Classes
             return Filterlist = DatabaseGetPost.GetName(naam);
         }
 
-        public List<Post> GetWord()
+        public List<Post> GetWord(string woord)
         {
-            return null;
-            // return Filterlist = DatabaseGetPost.GetWord();
+            return Filterlist = DatabaseGetPost.GetWord(woord);
         }
 
-        public List<Post> GetCategory()
+        public List<Post> GetCategory(string categorie)
         {
-            return null;
-            // return Filterlist = DatabaseGetPost.GetCategory();
+            return Filterlist = DatabaseGetPost.GetCategory(categorie);
         }
 
-        public List<Post> GetNameWord()
+        public List<Post> GetNameWord(string naam, string woord)
         {
-            return null;
-            // return Filterlist = DatabaseGetPost.GetNameWord();
+            return Filterlist = DatabaseGetPost.GetNameWord(naam, woord);
         }
 
-        public List<Post> GetNameCategory()
+        public List<Post> GetNameCategory(string naam, string categorie)
         {
-            return null;
-            // return Filterlist = DatabaseGetPost.GetNameCategory();
+            return Filterlist = DatabaseGetPost.GetNameCategory(naam, categorie);
         }
-        public List<Post> GetWordCategory()
+        public List<Post> GetWordCategory(string woord, string categorie)
         {
-            return null;
-            // return Filterlist = DatabaseGetPost.GetWordCategory();
+            return Filterlist = DatabaseGetPost.GetWordCategory(woord, categorie);
         }
     }
 }

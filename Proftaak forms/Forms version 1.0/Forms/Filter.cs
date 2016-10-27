@@ -24,45 +24,50 @@ namespace Forms_version_1._0.Forms
             }
         }
 
-        private void btnZoek_Click(object sender, EventArgs e)
+        private void btnZoek_Click(object sender, EventArgs e) //All the Search functions
         {
             FilterClass FC = new FilterClass();
             //All 3
-            if (tbName.Text != "" && tbWoord.Text != "" && cbCat != null)
+            if (tbName.Text != "" && tbWoord.Text != "" && cbCat.Text != "")
             {
                 Filerlst = FC.GetAll(tbName.Text, tbWoord.Text, cbCat.Text);
                 this.Close();
             }
             //Just Name
-            else if (tbName.Text != "" && tbWoord.Text == "" && cbCat == null)
+            else if (tbName.Text != "" && tbWoord.Text == "" && cbCat.Text == "")
             {
                 Filerlst = FC.GetName(tbName.Text);
                 this.Close();
             }
             //Just Word
-            else if (tbName.Text == "" && tbWoord.Text != "" && cbCat == null)
+            else if (tbName.Text == "" && tbWoord.Text != "" && cbCat.Text == "")
             {
-                //FC.GetWord();
+                Filerlst = FC.GetWord(tbWoord.Text);
+                this.Close();
             }
             //Just Category
-            else if (tbName.Text == "" && tbWoord.Text == "" && cbCat != null)
+            else if (tbName.Text == "" && tbWoord.Text == "" && cbCat.Text != "")
             {
-               // FC.GetCategory();
+                Filerlst = FC.GetCategory(cbCat.Text);
+                this.Close();
             }
             //Name and Word
-            else if (tbName.Text != "" && tbWoord.Text != "" && cbCat == null)
+            else if (tbName.Text != "" && tbWoord.Text != "" && cbCat.Text == "")
             {
-              //  FC.GetNameWord();
+                Filerlst = FC.GetNameWord(tbName.Text, tbWoord.Text);
+                this.Close();
             }
             //Name and Category
-            else if (tbName.Text != "" && tbWoord.Text == "" && cbCat != null)
+            else if (tbName.Text != "" && tbWoord.Text == "" && cbCat.Text != "")
             {
-                //FC.GetNameCategory();
+                Filerlst = FC.GetNameCategory(tbName.Text, cbCat.Text);
+                this.Close();
             }
             //Word and Category
-            else if (tbName.Text == "" && tbWoord.Text != "" && cbCat != null)
+            else if (tbName.Text == "" && tbWoord.Text != "" && cbCat.Text != "")
             {
-               // FC.GetWordCategory();
+                Filerlst = FC.GetWordCategory(tbWoord.Text, cbCat.Text);
+                this.Close();
             }
 
         }

@@ -130,10 +130,9 @@ namespace Forms_version_1._0.Forms
             FilterClass FC = new FilterClass();
             Filter window = new Filter();            
             window.ShowDialog();
-            TijdlijnBox.Items.Clear();
             foreach (Post E in window.Filerlst)
             {
-                //TijdlijnBox.Items.Clear();
+                TijdlijnBox.Items.Clear();
                 TijdlijnBox.Items.Add(E);
             }
         }
@@ -150,7 +149,20 @@ namespace Forms_version_1._0.Forms
         {
             TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             Post post = TijdlijnBox.SelectedItem as Post;
-            newtimeline.GetFile(post);
+            pcbAttach.Image = TimeLine.ByteToImage(post.File);
+            using (SaveFileDialog Save = new SaveFileDialog())
+            {
+                Save.Title = "Save Dialog";
+                Save.Filter = "Bitmap Images (.bmp)|.bmp|All files(.)|.";
+                if (Save.ShowDialog(this) == DialogResult.OK)
+                {
+                    using (Bitmap bmp = new Bitmap(pcbAttach.Width, pcbAttach.Height))
+                    {
+                        pcbAttach.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));                       
+                        bmp.Save(Save.FileName);
+                    }
+                }
+            }
         }
 
         private void btnReport_Click(object sender, EventArgs e)

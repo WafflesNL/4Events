@@ -29,9 +29,18 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "INSERT INTO Reservering (ID, PlaatsID, EventID, BetalingBedrag, BetalingStatus) VALUES (@ID, null, @EventID, @BetalingBedrag, @BetalingStatus)";
+                    cmd.CommandText = "INSERT INTO Reservering (ID, PlaatsID, EventID, BetalingBedrag, BetalingStatus) VALUES (@ID, @PlaatsID, @EventID, @BetalingBedrag, @BetalingStatus)";
                     cmd.Parameters.Add(new SqlParameter("ID", Reservation.ID));
-                    //cmd.Parameters.Add(new SqlParameter("PlaatsID", Reservation.Place));
+
+                    if (Reservation.Place != null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("PlaatsID", Reservation.Place.ID));
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add(new SqlParameter("PlaatsID", null));
+                    }
+
                     cmd.Parameters.Add(new SqlParameter("EventID", Reservation.Event.ID));
                     cmd.Parameters.Add(new SqlParameter("BetalingBedrag", Reservation.Payment.Amount));
 

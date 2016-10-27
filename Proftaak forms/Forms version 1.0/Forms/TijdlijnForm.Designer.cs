@@ -43,6 +43,8 @@
             this.btnDownload = new System.Windows.Forms.Button();
             this.lblAttach = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
+            this.pcbAttach = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbAttach)).BeginInit();
             this.SuspendLayout();
             // 
             // TijdlijnBox
@@ -187,11 +189,21 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // pcbAttach
+            // 
+            this.pcbAttach.Location = new System.Drawing.Point(930, 29);
+            this.pcbAttach.Name = "pcbAttach";
+            this.pcbAttach.Size = new System.Drawing.Size(400, 438);
+            this.pcbAttach.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbAttach.TabIndex = 15;
+            this.pcbAttach.TabStop = false;
+            // 
             // TijdlijnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 647);
+            this.ClientSize = new System.Drawing.Size(1342, 647);
+            this.Controls.Add(this.pcbAttach);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.lblAttach);
             this.Controls.Add(this.btnDownload);
@@ -210,6 +222,7 @@
             this.Name = "TijdlijnForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TijdlijnForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pcbAttach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +245,6 @@
         private System.Windows.Forms.Button btnDownload;
         private System.Windows.Forms.Label lblAttach;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.PictureBox pcbAttach;
     }
 }

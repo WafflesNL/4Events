@@ -11,15 +11,16 @@ using System.Windows.Forms;
 
 namespace Forms_version_1._0.Forms
 {
-    public partial class VerhuurForm : Form
+    public partial class InleverForm : Form
     {
-        Event Event;  
+        Event Event;
+        Account Account;
         Material material = new Material(1,"tomato",2, null,null);
 
         List<Material> materiallist = new List<Material>();
         List<Material> selectedlist = new List<Material>();
      
-        public VerhuurForm(Event Event)
+        public InleverForm(Event Event)
         {
             InitializeComponent();
             this.Event = Event;
@@ -28,12 +29,12 @@ namespace Forms_version_1._0.Forms
         }
     
         //Koppelt een material aan een account       
-        private void btnVerhuur_Click(object sender, EventArgs e)
+        private void btnInleveren_Click(object sender, EventArgs e)
         { 
             if (cbAccounts.SelectedItem != null)
             {
                 Account account = cbAccounts.SelectedItem as Account;
-                material.Rent(selectedlist, account.ID);           
+                material.Return(selectedlist, account.ID);           
                 selectedlist.Clear();
             }
             Refreshform();
@@ -88,10 +89,16 @@ namespace Forms_version_1._0.Forms
         public void GetData()
         {           
             lblEvent.Text = Event.Name;
-            materiallist = Event.GetMaterialList();
             cbAccounts.DataSource = Event.GetGuestList();
+           // materiallist = Event.GetMaterialList();         
         }
 
-       
+        private void cbAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Account = cbAccounts.SelectedItem as Account;
+            materiallist = material.GetMaterialForAccount(Event.ID, Account.ID);
+            Refreshform();
+            
+        }
     }
 }

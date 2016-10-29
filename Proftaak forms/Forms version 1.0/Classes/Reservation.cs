@@ -21,6 +21,8 @@ namespace Forms_version_1._0.Classes
         public Payment Payment { get; set; }
         public Place Place { get; set; }
 
+        // I don't think reservation really needs this many constructors.
+
         public Reservation(int ID, Event Event, Payment Payment, Place Place)
         {
             this.ID = ID;
@@ -71,6 +73,10 @@ namespace Forms_version_1._0.Classes
             
         }
 
+        /// <summary>
+        /// Checks if the reservation is trying to add more visitors than is allowed.
+        /// </summary>
+        /// <returns>Returns true if the accounts in the reservation will add up higher than is allowed in event.</returns>
         public bool MoreThanMaxVisitors()
         {
             if (Event.MaxVisitors > DatabaseGetAccountReservering.GetReservationAmountReservation(this))
@@ -81,6 +87,12 @@ namespace Forms_version_1._0.Classes
             {
                 return true;
             }
+        }
+
+        public List<Account> GetAccountsFunction(Function function)
+        {
+            List<Account> accountList = DatabaseGetAccounts.GetAccountsFunction(function);
+            return accountList;
         }
 
         public override string ToString()

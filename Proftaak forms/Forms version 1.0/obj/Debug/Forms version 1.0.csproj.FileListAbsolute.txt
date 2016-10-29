@@ -156,3 +156,5 @@ C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms versi
 C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.GenerateResource.Cache
 C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
 C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb
+C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.InleverForm.resources
+C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.VerhuurKeuze.resources

@@ -35,8 +35,8 @@ namespace Forms_version_1._0.Forms
         {
             List<Account> accountList = new List<Account>();
 
-            // This database call needs to be taken out of the form and into another class!
-            accountList = DatabaseGetAccounts.GetAccountsFunction(Function.Bezoeker);
+
+            accountList = reservation.GetAccountsFunction(Function.Bezoeker);
 
             if(currentEvent.Camping != null)
             {
@@ -131,10 +131,10 @@ namespace Forms_version_1._0.Forms
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var toBeAddedItem = lbAccount.SelectedItem;
-            //Eventprice should come from the database. but this is not implemented yet.
+            // Eventprice should come from the database. but this is not implemented yet.
             var EventPrice = 10;
 
-            //Checks if the item is already in the list
+            // Checks if the item is already in the list
             foreach (var item in lbReserveringLijst.Items)
             {
                 if(toBeAddedItem == item)
@@ -146,10 +146,10 @@ namespace Forms_version_1._0.Forms
 
             lbReserveringLijst.Items.Add(toBeAddedItem);
 
-            //Adds the value of the reservation to the textbox;
+            // Adds the value of the reservation to the textbox;
             var totalEventPrice = lbReserveringLijst.Items.Count * EventPrice;
             tbBedrag.Text = Convert.ToString(totalEventPrice);
-            //And also to the reservation object.
+            // And also to the reservation object.
             reservation.Payment.Amount = totalEventPrice;
             
         }
@@ -163,10 +163,10 @@ namespace Forms_version_1._0.Forms
 
                 lbReserveringLijst.Items.Remove(toBeRemoved);
 
-                //Adds the value of the reservation to the textbox;
+                // Adds the value of the reservation to the textbox;
                 var totalEventPrice = lbReserveringLijst.Items.Count * EventPrice;
                 tbBedrag.Text = Convert.ToString(totalEventPrice);
-                //And also to the reservation object.
+                // And also to the reservation object.
                 reservation.Payment.Amount = totalEventPrice;
             }
             else

@@ -28,7 +28,7 @@ namespace Forms_version_1._0.Classes
             this.TimeLineID = timelineID;
             this.Likes = likes;
             this.Account = account;
-        }
+        } //Constructor adding account to post
 
         public Post(string text, string category, int accountID, int timelineID, int likes)
         {
@@ -37,7 +37,7 @@ namespace Forms_version_1._0.Classes
             this.Category = category;
             this.TimeLineID = timelineID;
             this.Likes = likes;
-        }
+        } //Regular constructor
 
         public Post(string text, string category, int accountID, int timelineID, int likes, byte[] file)
         {
@@ -47,7 +47,7 @@ namespace Forms_version_1._0.Classes
             this.TimeLineID = timelineID;
             this.Likes = likes;
             this.File = file;
-        }
+        } //Constructor adding attachment to a post
 
         public Post(string text, string category, int accountID, int timelineID, int likes, Account account, byte[] file, string attachment)
         {
@@ -59,23 +59,12 @@ namespace Forms_version_1._0.Classes
             this.Account = account;
             this.File = file;
             this.Attachment = attachment;
-        }
+        } //Full constructor
 
         public Post(int iD)
         {
             this.ID = iD;
-        }
-
-        public void DownloadPost()
-        {
-
-        }
-
-        public static void AddPost()
-        {
-
-        }
-
+        } //Id constructor
         public override string ToString()
         {
             int Length;
@@ -86,6 +75,6 @@ namespace Forms_version_1._0.Classes
                 Length = Name.Length;
             }
             return  Name + Text.PadRight(90) +  Likes.ToString().PadRight(12) + Attachment; 
-        }
+        } //Tostring method to change Post from the database to strings for the listbox
     }
 }

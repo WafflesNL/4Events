@@ -16,6 +16,7 @@ namespace Forms_version_1._0.Classes
                     
         }
 
+        //The Methods fitting to the Search Functions in Filter
         public List<Post> GetAll(string naam, string woord, string categorie)
         {
             return Filterlist = DatabaseGetPost.GetAll(naam, woord, categorie);

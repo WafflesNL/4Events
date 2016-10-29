@@ -19,18 +19,18 @@ namespace Forms_version_1._0.Classes
         public TimeLine(int timelineID)
         {
             this.TimelineID = timelineID;
-        }
+        } //Constructor ID only
 
         public TimeLine(int timelineID, List<Post> Postlist)
         {
             this.TimelineID = timelineID;
             this.Postlist = Postlist;
-        }
+        } //Constructor ID and Postlist
 
         public void AddPost(Post post)
         {
             Check = DatabaseAddPost.AddPost(post);
-        }
+        } //Adds gotten post to the databaselayer
 
         public List<Post> GetPost()
         {
@@ -43,17 +43,17 @@ namespace Forms_version_1._0.Classes
                 Postlist = DatabaseGetPost.GetSafePost();
             }
             return Postlist;
-        }
+        } //Gets all the post out of the databaselayer
 
         public void LikePost(Post post)
         {
             Check = DatabaseEditPost.LikePost(post);
-        }
+        } //Adds a like to the post in the databaselayer
 
         public void ReportPost(Post post)
         {
             Check = DatabaseEditPost.ReportPost(post);
-        }
+        } //Adds a report to the post in the databaselayer
 
         public byte[] AddFile()
         {
@@ -82,16 +82,25 @@ namespace Forms_version_1._0.Classes
                 }
             }
             return TempFile = null;
-        }
+        } //Adds a attachment to a post
 
         public static Bitmap ByteToImage(byte[] postbyte)
         {
-            MemoryStream mStream = new MemoryStream();
-            mStream.Write(postbyte, 0, Convert.ToInt32(postbyte.Length));
-            Bitmap bm = new Bitmap(mStream, false);
-            mStream.Dispose();
-            return bm;
+            try
+            {
+                MemoryStream mStream = new MemoryStream();
+                mStream.Write(postbyte, 0, Convert.ToInt32(postbyte.Length));
+                Bitmap bm = new Bitmap(mStream, false);
+                mStream.Dispose();
+                return bm;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Post heeft geen bijlage");
+                return null;
+            }
 
-        }
+
+        } //Saves the post from a byte[] to a Bitmap
     }
 }

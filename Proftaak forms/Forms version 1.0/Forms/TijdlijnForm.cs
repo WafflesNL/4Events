@@ -19,7 +19,7 @@ namespace Forms_version_1._0.Forms
         char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
         Event newevent;
         Post postAttach;
-        //zet hier tijdlijn neer aangezien je het in elk event ongeveer gebruikt
+        TimeLine newtimeline;
         List<Post> Postlist = new List<Post>();
 
         public TijdlijnForm(Event Event)
@@ -30,18 +30,18 @@ namespace Forms_version_1._0.Forms
                 cbCatergory.Items.Add(item);
             }       
             newevent = Event;
+            newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             GetPosts();
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
         {      
             this.Close();
-        }
+        } //Button to go back to the homeform
 
         private void btnLike_Click(object sender, EventArgs e)
         {
             int ID;
-            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             if (TijdlijnBox.SelectedItem == null)
             {
                 MessageBox.Show("Selecteer een post");
@@ -59,13 +59,12 @@ namespace Forms_version_1._0.Forms
                 }
             }
             
-        }
+        } //Button to like the selected post
 
-        private void btnAttach_Click(object sender, EventArgs e) //bestand aan een post
+        private void btnAttach_Click(object sender, EventArgs e) //Sends post with an attachment to the business layer
         {
             if (cbCatergory.Text != null && txtPost.Text != "")
             {
-                TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
                 string Categorytext = cbCatergory.Text;
                 string Posttext = txtPost.Text;
                 if (Posttext.Length < 90)
@@ -83,9 +82,8 @@ namespace Forms_version_1._0.Forms
             }
         }
 
-        private void btnPost_Click(object sender, EventArgs e) //maakt een nieuwe post aan
+        private void btnPost_Click(object sender, EventArgs e) //Sends post to the business layer
         {
-            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             if (cbCatergory.Text != null && txtPost.Text != "")
             {
                 if (postAttach != null)
@@ -122,7 +120,7 @@ namespace Forms_version_1._0.Forms
             }
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void btnFilter_Click(object sender, EventArgs e) //Button for the filterfunction
         {
             Filter window = new Filter();            
             window.ShowDialog();
@@ -133,41 +131,43 @@ namespace Forms_version_1._0.Forms
             }
         }
 
-        public void GetPosts()
+        private void GetPosts() //Method to get all the posts into the Listbox
         {
-            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             foreach (Post E in newtimeline.GetPost())
             {
                 TijdlijnBox.Items.Add(E);
             }
         }
 
-
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             Post post = TijdlijnBox.SelectedItem as Post;
             pcbAttach.Image = TimeLine.ByteToImage(post.File);
-            using (SaveFileDialog Save = new SaveFileDialog())
+            if (pcbAttach.Image == null)
             {
-                Save.Title = "Save Dialog";
-                Save.Filter = "Bitmap Images (.bmp)|.bmp|All files(.)|.";
-                if (Save.ShowDialog(this) == DialogResult.OK)
+                
+            }
+            else
+            {
+                using (SaveFileDialog Save = new SaveFileDialog())
                 {
-                    using (Bitmap bmp = new Bitmap(pcbAttach.Width, pcbAttach.Height))
+                    Save.Title = "Save Dialog";
+                    Save.Filter = "Bitmap Images (.bmp)|.bmp|All files(.)|.";
+                    if (Save.ShowDialog(this) == DialogResult.OK)
                     {
-                        pcbAttach.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));                       
-                        bmp.Save(Save.FileName);
+                        using (Bitmap bmp = new Bitmap(pcbAttach.Width, pcbAttach.Height))
+                        {
+                            pcbAttach.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                            bmp.Save(Save.FileName);
+                        }
                     }
                 }
-            }
-        }
-
+            }           
+        } //Downloads the attachment from the selected post
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             int ID;
-            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             if (TijdlijnBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecteer een post");
@@ -183,19 +183,18 @@ namespace Forms_version_1._0.Forms
                     GetPosts();
                 }
             }
-        }
+        } //Button to reports the selected post
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            TimeLine newtimeline = new TimeLine(newevent.TimeLine.TimelineID);
             Post post = TijdlijnBox.SelectedItem as Post;
             pcbAttach.Image = TimeLine.ByteToImage(post.File);
-        }
+        } //Button to show the attachment from the selected post
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             TijdlijnBox.Items.Clear();
             GetPosts();
-        }
+        } //Clears the filter
     }
 }

@@ -55,6 +55,6 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             }
 
             return Check;
-        }
+        } //Adding the gottenpost from the business layer to the database
     }
 }

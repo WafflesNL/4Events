@@ -22,7 +22,7 @@ namespace Forms_version_1._0.Forms
             {
                 cbCat.Items.Add(item);
             }
-        }
+        } //Constructor
 
         private void btnZoek_Click(object sender, EventArgs e) //All the Search functions
         {

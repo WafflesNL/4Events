@@ -42,7 +42,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             }
 
             return Check;
-        }
+        } //Likes the selected Post
 
         public static bool ReportPost(Post Post)
         {
@@ -76,6 +76,6 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             }
 
             return Check;
-        }
+        } //Reports the selected Post
     }
 }

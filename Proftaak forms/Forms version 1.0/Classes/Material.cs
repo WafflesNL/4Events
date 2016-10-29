@@ -31,6 +31,11 @@ namespace Forms_version_1._0.Classes
             DatabaseUpdateMaterial.UpdateAccount(list, AccountID);
         }
 
+        public void Return(List<Material> list, int AccountID)
+        {
+            DatabaseUpdateMaterial.UpdateAccount(list, null);
+        }
+
         public double TotalPrice(List<Material> list)
         {
             double totalprice = 0;
@@ -55,6 +60,11 @@ namespace Forms_version_1._0.Classes
             return MaterialList;
         }
 
+        public List<Material> GetMaterialForAccount(int eventid, int accountid)
+        {
+            List<Material> Materiallist = DatabaseGetMaterial.GetMaterialforAccountonEvent(eventid, accountid);
+            return Materiallist;
+        }
         public List<Account> GetAccounts(int eventid)
         {
             List<Account> AccountList = DatabaseGetAccounts.GetAccountsEventID(eventid);

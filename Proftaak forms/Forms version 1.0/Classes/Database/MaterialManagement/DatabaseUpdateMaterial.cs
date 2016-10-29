@@ -43,7 +43,7 @@ namespace Forms_version_1._0
         
         }
 
-        public static void UpdateAccount(List<Material> MaterialList, int AccountID)
+        public static void UpdateAccount(List<Material> MaterialList, int? AccountID)
         {
             foreach (Material M in MaterialList)
             {

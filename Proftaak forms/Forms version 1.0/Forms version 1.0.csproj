@@ -168,6 +168,12 @@
     <Compile Include="Forms\TijdlijnForm.Designer.cs">
       <DependentUpon>TijdlijnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Inleverform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inleverform.Designer.cs">
+      <DependentUpon>Inleverform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VerhuurForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,12 @@
     </Compile>
     <Compile Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.Designer.cs">
       <DependentUpon>MateriaalBeschikbaarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VerhuurKeuze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VerhuurKeuze.Designer.cs">
+      <DependentUpon>VerhuurKeuze.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,11 +256,17 @@
     <EmbeddedResource Include="Forms\TijdlijnForm.resx">
       <DependentUpon>TijdlijnForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inleverform.resx">
+      <DependentUpon>Inleverform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\VerhuurForm.resx">
       <DependentUpon>VerhuurForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventManagementForms\DataForms\MateriaalBeschikbaarForm.resx">
       <DependentUpon>MateriaalBeschikbaarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VerhuurKeuze.resx">
+      <DependentUpon>VerhuurKeuze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

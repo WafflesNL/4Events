@@ -120,6 +120,60 @@ namespace Forms_version_1._0
             }
             return MaterialList;
         }
+
+        public static List<Material> GetMaterialforAccountonEvent(int EventID, int AccountID)
+        {
+            List<Material> MaterialList = new List<Material>();
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "SELECT * FROM Materiaal WHERE EventID = @EventID AND AccountID = @AccountID";
+                    cmd.Parameters.Add(new SqlParameter("EventID", EventID));
+                    cmd.Parameters.Add(new SqlParameter("AccountID", AccountID));
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int ID = Convert.ToInt32(reader["ID"]);
+                        int Price = Convert.ToInt32(reader["Prijs"]);
+                        string Type = (reader["Type"].ToString());
+                        int? eventid = (reader["EventID"] != DBNull.Value) ? Convert.ToInt32(reader["EventID"]) : 0;
+                        int? accountID = (reader["AccountID"] != DBNull.Value) ? Convert.ToInt32(reader["AccountID"]) : 0;
+                        if (eventid == 0)
+                        {
+                            eventid = null;
+                        }
+                        if (accountID == 0)
+                        {
+                            accountID = null;
+                        }
+
+
+                        Material Material = new Material(ID, Type, Price, eventid, accountID);
+                        MaterialList.Add(Material);
+                    }
+                    return MaterialList;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return MaterialList;
+        }
         /// <summary>
         /// Gets a materials that haven't been linked to an event yet
         /// </summary>     

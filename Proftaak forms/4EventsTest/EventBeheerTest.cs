@@ -8,12 +8,17 @@ using Forms_version_1._0.Classes;
 
 namespace _4EventsTest
 {
+    //event TestMethods
+
     /// <summary>
     /// Summary description for EventTest
     /// </summary>
     [TestClass]
     public class EventBeheerTest
     {
+        /// <summary>
+        /// Tests if event can be correctly changed in the database
+        /// </summary>
         [TestMethod]
         public void EventEditTestMethod()
         {
@@ -22,6 +27,9 @@ namespace _4EventsTest
             Assert.AreEqual(true, Event.EditEvent(Event));
         }
 
+        /// <summary>
+        /// Tests if event can be correctly created in the database
+        /// </summary>
         [TestMethod]
         public void EventCreateTestMethod()
         {
@@ -33,6 +41,9 @@ namespace _4EventsTest
             Assert.AreEqual(true, Event.CreateEvent(Event));
         }
 
+        /// <summary>
+        /// Tests if the date isn't out of range
+        /// </summary>
         [TestMethod]
         public void EventCheckDateTestMethod()
         {
@@ -44,6 +55,9 @@ namespace _4EventsTest
             Assert.AreEqual(true, Event.CheckDateOutOfRange());
         }
 
+        /// <summary>
+        /// Gets a camping to add to the Event
+        /// </summary>
         [TestMethod]
         public void EventGetCampingTestMethod()
         {
@@ -55,6 +69,9 @@ namespace _4EventsTest
             Assert.AreEqual(true, Event.GetCamping());
         }
 
+        /// <summary>
+        /// Creates a new timeline for an event
+        /// </summary>
         [TestMethod]
         public void EventCreateTimelineTestMethod()
         {
@@ -64,6 +81,31 @@ namespace _4EventsTest
             Event Event = new Event("2016 event", "Vet feest", "Tilburg", 50, Date, Account, MaterialList);
 
             Assert.AreEqual(true, Event.CreateTimeLine());
+        }
+
+        //Account TestMethods
+
+        /// <summary>
+        /// Tests if Account can be correctly recieved from the database
+        /// </summary>
+        [TestMethod]
+        public void LoginTestMethod()
+        {               
+            Assert.AreEqual(true, CurrentAccount.Login("1", "Lin"));
+            Assert.AreEqual(true, CurrentAccount.Login("3", "Henk-Jan"));
+            Assert.AreEqual(true, CurrentAccount.Login("4", "Jamal"));
+        }
+
+        /// <summary>
+        /// Tests if event can be correctly changed in the database
+        /// </summary>
+        [TestMethod]
+        public void TranslateFunctionTestMethod()
+        {
+            Assert.AreEqual(Function.Beheerder, CurrentAccount.TranslateFunction("Beheerder"));
+            Assert.AreEqual(Function.Bezoeker, CurrentAccount.TranslateFunction("Bezoeker"));
+            Assert.AreEqual(Function.Medewerker, CurrentAccount.TranslateFunction("Medewerker"));
+            Assert.AreEqual(Function.Accountbeheerder, CurrentAccount.TranslateFunction("Accountbeheerder"));
         }
 
 

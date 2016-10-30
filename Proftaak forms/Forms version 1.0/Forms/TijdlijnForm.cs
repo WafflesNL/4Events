@@ -247,7 +247,7 @@ namespace Forms_version_1._0.Forms
             TijdlijnBox.Items.Add(post1);
             foreach (Post E in newtimeline.GetReaction(post1.ID.ToString()))
             {
-                TijdlijnBox.Items.Add(E).ToString().PadLeft(10);
+                TijdlijnBox.Items.Add("".PadLeft(3) + E);
             }
         } //Shows reactions to selected post
     }

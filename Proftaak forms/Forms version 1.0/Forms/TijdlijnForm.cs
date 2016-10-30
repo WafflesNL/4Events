@@ -242,7 +242,13 @@ namespace Forms_version_1._0.Forms
 
         private void btnShowReact_Click(object sender, EventArgs e)
         {
-
-        }
+            Post post1 = TijdlijnBox.SelectedItem as Post;
+            TijdlijnBox.Items.Clear();
+            TijdlijnBox.Items.Add(post1);
+            foreach (Post E in newtimeline.GetReaction(post1.ID.ToString()))
+            {
+                TijdlijnBox.Items.Add(E).ToString().PadLeft(10);
+            }
+        } //Shows reactions to selected post
     }
 }

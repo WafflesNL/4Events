@@ -160,3 +160,5 @@ C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms versi
 C:\Users\redma_000\Desktop\Git Foldah\Project\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.VerhuurKeuze.resources
 C:\Users\Gebruiker\Desktop\GitHub2\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.InleverForm.resources
 C:\Users\Gebruiker\Desktop\GitHub2\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.VerhuurKeuze.resources
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.InleverForm.resources
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms_version_1._0.Forms.VerhuurKeuze.resources

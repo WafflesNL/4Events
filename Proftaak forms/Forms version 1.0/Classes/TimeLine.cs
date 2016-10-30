@@ -50,6 +50,19 @@ namespace Forms_version_1._0.Classes
             return Postlist;
         } //Gets all the post out of the databaselayer
 
+        public List<Post> GetReaction(string ID)
+        {
+            if (CurrentAccount.ID == 3)
+            {
+                Postlist = DatabaseGetPost.GetReaction(ID);
+            }
+            else
+            {
+                Postlist = DatabaseGetPost.GetSafeReaction(ID);
+            }
+            return Postlist;
+        } //Gets all the post out of the databaselayer
+
         public void LikePost(Post post)
         {
             Check = DatabaseEditPost.LikePost(post);

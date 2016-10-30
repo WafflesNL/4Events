@@ -165,6 +165,7 @@
             // 
             // cbLocation
             // 
+            this.cbLocation.Enabled = false;
             this.cbLocation.FormattingEnabled = true;
             this.cbLocation.Items.AddRange(new object[] {
             "Tilburg",

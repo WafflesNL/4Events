@@ -19,6 +19,39 @@ namespace Forms_version_1._0.Classes
         public Account Account { get; set; }
         public byte[] File { get; set; }
         public string Attachment { get; set; }
+        public string PostID { get; set; }
+
+        public Post(int iD)
+        {
+            this.ID = iD;
+        } //Id constructor
+
+        public Post(int iD, string text, string category, int accountID, int timelineID, int likes, Account account, byte[] file, string attachment)
+        {
+            this.ID = iD;
+            this.AccountID = accountID;
+            this.Text = text;
+            this.Category = category;
+            this.TimeLineID = timelineID;
+            this.Likes = likes;
+            this.Account = account;
+            this.File = file;
+            this.Attachment = attachment;
+        } //Full iD constructor
+
+        public Post(int iD, string text, string category, int accountID, int timelineID, int likes, Account account, byte[] file, string attachment, string postID)
+        {
+            this.ID = iD;
+            this.AccountID = accountID;
+            this.Text = text;
+            this.Category = category;
+            this.TimeLineID = timelineID;
+            this.Likes = likes;
+            this.Account = account;
+            this.File = file;
+            this.Attachment = attachment;
+            this.PostID = postID;
+        } //Full ID Reaction constructor
 
         public Post(string text, string category, int accountID, int timelineID, int likes, Account account)
         {
@@ -39,6 +72,16 @@ namespace Forms_version_1._0.Classes
             this.Likes = likes;
         } //Regular constructor
 
+        public Post(string text, string category, int accountID, int timelineID, int likes, string postID)
+        {
+            this.AccountID = accountID;
+            this.Text = text;
+            this.Category = category;
+            this.TimeLineID = timelineID;
+            this.Likes = likes;
+            this.PostID = postID;
+        } //Regular constructor Reaction   
+
         public Post(string text, string category, int accountID, int timelineID, int likes, byte[] file)
         {
             this.AccountID = accountID;
@@ -48,6 +91,17 @@ namespace Forms_version_1._0.Classes
             this.Likes = likes;
             this.File = file;
         } //Constructor adding attachment to a post
+
+        public Post(string text, string category, int accountID, int timelineID, int likes, byte[] file, string postID)
+        {
+            this.AccountID = accountID;
+            this.Text = text;
+            this.Category = category;
+            this.TimeLineID = timelineID;
+            this.Likes = likes;
+            this.File = file;
+            this.PostID = postID;
+        } //Constructor adding attachment to a post Reaction
 
         public Post(string text, string category, int accountID, int timelineID, int likes, Account account, byte[] file, string attachment)
         {
@@ -61,10 +115,19 @@ namespace Forms_version_1._0.Classes
             this.Attachment = attachment;
         } //Full constructor
 
-        public Post(int iD)
+        public Post(string text, string category, int accountID, int timelineID, int likes, Account account, byte[] file, string attachment, string postID)
         {
-            this.ID = iD;
-        } //Id constructor
+            this.AccountID = accountID;
+            this.Text = text;
+            this.Category = category;
+            this.TimeLineID = timelineID;
+            this.Likes = likes;
+            this.Account = account;
+            this.File = file;
+            this.Attachment = attachment;
+            this.PostID = postID;
+        } //Full Reaction Constructor
+
         public override string ToString()
         {
             int Length;
@@ -74,7 +137,7 @@ namespace Forms_version_1._0.Classes
                 Name = Name.Insert(Name.Length, " ");
                 Length = Name.Length;
             }
-            return  Name + Text.PadRight(90) +  Likes.ToString().PadRight(12) + Attachment; 
+            return  Name + Text.PadRight(90) +  Likes.ToString().PadRight(12) + Attachment + ID; 
         } //Tostring method to change Post from the database to strings for the listbox
     }
 }

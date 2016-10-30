@@ -56,5 +56,53 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
 
             return Check;
         } //Adding the gottenpost from the business layer to the database
+
+        public static bool AddReaction(Post Post)
+        {
+            bool Check = false;
+            int ID = DatabaseGetHighestID.GetHighestID("Post");
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    if (Post.File == null)
+                    {
+                        cmd.CommandText = "INSERT INTO Post (ID, Tekstinhoud, postID, Datum, Categorie, TijdlijnID, AccountID) VALUES (@ID, @Text, @PostID, @Date, @Category, @TimelineID, @AccountID)";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "INSERT INTO Post (ID, Tekstinhoud, postID, Datum, Categorie, TijdlijnID, AccountID, Bestand) VALUES (@ID, @Text, @PostID, @Date, @Category, @TimelineID, @AccountID, @File)";
+                        cmd.Parameters.Add(new SqlParameter("File", Post.File));
+                    }
+                    cmd.Parameters.Add(new SqlParameter("ID", ID));
+                    cmd.Parameters.Add(new SqlParameter("Text", Post.Text));
+                    cmd.Parameters.Add(new SqlParameter("postID", Post.PostID));
+                    cmd.Parameters.Add(new SqlParameter("Date", System.DateTime.Now));
+                    cmd.Parameters.Add(new SqlParameter("Category", Post.Category));
+                    cmd.Parameters.Add(new SqlParameter("TimelineID", Post.TimeLineID));
+                    cmd.Parameters.Add(new SqlParameter("AccountID", Post.AccountID));
+                    cmd.ExecuteNonQuery();
+
+                    Check = true;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                    Check = false;
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+
+            return Check;
+        } //Adding the gottenpost from the business layer to the database
     }
 }

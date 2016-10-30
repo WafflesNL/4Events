@@ -84,27 +84,29 @@ namespace Forms_version_1._0.Forms
 
         private void btnPost_Click(object sender, EventArgs e) //Sends post to the business layer
         {
-            if (cbCatergory.Text != null && txtPost.Text != "")
+            if (TijdlijnBox.SelectedItem == null)
             {
-                if (postAttach != null)
+                if (cbCatergory.Text != null && txtPost.Text != "")
                 {
-                    newtimeline.AddPost(postAttach); //hier insert je een post
-                }
-                else
-                {
-                    string Categorytext = cbCatergory.Text;
-                    string Posttext = txtPost.Text;
-                    if (Posttext.Length < 90)
+                    if (postAttach != null) //Inserts a post with an attachment
                     {
-                        Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newtimeline.TimelineID, 0);
-                        newtimeline.AddPost(post); //hier insert je een post
+                        newtimeline.AddPost(postAttach); 
                     }
-                    else
+                    else //Inserts a post without an attachment
                     {
-                        MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
-                    }
+                        string Categorytext = cbCatergory.Text;
+                        string Posttext = txtPost.Text;
+                        if (Posttext.Length < 90)
+                        {
+                            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newtimeline.TimelineID, 0);
+                            newtimeline.AddPost(post); 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
+                        }
 
-                }
+                    }
 
                     if (newtimeline.Check)
                     {
@@ -112,12 +114,53 @@ namespace Forms_version_1._0.Forms
                         GetPosts();
                         cbCatergory.Text = null;
                         txtPost.Text = null;
-                    }        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Category and Text");
+                }
             }
             else
             {
-                MessageBox.Show("Please enter Category and Text");
-            }
+                Post post1 = TijdlijnBox.SelectedItem as Post;
+                if (cbCatergory.Text != null && txtPost.Text != "")
+                {
+                    if (postAttach != null)
+                    {
+                        string Categorytext = cbCatergory.Text;
+                        string Posttext = txtPost.Text;
+                        newtimeline.AddReaction(postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile(), post1.ID.ToString())); //Inserts a post with an attachment
+                    }
+                    else
+                    {
+                        string Categorytext = cbCatergory.Text;
+                        string Posttext = txtPost.Text;
+                        if (Posttext.Length < 90)
+                        {
+                            Post post2 = new Post(Posttext, Categorytext, CurrentAccount.ID, newtimeline.TimelineID, 0, post1.ID.ToString());
+                            newtimeline.AddReaction(post2); //Inserts a post without an attachment
+                        }
+                        else
+                        {
+                            MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
+                        }
+
+                    }
+
+                    if (newtimeline.Check)
+                    {
+                        TijdlijnBox.Items.Clear();
+                        GetPosts();
+                        cbCatergory.Text = null;
+                        txtPost.Text = null;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Category and Text");
+                }
+            }           
         }
 
         private void btnFilter_Click(object sender, EventArgs e) //Button for the filterfunction
@@ -196,5 +239,10 @@ namespace Forms_version_1._0.Forms
             TijdlijnBox.Items.Clear();
             GetPosts();
         } //Clears the filter
+
+        private void btnShowReact_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -46,6 +46,7 @@
             this.pcbAttach = new System.Windows.Forms.PictureBox();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnShowReact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAttach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,11 +221,22 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // btnShowReact
+            // 
+            this.btnShowReact.Location = new System.Drawing.Point(405, 478);
+            this.btnShowReact.Name = "btnShowReact";
+            this.btnShowReact.Size = new System.Drawing.Size(75, 32);
+            this.btnShowReact.TabIndex = 18;
+            this.btnShowReact.Text = "Reacties";
+            this.btnShowReact.UseVisualStyleBackColor = true;
+            this.btnShowReact.Click += new System.EventHandler(this.btnShowReact_Click);
+            // 
             // TijdlijnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 647);
+            this.Controls.Add(this.btnShowReact);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.pcbAttach);
@@ -272,5 +284,6 @@
         private System.Windows.Forms.PictureBox pcbAttach;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnShowReact;
     }
 }

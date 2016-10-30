@@ -32,6 +32,11 @@ namespace Forms_version_1._0.Classes
             Check = DatabaseAddPost.AddPost(post);
         } //Adds gotten post to the databaselayer
 
+        public void AddReaction(Post post)
+        {
+            Check = DatabaseAddPost.AddReaction(post);
+        } //Adds gotten post to the databaselayer
+
         public List<Post> GetPost()
         {
             if (CurrentAccount.ID == 3)

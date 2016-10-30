@@ -33,8 +33,7 @@ namespace Forms_version_1._0
             //DatabaseAddPost.AddPost();
             Event Event = cbSelectEvent.SelectedItem as Event;
             TijdlijnForm Form = new TijdlijnForm(Event);
-            Form.ShowDialog();
-            this.Close();
+            Form.ShowDialog();        
         }
 
         private void btnBetalingStatus_Click(object sender, EventArgs e)
@@ -117,23 +116,16 @@ namespace Forms_version_1._0
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {
-                btnAccountView.Visible = true;
-                btnCreateEvent.Visible = true;
-                btnBetalingStatus.Visible = false;
-                btnReserve.Visible = false;
+                btnAccountView.Enabled = true;
+                btnCreateEvent.Enabled = true;
             }
             else if(CurrentAccount.Function == Function.Accountbeheerder)
             {
-                btnAccountView.Visible = true;
-                btnBetalingStatus.Visible = false;
-                btnReserve.Visible = false;
-
+                btnAccountView.Enabled = true;                        
             }
             else if(CurrentAccount.Function == Function.Medewerker)
             {
-                btnBetalingStatus.Visible = false;
-                btnReservePlace.Visible = false;
-                btnReserve.Visible = false;
+            
             }
             else if(CurrentAccount.Function == Function.Bezoeker)
             {
@@ -142,9 +134,27 @@ namespace Forms_version_1._0
         }
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
-            this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;
-            this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
+            //iedereen
+            this.btnEventInfo.Enabled = this.cbSelectEvent.SelectedItem != null;     
             this.btnTijdlijn.Enabled = this.cbSelectEvent.SelectedItem != null;
+
+            if (CurrentAccount.Function == Function.Bezoeker)
+            {
+                this.btnReserve.Enabled = this.cbSelectEvent.SelectedItem != null;
+                this.btnBetalingStatus.Enabled = this.cbSelectEvent.SelectedItem != null;
+            }
+            else if (CurrentAccount.Function == Function.Beheerder)
+            {
+                this.btnMaterial.Enabled = this.cbSelectEvent.SelectedItem != null;
+            }
+            else if (CurrentAccount.Function == Function.Medewerker)
+            {
+                this.btnMaterial.Enabled = this.cbSelectEvent.SelectedItem != null;
+            }
+            else if (CurrentAccount.Function == Function.Accountbeheerder)
+            {
+
+            }        
         }
 
      

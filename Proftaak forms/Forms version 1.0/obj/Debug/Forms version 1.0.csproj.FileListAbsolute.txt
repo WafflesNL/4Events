@@ -1,6 +1,5 @@
 C:\Users\Gebruiker\Documents\schooljaar 2016-2017\proftaak event\C#\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.config
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.config
-C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csprojResolveAssemblyReference.cache
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
 C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb
 C:\Users\Gebruiker\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.config
@@ -191,3 +190,5 @@ C:\Users\redma\Desktop\newgit\4Events\Proftaak forms\Forms version 1.0\obj\Debug
 C:\Users\redma\Desktop\newgit\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.csproj.GenerateResource.Cache
 C:\Users\redma\Desktop\newgit\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.exe
 C:\Users\redma\Desktop\newgit\4Events\Proftaak forms\Forms version 1.0\obj\Debug\Forms version 1.0.pdb
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.CodeAnalysisLog.xml
+C:\Users\Bart\Documents\GitHub\4Events\Proftaak forms\Forms version 1.0\bin\Debug\Forms version 1.0.exe.lastcodeanalysissucceeded

@@ -13,7 +13,8 @@ namespace Forms_version_1._0.Forms
 {
     public partial class VerhuurForm : Form
     {
-        Event Event;  
+        Event Event;
+        RFID rfid;
         Material material = new Material(1,"tomato",2, null,null);
 
         List<Material> materiallist = new List<Material>();
@@ -25,6 +26,13 @@ namespace Forms_version_1._0.Forms
             this.Event = Event;
             GetData();
             Refreshform();
+            rfid = new RFID();
+            rfid.Open();
+            if (rfid.IsAttached == false)
+            {
+                MessageBox.Show("RFID reader kon niet worden gevonden. Het form wordt zonder RFID functie opgestart.", "Melding");
+                btnRFID.Visible = false;
+            }
         }
     
         //Koppelt een material aan een account       
@@ -92,6 +100,10 @@ namespace Forms_version_1._0.Forms
             cbAccounts.DataSource = Event.GetGuestList();
         }
 
-       
+        private void btnRFID_Click(object sender, EventArgs e)
+        {
+            rfid.Open();
+            
+        }
     }
 }

@@ -36,8 +36,8 @@
             this.btnTotaal = new System.Windows.Forms.Button();
             this.lbSelected = new System.Windows.Forms.ListBox();
             this.lblEvent = new System.Windows.Forms.Label();
-            this.cbAccounts = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbMateriaal
@@ -110,15 +110,6 @@
             this.lblEvent.Size = new System.Drawing.Size(0, 13);
             this.lblEvent.TabIndex = 11;
             // 
-            // cbAccounts
-            // 
-            this.cbAccounts.FormattingEnabled = true;
-            this.cbAccounts.Location = new System.Drawing.Point(163, 14);
-            this.cbAccounts.Name = "cbAccounts";
-            this.cbAccounts.Size = new System.Drawing.Size(140, 21);
-            this.cbAccounts.TabIndex = 12;
-            this.cbAccounts.SelectedIndexChanged += new System.EventHandler(this.cbAccounts_SelectedIndexChanged);
-            // 
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(223, 98);
@@ -129,13 +120,23 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(272, 324);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(145, 23);
+            this.btnCheck.TabIndex = 14;
+            this.btnCheck.Text = "Check Materiaal Account";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // InleverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 351);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.cbAccounts);
             this.Controls.Add(this.lblEvent);
             this.Controls.Add(this.lbSelected);
             this.Controls.Add(this.btnTotaal);
@@ -147,6 +148,7 @@
             this.Name = "InleverForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerhuurForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClose);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +164,7 @@
         private System.Windows.Forms.Button btnTotaal;
         private System.Windows.Forms.ListBox lbSelected;
         private System.Windows.Forms.Label lblEvent;
-        private System.Windows.Forms.ComboBox cbAccounts;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnCheck;
     }
 }

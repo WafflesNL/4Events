@@ -115,6 +115,8 @@ namespace Forms_version_1._0.Forms
             material.Rent(selectedlist, account.ID);
             selectedlist.Clear();
             Refreshform();
+
+            MessageBox.Show("Geselecteerde items aan account: " + account.Name + " Toegevoegd.");
         }
 
         private void FormClose(object sender, FormClosingEventArgs e)

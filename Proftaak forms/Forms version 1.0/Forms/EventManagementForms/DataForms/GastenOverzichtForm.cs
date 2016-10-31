@@ -78,7 +78,7 @@ namespace Forms_version_1._0.Forms
                 // Hier moet ook nog fout afhandeling bij.
 
 
-                if (MessageBox.Show("Account: " + account.Name + " Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Account: " + account.Username + " Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     // Schrijf het account in
                     
@@ -107,10 +107,22 @@ namespace Forms_version_1._0.Forms
             if (rfid.CurrentRFIDTag != null)
             {
                 // Check het account
-                // Hier moet ook nog foutafhandeling bij
-                if (MessageBox.Show("Account: " + rfid.CurrentRFIDTag + " Wordt uitgeschreven.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                Account Account = newevent.Checkuit_CheckAccount(rfid.CurrentRFIDTag);
+
+                if (Account == null)
                 {
-                    // Schrijf het accoutn in.
+                    MessageBox.Show("Dit account is momenteel niet op het account");
+                    return;
+                }
+                // Hier moet ook nog foutafhandeling bij
+                if (MessageBox.Show("Account: " + Account.Username + " Wordt uitgeschreven.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    if (newevent.Checkuit_UpdateAccount(Account) == false)
+                    {
+                        MessageBox.Show("Account kon niet worden uigecheckt.");
+                    }
+
+                    GetGuestList();
                 }
                 else
                 {

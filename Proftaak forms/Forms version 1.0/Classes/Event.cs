@@ -186,9 +186,9 @@ namespace Forms_version_1._0.Classes
         public Account Checkin_CheckAccount(string RFIDtag)
         {
             
-            if (DatabaseGetAccounts.GetAccountRFID(RFIDtag, ID) != null) //database
+            if (DatabaseGetAccounts.GetAccountRFID_Checkin(RFIDtag, ID) != null) //database
             {
-                Account Account = DatabaseGetAccounts.GetAccountRFID(RFIDtag, ID);
+                Account Account = DatabaseGetAccounts.GetAccountRFID_Checkin(RFIDtag, ID);
                 return Account;
             }
             else
@@ -199,7 +199,7 @@ namespace Forms_version_1._0.Classes
 
         public bool Checkin_UpdateAccount(Account Account)
         {
-            if (DatabaseEditAccount.UpdateEventID(Account, ID))
+            if (DatabaseEditAccount.UpdateEventID_checkin(Account, ID))
             {
                 return true;
             }
@@ -208,6 +208,32 @@ namespace Forms_version_1._0.Classes
                 return false;
             }
         }
+
+        public Account Checkuit_CheckAccount(string RFIDtag)
+        {
+            if (DatabaseGetAccounts.GetAccountRFID_Checkuit(RFIDtag, ID) != null) //database
+            {
+                Account Account = DatabaseGetAccounts.GetAccountRFID_Checkuit(RFIDtag, ID);
+                return Account;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public bool Checkuit_UpdateAccount(Account Account)
+        {
+            if (DatabaseEditAccount.UpdateEventID_checkuit(Account, ID))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         /// <summary>
         /// Tostring methods for event

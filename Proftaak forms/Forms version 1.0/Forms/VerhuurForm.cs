@@ -102,8 +102,10 @@ namespace Forms_version_1._0.Forms
 
         private void btnRFID_Click(object sender, EventArgs e)
         {
-            rfid.Open();
-            
+            //rfid.Open();
+
+            //cbAccounts.Items.Add(material.GetAccountRFID(rfid.CurrentRFIDTag));
+            //rfid.Close();
         }
     }
 }

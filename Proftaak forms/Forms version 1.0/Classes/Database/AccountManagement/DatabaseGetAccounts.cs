@@ -234,9 +234,52 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "select * from Account a join Account_Reservering ar on a.ID = ar.AccountID join Reservering r on ar.ReserveringID = r.ID where a.RFID = '@RFID' and r.EventID = @Event";
+                    cmd.CommandText = "SELECT * FROM Account a JOIN Account_Reservering ar ON a.ID = ar.AccountID JOIN Reservering r ON ar.ReserveringID = r.ID WHERE a.RFID = @RFID AND r.EventID = @EventID";
                     cmd.Parameters.Add(new SqlParameter("RFID", RFID));
                     cmd.Parameters.Add(new SqlParameter("EventID", EventID));
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int ID = Convert.ToInt32(reader["ID"]);
+                        string Username = (reader["Gebruikersnaam"].ToString());
+                        string Password = (reader["Wachtwoord"].ToString());
+                        string Function = (reader["Functie"].ToString());
+                        string Name = (reader["Naam"].ToString());
+
+                        account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
+                    }
+                    return account;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return account;
+        }
+
+        public static Account GetAccountFromRFID(string RFID)
+        {
+            Account account = null;
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "SELECT * FROM Account WHERE RFID = @RFID";
+                    cmd.Parameters.Add(new SqlParameter("RFID", RFID));
 
                     SqlDataReader reader = cmd.ExecuteReader();
 

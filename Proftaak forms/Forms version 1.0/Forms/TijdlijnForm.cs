@@ -41,20 +41,17 @@ namespace Forms_version_1._0.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
-            int ID;
-            if (TijdlijnBox.SelectedItem == null)
+            if (lbTimeline.SelectedItem == null)
             {
                 MessageBox.Show("Selecteer een post");
             }
             else
             {
-                ID = TijdlijnBox.SelectedIndex + 1; //hier kun je een methode van maken en in post neer zetten
-                Post post1 = new Post(ID);
-                newtimeline.LikePost(post1); //like post zou eigenlijk op een manier terug moeten komen in de klasse post net als rapporteren
-
+                //Post post1 = lbTimeline.SelectedItem as Post;
+                newtimeline.LikePost(lbTimeline.SelectedItem as Post);
                 if (newtimeline.Check == true)
                 {
-                    TijdlijnBox.Items.Clear();
+                    lbTimeline.Items.Clear();
                     GetPosts();
                 }
             }
@@ -84,9 +81,9 @@ namespace Forms_version_1._0.Forms
 
         private void btnPost_Click(object sender, EventArgs e) //Sends post to the business layer
         {
-            if (TijdlijnBox.SelectedItem == null)
+            if (lbTimeline.SelectedItem == null)
             {
-                if (cbCatergory.Text != null && txtPost.Text != "")
+                if (cbCatergory.Text != "" && txtPost.Text != "")
                 {
                     if (postAttach != null) //Inserts a post with an attachment
                     {
@@ -110,7 +107,7 @@ namespace Forms_version_1._0.Forms
 
                     if (newtimeline.Check)
                     {
-                        TijdlijnBox.Items.Clear();
+                        lbTimeline.Items.Clear();
                         GetPosts();
                         cbCatergory.Text = null;
                         txtPost.Text = null;
@@ -123,7 +120,7 @@ namespace Forms_version_1._0.Forms
             }
             else
             {
-                Post post1 = TijdlijnBox.SelectedItem as Post;
+                Post post1 = lbTimeline.SelectedItem as Post;
                 if (cbCatergory.Text != null && txtPost.Text != "")
                 {
                     if (postAttach != null)
@@ -150,7 +147,7 @@ namespace Forms_version_1._0.Forms
 
                     if (newtimeline.Check)
                     {
-                        TijdlijnBox.Items.Clear();
+                        lbTimeline.Items.Clear();
                         GetPosts();
                         cbCatergory.Text = null;
                         txtPost.Text = null;
@@ -167,10 +164,17 @@ namespace Forms_version_1._0.Forms
         {
             Filter window = new Filter();            
             window.ShowDialog();
-            TijdlijnBox.Items.Clear();
+            if (window.Filerlst.Count != 0)
+            {
+                lbTimeline.Items.Clear();              
+            }
+            else
+            {
+                MessageBox.Show("Geen resultaten gevonden");
+            }      
             foreach (Post E in window.Filerlst)
             {               
-                TijdlijnBox.Items.Add(E);
+                lbTimeline.Items.Add(E);
             }
         }
 
@@ -178,14 +182,21 @@ namespace Forms_version_1._0.Forms
         {
             foreach (Post E in newtimeline.GetPost())
             {
-                TijdlijnBox.Items.Add(E);
+                lbTimeline.Items.Add(E);
             }
         }
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            Post post = TijdlijnBox.SelectedItem as Post;
-            pcbAttach.Image = TimeLine.ByteToImage(post.File);
+            Post post = lbTimeline.SelectedItem as Post;
+            if (lbTimeline.SelectedItem == null)
+            {
+                MessageBox.Show("Selecteer een Post met bestand");
+            }
+            else
+            {
+                pcbAttach.Image = TimeLine.ByteToImage(post.File);
+            }
             if (pcbAttach.Image == null)
             {
                 
@@ -211,18 +222,18 @@ namespace Forms_version_1._0.Forms
         private void btnReport_Click(object sender, EventArgs e)
         {
             int ID;
-            if (TijdlijnBox.SelectedIndex == -1)
+            if (lbTimeline.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecteer een post");
             }
             else
             {
-                ID = TijdlijnBox.SelectedIndex + 1;
+                ID = lbTimeline.SelectedIndex + 1;
                 Post post1 = new Post(ID);
                 newtimeline.ReportPost(post1);
                 if (newtimeline.Check == true)
                 {
-                    TijdlijnBox.Items.Clear();
+                    lbTimeline.Items.Clear();
                     GetPosts();
                 }
             }
@@ -230,24 +241,31 @@ namespace Forms_version_1._0.Forms
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            Post post = TijdlijnBox.SelectedItem as Post;
+            Post post = lbTimeline.SelectedItem as Post;
             pcbAttach.Image = TimeLine.ByteToImage(post.File);
         } //Button to show the attachment from the selected post
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            TijdlijnBox.Items.Clear();
+            lbTimeline.Items.Clear();
             GetPosts();
         } //Clears the filter
 
         private void btnShowReact_Click(object sender, EventArgs e)
         {
-            Post post1 = TijdlijnBox.SelectedItem as Post;
-            TijdlijnBox.Items.Clear();
-            TijdlijnBox.Items.Add(post1);
-            foreach (Post E in newtimeline.GetReaction(post1.ID.ToString()))
+            Post post1 = lbTimeline.SelectedItem as Post;           
+            if (post1 != null)
             {
-                TijdlijnBox.Items.Add("".PadLeft(3) + E);
+                lbTimeline.Items.Clear();
+                lbTimeline.Items.Add(post1);
+                foreach (Post E in newtimeline.GetReaction(post1.ID.ToString()))
+                    {
+                        lbTimeline.Items.Add(E);
+                    }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een post");
             }
         } //Shows reactions to selected post
     }

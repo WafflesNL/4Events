@@ -25,7 +25,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT * FROM Post";
+                    cmd.CommandText = "SELECT * FROM Post WHERE PostID IS NULL";
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -86,7 +86,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT * FROM Post WHERE Rapportaties < 5";
+                    cmd.CommandText = "SELECT * FROM Post WHERE Rapportaties < 5 AND PostID IS NULL";
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -269,7 +269,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam = "+ "'" + Fnaam + "'" + " AND p.Tekstinhoud LIKE " + "'%" +  Fwoord + "%'" + "AND p.Categorie = " + "'" + Fcat + "'" + ";";
+                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam LIKE "+ "'%" + Fnaam + "%'" + " AND p.Tekstinhoud LIKE " + "'%" +  Fwoord + "%'" + "AND p.Categorie = " + "'" + Fcat + "'" + ";";
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -291,7 +291,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         }
                         else
                         {
-                            Attachment = null;
+                            Attachment = "None";
                             File = null;
                         }
 
@@ -330,7 +330,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam = " + "'" + Fnaam + "'" + ";";
+                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam LIKE " + "'%" + Fnaam + "%'" + ";";
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -352,7 +352,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         }
                         else
                         {
-                            Attachment = null;
+                            Attachment = "None";
                             File = null;
                         }
 
@@ -413,7 +413,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         }
                         else
                         {
-                            Attachment = null;
+                            Attachment = "None";
                             File = null;
                         }
 
@@ -474,7 +474,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         }
                         else
                         {
-                            Attachment = null;
+                            Attachment = "None";
                             File = null;
                         }
 
@@ -513,7 +513,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam = " + "'" + Fnaam + "'" + " AND p.Tekstinhoud LIKE " + "'%" + Fwoord + "%'" + ";";
+                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam LIKE " + "'%" + Fnaam + "%'" + " AND p.Tekstinhoud LIKE " + "'%" + Fwoord + "%'" + ";";
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -535,7 +535,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         }
                         else
                         {
-                            Attachment = null;
+                            Attachment = "None";
                             File = null;
                         }
 
@@ -574,7 +574,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam = " + "'" + Fnaam + "'" + "AND p.Categorie = " + "'" + Fcat + "'" + ";";
+                    cmd.CommandText = "SELECT p.Categorie, p.AccountID, p.TijdlijnID, p.Tekstinhoud, p.Likes, a.Naam, p.Bestand FROM Post p, Account a WHERE p.AccountID = a.ID AND a.Naam LIKE " + "'%" + Fnaam + "%'" + "AND p.Categorie = " + "'" + Fcat + "'" + ";";
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -596,7 +596,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         }
                         else
                         {
-                            Attachment = null;
+                            Attachment = "None";
                             File = null;
                         }
 
@@ -657,7 +657,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                         }
                         else
                         {
-                            Attachment = null;
+                            Attachment = "None";
                             File = null;
                         }
 

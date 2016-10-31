@@ -71,5 +71,10 @@ namespace Forms_version_1._0.Forms
             }
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -120,5 +120,16 @@ namespace Forms_version_1._0.Classes
 
 
         } //Saves the post from a byte[] to a Bitmap
+
+        public Post CreatePost(string posttext, string categorytext, int timelineID)
+        {
+            Post post = new Post(posttext, categorytext, CurrentAccount.ID, timelineID, 0);
+            return post;
+        }//Creates a Post to add to the database
+        public Post CreateReaction(string posttext, string categorytext, int timelineID, string postID)
+        {
+            Post post = new Post(posttext, categorytext, CurrentAccount.ID, timelineID, 0, postID);
+            return post;
+        }//Creates a Reaction to add to the database
     }
 }

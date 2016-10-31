@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Forms_version_1._0.Classes;
 
 namespace Forms_version_1._0
 {
@@ -216,56 +217,13 @@ namespace Forms_version_1._0
         }
 
         /// <summary>
-        /// Returns the RFID string with the AccountID
-        /// </summary>
-        /// <param name="AccountID">The AccountID int</param>
-        /// <returns></returns>
-        public static string GetSingleAccountRFID(int AccountID)
-        {
-            string RFIDTag = "N/A";
-
-            if (DatabaseConnectie.OpenConnection())
-            {
-
-                try
-                {
-                    DatabaseConnectie.OpenConnection();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = DatabaseConnectie.connect;
-
-                    cmd.CommandText = "SELECT RFID FROM Account Where ID = @ID AND Functie = 'Bezoeker'";
-                    cmd.Parameters.Add(new SqlParameter("ID", AccountID));
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        RFIDTag = (reader["RFID"].ToString());
-
-                    }
-                    return RFIDTag;
-                }
-                catch (SqlException e)
-                {
-                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
-
-                }
-                finally
-                {
-                    DatabaseConnectie.CloseConnection();
-                }
-            }
-            return RFIDTag;
-        }
-
-        /// <summary>
         /// Returns the Account in a list with the RFID.
         /// </summary>
         /// <param name="RFID">RFID string.</param>
         /// <returns></returns>
-        public static List<Account> GetAccountRFID(string RFID)
+        public static Account GetAccountRFID(string RFID, Event Event)
         {
-            List<Account> AccountList = new List<Account>();
+            Account account = null;
 
             if (DatabaseConnectie.OpenConnection())
             {
@@ -276,8 +234,9 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT * FROM Account Where RFID = @RFID AND Functie = 'Bezoeker'";
+                    cmd.CommandText = "select * from Account a join Account_Reservering ar on a.ID = ar.AccountID join Reservering r on ar.ReserveringID = r.ID where a.RFID = '@RFID' and r.EventID = @Event";
                     cmd.Parameters.Add(new SqlParameter("RFID", RFID));
+                    cmd.Parameters.Add(new SqlParameter("EventID", Event.ID));
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -289,10 +248,9 @@ namespace Forms_version_1._0
                         string Function = (reader["Functie"].ToString());
                         string Name = (reader["Naam"].ToString());
 
-                        Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
-                        AccountList.Add(Account);
+                        account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
                     }
-                    return AccountList;
+                    return account;
                 }
                 catch (SqlException e)
                 {
@@ -304,7 +262,7 @@ namespace Forms_version_1._0
                     DatabaseConnectie.CloseConnection();
                 }
             }
-            return AccountList;
+            return account;
         }
 
     }

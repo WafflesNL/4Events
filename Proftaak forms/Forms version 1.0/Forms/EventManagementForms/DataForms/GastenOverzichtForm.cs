@@ -20,6 +20,7 @@ namespace Forms_version_1._0.Forms
             InitializeComponent();
             this.newevent = Event;
             GetGuestList();
+            GetAcces();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -36,6 +37,29 @@ namespace Forms_version_1._0.Forms
             }
         }
 
+        private void GetAcces()
+        {
+            if (CurrentAccount.Function == Function.Beheerder || CurrentAccount.Function == Function.Medewerker)
+            {
+                btnInChecken.Visible = true;
+                btnUitChecken.Visible = true;
+            }
+            else
+            {
+                btnInChecken.Visible = false;
+                btnUitChecken.Visible = false;
+            }
+        }
 
+        private void btnInChecken_Click(object sender, EventArgs e)
+        {
+            //voegt een gast toe aan de gastenlijst
+            //laat messagebox zien met in te checken account
+        }
+
+        private void btnUitChecken_Click(object sender, EventArgs e)
+        {
+            //verwijderd een gast uit de lijst
+        }
     }
 }

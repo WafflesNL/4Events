@@ -78,7 +78,7 @@ namespace Forms_version_1._0.Forms
                 // Hier moet ook nog fout afhandeling bij.
 
 
-                if (MessageBox.Show("Account: " + rfid.CurrentRFIDTag + " Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Account: " + account.Username +" Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     // Schrijf het account in
                     
@@ -104,7 +104,7 @@ namespace Forms_version_1._0.Forms
             //verwijderd een gast uit de lijst
             if (rfid.CurrentRFIDTag != null)
             {
-                // Check het account
+                // Check het account 
                 // Hier moet ook nog foutafhandeling bij
                 if (MessageBox.Show("Account: " + rfid.CurrentRFIDTag + " Wordt uitgeschreven.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {

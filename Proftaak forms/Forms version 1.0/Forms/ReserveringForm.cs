@@ -24,7 +24,7 @@ namespace Forms_version_1._0.Forms
             this.currentEvent = currentEvent;
 
             reservation = new Reservation();
-            placeList = currentEvent.Camping.GetPlaces();
+            
             reservationList = currentEvent.GetReservationList();
 
             InitializeComponent();
@@ -40,6 +40,8 @@ namespace Forms_version_1._0.Forms
 
             if(currentEvent.Camping != null)
             {
+                placeList = currentEvent.Camping.GetPlaces();
+
                 foreach (Control c in gbCamping.Controls)
                 {
                     if (c is Button)
@@ -69,7 +71,7 @@ namespace Forms_version_1._0.Forms
         {
             int placeID = Convert.ToInt32(sender.ToString().Remove(0, 35));
 
-            if (placeList[placeID] == reservation.Place)
+            if (placeList[placeID - 1] == reservation.Place)
             {
                 reservation.Place = null;
                 MessageBox.Show("Plaats selectie verwijderd.", "Melding");
@@ -77,7 +79,7 @@ namespace Forms_version_1._0.Forms
             }
             else
             {
-                reservation.Place = placeList[placeID];
+                reservation.Place = placeList[placeID - 1];
                 tbGeselecteerdePlaats.Text = "" + placeID;
             }
 

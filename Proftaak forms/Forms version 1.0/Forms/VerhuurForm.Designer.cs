@@ -158,6 +158,7 @@
             this.Name = "VerhuurForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerhuurForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClose);
             this.ResumeLayout(false);
             this.PerformLayout();
 

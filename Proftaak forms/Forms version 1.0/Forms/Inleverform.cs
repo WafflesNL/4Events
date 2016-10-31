@@ -33,6 +33,7 @@ namespace Forms_version_1._0.Forms
             {
                 MessageBox.Show("RFID reader kon niet worden gevonden. Form wordt opgestart zonder RFID functionaliteit.");
                 btnInleveren.Visible = false;
+                btnCheck.Visible = false;
             }
         }
     
@@ -104,14 +105,6 @@ namespace Forms_version_1._0.Forms
            // materiallist = Event.GetMaterialList();         
         }
 
-        
-
-        private void cbAccounts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            
-        }
-
         private void btnCheck_Click(object sender, EventArgs e)
         {
             Account = DatabaseGetAccounts.GetAccountFromRFID(rfid.CurrentRFIDTag);
@@ -119,6 +112,7 @@ namespace Forms_version_1._0.Forms
             if(Account == null)
             {
                 MessageBox.Show("Account kon niet worden gevonden.");
+                return;
             }
 
             materiallist = material.GetMaterialForAccount(Event.ID, Account.ID);

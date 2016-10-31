@@ -97,7 +97,7 @@ namespace Forms_version_1._0.Forms
         {           
             lblEvent.Text = Event.Name;
             materiallist = Event.GetMaterialList();
-            cbAccounts.DataSource = Event.GetGuestList();
+            //cbAccounts.DataSource = Event.GetGuestList();
         }
 
         private void btnRFID_Click(object sender, EventArgs e)
@@ -105,6 +105,13 @@ namespace Forms_version_1._0.Forms
             //cbAccounts.Items.Add(material.GetAccountRFID(rfid.CurrentRFIDTag));
 
             Account account = material.GetAccountRFID(rfid.CurrentRFIDTag);
+
+            if(account == null)
+            {
+                MessageBox.Show("Geen account gevonden.");
+                return;
+            }
+
             material.Rent(selectedlist, account.ID);
             selectedlist.Clear();
             Refreshform();

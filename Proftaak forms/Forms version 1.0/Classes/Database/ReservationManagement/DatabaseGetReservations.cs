@@ -34,7 +34,7 @@ namespace Forms_version_1._0
                         //event moet nog opgehaald worden
                         int ID = Convert.ToInt32(reader["ID"]);
                         int PlaceID = (reader["PlaatsID"] != DBNull.Value) ? Convert.ToInt32(reader["PlaatsID"]) : 0;
-                        int Amount = Convert.ToInt32(reader["BetalingBedrag"]);
+                        int Amount = Convert.ToInt32(reader["BetalingBedrag"]); //Invalid Case Exception
                         bool Status = Convert.ToBoolean(reader["BetalingStatus"]);
                         if (PlaceID == 0)
                         {

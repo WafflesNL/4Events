@@ -21,6 +21,7 @@ namespace Forms_version_1._0.Forms
         Post postAttach;
         TimeLine newtimeline;
         List<Post> Postlist = new List<Post>();
+        int Check = 0;
 
         public TijdlijnForm(Event Event)
         {
@@ -241,28 +242,41 @@ namespace Forms_version_1._0.Forms
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            int ID;
             if (lbTimeline.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecteer een post");
             }
             else
             {
-                ID = lbTimeline.SelectedIndex + 1;
-                Post post1 = new Post(ID);
-                newtimeline.ReportPost(post1);
-                if (newtimeline.Check == true)
-                {
-                    lbTimeline.Items.Clear();
-                    GetPosts();
+                Post postrep = lbTimeline.SelectedItem as Post;
+                if (Check == 0)
+                { 
+                    newtimeline.ReportPost(postrep);
+                    if (newtimeline.Check == true)
+                    {
+                        lbTimeline.Items.Clear();
+                        GetPosts();
+                        Check++;
+                    }
                 }
-            }
+                else
+                {
+                    MessageBox.Show("Deze post is al gereport");
+                }              
+            }    
         } //Button to reports the selected post
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            Post post = lbTimeline.SelectedItem as Post;
-            pcbAttach.Image = TimeLine.ByteToImage(post.File);
+            if (lbTimeline.SelectedItem == null)
+            {
+                MessageBox.Show("Selecteer een post me bijlage");
+            }
+            else
+            {
+                Post post = lbTimeline.SelectedItem as Post;
+                pcbAttach.Image = TimeLine.ByteToImage(post.File);
+            }          
         } //Button to show the attachment from the selected post
 
         private void btnRemove_Click(object sender, EventArgs e)

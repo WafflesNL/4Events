@@ -35,6 +35,7 @@
             this.tbWoord = new System.Windows.Forms.TextBox();
             this.btnZoek = new System.Windows.Forms.Button();
             this.cbCat = new System.Windows.Forms.ComboBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNaam
@@ -97,11 +98,22 @@
             this.cbCat.Size = new System.Drawing.Size(184, 21);
             this.cbCat.TabIndex = 8;
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(12, 93);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Text = "Sluit";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Filter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(272, 126);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cbCat);
             this.Controls.Add(this.btnZoek);
             this.Controls.Add(this.tbWoord);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.TextBox tbWoord;
         private System.Windows.Forms.Button btnZoek;
         private System.Windows.Forms.ComboBox cbCat;
+        private System.Windows.Forms.Button btnClose;
     }
 }

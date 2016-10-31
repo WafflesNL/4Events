@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TijdlijnBox = new System.Windows.Forms.ListBox();
+            this.lbTimeline = new System.Windows.Forms.ListBox();
             this.btnPost = new System.Windows.Forms.Button();
             this.txtPost = new System.Windows.Forms.TextBox();
             this.btnLike = new System.Windows.Forms.Button();
@@ -50,15 +50,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbAttach)).BeginInit();
             this.SuspendLayout();
             // 
-            // TijdlijnBox
+            // lbTimeline
             // 
-            this.TijdlijnBox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.TijdlijnBox.FormattingEnabled = true;
-            this.TijdlijnBox.ItemHeight = 14;
-            this.TijdlijnBox.Location = new System.Drawing.Point(12, 29);
-            this.TijdlijnBox.Name = "TijdlijnBox";
-            this.TijdlijnBox.Size = new System.Drawing.Size(912, 438);
-            this.TijdlijnBox.TabIndex = 0;
+            this.lbTimeline.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.lbTimeline.FormattingEnabled = true;
+            this.lbTimeline.ItemHeight = 14;
+            this.lbTimeline.Location = new System.Drawing.Point(12, 29);
+            this.lbTimeline.Name = "lbTimeline";
+            this.lbTimeline.Size = new System.Drawing.Size(912, 438);
+            this.lbTimeline.TabIndex = 0;
             // 
             // btnPost
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.btnLike);
             this.Controls.Add(this.txtPost);
             this.Controls.Add(this.btnPost);
-            this.Controls.Add(this.TijdlijnBox);
+            this.Controls.Add(this.lbTimeline);
             this.Name = "TijdlijnForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TijdlijnForm";
@@ -266,7 +266,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox TijdlijnBox;
+        private System.Windows.Forms.ListBox lbTimeline;
         private System.Windows.Forms.Button btnPost;
         private System.Windows.Forms.TextBox txtPost;
         private System.Windows.Forms.Button btnLike;

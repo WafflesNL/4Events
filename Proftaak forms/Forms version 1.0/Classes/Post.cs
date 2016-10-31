@@ -18,7 +18,8 @@ namespace Forms_version_1._0.Classes
         public int Likes { get; set; }
         public Account Account { get; set; }
         public byte[] File { get; set; }
-        public string Attachment { get; set; }
+
+        public string Attachment = "None";
         public string PostID { get; set; }
 
         public Post(int iD)
@@ -137,7 +138,7 @@ namespace Forms_version_1._0.Classes
                 Name = Name.Insert(Name.Length, " ");
                 Length = Name.Length;
             }
-            return  Name + Text.PadRight(90) +  Likes.ToString().PadRight(12) + Attachment.PadRight(12) + ID; 
+            return  Name + Text.PadRight(90) +  Likes.ToString().PadRight(12) + Attachment.PadRight(20) + ID; 
         } //Tostring method to change Post from the database to strings for the listbox
     }
 }

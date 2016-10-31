@@ -270,7 +270,7 @@ namespace Forms_version_1._0.Forms
         {
             if (lbTimeline.SelectedItem == null)
             {
-                MessageBox.Show("Selecteer een post me bijlage");
+                MessageBox.Show("Selecteer een post met bijlage");
             }
             else
             {

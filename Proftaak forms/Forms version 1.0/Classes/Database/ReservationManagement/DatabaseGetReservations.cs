@@ -36,6 +36,8 @@ namespace Forms_version_1._0
                         int PlaceID = (reader["PlaatsID"] != DBNull.Value) ? Convert.ToInt32(reader["PlaatsID"]) : 0;
                         int Amount = Convert.ToInt32(reader["BetalingBedrag"]); //Invalid Case Exception
                         bool Status = Convert.ToBoolean(reader["BetalingStatus"]);
+                        //bezoekers in de reservering
+                        //event naam
                         if (PlaceID == 0)
                         {
                             Place = null;

@@ -33,7 +33,7 @@ namespace Forms_version_1._0.Classes
 
         public void Return(List<Material> list, int AccountID)
         {
-            DatabaseUpdateMaterial.UpdateAccount(list, AccountID);
+            DatabaseUpdateMaterial.UpdateAccount(list, null);
         }
 
         public double TotalPrice(List<Material> list)

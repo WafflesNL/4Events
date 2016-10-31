@@ -15,6 +15,7 @@ namespace Forms_version_1._0.Forms
     {
         Event Event;
         Account Account;
+        RFID rfid;
         Material material = new Material(1,"tomato",2, null,null);
 
         List<Material> materiallist = new List<Material>();
@@ -22,21 +23,32 @@ namespace Forms_version_1._0.Forms
      
         public InleverForm(Event Event)
         {
+            rfid = new RFID();
             InitializeComponent();
             this.Event = Event;
             GetData();
             Refreshform();
+            rfid.Open();
+            if(rfid.IsAttached == false)
+            {
+                MessageBox.Show("RFID reader kon niet worden gevonden. Form wordt opgestart zonder RFID functionaliteit.");
+                btnInleveren.Visible = false;
+            }
         }
     
         //Koppelt een material aan een account       
         private void btnInleveren_Click(object sender, EventArgs e)
-        { 
-            if (cbAccounts.SelectedItem != null)
+        {
+            Account account = DatabaseGetAccounts.GetAccountFromRFID(rfid.CurrentRFIDTag);
+
+            if(account == null)
             {
-                Account account = cbAccounts.SelectedItem as Account;
-                material.Return(selectedlist, account.ID);           
-                selectedlist.Clear();
+                MessageBox.Show("Account kon niet worden gevonden.");
+                return;
             }
+
+            material.Return(selectedlist, account.ID);
+            selectedlist.Clear();
             Refreshform();
         }
     
@@ -89,16 +101,33 @@ namespace Forms_version_1._0.Forms
         public void GetData()
         {           
             lblEvent.Text = Event.Name;
-            cbAccounts.DataSource = Event.GetGuestList();
            // materiallist = Event.GetMaterialList();         
         }
 
+        
+
         private void cbAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Account = cbAccounts.SelectedItem as Account;
+            
+            
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            Account = DatabaseGetAccounts.GetAccountFromRFID(rfid.CurrentRFIDTag);
+
+            if(Account == null)
+            {
+                MessageBox.Show("Account kon niet worden gevonden.");
+            }
+
             materiallist = material.GetMaterialForAccount(Event.ID, Account.ID);
             Refreshform();
-            
+        }
+
+        private void FormClose(object sender, FormClosingEventArgs e)
+        {
+            rfid.Close();
         }
     }
 }

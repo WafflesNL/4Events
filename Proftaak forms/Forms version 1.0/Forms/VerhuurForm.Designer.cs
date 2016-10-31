@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.lbMateriaal = new System.Windows.Forms.ListBox();
-            this.btnVerhuur = new System.Windows.Forms.Button();
             this.lblMatNaam = new System.Windows.Forms.Label();
             this.btnToevoegen = new System.Windows.Forms.Button();
             this.tbTotaal = new System.Windows.Forms.TextBox();
             this.btnTotaal = new System.Windows.Forms.Button();
             this.lbSelected = new System.Windows.Forms.ListBox();
             this.lblEvent = new System.Windows.Forms.Label();
-            this.cbAccounts = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnRFID = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -48,16 +46,6 @@
             this.lbMateriaal.Name = "lbMateriaal";
             this.lbMateriaal.Size = new System.Drawing.Size(189, 277);
             this.lbMateriaal.TabIndex = 0;
-            // 
-            // btnVerhuur
-            // 
-            this.btnVerhuur.Location = new System.Drawing.Point(435, 323);
-            this.btnVerhuur.Name = "btnVerhuur";
-            this.btnVerhuur.Size = new System.Drawing.Size(82, 23);
-            this.btnVerhuur.TabIndex = 1;
-            this.btnVerhuur.Text = "Verhuur";
-            this.btnVerhuur.UseVisualStyleBackColor = true;
-            this.btnVerhuur.Click += new System.EventHandler(this.btnVerhuur_Click);
             // 
             // lblMatNaam
             // 
@@ -111,14 +99,6 @@
             this.lblEvent.Size = new System.Drawing.Size(0, 13);
             this.lblEvent.TabIndex = 11;
             // 
-            // cbAccounts
-            // 
-            this.cbAccounts.FormattingEnabled = true;
-            this.cbAccounts.Location = new System.Drawing.Point(296, 323);
-            this.cbAccounts.Name = "cbAccounts";
-            this.cbAccounts.Size = new System.Drawing.Size(133, 21);
-            this.cbAccounts.TabIndex = 12;
-            // 
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(222, 70);
@@ -131,11 +111,11 @@
             // 
             // btnRFID
             // 
-            this.btnRFID.Location = new System.Drawing.Point(144, 323);
+            this.btnRFID.Location = new System.Drawing.Point(12, 323);
             this.btnRFID.Name = "btnRFID";
-            this.btnRFID.Size = new System.Drawing.Size(146, 23);
+            this.btnRFID.Size = new System.Drawing.Size(505, 23);
             this.btnRFID.TabIndex = 14;
-            this.btnRFID.Text = "Haal account op met RFID";
+            this.btnRFID.Text = "Verhuur";
             this.btnRFID.UseVisualStyleBackColor = true;
             this.btnRFID.Click += new System.EventHandler(this.btnRFID_Click);
             // 
@@ -146,14 +126,12 @@
             this.ClientSize = new System.Drawing.Size(529, 351);
             this.Controls.Add(this.btnRFID);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.cbAccounts);
             this.Controls.Add(this.lblEvent);
             this.Controls.Add(this.lbSelected);
             this.Controls.Add(this.btnTotaal);
             this.Controls.Add(this.tbTotaal);
             this.Controls.Add(this.btnToevoegen);
             this.Controls.Add(this.lblMatNaam);
-            this.Controls.Add(this.btnVerhuur);
             this.Controls.Add(this.lbMateriaal);
             this.Name = "VerhuurForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -167,14 +145,12 @@
         #endregion
 
         private System.Windows.Forms.ListBox lbMateriaal;
-        private System.Windows.Forms.Button btnVerhuur;
         private System.Windows.Forms.Label lblMatNaam;
         private System.Windows.Forms.Button btnToevoegen;
         private System.Windows.Forms.TextBox tbTotaal;
         private System.Windows.Forms.Button btnTotaal;
         private System.Windows.Forms.ListBox lbSelected;
         private System.Windows.Forms.Label lblEvent;
-        private System.Windows.Forms.ComboBox cbAccounts;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnRFID;
     }

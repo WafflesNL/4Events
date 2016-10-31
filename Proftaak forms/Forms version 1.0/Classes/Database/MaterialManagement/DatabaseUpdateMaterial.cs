@@ -55,9 +55,8 @@ namespace Forms_version_1._0
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = DatabaseConnectie.connect;
 
-                        cmd.CommandText = "UPDATE Materiaal SET AccountID = @AccountID WHERE ID = @ID";
+                        cmd.CommandText = "UPDATE Materiaal SET AccountID = NULL WHERE ID = @ID";
                         cmd.Parameters.Add(new SqlParameter("ID", M.ID));
-                        cmd.Parameters.Add(new SqlParameter("AccountID", AccountID));
 
                         cmd.ExecuteNonQuery();
 

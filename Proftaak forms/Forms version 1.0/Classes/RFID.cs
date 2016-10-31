@@ -14,6 +14,14 @@ namespace Forms_version_1._0.Classes
 
         private string lastRFIDTag;
         private string currentRFIDTag;
+        private bool isAttached;
+
+        public bool IsAttached
+        {
+            get { return isAttached; }
+            set { isAttached = value; }
+        }
+
 
         public string CurrentRFIDTag
         {
@@ -51,6 +59,7 @@ namespace Forms_version_1._0.Classes
         {
             Console.WriteLine("Tag {0} lost", tagNumber);
             lastRFIDTag = tagNumber;
+            currentRFIDTag = null;
         }
 
         /// <summary>
@@ -98,6 +107,7 @@ namespace Forms_version_1._0.Classes
                 rf.WaitForAttachment(1000);
                 rf.AntennaOn = true;
                 rf.LEDOn = true;
+                isAttached = rf.IsAttached;
             }
             catch
             {

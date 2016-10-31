@@ -22,10 +22,7 @@ namespace Forms_version_1._0
         {
             InitializeComponent();
             GetAcces();
-            LoadEvents();
-            // selects an event by default, to avoid crashing in the HomeForm when no event is selected
-            // maybe add a few try-catches here and there
-            cbSelectEvent.SelectedIndex = 0;          
+            LoadEvents();       
         }
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
@@ -49,6 +46,7 @@ namespace Forms_version_1._0
             Form.GetData(Event);
             Form.ShowDialog();
             LoadEvents();
+            DisableButtons();
         }
 
         private void btnReserveren_Click(object sender, EventArgs e)
@@ -85,7 +83,7 @@ namespace Forms_version_1._0
         private void btnAccountWijzingen_Click(object sender, EventArgs e)
         {      
             AccountOverzichtForm Form = new AccountOverzichtForm();
-            Form.ShowDialog();         
+            Form.ShowDialog();
         }
 
         private void btnCreateEvent_Click(object sender, EventArgs e)
@@ -132,6 +130,20 @@ namespace Forms_version_1._0
 
             }
         }
+
+        private void DisableButtons()
+        {
+            btnAccountView.Enabled = false;
+            btnBetalingStatus.Enabled = false;
+            btnCreateEvent.Enabled = false;
+            btnEventInfo.Enabled = false;
+            btnMaterial.Enabled = false;
+            btnReserve.Enabled = false;
+            btnReservePlace.Enabled = false;
+            btnTijdlijn.Enabled = false;
+            GetAcces();
+        }
+
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
             //iedereen

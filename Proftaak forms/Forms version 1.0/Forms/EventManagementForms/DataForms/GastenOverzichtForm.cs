@@ -14,6 +14,7 @@ namespace Forms_version_1._0.Forms
     public partial class GastenOverzichtForm : Form
     {
         Event newevent;
+        RFID rfid;
 
         public GastenOverzichtForm(Event Event)
         {
@@ -21,6 +22,14 @@ namespace Forms_version_1._0.Forms
             this.newevent = Event;
             GetGuestList();
             GetAcces();
+            rfid = new RFID();
+            rfid.Open();
+            if (rfid.IsAttached == false)
+            {
+                MessageBox.Show("RFID reader could not be found. Form will be opened without RFID functionality.");
+                btnInChecken.Visible = false;
+                btnUitChecken.Visible = false;
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -55,11 +64,47 @@ namespace Forms_version_1._0.Forms
         {
             //voegt een gast toe aan de gastenlijst
             //laat messagebox zien met in te checken account
+            if(rfid.CurrentRFIDTag != null)
+            {
+                if(MessageBox.Show("Account: " + rfid.CurrentRFIDTag + " Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Account is niet ingeschreven.", "Melding");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geen RFID tag gevonden. Hou de RFID tag boven de reader en druk op de knop.", "Melding");
+            }
+
         }
 
         private void btnUitChecken_Click(object sender, EventArgs e)
         {
             //verwijderd een gast uit de lijst
+            if (rfid.CurrentRFIDTag != null)
+            {
+                if (MessageBox.Show("Account: " + rfid.CurrentRFIDTag + " Wordt uitgeschreven.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Account is niet uitgeschreven.", "Melding");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geen RFID tag gevonden. Hou de RFID tag boven de reader en druk op de knop.", "Melding");
+            }
+        }
+
+        private void FormClose(object sender, FormClosingEventArgs e)
+        {
+            rfid.Close();
         }
     }
 }

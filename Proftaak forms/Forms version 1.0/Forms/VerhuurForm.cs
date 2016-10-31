@@ -33,20 +33,7 @@ namespace Forms_version_1._0.Forms
                 MessageBox.Show("RFID reader kon niet worden gevonden. Het form wordt zonder RFID functie opgestart.", "Melding");
                 btnRFID.Visible = false;
             }
-        }
-    
-        //Koppelt een material aan een account       
-        private void btnVerhuur_Click(object sender, EventArgs e)
-        { 
-            if (cbAccounts.SelectedItem != null)
-            {
-                Account account = cbAccounts.SelectedItem as Account;
-                material.Rent(selectedlist, account.ID);           
-                selectedlist.Clear();
-            }
-            Refreshform();
-        }
-    
+        }   
 
         private void btnToevoegen_Click(object sender, EventArgs e)
         {          

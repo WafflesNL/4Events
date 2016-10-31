@@ -59,6 +59,12 @@ namespace Forms_version_1._0.Classes
             List<Material> Materiallist = DatabaseGetMaterial.GetMaterialforAccountonEvent(eventid, accountid);
             return Materiallist;
         }
+
+        public Account GetAccountRFID(string RFIDtag)
+        {
+            Account account = DatabaseGetAccounts.GetAccountFromRFID(RFIDtag);
+            return account;
+        }
       
         public override string ToString()
         {

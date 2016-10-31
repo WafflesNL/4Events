@@ -51,6 +51,79 @@ namespace Forms_version_1._0
         }
 
 
+        /// <summary>
+        /// Adds the account to an event
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
+        public static bool UpdateEventID_checkin(Account Account, int EventID)
+        {
+            bool Check = false;
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "UPDATE Account SET EventID = @EventID WHERE Account.ID = @AccountID";
+                    cmd.Parameters.Add(new SqlParameter("EventID", EventID));
+                    cmd.Parameters.Add(new SqlParameter("Accountid", Account.ID));            
+
+                    cmd.ExecuteNonQuery();
+
+                    Check = true;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                    Check = false;
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }          
+            return Check;
+        }
+
+        /// <summary>
+        /// Removes the account to an event
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
+        public static bool UpdateEventID_checkuit(Account Account, int EventID)
+        {
+            bool Check = false;
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "UPDATE Account SET EventID = null WHERE Account.ID = @Accountid ";
+                    cmd.Parameters.Add(new SqlParameter("EventID", EventID));
+                    cmd.Parameters.Add(new SqlParameter("Accountid", Account.ID));
+
+                    cmd.ExecuteNonQuery();
+
+                    Check = true;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                    Check = false;
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return Check;
+        }
 
     }
 }

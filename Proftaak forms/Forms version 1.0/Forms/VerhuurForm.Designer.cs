@@ -38,24 +38,22 @@
             this.lblEvent = new System.Windows.Forms.Label();
             this.cbAccounts = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnRFID = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbMateriaal
             // 
             this.lbMateriaal.FormattingEnabled = true;
-            this.lbMateriaal.ItemHeight = 16;
-            this.lbMateriaal.Location = new System.Drawing.Point(16, 50);
-            this.lbMateriaal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbMateriaal.Location = new System.Drawing.Point(12, 41);
             this.lbMateriaal.Name = "lbMateriaal";
-            this.lbMateriaal.Size = new System.Drawing.Size(251, 340);
+            this.lbMateriaal.Size = new System.Drawing.Size(189, 277);
             this.lbMateriaal.TabIndex = 0;
             // 
             // btnVerhuur
             // 
-            this.btnVerhuur.Location = new System.Drawing.Point(580, 398);
-            this.btnVerhuur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerhuur.Location = new System.Drawing.Point(435, 323);
             this.btnVerhuur.Name = "btnVerhuur";
-            this.btnVerhuur.Size = new System.Drawing.Size(109, 28);
+            this.btnVerhuur.Size = new System.Drawing.Size(82, 23);
             this.btnVerhuur.TabIndex = 1;
             this.btnVerhuur.Text = "Verhuur";
             this.btnVerhuur.UseVisualStyleBackColor = true;
@@ -64,19 +62,17 @@
             // lblMatNaam
             // 
             this.lblMatNaam.AutoSize = true;
-            this.lblMatNaam.Location = new System.Drawing.Point(12, 27);
-            this.lblMatNaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMatNaam.Location = new System.Drawing.Point(9, 22);
             this.lblMatNaam.Name = "lblMatNaam";
-            this.lblMatNaam.Size = new System.Drawing.Size(66, 17);
+            this.lblMatNaam.Size = new System.Drawing.Size(50, 13);
             this.lblMatNaam.TabIndex = 3;
             this.lblMatNaam.Text = "Materiaal";
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(296, 50);
-            this.btnToevoegen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnToevoegen.Location = new System.Drawing.Point(222, 41);
             this.btnToevoegen.Name = "btnToevoegen";
-            this.btnToevoegen.Size = new System.Drawing.Size(108, 28);
+            this.btnToevoegen.Size = new System.Drawing.Size(81, 23);
             this.btnToevoegen.TabIndex = 5;
             this.btnToevoegen.Text = "Toevoegen";
             this.btnToevoegen.UseVisualStyleBackColor = true;
@@ -84,18 +80,16 @@
             // 
             // tbTotaal
             // 
-            this.tbTotaal.Location = new System.Drawing.Point(295, 366);
-            this.tbTotaal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTotaal.Location = new System.Drawing.Point(221, 297);
             this.tbTotaal.Name = "tbTotaal";
-            this.tbTotaal.Size = new System.Drawing.Size(109, 22);
+            this.tbTotaal.Size = new System.Drawing.Size(83, 20);
             this.tbTotaal.TabIndex = 7;
             // 
             // btnTotaal
             // 
-            this.btnTotaal.Location = new System.Drawing.Point(295, 330);
-            this.btnTotaal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTotaal.Location = new System.Drawing.Point(221, 268);
             this.btnTotaal.Name = "btnTotaal";
-            this.btnTotaal.Size = new System.Drawing.Size(109, 28);
+            this.btnTotaal.Size = new System.Drawing.Size(82, 23);
             this.btnTotaal.TabIndex = 8;
             this.btnTotaal.Text = "Totaal";
             this.btnTotaal.UseVisualStyleBackColor = true;
@@ -104,47 +98,53 @@
             // lbSelected
             // 
             this.lbSelected.FormattingEnabled = true;
-            this.lbSelected.ItemHeight = 16;
-            this.lbSelected.Location = new System.Drawing.Point(439, 49);
-            this.lbSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbSelected.Location = new System.Drawing.Point(329, 40);
             this.lbSelected.Name = "lbSelected";
-            this.lbSelected.Size = new System.Drawing.Size(251, 340);
+            this.lbSelected.Size = new System.Drawing.Size(189, 277);
             this.lbSelected.TabIndex = 10;
             // 
             // lblEvent
             // 
             this.lblEvent.AutoSize = true;
-            this.lblEvent.Location = new System.Drawing.Point(435, 30);
-            this.lblEvent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEvent.Location = new System.Drawing.Point(326, 24);
             this.lblEvent.Name = "lblEvent";
-            this.lblEvent.Size = new System.Drawing.Size(0, 17);
+            this.lblEvent.Size = new System.Drawing.Size(0, 13);
             this.lblEvent.TabIndex = 11;
             // 
             // cbAccounts
             // 
             this.cbAccounts.FormattingEnabled = true;
-            this.cbAccounts.Location = new System.Drawing.Point(395, 398);
-            this.cbAccounts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAccounts.Location = new System.Drawing.Point(296, 323);
             this.cbAccounts.Name = "cbAccounts";
-            this.cbAccounts.Size = new System.Drawing.Size(176, 24);
+            this.cbAccounts.Size = new System.Drawing.Size(133, 21);
             this.cbAccounts.TabIndex = 12;
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(296, 86);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemove.Location = new System.Drawing.Point(222, 70);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(108, 28);
+            this.btnRemove.Size = new System.Drawing.Size(81, 23);
             this.btnRemove.TabIndex = 13;
             this.btnRemove.Text = "Verwijderen";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // btnRFID
+            // 
+            this.btnRFID.Location = new System.Drawing.Point(144, 323);
+            this.btnRFID.Name = "btnRFID";
+            this.btnRFID.Size = new System.Drawing.Size(146, 23);
+            this.btnRFID.TabIndex = 14;
+            this.btnRFID.Text = "Haal account op met RFID";
+            this.btnRFID.UseVisualStyleBackColor = true;
+            this.btnRFID.Click += new System.EventHandler(this.btnRFID_Click);
+            // 
             // VerhuurForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 432);
+            this.ClientSize = new System.Drawing.Size(529, 351);
+            this.Controls.Add(this.btnRFID);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.cbAccounts);
             this.Controls.Add(this.lblEvent);
@@ -155,10 +155,10 @@
             this.Controls.Add(this.lblMatNaam);
             this.Controls.Add(this.btnVerhuur);
             this.Controls.Add(this.lbMateriaal);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "VerhuurForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerhuurForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClose);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +176,6 @@
         private System.Windows.Forms.Label lblEvent;
         private System.Windows.Forms.ComboBox cbAccounts;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnRFID;
     }
 }

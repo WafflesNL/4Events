@@ -60,23 +60,47 @@ namespace Forms_version_1._0.Forms
 
         private void btnAttach_Click(object sender, EventArgs e) //Sends post with an attachment to the business layer
         {
-            if (cbCatergory.Text != null && txtPost.Text != "")
+            if (lbTimeline.SelectedItem != null)
             {
-                string Categorytext = cbCatergory.Text;
-                string Posttext = txtPost.Text;
-                if (Posttext.Length < 90)
+                if (cbCatergory.Text != null && txtPost.Text != "")
                 {
-                    postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile());
+                    Post post1 = lbTimeline.SelectedItem as Post;
+                    string Categorytext = cbCatergory.Text;
+                    string Posttext = txtPost.Text;
+                    if (Posttext.Length < 90)
+                    {
+                        postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile(), post1.ID.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
+                    MessageBox.Show("Please enter Category and Text");
                 }
             }
             else
             {
-                MessageBox.Show("Please enter Category and Text");
-            }
+                if (cbCatergory.Text != null && txtPost.Text != "")
+                {
+                    string Categorytext = cbCatergory.Text;
+                    string Posttext = txtPost.Text;
+                    if (Posttext.Length < 90)
+                    {
+                        postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Meer dan 90 Karakters niet toegestaan");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Category and Text");
+                }
+            }         
         }
 
         private void btnPost_Click(object sender, EventArgs e) //Sends post to the business layer
@@ -95,8 +119,7 @@ namespace Forms_version_1._0.Forms
                         string Posttext = txtPost.Text;
                         if (Posttext.Length < 90)
                         {
-                            Post post = new Post(Posttext, Categorytext, CurrentAccount.ID, newtimeline.TimelineID, 0);
-                            newtimeline.AddPost(post); 
+                            newtimeline.AddPost(newtimeline.CreatePost(Posttext, Categorytext, newtimeline.TimelineID)); 
                         }
                         else
                         {
@@ -125,9 +148,7 @@ namespace Forms_version_1._0.Forms
                 {
                     if (postAttach != null)
                     {
-                        string Categorytext = cbCatergory.Text;
-                        string Posttext = txtPost.Text;
-                        newtimeline.AddReaction(postAttach = new Post(Posttext, Categorytext, CurrentAccount.ID, newevent.TimeLine.TimelineID, 0, newtimeline.AddFile(), post1.ID.ToString())); //Inserts a post with an attachment
+                        newtimeline.AddReaction(postAttach); //Inserts a post with an attachment
                     }
                     else
                     {
@@ -135,8 +156,7 @@ namespace Forms_version_1._0.Forms
                         string Posttext = txtPost.Text;
                         if (Posttext.Length < 90)
                         {
-                            Post post2 = new Post(Posttext, Categorytext, CurrentAccount.ID, newtimeline.TimelineID, 0, post1.ID.ToString());
-                            newtimeline.AddReaction(post2); //Inserts a post without an attachment
+                            newtimeline.AddReaction(newtimeline.CreateReaction(Posttext, Categorytext, newtimeline.TimelineID, post1.ID.ToString())); //Inserts a post without an attachment
                         }
                         else
                         {
@@ -253,7 +273,7 @@ namespace Forms_version_1._0.Forms
 
         private void btnShowReact_Click(object sender, EventArgs e)
         {
-            Post post1 = lbTimeline.SelectedItem as Post;           
+            Post post1 = lbTimeline.SelectedItem as Post;
             if (post1 != null)
             {
                 lbTimeline.Items.Clear();
@@ -267,6 +287,7 @@ namespace Forms_version_1._0.Forms
             {
                 MessageBox.Show("Selecteer eerst een post");
             }
+            lbTimeline.SetSelected(0, true);
         } //Shows reactions to selected post
     }
 }

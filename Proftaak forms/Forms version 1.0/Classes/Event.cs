@@ -185,8 +185,8 @@ namespace Forms_version_1._0.Classes
 
         public Account Checkin_CheckAccount(string RFIDtag)
         {
-            /*
-            if (DatabaseGetAccounts.GetAccountRFID(RFIDtag, ID)) //database
+            
+            if (DatabaseGetAccounts.GetAccountRFID(RFIDtag, ID) != null) //database
             {
                 Account Account = DatabaseGetAccounts.GetAccountRFID(RFIDtag, ID);
                 return Account;
@@ -195,8 +195,6 @@ namespace Forms_version_1._0.Classes
             {
                 return null;
             }
-            */
-            return null;
         }
 
         public bool Checkin_UpdateAccount(Account Account)

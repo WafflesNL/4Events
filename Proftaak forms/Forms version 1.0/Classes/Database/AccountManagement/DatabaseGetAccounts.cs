@@ -221,7 +221,7 @@ namespace Forms_version_1._0
         /// </summary>
         /// <param name="RFID">RFID string.</param>
         /// <returns></returns>
-        public static Account GetAccountRFID(string RFID, Event Event)
+        public static Account GetAccountRFID(string RFID, int EventID)
         {
             Account account = null;
 
@@ -236,7 +236,7 @@ namespace Forms_version_1._0
 
                     cmd.CommandText = "select * from Account a join Account_Reservering ar on a.ID = ar.AccountID join Reservering r on ar.ReserveringID = r.ID where a.RFID = '@RFID' and r.EventID = @Event";
                     cmd.Parameters.Add(new SqlParameter("RFID", RFID));
-                    cmd.Parameters.Add(new SqlParameter("EventID", Event.ID));
+                    cmd.Parameters.Add(new SqlParameter("EventID", EventID));
 
                     SqlDataReader reader = cmd.ExecuteReader();
 

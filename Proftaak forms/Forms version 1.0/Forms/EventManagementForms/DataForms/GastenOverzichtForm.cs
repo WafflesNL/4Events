@@ -66,15 +66,30 @@ namespace Forms_version_1._0.Forms
             //laat messagebox zien met in te checken account
             if(rfid.CurrentRFIDTag != null)
             {
+                Account account = newevent.Checkin_CheckAccount(rfid.CurrentRFIDTag);
+
+                if(account == null)
+                {
+                    MessageBox.Show("Dit account is niet ingeschreven voor dit event.");
+                    return;
+                }
+
                 // Check het account
                 // Hier moet ook nog fout afhandeling bij.
-                if(MessageBox.Show("Account: " + rfid.CurrentRFIDTag + " Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+
+                if (MessageBox.Show("Account: " + rfid.CurrentRFIDTag + " Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     // Schrijf het account in
+                    
+                    if (newevent.Checkin_UpdateAccount(account) == false)
+                    {
+                        MessageBox.Show("Account kon niet worden ingecheckt.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Account is niet ingeschreven.", "Melding");
+                    MessageBox.Show("Account wordt niet ingecheckt.", "Melding");
                 }
             }
             else

@@ -50,7 +50,11 @@ namespace Forms_version_1._0
             return Check;
         }
 
+        public static bool UpdateEventID(Account Account, int EventID)
+        {
 
+            return true;
+        }
 
     }
 }

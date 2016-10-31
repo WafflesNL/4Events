@@ -183,7 +183,33 @@ namespace Forms_version_1._0.Classes
             return ReservationList;        
         }
 
+        public Account Checkin_CheckAccount(string RFIDtag)
+        {
+            /*
+            if (DatabaseGetAccounts.GetAccountRFID(RFIDtag, ID)) //database
+            {
+                Account Account = DatabaseGetAccounts.GetAccountRFID(RFIDtag, ID);
+                return Account;
+            }
+            else
+            {
+                return null;
+            }
+            */
+            return null;
+        }
 
+        public bool Checkin_UpdateAccount(Account Account)
+        {
+            if (DatabaseEditAccount.UpdateEventID(Account, ID))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// Tostring methods for event

@@ -217,11 +217,11 @@ namespace Forms_version_1._0
         }
 
         /// <summary>
-        /// Returns the Account in a list with the RFID.
+        /// Returns the Account in a list with the RFID. (bestemd voor het inchecken)
         /// </summary>
         /// <param name="RFID">RFID string.</param>
         /// <returns></returns>
-        public static Account GetAccountRFID(string RFID, int EventID)
+        public static Account GetAccountRFID_Checkin(string RFID, int EventID)
         {
             Account account = null;
 
@@ -235,6 +235,55 @@ namespace Forms_version_1._0
                     cmd.Connection = DatabaseConnectie.connect;
 
                     cmd.CommandText = "SELECT * FROM Account a JOIN Account_Reservering ar ON a.ID = ar.AccountID JOIN Reservering r ON ar.ReserveringID = r.ID WHERE a.RFID = @RFID AND r.EventID = @EventID";
+                    cmd.Parameters.Add(new SqlParameter("RFID", RFID));
+                    cmd.Parameters.Add(new SqlParameter("EventID", EventID));
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int ID = Convert.ToInt32(reader["ID"]);
+                        string Username = (reader["Gebruikersnaam"].ToString());
+                        string Password = (reader["Wachtwoord"].ToString());
+                        string Function = (reader["Functie"].ToString());
+                        string Name = (reader["Naam"].ToString());
+
+                        account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
+                    }
+                    return account;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return account;
+        }
+
+        /// <summary>
+        /// Returns the Account in a list with the RFID. (bestemd voor het uitchecken)
+        /// </summary>
+        /// <param name="RFID">RFID string.</param>
+        /// <returns></returns>
+        public static Account GetAccountRFID_Checkuit(string RFID, int EventID)
+        {
+            Account account = null;
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "Select * from account a where a.RFID = @RFID and a.EventID = @EventID";
                     cmd.Parameters.Add(new SqlParameter("RFID", RFID));
                     cmd.Parameters.Add(new SqlParameter("EventID", EventID));
 
@@ -307,6 +356,8 @@ namespace Forms_version_1._0
             }
             return account;
         }
+
+
 
     }
 }

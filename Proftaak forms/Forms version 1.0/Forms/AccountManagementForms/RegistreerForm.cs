@@ -7,15 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
+using Forms_version_1._0.Classes;
+using System.Threading;
 
 namespace Forms_version_1._0
 {
     public partial class RegistreerForm : Form
     {
+        System.Timers.Timer t;
+        RFID rfid;
+
         public RegistreerForm()
         {
             InitializeComponent();
             GetAcces();
+            t = new System.Timers.Timer();
+            t.Interval = 300;
+            t.Elapsed += Time_Elapsed;
+            t.Start();
+
+            rfid = new RFID();
+            rfid.Open();
+            if(rfid.IsAttached == false)
+            {
+                MessageBox.Show("RFID Reader kon niet worden gevonden. Form wordt opgestart zonder RFID functionaliteit.", "Melding");
+            }
+            
+        }
+
+        private void Time_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            UpdateRFIDText();
+        }
+
+        private void UpdateRFIDText()
+        {
+            if (InvokeRequired)
+            {
+                 MethodInvoker method = new MethodInvoker(UpdateRFIDText);
+                 Invoke(method);
+                 return;
+            }
+
+            tbRFIDTag.Text = rfid.CurrentRFIDTag;
         }
 
         //netheid code moet nog aan gewerkt worden
@@ -30,8 +65,20 @@ namespace Forms_version_1._0
             {
                 function = Function.Bezoeker;
             }
-
-            if (tbName.Text != "" && tbUserName.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "") //change account and password
+            if(tbName.Text != "" && tbUserName.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "" && tbRFIDTag.Text != "") // If RFID is filed in
+            {
+                if (tbNewPassword.Text == tbRepeatPassword.Text)  //If passwords are the same
+                {
+                    Account Account = new Account(tbName.Text, tbUserName.Text, tbNewPassword.Text, function);
+                    bool Check = Account.CreateAccountWithRFID(Account, tbRFIDTag.Text);
+                    CheckUserName(Check);
+                }
+                else
+                {
+                    MessageBox.Show("Wachtwoorden komen niet overeen");
+                }
+            }
+            else if (tbName.Text != "" && tbUserName.Text != "" && tbNewPassword.Text != "" && tbRepeatPassword.Text != "") //change account and password
             {
 
                 if (tbNewPassword.Text == tbRepeatPassword.Text)  //If passwords are the same
@@ -44,11 +91,13 @@ namespace Forms_version_1._0
                 {
                     MessageBox.Show("Wachtwoorden komen niet overeen");
                 }
-            }           
+            }
             else
             {
                 MessageBox.Show("Niet alle gegevens zijn correct ingevuld");
             }
+
+
         }
 
 
@@ -86,6 +135,13 @@ namespace Forms_version_1._0
             {
 
             }
+        }
+
+        private void FormClose(object sender, FormClosingEventArgs e)
+        {
+            rfid.Close();
+            t.Stop();
+            Dispose();
         }
     }
 }

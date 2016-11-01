@@ -87,6 +87,18 @@ namespace Forms_version_1._0
             return Check;
         }
 
+        /// <summary>
+        /// Checks if the account is allowed in the database and creates it with an RFID tag.
+        /// </summary>
+        /// <param name="Account"></param>
+        /// <param name="RFIDTag"></param>
+        /// <returns>True if changes are allowed and false if they're not</returns>
+        public bool CreateAccountWithRFID(Account Account, string RFIDTag)
+        {
+            bool Check = DatabaseCreateAccount.CreateAccountWithRFID(Account, RFIDTag);
+            return Check;
+        }
+
 
         /// <summary>
         /// Checks if the new account is allowed in the database

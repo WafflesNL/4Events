@@ -116,7 +116,8 @@ namespace Forms_version_1._0
         /// <returns>Object account to a string</returns>
         public override string ToString()
         {
-            return Username + ", " + Password + ", " + Name + ", " + Function;
+            return Username + ", " + Name + ", " + Function;
         }
+
     }
 }

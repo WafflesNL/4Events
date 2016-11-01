@@ -70,6 +70,7 @@
     <Compile Include="Classes\FilterClass.cs" />
     <Compile Include="Classes\RFID.cs" />
     <Compile Include="Classes\Database\MaterialManagement\DatabaseUpdateMaterial.cs" />
+    <Compile Include="Classes\Database\ReservationManagement\DatabaseEditReservation.cs" />
     <Compile Include="Forms\EventManagementForms\CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

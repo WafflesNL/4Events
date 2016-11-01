@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0.Classes.Enum
 {
+    /// <summary>
+    /// Different categories for Post
+    /// </summary>
     public enum Category
     {
         Muziek,

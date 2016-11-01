@@ -31,13 +31,15 @@ namespace Forms_version_1._0
 
                     while (reader.Read())
                     {
-                        //event moet nog opgehaald worden
+                   
                         int ID = Convert.ToInt32(reader["ID"]);
                         int PlaceID = (reader["PlaatsID"] != DBNull.Value) ? Convert.ToInt32(reader["PlaatsID"]) : 0;
-                        int Amount = Convert.ToInt32(reader["BetalingBedrag"]); //Invalid Case Exception
+                        int Amount = Convert.ToInt32(reader["BetalingBedrag"]);
                         bool Status = Convert.ToBoolean(reader["BetalingStatus"]);
-                        //bezoekers in de reservering
-                        //event naam
+
+                        List<Account> Accountlist = DatabaseGetAccounts.GetAccountsReservation(ID);
+                        Event newEvent = DatabaseGetEvents.GetSingleEvent(EventID);
+
                         if (PlaceID == 0)
                         {
                             Place = null;
@@ -48,7 +50,7 @@ namespace Forms_version_1._0
                         }
 
 
-                        Reservation Reservation = new Reservation(ID, new Payment(Amount, Status), Place);
+                        Reservation Reservation = new Reservation(ID, newEvent, new Payment(Amount, Status), Place, Accountlist);                     
                         ReservationList.Add(Reservation);
                     }
                     return ReservationList;

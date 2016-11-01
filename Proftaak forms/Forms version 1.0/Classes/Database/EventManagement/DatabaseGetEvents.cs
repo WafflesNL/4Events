@@ -74,6 +74,68 @@ namespace Forms_version_1._0
         }
 
 
+        public static Event GetSingleEvent(int EventID)
+        {
+            Event newEvent = null;
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "SELECT * FROM Event WHERE ID = @EventID";
+                    cmd.Parameters.Add(new SqlParameter("EventID", EventID));
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int ID = Convert.ToInt32(reader["ID"]);
+                        string Name = (reader["Naam"].ToString());
+                        DateTime Date = Convert.ToDateTime(reader["Datum"]);
+                        string Discription = (reader["Beschrijving"].ToString());
+                        string Location = (reader["Locatie"].ToString());
+                        int Maxvisitors = Convert.ToInt32(reader["Maxbezoekers"]);
+                        int CampingID = (reader["CampingID"] != DBNull.Value) ? Convert.ToInt32(reader["CampingID"]) : 0;
+                        int AccountID = Convert.ToInt32(reader["AccountID"]);
+
+                        /*
+                        TimeLine Timeline = DatabaseGetTimeLine.GetTimeline(ID);
+                        Account Account = DatabaseGetAccounts.GetSingleAccountID(AccountID);
+                        Camping Camping;
+                        
+
+                        if (CampingID != 0)
+                        {
+                            Camping = DatabaseGetCamping.GetSingleCamping(CampingID);
+                        }
+                        else
+                        {
+                            Camping = null;
+                        }
+                        */
+                        newEvent = new Event(ID, Name, Discription, Location, Maxvisitors, Date);                   
+                    }
+                    return newEvent;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return newEvent;
+
+
+
+        }
 
     }
 }

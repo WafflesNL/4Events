@@ -23,8 +23,8 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "";
-                   // cmd.Parameters.Add(new SqlParameter("ID", Reservation.ID));
+                    cmd.CommandText = "UPDATE Reservering SET BetalingStatus = 1  WHERE ID = @ID";
+                    cmd.Parameters.Add(new SqlParameter("ID", Reservation.ID));
                     cmd.ExecuteNonQuery();
                     return true;
                 }

@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0.Classes.Database.TimelineManagement
 {
-    public static class DatabaseEditPost
-    {
+    public static class DatabaseEditPost //Slechte code bart!
+    { 
+        /// <summary>
+        /// Give a like to a post
+        /// </summary>       
+        /// <returns>true if database allows changes false if not</returns>
         public static bool LikePost(Post Post)
         {
             bool Check = false;
@@ -42,8 +46,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             }
 
             return Check;
-        } //Likes the selected Post
+        } 
 
+        /// <summary>
+        /// Adds a report to a post
+        /// </summary>   
+        /// <returns>true if database allows changes false if not</returns>
         public static bool ReportPost(Post Post)
         {
             bool Check = false;
@@ -76,6 +84,6 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             }
 
             return Check;
-        } //Reports the selected Post
+        } 
     }
 }

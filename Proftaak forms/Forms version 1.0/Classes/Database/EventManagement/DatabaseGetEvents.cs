@@ -73,7 +73,10 @@ namespace Forms_version_1._0
             return EventList;
         }
 
-
+        /// <summary>
+        /// Gets a single event from the database
+        /// </summary>
+        /// <returns>a specific event from the database</returns>
         public static Event GetSingleEvent(int EventID)
         {
             Event newEvent = null;

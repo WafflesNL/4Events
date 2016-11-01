@@ -10,6 +10,10 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
 {
     public static class DatabaseAddPost
     {
+        /// <summary>
+        /// Adds a post to the timeline
+        /// </summary>      
+        /// <returns>true if database allows changes false if not</returns>
         public static bool AddPost(Post Post)
         {
             bool Check = false;
@@ -57,6 +61,10 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             return Check;
         } //Adding the gottenpost from the business layer to the database
 
+        /// <summary>
+        /// Adds a reaction to posts
+        /// </summary>   
+        /// <returns>true if database allows changes false if not</returns>
         public static bool AddReaction(Post Post)
         {
             bool Check = false;

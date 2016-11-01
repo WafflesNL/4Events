@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     public static class DatabaseGetReservations
     {
+        /// <summary>
+        /// Gets list of reservations that belongs to a specific event
+        /// </summary>
+        /// <returns>A list of reservations</returns>
         public static List<Reservation> GetReservation(int EventID)
         {
             List<Reservation> ReservationList = new List<Reservation>();
@@ -67,8 +71,6 @@ namespace Forms_version_1._0
             }
             return ReservationList;
         }
-
-
 
 
     }

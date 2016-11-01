@@ -314,7 +314,10 @@ namespace Forms_version_1._0
             return account;
         }
 
-       
+        /// <summary>
+        /// Gets account from a gotten RFID
+        /// </summary>
+        /// <returns>account that has the same rfid</returns>
         public static Account GetAccountFromRFID(string RFID)
         {
             Account account = null;
@@ -358,6 +361,10 @@ namespace Forms_version_1._0
             return account;
         }
 
+        /// <summary>
+        /// Get account that belong with a reservation
+        /// </summary>
+        /// <returns>A list of al accounts that are in a reservation</returns>
         public static List<Account> GetAccountsReservation(int ReservationID)
         {
             List<Account> AccountList = new List<Account>();

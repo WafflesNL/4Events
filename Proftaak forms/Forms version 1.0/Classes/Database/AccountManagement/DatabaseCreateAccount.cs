@@ -52,6 +52,10 @@ namespace Forms_version_1._0
             return Check;
         }
 
+        /// <summary>
+        /// Creates an account with RFID attached
+        /// </summary>
+        /// <returns>True if Database allows the changes false if not</returns>
         public static bool CreateAccountWithRFID(Account Account, string RFIDTag)
         {
             bool Check = false;

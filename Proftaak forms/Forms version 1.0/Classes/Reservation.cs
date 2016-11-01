@@ -95,7 +95,7 @@ namespace Forms_version_1._0.Classes
 
         public override string ToString()
         {
-            return ID + ", " + Event.Name + ", " + this.Accounts.Count;
+            return ID + "\t " + Event.Name + "\t " + this.Accounts.Count;
         }
     }
 }

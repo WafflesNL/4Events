@@ -35,7 +35,8 @@ namespace Forms_version_1._0
 
         private void btnBetalingStatus_Click(object sender, EventArgs e)
         {
-            BetalingsForm Form = new BetalingsForm();
+            Event Event = cbSelectEvent.SelectedItem as Event;
+            BetalingsForm Form = new BetalingsForm(Event);
             Form.ShowDialog();
         }
 

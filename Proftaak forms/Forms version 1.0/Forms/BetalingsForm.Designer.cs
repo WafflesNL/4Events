@@ -31,7 +31,6 @@
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblSaldoDB = new System.Windows.Forms.Label();
             this.btnBetalen = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblKosten = new System.Windows.Forms.Label();
             this.lblEvent = new System.Windows.Forms.Label();
             this.lblKostenDB = new System.Windows.Forms.Label();
@@ -64,14 +63,6 @@
             this.btnBetalen.Text = "Betalen";
             this.btnBetalen.UseVisualStyleBackColor = true;
             this.btnBetalen.Click += new System.EventHandler(this.btnBetalen_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 21);
-            this.comboBox1.TabIndex = 3;
             // 
             // lblKosten
             // 
@@ -108,7 +99,6 @@
             this.Controls.Add(this.lblKostenDB);
             this.Controls.Add(this.lblEvent);
             this.Controls.Add(this.lblKosten);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnBetalen);
             this.Controls.Add(this.lblSaldoDB);
             this.Controls.Add(this.lblSaldo);
@@ -125,7 +115,6 @@
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label lblSaldoDB;
         private System.Windows.Forms.Button btnBetalen;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblKosten;
         private System.Windows.Forms.Label lblEvent;
         private System.Windows.Forms.Label lblKostenDB;

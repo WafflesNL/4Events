@@ -10,6 +10,11 @@ namespace Forms_version_1._0
 {
     class DatabaseGetAccountReservering
     {
+        /// <summary>
+        /// Get the total amount of account on one reservation
+        /// </summary>
+        /// <param name="Reservation"></param>
+        /// <returns></returns>
         public static int GetReservationAmountReservation(Reservation Reservation)
         {
             int reservationCount = 0;

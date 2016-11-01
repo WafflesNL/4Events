@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Forms_version_1._0.Classes;
 
 namespace Forms_version_1._0.Forms
 {
     public partial class BetalingsForm : Form
     {
-        public BetalingsForm()
+        Event currentEvent;
+
+        public BetalingsForm(Event currentEvent)
         {
             InitializeComponent();
+            this.currentEvent = currentEvent;
+            
         }
 
         private void btnBetalen_Click(object sender, EventArgs e)

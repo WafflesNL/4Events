@@ -45,9 +45,17 @@ namespace Forms_version_1._0
         {
             if (InvokeRequired)
             {
-                 MethodInvoker method = new MethodInvoker(UpdateRFIDText);
-                 Invoke(method);
-                 return;
+                try
+                {
+                    MethodInvoker method = new MethodInvoker(UpdateRFIDText);
+                    Invoke(method);
+                    return;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
 
             tbRFIDTag.Text = rfid.CurrentRFIDTag;

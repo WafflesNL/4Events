@@ -10,6 +10,10 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
 {
     public static class DatabaseGetPost
     {
+        /// <summary>
+        /// Get a list of all post from a timeline
+        /// </summary> 
+        /// <returns>A list with posts</returns>
         public static List<Post> GetPost()
         {
             List<Post> Postlist = new List<Post>();
@@ -69,8 +73,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Gets all posts
+        }
 
+        /// <summary>
+        /// Gets all post that have below 5 reports
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetSafePost()
         {
             List<Post> Postlist = new List<Post>();
@@ -132,6 +140,10 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             return Postlist;
         } //Gets all posts who havent been reported 5 times or more
 
+        /// <summary>
+        /// Gets all Reactions from a post
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetReaction(string ReID)
         {
             List<Post> Postlist = new List<Post>();
@@ -191,8 +203,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Gets all reactions
+        }
 
+        /// <summary>
+        /// Gets all post that have below 5 reports (twee dezelfde methoden)
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetSafeReaction(string ReID)
         {
             List<Post> Postlist = new List<Post>();
@@ -254,6 +270,10 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             return Postlist;
         } //Gets all posts who havent been reported 5 times or more and is a reaction to selected post
 
+        /// <summary>
+        /// deze methode is slecht en schrijf comments!!!!!!! //Returns the posts that contain the searched name, word and category
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetAll(string Fnaam, string Fwoord, string Fcat)
         {
             List<Post> Postlist = new List<Post>();
@@ -313,8 +333,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Returns the posts that contain the searched name, word and category
+        }
 
+        /// <summary>
+        /// Get all post by name (ook slecht)
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetName(string Fnaam)
         {
             List<Post> Postlist = new List<Post>();
@@ -376,6 +400,10 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             return Postlist;
         } //Returns the posts that contain the searched name
 
+        /// <summary>
+        /// Returns the posts that contain the searched word
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetWord(string Fwoord)
         {
             List<Post> Postlist = new List<Post>();
@@ -435,8 +463,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Returns the posts that contain the searched word
+        }
 
+        /// <summary>
+        /// Returns the posts that contain the searched category
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetCategory(string Fcat)
         {
             List<Post> Postlist = new List<Post>();
@@ -496,8 +528,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Returns the posts that contain the searched category
+        }
 
+        /// <summary>
+        /// //Returns the posts that contain the searched name and word
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetNameWord(string Fnaam, string Fwoord)
         {
             List<Post> Postlist = new List<Post>();
@@ -557,8 +593,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Returns the posts that contain the searched name and word
+        }
 
+        /// <summary>
+        /// //Returns the posts that contain the searched name and category (ook slecht)
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetNameCategory(string Fnaam, string Fcat)
         {
             List<Post> Postlist = new List<Post>();
@@ -618,8 +658,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Returns the posts that contain the searched name and category
+        }
 
+        /// <summary>
+        /// //Returns the posts that contain the searched word and category (ook slecht)
+        /// </summary>  
+        /// <returns>A list with posts</returns>
         public static List<Post> GetWordCategory(string Fwoord, string Fcat)
         {
             List<Post> Postlist = new List<Post>();
@@ -679,7 +723,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Returns the posts that contain the searched word and category
+        } 
 
     }
 }

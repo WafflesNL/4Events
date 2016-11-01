@@ -13,7 +13,6 @@ namespace Forms_version_1._0
         /// <summary>
         /// Creates a new column in the reservation table.
         /// </summary>
-        /// <param name="Reservation">The reservation to be added.</param>
         /// <returns>Returns true if the reservation is added and false if it failed.</returns>
         public static bool CreateReservation(Reservation Reservation)
         {

@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     class DatabaseGetTimeLine
     {
+        /// <summary>
+        /// Gets the timeLine To post on
+        /// </summary>
+        /// <returns>A timeLine</returns>
         public static TimeLine GetTimeline(int EventID)
         {
             TimeLine Timeline = null;

@@ -10,6 +10,10 @@ namespace Forms_version_1._0
 {
     class DatabaseGetAccountReservering
     {
+        /// <summary>
+        /// returns amount of people in a reservation
+        /// </summary>
+        /// <returns>gets amount of all people in a reservation</returns>
         public static int GetReservationAmountReservation(Reservation Reservation)
         {
             int reservationCount = 0;

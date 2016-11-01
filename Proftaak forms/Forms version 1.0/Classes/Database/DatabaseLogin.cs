@@ -54,6 +54,10 @@ namespace Forms_version_1._0
             return Check;
         }
 
+        /// <summary>
+        ///  Get string that is requested
+        /// </summary>
+        /// <returns>A string</returns>
         public static string GetString(int ID, string Data)
         {
             string Check = "";
@@ -93,6 +97,10 @@ namespace Forms_version_1._0
             return Check;
         }
 
+        /// <summary>
+        ///  Get int that is requested
+        /// </summary>
+        /// <returns>A string</returns>
         public static int? GetInt(int ID, string Data)
         {
             int? Check = 0;

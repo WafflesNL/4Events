@@ -8,9 +8,16 @@ using System.Threading.Tasks;
 
 namespace Forms_version_1._0
 {
+  
     public static class DatabaseUpdateMaterial
     {
-        public static void UpdateMaterial(List<Material> MaterialList, int EventID)
+        /// <summary>
+        /// asign all selected materials to an event
+        /// </summary>
+        /// <param name="EventID">EventID int</param>
+        /// <param name="MaterialList">All materials that get set to an event</param>
+        /// <returns>true if database allows changes false if not</returns>
+        public static bool UpdateMaterial(List<Material> MaterialList, int EventID)
         {
             foreach (Material M in MaterialList)
             {
@@ -28,22 +35,31 @@ namespace Forms_version_1._0
 
                         cmd.ExecuteNonQuery();
 
-                        
+                        return true;
                     }
                     catch (SqlException e)
                     {
                         Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                        return false;
                     }
                     finally
                     {
                         DatabaseConnectie.CloseConnection();
                     }
                 }
+                return true;
             }
-        
+            return true;
+
         }
 
-        public static void UpdateAccount(List<Material> MaterialList, int? AccountID)
+        /// <summary>
+        /// Sets selected items to an event
+        /// </summary>
+        /// <param name="EventID">EventID int</param>
+        /// <param name="MaterialList">All materials that get set to an account</param>
+        /// <returns>true if database allows changes false if not</returns>
+        public static bool UpdateAccount(List<Material> MaterialList, int? AccountID)
         {
             foreach (Material M in MaterialList)
             {
@@ -74,18 +90,21 @@ namespace Forms_version_1._0
 
                         cmd.ExecuteNonQuery();
 
-
+                        return true;
                     }
                     catch (SqlException e)
                     {
                         Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                        return false;
                     }
                     finally
                     {
                         DatabaseConnectie.CloseConnection();
                     }
                 }
+                return true;
             }
+            return true;
 
         }
     }

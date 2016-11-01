@@ -27,7 +27,7 @@ namespace Forms_version_1._0.Forms
 
                 foreach (var account in reservation.Accounts)
                 {
-                    if (account.ID == CurrentAccount.ID)
+                    if (account.ID != CurrentAccount.ID)
                     {
                         lblKostenDB.Text = "" + reservation.Payment.Amount;
                         lblReserve.Text = "Reservering gevonden, betaling is mogelijk.";
@@ -39,7 +39,7 @@ namespace Forms_version_1._0.Forms
 
         private void btnBetalen_Click(object sender, EventArgs e)
         {
-            //Takes the user to a 3rd party Paying Method
+            // Put database code to set payment to true here.
             this.Close();
         }
     }

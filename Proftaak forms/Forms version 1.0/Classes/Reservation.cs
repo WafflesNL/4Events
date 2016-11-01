@@ -19,9 +19,7 @@ namespace Forms_version_1._0.Classes
         public int ID { get; set; }
         public Event Event { get; set; }
         public Payment Payment { get; set; }
-        public Place Place { get; set; }
-
-        // I don't think reservation really needs this many constructors.
+        public Place Place { get; set; }   
 
         public Reservation(int ID, Event Event, Payment Payment, Place Place)
         {
@@ -97,7 +95,7 @@ namespace Forms_version_1._0.Classes
 
         public override string ToString()
         {
-            return Event.Name;
+            return ID + ", " + Event.Name + ", " + this.Accounts.Count;
         }
     }
 }

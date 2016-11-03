@@ -15,7 +15,14 @@ namespace Forms_version_1._0.Classes
         public int? EventID { get; set; }
         public int? AccountID { get; set; }
 
-        
+        /// <summary>
+        /// Used to change account in the database
+        /// </summary>
+        /// <param name="ID">Identidication for a Material</param>
+        /// <param name="Type">Type of the object<param>
+        /// <param name="Price">Price of the object</param>
+        /// <param name="EventID">Event where the item is currently at</param>
+        /// <param name="AccountID">Account currently in possession of the object<param> 
         public Material(int ID, string Type, double Price, int? EventID, int? AccountID)
         {
             this.ID = ID;

@@ -14,8 +14,6 @@ namespace Forms_version_1._0
         /// <summary>
         /// asign all selected materials to an event
         /// </summary>
-        /// <param name="EventID">EventID int</param>
-        /// <param name="MaterialList">All materials that get set to an event</param>
         /// <returns>true if database allows changes false if not</returns>
         public static bool UpdateMaterial(List<Material> MaterialList, int EventID)
         {

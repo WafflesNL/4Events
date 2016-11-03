@@ -9,6 +9,7 @@ namespace _4EventsTest
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }

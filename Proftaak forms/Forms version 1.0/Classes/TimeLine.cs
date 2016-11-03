@@ -16,6 +16,8 @@ namespace Forms_version_1._0.Classes
         public int TimelineID { get; set; }
         public bool Check { get; set; }
 
+        //geen goede comments
+
         public TimeLine(int timelineID)
         {
             this.TimelineID = timelineID;

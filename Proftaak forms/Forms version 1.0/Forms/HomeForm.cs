@@ -136,8 +136,7 @@ namespace Forms_version_1._0
             btnCreateEvent.Enabled = false;
             btnEventInfo.Enabled = false;
             btnMaterial.Enabled = false;
-            btnReserve.Enabled = false;
-            btnReservePlace.Enabled = false;
+            btnReserve.Enabled = false;     
             btnTijdlijn.Enabled = false;
             GetAcces();
         }

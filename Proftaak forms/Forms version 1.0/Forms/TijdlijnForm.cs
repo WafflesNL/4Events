@@ -19,6 +19,8 @@ namespace Forms_version_1._0.Forms
         char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
         Event newevent;
         Post postAttach;
+        Post postcheck;
+        Post postrep;
         TimeLine newtimeline;
         List<Post> Postlist = new List<Post>();
         int Check = 0;
@@ -242,15 +244,27 @@ namespace Forms_version_1._0.Forms
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            if (lbTimeline.SelectedIndex == -1)
+            if (lbTimeline.SelectedItem == null)
             {
                 MessageBox.Show("Selecteer een post");
             }
             else
             {
-                Post postrep = lbTimeline.SelectedItem as Post;
-                if (Check == 0)
-                { 
+                postrep = lbTimeline.SelectedItem as Post;
+                if (postcheck != postrep)
+                {
+                    postcheck = postrep;
+                    newtimeline.ReportPost(postrep);
+                    if (newtimeline.Check == true)
+                    {
+                        lbTimeline.Items.Clear();
+                        GetPosts();
+                    }
+                }          
+                
+                else if (Check == 0)
+                {
+                    postcheck = postrep;
                     newtimeline.ReportPost(postrep);
                     if (newtimeline.Check == true)
                     {

@@ -44,7 +44,8 @@ namespace Forms_version_1._0
 
         private void btnBetalingStatus_Click(object sender, EventArgs e)
         {
-            BetalingsForm Form = new BetalingsForm();
+            Event Event = cbSelectEvent.SelectedItem as Event;
+            BetalingsForm Form = new BetalingsForm(Event);
             Form.ShowDialog();
         }
 
@@ -68,10 +69,7 @@ namespace Forms_version_1._0
 
         private void btnPlaats_Click(object sender, EventArgs e)
         {
-            CampingOverzichtForm Form = new CampingOverzichtForm();
-            this.Hide();
-            Form.ShowDialog();
-            this.Close();
+            //niet meer van toepassing
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -147,8 +145,7 @@ namespace Forms_version_1._0
             btnCreateEvent.Enabled = false;
             btnEventInfo.Enabled = false;
             btnMaterial.Enabled = false;
-            btnReserve.Enabled = false;
-            btnReservePlace.Enabled = false;
+            btnReserve.Enabled = false;     
             btnTijdlijn.Enabled = false;
             GetAcces();
         }

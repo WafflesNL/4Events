@@ -314,7 +314,10 @@ namespace Forms_version_1._0
             return account;
         }
 
-       
+        /// <summary>
+        /// Gets account from a gotten RFID
+        /// </summary>
+        /// <returns>account that has the same rfid</returns>
         public static Account GetAccountFromRFID(string RFID)
         {
             Account account = null;
@@ -358,6 +361,54 @@ namespace Forms_version_1._0
             return account;
         }
 
+        /// <summary>
+        /// Get account that belong with a reservation
+        /// </summary>
+        /// <returns>A list of al accounts that are in a reservation</returns>
+        public static List<Account> GetAccountsReservation(int ReservationID)
+        {
+            List<Account> AccountList = new List<Account>();
+
+            if (DatabaseConnectie.OpenConnection())
+            {
+
+                try
+                {
+                    DatabaseConnectie.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = DatabaseConnectie.connect;
+
+                    cmd.CommandText = "select * from Account_Reservering ar join Account a on ar.AccountID = a.ID where ar.ReserveringID = @ReservationID";
+                    cmd.Parameters.Add(new SqlParameter("@ReservationID", ReservationID));
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int ID = Convert.ToInt32(reader["ID"]);
+                        string Username = (reader["Gebruikersnaam"].ToString());
+                        string Password = (reader["Wachtwoord"].ToString());
+                        string Function = (reader["Functie"].ToString());
+                        string Name = (reader["Naam"].ToString());
+
+                        Account Account = new Account(ID, Name, Username, Password, CurrentAccount.TranslateFunction(Function));
+                        AccountList.Add(Account);
+                    }
+                    return AccountList;
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                }
+                finally
+                {
+                    DatabaseConnectie.CloseConnection();
+                }
+            }
+            return AccountList;
+
+
+        }
 
 
     }

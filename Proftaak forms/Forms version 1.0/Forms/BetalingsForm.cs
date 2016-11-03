@@ -7,20 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Forms_version_1._0.Classes;
 
 namespace Forms_version_1._0.Forms
 {
     public partial class BetalingsForm : Form
     {
-        public BetalingsForm()
+        Event currentEvent;
+        List<Reservation> listReservation;
+
+        public BetalingsForm(Event currentEvent)
         {
             InitializeComponent();
+            this.currentEvent = currentEvent;
+            GetPayment();
         }
 
         private void btnBetalen_Click(object sender, EventArgs e)
         {
-            //Takes the user to a 3rd party Paying Method
+
+            // Put database code to set payment to true here.
             this.Close();
+        }
+
+        private void GetPayment()
+        {
+            listReservation = currentEvent.GetReservationList();
+            foreach (var reservation in listReservation)
+            {
+                lblEvent.Text = "" + reservation.Event.ToString();
+
+                foreach (var account in reservation.Accounts)
+                {
+                    if (account.ID != CurrentAccount.ID)
+                    {
+                        lblKostenDB.Text = "" + reservation.Payment.Amount;
+                        lblReserve.Text = "Reservering gevonden, betaling is mogelijk.";
+                        btnBetalen.Enabled = true;
+                    }
+                }
+            }
+
         }
     }
 }

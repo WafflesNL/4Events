@@ -10,6 +10,11 @@ namespace Forms_version_1._0
 {
     public static class DatabaseGetPlace
     {
+        /// <summary>
+        /// Gets a place for a event
+        /// </summary>
+        /// <param name="PlaceID">EventID int</param>
+        /// <returns>The class place</returns>
         public static Place GetPlace(int PlaceID)
         {
             Place Place = null;
@@ -53,6 +58,11 @@ namespace Forms_version_1._0
             return Place;
         }
 
+        /// <summary>
+        /// Gets a list of all places that belong to a camping
+        /// </summary>
+        /// <param name="CampingID">EventID int</param>     
+        /// <returns>Returns a list of places</returns>
         public static List<Place> GetPlacesCamping(int? CampingID)
         {
             List<Place> placeList = new List<Place>();
@@ -95,9 +105,5 @@ namespace Forms_version_1._0
             }
             return placeList;
         }
-
-
-
-
     }
 }

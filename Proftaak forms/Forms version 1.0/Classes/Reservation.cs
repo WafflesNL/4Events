@@ -19,7 +19,10 @@ namespace Forms_version_1._0.Classes
         public int ID { get; set; }
         public Event Event { get; set; }
         public Payment Payment { get; set; }
-        public Place Place { get; set; }   
+        public Place Place { get; set; }
+
+      
+        //waarvoor worden de verschillende constructors gebruikt
 
         /// <summary>
         /// Creates an Event if the data is already known.

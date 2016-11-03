@@ -12,8 +12,7 @@ namespace Forms_version_1._0
     {
         /// <summary>
         /// Gets a place for a event
-        /// </summary>
-        /// <param name="PlaceID">EventID int</param>
+        /// </summary
         /// <returns>The class place</returns>
         public static Place GetPlace(int PlaceID)
         {

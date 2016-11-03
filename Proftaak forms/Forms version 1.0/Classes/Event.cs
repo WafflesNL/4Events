@@ -183,6 +183,11 @@ namespace Forms_version_1._0.Classes
             return ReservationList;        
         }
 
+        /// <summary>
+        /// Gets an account with a specific RFID tag.
+        /// </summary>
+        /// <param name="RFIDtag"></param>
+        /// <returns>Returns a single account</returns>
         public Account Checkin_CheckAccount(string RFIDtag)
         {
             
@@ -197,6 +202,11 @@ namespace Forms_version_1._0.Classes
             }
         }
 
+        /// <summary>
+        /// Updates an Account by adding an Event to it.
+        /// </summary>
+        /// <param name="Account">A single account.</param>
+        /// <returns>Returns true or false.</returns>
         public bool Checkin_UpdateAccount(Account Account)
         {
             if (DatabaseEditAccount.UpdateEventID_checkin(Account, ID))
@@ -209,6 +219,11 @@ namespace Forms_version_1._0.Classes
             }
         }
 
+        /// <summary>
+        /// Returns an account if it is checked in to this event.
+        /// </summary>
+        /// <param name="RFIDtag"></param>
+        /// <returns>Returns a single account.</returns>
         public Account Checkuit_CheckAccount(string RFIDtag)
         {
             if (DatabaseGetAccounts.GetAccountRFID_Checkuit(RFIDtag, ID) != null) //database
@@ -222,6 +237,11 @@ namespace Forms_version_1._0.Classes
             }
         }
 
+        /// <summary>
+        /// Updates an account by removing this event from it.
+        /// </summary>
+        /// <param name="Account">A single account</param>
+        /// <returns>Returns true or false</returns>
         public bool Checkuit_UpdateAccount(Account Account)
         {
             if (DatabaseEditAccount.UpdateEventID_checkuit(Account, ID))

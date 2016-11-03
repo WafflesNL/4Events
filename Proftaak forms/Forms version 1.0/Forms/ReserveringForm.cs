@@ -88,7 +88,7 @@ namespace Forms_version_1._0.Forms
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Weet je zeker dat je wilt reserveren?", "teset", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Weet je zeker dat je wilt reserveren?", "Check", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 reservation.Event = currentEvent;
 

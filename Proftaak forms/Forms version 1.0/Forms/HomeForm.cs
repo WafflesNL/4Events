@@ -29,8 +29,17 @@ namespace Forms_version_1._0
         {
             //DatabaseAddPost.AddPost();
             Event Event = cbSelectEvent.SelectedItem as Event;
-            TijdlijnForm Form = new TijdlijnForm(Event);
-            Form.ShowDialog();        
+            try
+            {
+                TijdlijnForm Form = new TijdlijnForm(Event);
+                Form.ShowDialog();  
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Event heeft (nog) geen tijdlijn");
+            }
+            
+                  
         }
 
         private void btnBetalingStatus_Click(object sender, EventArgs e)

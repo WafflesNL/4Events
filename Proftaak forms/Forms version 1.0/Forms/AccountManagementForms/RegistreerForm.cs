@@ -54,7 +54,7 @@ namespace Forms_version_1._0
                 catch (Exception)
                 {
 
-                    throw;
+                   
                 }
             }
 

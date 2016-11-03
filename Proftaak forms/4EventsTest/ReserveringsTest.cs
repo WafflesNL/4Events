@@ -16,7 +16,7 @@ namespace _4EventsTest
             Payment testPayment = new Payment(10, false);
             Place testPlace = new Place(1, "Zand", 1, Forms_version_1._0.Categorie.Normal);
 
-            Reservation reservering = new Reservation(1, testEvent, testPayment, testPlace);
+            Reservation reservering = new Reservation(1, testEvent, testPayment, testPlace, null);
 
             Assert.AreEqual(1, reservering.Event.ID);
             Assert.AreEqual("testEvent", reservering.Event.Name);

@@ -13,6 +13,7 @@ namespace Forms_version_1._0.Forms
 {
     public partial class BetalingsForm : Form
     {
+        Reservation Reservation;
         Event currentEvent;
         List<Reservation> listReservation;
 
@@ -25,7 +26,7 @@ namespace Forms_version_1._0.Forms
 
         private void btnBetalen_Click(object sender, EventArgs e)
         {
-
+            // moet de reservation op kunnen vragen 
             // Put database code to set payment to true here.
             this.Close();
         }
@@ -33,17 +34,18 @@ namespace Forms_version_1._0.Forms
         private void GetPayment()
         {
             listReservation = currentEvent.GetReservationList();
-            foreach (var reservation in listReservation)
+            foreach (Reservation reservation in listReservation)
             {
                 lblEvent.Text = "" + reservation.Event.ToString();
 
-                foreach (var account in reservation.Accounts)
+                foreach (Account account in reservation.Accounts)
                 {
                     if (account.ID != CurrentAccount.ID)
                     {
                         lblKostenDB.Text = "" + reservation.Payment.Amount;
                         lblReserve.Text = "Reservering gevonden, betaling is mogelijk.";
                         btnBetalen.Enabled = true;
+                        this.Reservation = reservation;
                     }
                 }
             }

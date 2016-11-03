@@ -52,7 +52,7 @@ namespace Forms_version_1._0
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = DatabaseConnectie.connect;
 
-                cmd.CommandText = "UPDATE Reservering SET  WHERE ID = @ID";
+                cmd.CommandText = "UPDATE Reservering SET BetalingStatus = 1 WHERE ID = @ID";
                 cmd.Parameters.Add(new SqlParameter("ID", ReservationID));
                 cmd.ExecuteNonQuery();
                 return true;

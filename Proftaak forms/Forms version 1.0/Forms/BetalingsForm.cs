@@ -26,30 +26,44 @@ namespace Forms_version_1._0.Forms
 
         private void btnBetalen_Click(object sender, EventArgs e)
         {
-            // moet de reservation op kunnen vragen 
-            // Put database code to set payment to true here.
-            this.Close();
+            if (this.Reservation.PayForReservation())
+            {
+                MessageBox.Show("De betaling is voltooid");
+                GetPayment();
+            }
+            else
+            {
+                MessageBox.Show("De betaling is niet voltooid");
+            }
+      
         }
 
         private void GetPayment()
-        {
+        {         
             listReservation = currentEvent.GetReservationList();
-            foreach (Reservation reservation in listReservation)
+            foreach (Reservation R in listReservation)
             {
-                lblEvent.Text = "" + reservation.Event.ToString();
-
-                foreach (Account account in reservation.Accounts)
+                foreach (Account A in R.Accounts)
                 {
-                    if (account.ID != CurrentAccount.ID)
+                    if (A.ID == CurrentAccount.ID && R.ID == currentEvent.ID && R.Payment.Paid == false)
                     {
-                        lblKostenDB.Text = "" + reservation.Payment.Amount;
+                        lblEvent.Text = "Event naam: " + currentEvent.Name.ToString();
                         lblReserve.Text = "Reservering gevonden, betaling is mogelijk.";
-                        btnBetalen.Enabled = true;
-                        this.Reservation = reservation;
+                        lblKosten.Text = "Kosten: € " + R.Payment.Amount;
+                        Reservation = R;
                     }
+                    else if (A.ID == CurrentAccount.ID && R.ID == currentEvent.ID && R.Payment.Paid)
+                    {
+                        btnBetalen.Enabled = false;
+                        lblEvent.Text = "Event naam: " + currentEvent.Name.ToString();
+                        lblReserve.Text = "Reservering gevonden, betaling is voltooid.";
+                        lblKosten.Text = "Betaalde bedrag: € " + R.Payment.Amount;
+                        break;
+                    }               
                 }
+                
             }
-
         }
+
     }
 }

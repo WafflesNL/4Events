@@ -45,7 +45,7 @@ namespace Forms_version_1._0
 
                     //Converts the bool to a bit for the database.
                     int paymentStatus;
-                    if (Reservation.Payment.Payed)
+                    if (Reservation.Payment.Paid)
                     {
                         paymentStatus = 1;
                     }

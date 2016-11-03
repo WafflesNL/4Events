@@ -31,13 +31,11 @@
             this.btnBetalen = new System.Windows.Forms.Button();
             this.lblKosten = new System.Windows.Forms.Label();
             this.lblEvent = new System.Windows.Forms.Label();
-            this.lblKostenDB = new System.Windows.Forms.Label();
             this.lblReserve = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBetalen
             // 
-            this.btnBetalen.Enabled = false;
             this.btnBetalen.Location = new System.Drawing.Point(296, 99);
             this.btnBetalen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBetalen.Name = "btnBetalen";
@@ -67,16 +65,6 @@
             this.lblEvent.TabIndex = 5;
             this.lblEvent.Text = "Event";
             // 
-            // lblKostenDB
-            // 
-            this.lblKostenDB.AutoSize = true;
-            this.lblKostenDB.Location = new System.Drawing.Point(72, 66);
-            this.lblKostenDB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKostenDB.Name = "lblKostenDB";
-            this.lblKostenDB.Size = new System.Drawing.Size(36, 17);
-            this.lblKostenDB.TabIndex = 6;
-            this.lblKostenDB.Text = "0.00";
-            // 
             // lblReserve
             // 
             this.lblReserve.AutoSize = true;
@@ -93,7 +81,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 140);
             this.Controls.Add(this.lblReserve);
-            this.Controls.Add(this.lblKostenDB);
             this.Controls.Add(this.lblEvent);
             this.Controls.Add(this.lblKosten);
             this.Controls.Add(this.btnBetalen);
@@ -110,7 +97,6 @@
         private System.Windows.Forms.Button btnBetalen;
         private System.Windows.Forms.Label lblKosten;
         private System.Windows.Forms.Label lblEvent;
-        private System.Windows.Forms.Label lblKostenDB;
         private System.Windows.Forms.Label lblReserve;
     }
 }

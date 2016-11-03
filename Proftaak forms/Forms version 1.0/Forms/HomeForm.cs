@@ -60,10 +60,7 @@ namespace Forms_version_1._0
 
         private void btnPlaats_Click(object sender, EventArgs e)
         {
-            CampingOverzichtForm Form = new CampingOverzichtForm();
-            this.Hide();
-            Form.ShowDialog();
-            this.Close();
+            //niet meer van toepassing
         }
 
         private void btnAccount_Click(object sender, EventArgs e)

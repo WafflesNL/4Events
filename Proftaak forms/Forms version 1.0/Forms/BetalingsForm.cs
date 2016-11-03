@@ -20,6 +20,18 @@ namespace Forms_version_1._0.Forms
         {
             InitializeComponent();
             this.currentEvent = currentEvent;
+            GetPayment();
+        }
+
+        private void btnBetalen_Click(object sender, EventArgs e)
+        {
+
+            // Put database code to set payment to true here.
+            this.Close();
+        }
+
+        private void GetPayment()
+        {
             listReservation = currentEvent.GetReservationList();
             foreach (var reservation in listReservation)
             {
@@ -35,12 +47,7 @@ namespace Forms_version_1._0.Forms
                     }
                 }
             }
-        }
 
-        private void btnBetalen_Click(object sender, EventArgs e)
-        {
-            // Put database code to set payment to true here.
-            this.Close();
         }
     }
 }

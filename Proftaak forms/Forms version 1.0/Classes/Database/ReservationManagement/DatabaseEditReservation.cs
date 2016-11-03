@@ -42,6 +42,32 @@ namespace Forms_version_1._0
         }
 
 
+        public static bool ChangePayment(int ReservationID)
+        {
+            DatabaseConnectie.OpenConnection();
+
+            try
+            {
+                DatabaseConnectie.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = DatabaseConnectie.connect;
+
+                cmd.CommandText = "UPDATE Reservering SET  WHERE ID = @ID";
+                cmd.Parameters.Add(new SqlParameter("ID", ReservationID));
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Query Failed: " + e.StackTrace + e.Message.ToString());
+                return false;
+            }
+            finally
+            {
+                DatabaseConnectie.CloseConnection();
+            }
+
+        }
 
 
 

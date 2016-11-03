@@ -93,6 +93,18 @@ namespace Forms_version_1._0.Classes
             return accountList;
         }
 
+        public bool PayForReservation()
+        {
+            if (DatabaseEditReservation.ChangePayment(ID))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public override string ToString()
         {
             return ID + "\t " + Event.Name + "\t " + this.Accounts.Count;

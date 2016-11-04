@@ -37,29 +37,6 @@ namespace Forms_version_1._0.Forms
             GetGuestList();
         }
 
-        private void GetGuestList()
-        {
-            lbGuestList.Items.Clear();
-            foreach (Account A in newevent.GetGuestList())
-            {
-                lbGuestList.Items.Add(A);
-            }
-        }
-
-        private void GetAcces()
-        {
-            if (CurrentAccount.Function == Function.Beheerder || CurrentAccount.Function == Function.Medewerker)
-            {
-                btnInChecken.Visible = true;
-                btnUitChecken.Visible = true;
-            }
-            else
-            {
-                btnInChecken.Visible = false;
-                btnUitChecken.Visible = false;
-            }
-        }
-
         private void btnInChecken_Click(object sender, EventArgs e)
         {
             //voegt een gast toe aan de gastenlijst
@@ -138,6 +115,35 @@ namespace Forms_version_1._0.Forms
         private void FormClose(object sender, FormClosingEventArgs e)
         {
             rfid.Close();
+        }
+
+        /// <summary>
+        /// Gets a list from all guests from an event and puts them in a listbox.
+        /// </summary>
+        private void GetGuestList()
+        {
+            lbGuestList.Items.Clear();
+            foreach (Account A in newevent.GetGuestList())
+            {
+                lbGuestList.Items.Add(A);
+            }
+        }
+
+        /// <summary>
+        /// Grants acces to the user depending on function.
+        /// </summary>
+        private void GetAcces()
+        {
+            if (CurrentAccount.Function == Function.Beheerder || CurrentAccount.Function == Function.Medewerker)
+            {
+                btnInChecken.Visible = true;
+                btnUitChecken.Visible = true;
+            }
+            else
+            {
+                btnInChecken.Visible = false;
+                btnUitChecken.Visible = false;
+            }
         }
     }
 }

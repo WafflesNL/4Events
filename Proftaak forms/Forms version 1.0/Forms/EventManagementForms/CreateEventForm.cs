@@ -13,7 +13,6 @@ namespace Forms_version_1._0
 {
     public partial class CreateEventForm : Form
     {
-        //stel er is een event op dezelfde locatie en dag dan controleert die hier niet op
         List<Material> MaterialList = new List<Material>();
 
         public CreateEventForm()

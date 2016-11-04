@@ -40,9 +40,8 @@ namespace Forms_version_1._0.Forms
 
 
 
-        private void btnOpslaan_Click(object sender, EventArgs e) //still in progress
-        {
-            //Saves changes to the Event.         
+        private void btnOpslaan_Click(object sender, EventArgs e)
+        {       
             if (tbEventName.Text != "" && tbEventDescription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "" && numQuantityVisitors.Value >= 5)
             {            
                 Event NewEvent = new Event(Event.ID, tbEventName.Text, tbEventDescription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value);              
@@ -75,6 +74,9 @@ namespace Forms_version_1._0.Forms
             numQuantityVisitors.Value = Event.MaxVisitors;
         }
 
+        /// <summary>
+        /// Grants acces to the user depending on function.
+        /// </summary>
         private void GetAcces()
         {
             numQuantityVisitors.Enabled = false;

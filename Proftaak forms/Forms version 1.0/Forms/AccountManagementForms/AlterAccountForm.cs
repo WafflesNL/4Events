@@ -17,7 +17,7 @@ namespace Forms_version_1._0
         public AlterAccountForm()
         {
             InitializeComponent();
-            GetAcces();
+            GetAccess();
         }
 
         private void btnOpslaan_Click(object sender, EventArgs e)
@@ -73,8 +73,10 @@ namespace Forms_version_1._0
             this.Account = Account;
         }
 
-
-        private void GetAcces()
+        /// <summary>
+        /// Grants access depending on the function of the account
+        /// </summary>
+        private void GetAccess()
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {

@@ -30,15 +30,15 @@
         {
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lbAccounts = new System.Windows.Forms.ListBox();
-            this.btnRemoveAccount = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(12, 12);
+            this.btnCreateAccount.Location = new System.Drawing.Point(9, 10);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(112, 48);
+            this.btnCreateAccount.Size = new System.Drawing.Size(84, 39);
             this.btnCreateAccount.TabIndex = 0;
             this.btnCreateAccount.Text = "Account aanmaken";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
@@ -47,27 +47,18 @@
             // lbAccounts
             // 
             this.lbAccounts.FormattingEnabled = true;
-            this.lbAccounts.ItemHeight = 16;
-            this.lbAccounts.Location = new System.Drawing.Point(130, 12);
+            this.lbAccounts.Location = new System.Drawing.Point(98, 10);
+            this.lbAccounts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbAccounts.Name = "lbAccounts";
-            this.lbAccounts.Size = new System.Drawing.Size(442, 340);
+            this.lbAccounts.Size = new System.Drawing.Size(332, 277);
             this.lbAccounts.TabIndex = 1;
-            // 
-            // btnRemoveAccount
-            // 
-            this.btnRemoveAccount.Location = new System.Drawing.Point(12, 120);
-            this.btnRemoveAccount.Name = "btnRemoveAccount";
-            this.btnRemoveAccount.Size = new System.Drawing.Size(112, 48);
-            this.btnRemoveAccount.TabIndex = 2;
-            this.btnRemoveAccount.Text = "Account Verwijderen";
-            this.btnRemoveAccount.UseVisualStyleBackColor = true;
-            this.btnRemoveAccount.Click += new System.EventHandler(this.btnRemoveAccount_Click);
             // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Location = new System.Drawing.Point(12, 66);
+            this.btnEditAccount.Location = new System.Drawing.Point(9, 54);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(112, 48);
+            this.btnEditAccount.Size = new System.Drawing.Size(84, 39);
             this.btnEditAccount.TabIndex = 3;
             this.btnEditAccount.Text = "Account aanpassen";
             this.btnEditAccount.UseVisualStyleBackColor = true;
@@ -75,13 +66,13 @@
             // 
             // AccountOverzichtForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 370);
+            this.ClientSize = new System.Drawing.Size(438, 301);
             this.Controls.Add(this.btnEditAccount);
-            this.Controls.Add(this.btnRemoveAccount);
             this.Controls.Add(this.lbAccounts);
             this.Controls.Add(this.btnCreateAccount);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AccountOverzichtForm";
             this.Text = "AccountOverzichtForm";
             this.ResumeLayout(false);
@@ -92,7 +83,6 @@
 
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.ListBox lbAccounts;
-        private System.Windows.Forms.Button btnRemoveAccount;
         private System.Windows.Forms.Button btnEditAccount;
     }
 }

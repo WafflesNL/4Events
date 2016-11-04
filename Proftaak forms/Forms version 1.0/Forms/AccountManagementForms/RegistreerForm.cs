@@ -21,7 +21,7 @@ namespace Forms_version_1._0
         public RegistreerForm()
         {
             InitializeComponent();
-            GetAcces();
+            GetAccess();
             t = new System.Timers.Timer();
             t.Interval = 300;
             t.Elapsed += Time_Elapsed;
@@ -36,32 +36,6 @@ namespace Forms_version_1._0
             
         }
 
-        private void Time_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            UpdateRFIDText();
-        }
-
-        private void UpdateRFIDText()
-        {
-            if (InvokeRequired)
-            {
-                try
-                {
-                    MethodInvoker method = new MethodInvoker(UpdateRFIDText);
-                    Invoke(method);
-                    return;
-                }
-                catch (Exception)
-                {
-
-                   
-                }
-            }
-
-            tbRFIDTag.Text = rfid.CurrentRFIDTag;
-        }
-
-        //netheid code moet nog aan gewerkt worden
         private void btnSave_Click(object sender, EventArgs e)
         {
             Function function;
@@ -104,11 +78,39 @@ namespace Forms_version_1._0
             {
                 MessageBox.Show("Niet alle gegevens zijn correct ingevuld");
             }
-
-
         }
 
+        private void FormClose(object sender, FormClosingEventArgs e)
+        {
+            rfid.Close();
+            t.Stop();
+            Dispose();
+        }
 
+        private void Time_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            UpdateRFIDText();
+        }
+
+        private void UpdateRFIDText()
+        {
+            if (InvokeRequired)
+            {
+                try
+                {
+                    MethodInvoker method = new MethodInvoker(UpdateRFIDText);
+                    Invoke(method);
+                    return;
+                }
+                catch (Exception)
+                {
+
+
+                }
+            }
+
+            tbRFIDTag.Text = rfid.CurrentRFIDTag;
+        }
 
         public void CheckUserName(bool Check)
         {
@@ -123,8 +125,10 @@ namespace Forms_version_1._0
             }
         }
 
-
-        private void GetAcces()
+        /// <summary>
+        /// Grants access depending on the account function
+        /// </summary>
+        private void GetAccess()
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {
@@ -143,13 +147,6 @@ namespace Forms_version_1._0
             {
 
             }
-        }
-
-        private void FormClose(object sender, FormClosingEventArgs e)
-        {
-            rfid.Close();
-            t.Stop();
-            Dispose();
         }
     }
 }

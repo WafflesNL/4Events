@@ -13,18 +13,12 @@ namespace Forms_version_1._0
 {
     public partial class AccountOverzichtForm : Form
     {
-        //Andere oplossing is nodig
         public Account account = new Account("", "", "", Function.Bezoeker); 
 
         public AccountOverzichtForm()
         {
             InitializeComponent();
             RefreshForm();
-        }
-
-        private void btnRemoveAccount_Click(object sender, EventArgs e)
-        {
-            //Geen must have hoeft niet geïmplementeerd te worden
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -41,8 +35,7 @@ namespace Forms_version_1._0
                 Account Index = lbAccounts.SelectedItem as Account;
                 AlterAccountForm Form = new AlterAccountForm();
                 Form.GetAccountInformation(Index);
-                Form.ShowDialog();
-               //Verwijst naar form waar account aan te passen is             
+                Form.ShowDialog();           
             }           
             RefreshForm();
         }
@@ -55,8 +48,5 @@ namespace Forms_version_1._0
                 lbAccounts.Items.Add(A);
             }
         }
-
-
-
     }
 }

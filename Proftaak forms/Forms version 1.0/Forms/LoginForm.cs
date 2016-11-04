@@ -45,24 +45,26 @@ namespace Forms_version_1._0
 
 
 
-        //Method to get acces to a form for a specific account
+        /// <summary>
+        /// Grants access depending on function.
+        /// </summary>
         private void GetAcces()
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {
-               //Homeform beheerder
+               // Homeform beheerder
             }
             else if (CurrentAccount.Function == Function.Accountbeheerder)
             {
-               //Homeform accountbeheerder
+               // Homeform accountbeheerder
             }
             else if (CurrentAccount.Function == Function.Medewerker)
             {
-               //Homeform medewerker
+               // Homeform medewerker
             }
             else if (CurrentAccount.Function == Function.Bezoeker)
             {
-                //Homeform bezoeker
+                // Homeform bezoeker
             }
         }
     }

@@ -16,7 +16,6 @@ namespace Forms_version_1._0
 {
     public partial class HomeForm : Form
     {
-        //Post post = new Post
         List<Post> poslst = new List<Post>();
         public HomeForm()
         {
@@ -27,7 +26,6 @@ namespace Forms_version_1._0
 
         private void btnTijdlijn_Click(object sender, EventArgs e)
         {
-            //DatabaseAddPost.AddPost();
             Event Event = cbSelectEvent.SelectedItem as Event;
             try
             {
@@ -67,11 +65,6 @@ namespace Forms_version_1._0
 
         }
 
-        private void btnPlaats_Click(object sender, EventArgs e)
-        {
-            //niet meer van toepassing
-        }
-
         private void btnAccount_Click(object sender, EventArgs e)
         {
             AccountForm Form = new AccountForm();
@@ -107,49 +100,6 @@ namespace Forms_version_1._0
             verhuurform.ShowDialog();
         }
 
-        private void LoadEvents()
-        {
-            cbSelectEvent.Items.Clear();
-            foreach (Event E in CurrentAccount.GetEvents()) 
-            {
-                cbSelectEvent.Items.Add(E);
-            }
-        }
-        
-        //Grants access to users
-        private void GetAcces()
-        {
-            if (CurrentAccount.Function == Function.Beheerder)
-            {
-                btnAccountView.Enabled = true;
-                btnCreateEvent.Enabled = true;
-            }
-            else if(CurrentAccount.Function == Function.Accountbeheerder)
-            {
-                btnAccountView.Enabled = true;                        
-            }
-            else if(CurrentAccount.Function == Function.Medewerker)
-            {
-            
-            }
-            else if(CurrentAccount.Function == Function.Bezoeker)
-            {
-
-            }
-        }
-
-        private void DisableButtons()
-        {
-            btnAccountView.Enabled = false;
-            btnBetalingStatus.Enabled = false;
-            btnCreateEvent.Enabled = false;
-            btnEventInfo.Enabled = false;
-            btnMaterial.Enabled = false;
-            btnReserve.Enabled = false;     
-            btnTijdlijn.Enabled = false;
-            GetAcces();
-        }
-
         private void cbSelectEvent_SelectedIndexChanged(object sender, EventArgs e)
         {          
             //iedereen
@@ -175,6 +125,57 @@ namespace Forms_version_1._0
             }        
         }
 
-     
+        /// <summary>
+        /// Loads all events and puts them in the combobox cbSelectEvents.
+        /// </summary>
+        private void LoadEvents()
+        {
+            cbSelectEvent.Items.Clear();
+            foreach (Event E in CurrentAccount.GetEvents())
+            {
+                cbSelectEvent.Items.Add(E);
+            }
+        }
+
+        /// <summary>
+        /// Grants access to users.
+        /// </summary>
+        private void GetAcces()
+        {
+            if (CurrentAccount.Function == Function.Beheerder)
+            {
+                btnAccountView.Enabled = true;
+                btnCreateEvent.Enabled = true;
+            }
+            else if (CurrentAccount.Function == Function.Accountbeheerder)
+            {
+                btnAccountView.Enabled = true;
+            }
+            else if (CurrentAccount.Function == Function.Medewerker)
+            {
+
+            }
+            else if (CurrentAccount.Function == Function.Bezoeker)
+            {
+
+            }
+        }
+
+        /// <summary>
+        /// Disables all buttons.
+        /// </summary>
+        private void DisableButtons()
+        {
+            btnAccountView.Enabled = false;
+            btnBetalingStatus.Enabled = false;
+            btnCreateEvent.Enabled = false;
+            btnEventInfo.Enabled = false;
+            btnMaterial.Enabled = false;
+            btnReserve.Enabled = false;
+            btnTijdlijn.Enabled = false;
+            GetAcces();
+        }
+
+
     }
 }

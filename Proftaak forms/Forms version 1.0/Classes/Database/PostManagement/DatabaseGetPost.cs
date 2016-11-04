@@ -143,6 +143,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         /// <summary>
         /// Gets all Reactions from a post
         /// </summary>  
+        ///  <param name="ReID">Reaction ID integer</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetReaction(string ReID)
         {
@@ -208,6 +209,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         /// <summary>
         /// Gets all post that have below 5 reports (twee dezelfde methoden)
         /// </summary>  
+        ///  <param name="ReID">Reaction ID integer</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetSafeReaction(string ReID)
         {
@@ -268,11 +270,14 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Gets all posts who havent been reported 5 times or more and is a reaction to selected post
+        }
 
         /// <summary>
-        /// deze methode is slecht en schrijf comments!!!!!!! //Returns the posts that contain the searched name, word and category
+        /// gets the posts that contain the searched name, word and category
         /// </summary>  
+        /// <param name="Fnaam">Naam gebruiker</param> 
+        /// <param name="Fwoord">Woord van post</param> 
+        /// <param name="Fcat">categorie van post</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetAll(string Fnaam, string Fwoord, string Fcat)
         {
@@ -337,7 +342,8 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
 
         /// <summary>
         /// Get all post by name (ook slecht)
-        /// </summary>  
+        /// </summary> 
+        ///  /// <param name="Fnaam">Naam gebruiker</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetName(string Fnaam)
         {
@@ -398,11 +404,12 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
                 }
             }
             return Postlist;
-        } //Returns the posts that contain the searched name
+        }
 
         /// <summary>
         /// Returns the posts that contain the searched word
-        /// </summary>  
+        /// </summary> 
+        /// <param name="Fnaam">Naam gebruiker</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetWord(string Fwoord)
         {
@@ -468,6 +475,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         /// <summary>
         /// Returns the posts that contain the searched category
         /// </summary>  
+        /// <param name="Fcat">categorie van post</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetCategory(string Fcat)
         {
@@ -532,7 +540,9 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
 
         /// <summary>
         /// //Returns the posts that contain the searched name and word
-        /// </summary>  
+        /// </summary>
+        /// <param name="Fnaam">Naam gebruiker</param> 
+        /// <param name="Fwoord">Woord van post</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetNameWord(string Fnaam, string Fwoord)
         {
@@ -598,6 +608,8 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         /// <summary>
         /// //Returns the posts that contain the searched name and category (ook slecht)
         /// </summary>  
+        /// <param name="Fnaam">Naam gebruiker</param> 
+        /// <param name="Fcat">categorie van post</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetNameCategory(string Fnaam, string Fcat)
         {
@@ -663,6 +675,8 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         /// <summary>
         /// //Returns the posts that contain the searched word and category (ook slecht)
         /// </summary>  
+        /// <param name="Fwoord">Woord van post</param> 
+        /// <param name="Fcat">categorie van post</param> 
         /// <returns>A list with posts</returns>
         public static List<Post> GetWordCategory(string Fwoord, string Fcat)
         {

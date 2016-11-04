@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets the timeLine To post on
         /// </summary>
+        /// <param name="EventID">EventID integer</param> 
         /// <returns>A timeLine</returns>
         public static TimeLine GetTimeline(int EventID)
         {

@@ -220,6 +220,7 @@ namespace Forms_version_1._0
         /// Returns the Account in a list with the RFID. (bestemd voor het inchecken)
         /// </summary>
         /// <param name="RFID">RFID string.</param>
+        /// <param name="EventID">Gets account that has to be checked in</param>
         /// <returns></returns>
         public static Account GetAccountRFID_Checkin(string RFID, int EventID)
         {
@@ -269,6 +270,7 @@ namespace Forms_version_1._0
         /// Returns the Account in a list with the RFID. (bestemd voor het uitchecken)
         /// </summary>
         /// <param name="RFID">RFID string.</param>
+        ///  <param name="EventID">Gets account that has to be checked out</param>
         /// <returns></returns>
         public static Account GetAccountRFID_Checkuit(string RFID, int EventID)
         {
@@ -317,6 +319,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets account from a gotten RFID
         /// </summary>
+        ///  <param name="RFID">string RFID.</param>
         /// <returns>account that has the same rfid</returns>
         public static Account GetAccountFromRFID(string RFID)
         {
@@ -362,8 +365,9 @@ namespace Forms_version_1._0
         }
 
         /// <summary>
-        /// Get account that belong with a reservation
+        /// Get accounts that belong with a reservation
         /// </summary>
+        ///  <param name="ReservationID">Reservation ID integer</param>
         /// <returns>A list of al accounts that are in a reservation</returns>
         public static List<Account> GetAccountsReservation(int ReservationID)
         {

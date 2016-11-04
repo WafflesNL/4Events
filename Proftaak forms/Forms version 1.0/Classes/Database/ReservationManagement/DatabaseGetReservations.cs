@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets list of reservations that belongs to a specific event
         /// </summary>
+        /// <param name="EventID">EventID integer</param> 
         /// <returns>A list of reservations</returns>
         public static List<Reservation> GetReservation(int EventID)
         {

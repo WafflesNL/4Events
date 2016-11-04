@@ -28,6 +28,9 @@ namespace Forms_version_1._0
             GetMaterialList();
         }
 
+        /// <summary>
+        /// Gets a list of all material from an event and puts them in the listbox.
+        /// </summary>
         private void GetMaterialList()
         {
             lbMateriaal.Items.Clear();

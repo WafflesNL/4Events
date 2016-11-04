@@ -16,29 +16,50 @@ namespace Forms_version_1._0.Classes
         public int TimelineID { get; set; }
         public bool Check { get; set; }
 
-        //geen goede comments
-
+        /// <summary>
+        /// Used to add a Timeline to an Event
+        /// </summary>
+        /// <param name="timelineID">timelineID to match timeline with event<param>
         public TimeLine(int timelineID)
         {
             this.TimelineID = timelineID;
-        } //Constructor ID only
+        }
 
+        /// <summary>
+        /// Used to add a list of post to the Timeline
+        /// </summary>
+        /// <param name="timelineID">timelineID gotten from the Homeform<param>
+        /// <param name="Postlist">Postlist gotten from the database</param>
         public TimeLine(int timelineID, List<Post> Postlist)
         {
             this.TimelineID = timelineID;
             this.Postlist = Postlist;
-        } //Constructor ID and Postlist
+        }
 
+        /// <summary>
+        /// Adds the post from the parameter into the Data access layer
+        /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
+        /// <returns>True if changes are allowed false if not</returns>
         public void AddPost(Post post)
         {
             Check = DatabaseAddPost.AddPost(post);
-        } //Adds gotten post to the databaselayer
+        }
 
+        /// <summary>
+        /// Adds the post from the parameter into the Data access layer as a reaction
+        /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
+        /// <returns>True if changes are allowed false if not</returns>
         public void AddReaction(Post post)
         {
             Check = DatabaseAddPost.AddReaction(post);
-        } //Adds gotten post to the databaselayer
+        }
 
+        /// <summary>
+        /// Gets all post from the Data access layer
+        /// </summary>
+        /// <returns>A list of posts</returns>
         public List<Post> GetPost()
         {
             if (CurrentAccount.ID == 3)
@@ -50,8 +71,13 @@ namespace Forms_version_1._0.Classes
                 Postlist = DatabaseGetPost.GetSafePost();
             }
             return Postlist;
-        } //Gets all the post out of the databaselayer
+        }
 
+        /// <summary>
+        /// Gets all reactions to a specific post from the Data access layer
+        /// </summary>
+        /// <param name="ID">The ID of the selected post from Tijdlijnform<param>
+        /// <returns>A list of reactions</returns>
         public List<Post> GetReaction(string ID)
         {
             if (CurrentAccount.ID == 3)
@@ -63,18 +89,32 @@ namespace Forms_version_1._0.Classes
                 Postlist = DatabaseGetPost.GetSafeReaction(ID);
             }
             return Postlist;
-        } //Gets all the post out of the databaselayer
+        }
 
+        /// <summary>
+        /// Likes the post from the parameter into the Data access layer
+        /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
+        /// <returns>True if changes are allowed false if not</returns>
         public void LikePost(Post post)
         {
             Check = DatabaseEditPost.LikePost(post);
-        } //Adds a like to the post in the databaselayer
+        }
 
+        /// <summary>
+        /// Likes the post from the parameter into the Data access layer
+        /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
+        /// <returns>True if changes are allowed false if not</returns>
         public void ReportPost(Post post)
         {
             Check = DatabaseEditPost.ReportPost(post);
-        } //Adds a report to the post in the databaselayer
+        }
 
+        /// <summary>
+        /// Converts the file uploaded to byte[] and adds it with a post into the Data access layer
+        /// </summary>
+        /// <returns>The byte[] of the added file</returns>
         public byte[] AddFile()
         {
             byte[] TempFile;
@@ -102,8 +142,13 @@ namespace Forms_version_1._0.Classes
                 }
             }
             return TempFile = null;
-        } //Adds a attachment to a post
+        }
 
+        /// <summary>
+        /// Uses the btye[] from the database and converts it to bitmap
+        /// </summary>
+        /// <param name="postbyte">The byte[] gotten from the database<param>
+        /// <returns>The from byte[] converted bitmap</returns>
         public static Bitmap ByteToImage(byte[] postbyte)
         {
             try
@@ -121,17 +166,33 @@ namespace Forms_version_1._0.Classes
             }
 
 
-        } //Saves the post from a byte[] to a Bitmap
+        }
 
+        /// <summary>
+        /// Creates a new Post
+        /// </summary>
+        /// <param name="posttext">Text of the Post<param>
+        /// <param name="categorytext">Category of the Post</param>
+        /// <param name="timelineID">TimelineID where the Post is posted<param>
+        /// <returns>A new Post</returns>
         public Post CreatePost(string posttext, string categorytext, int timelineID)
         {
             Post post = new Post(posttext, categorytext, CurrentAccount.ID, timelineID, 0);
             return post;
-        }//Creates a Post to add to the database
+        }
+
+        /// <summary>
+        /// Creates a new Post as a reaction to another
+        /// </summary>
+        /// <param name="posttext">Text of the Post<param>
+        /// <param name="categorytext">Category of the Post</param>
+        /// <param name="timelineID">TimelineID where the Post is posted<param>
+        /// <param name="postID">ID of the post reacted to</param>
+        /// <returns>A new Post as reaction</returns>
         public Post CreateReaction(string posttext, string categorytext, int timelineID, string postID)
         {
             Post post = new Post(posttext, categorytext, CurrentAccount.ID, timelineID, 0, postID);
             return post;
-        }//Creates a Reaction to add to the database
+        }
     }
 }

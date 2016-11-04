@@ -27,6 +27,9 @@ namespace Forms_version_1._0.Forms
             GetReservationList();
         }
 
+        /// <summary>
+        /// Gets a list of reservations from the events and adds them to the listbox.
+        /// </summary>
         private void GetReservationList()
         {
             lbReservation.Items.Clear();

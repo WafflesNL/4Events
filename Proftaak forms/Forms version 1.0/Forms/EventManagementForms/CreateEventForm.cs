@@ -13,7 +13,6 @@ namespace Forms_version_1._0
 {
     public partial class CreateEventForm : Form
     {
-        
         List<Material> MaterialList = new List<Material>();
 
         public CreateEventForm()

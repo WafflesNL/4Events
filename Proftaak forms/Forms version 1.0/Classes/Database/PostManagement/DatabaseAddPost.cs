@@ -13,6 +13,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         /// <summary>
         /// Adds a post to the timeline
         /// </summary>      
+        /// <param name="Post">Post that needs to be added</param>   
         /// <returns>true if database allows changes false if not</returns>
         public static bool AddPost(Post Post)
         {
@@ -64,6 +65,7 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
         /// <summary>
         /// Adds a reaction to posts
         /// </summary>   
+        ///  <param name="Post">Post that needs to be added (reaction)</param> 
         /// <returns>true if database allows changes false if not</returns>
         public static bool AddReaction(Post Post)
         {
@@ -111,6 +113,6 @@ namespace Forms_version_1._0.Classes.Database.TimelineManagement
             }
 
             return Check;
-        } //Adding the gottenpost from the business layer to the database
+        } 
     }
 }

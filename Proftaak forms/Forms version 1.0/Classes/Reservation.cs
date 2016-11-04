@@ -19,16 +19,16 @@ namespace Forms_version_1._0.Classes
         public int ID { get; set; }
         public Event Event { get; set; }
         public Payment Payment { get; set; }
-        public Place Place { get; set; }   
+        public Place Place { get; set; }
 
-        public Reservation(int ID, Event Event, Payment Payment, Place Place)
-        {
-            this.ID = ID;
-            this.Payment = Payment;
-            this.Place = Place;
-            this.Event = Event;
-        }
-
+        /// <summary>
+        /// Creates an Event if the data is already known.
+        /// </summary>
+        /// <param name="ID">The event ID.</param>
+        /// <param name="Event">An event object.</param>
+        /// <param name="Payment">A payment object.</param>
+        /// <param name="Place">A place object.</param>
+        /// <param name="accounts">A list of account objects.</param>
         public Reservation(int ID, Event Event, Payment Payment, Place Place, List<Account> accounts)
         {
             this.ID = ID;
@@ -38,13 +38,10 @@ namespace Forms_version_1._0.Classes
             this.Accounts = accounts;
         }
 
-        public Reservation(int ID, Payment Payment, Place Place)
-        {
-            this.ID = ID;
-            this.Payment = Payment;
-            this.Place = Place;
-        }
-
+        /// <summary>
+        /// Creates an entirely new event.
+        /// Accounts and Payment is made in the constructor and it automaticly uses the highest available ReservationID.
+        /// </summary>
         public Reservation()
         {
             Accounts = new List<Account>();
@@ -87,12 +84,21 @@ namespace Forms_version_1._0.Classes
             }
         }
 
+        /// <summary>
+        /// Used to get all accounts that have a specific function.
+        /// </summary>
+        /// <param name="function">The function the account has.</param>
+        /// <returns>Returns a list of accounts.</returns>
         public List<Account> GetAccountsFunction(Function function)
         {
             List<Account> accountList = DatabaseGetAccounts.GetAccountsFunction(function);
             return accountList;
         }
 
+        /// <summary>
+        /// Changes the payment in event to true.
+        /// </summary>
+        /// <returns></returns>
         public bool PayForReservation()
         {
             if (DatabaseEditReservation.ChangePayment(ID))
@@ -105,6 +111,10 @@ namespace Forms_version_1._0.Classes
             }
         }
 
+        /// <summary>
+        /// Converts the object to string.
+        /// </summary>
+        /// <returns>Returns ID + Eventname + number of accounts</returns>
         public override string ToString()
         {
             return ID + "\t " + Event.Name + "\t " + this.Accounts.Count;

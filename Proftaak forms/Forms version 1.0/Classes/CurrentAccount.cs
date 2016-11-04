@@ -16,11 +16,12 @@ namespace Forms_version_1._0
         public static string Name { get; set; }
         public static int? EventID { get; set; }
 
-
         /// <summary>
-        /// Checks if a account exist in the database 
+        /// Checks if an account exists in the database.
         /// </summary>
-        /// <returns>True if account exists false if not</returns>
+        /// <param name="Password">The password of an account</param>
+        /// <param name="Username">The username of an account</param>
+        /// <returns>Trie if an account exists false if not</returns>
         public static bool Login(string Password, string Username)
         {
             ID = DatabaseLogin.CheckUser(Password, Username);
@@ -36,8 +37,9 @@ namespace Forms_version_1._0
         }
 
         /// <summary>
-        /// Checks if a account exist in the database 
+        /// Checks if an account exists in the database
         /// </summary>
+        /// <param name="ID">The id of an account</param>
         /// <returns>True if account exists false if not</returns>
         private static bool GetUserName(int ID)
         {
@@ -56,6 +58,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets the password that belongs to the corresponding AccountID
         /// </summary>
+        /// <param name="ID">The id of an account</param>
         /// <returns>True if password exists false if not</returns>
         private static bool GetPassword(int ID)
         {
@@ -72,8 +75,9 @@ namespace Forms_version_1._0
         }
 
         /// <summary>
-        /// Gets the function that belongs to the corresponding AccountID
+        /// Get the function that belongs to the corresponding AccountID
         /// </summary>
+        /// <param name="ID">The id of an Account</param>
         /// <returns>True if function exists false if not</returns>
         private static bool GetFunction(int ID)
         {
@@ -92,7 +96,8 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets the name that belongs to the corresponding AccountID
         /// </summary>
-        /// <returns>True if name exists false if not</returns>
+        /// <param name="ID">The id of an Account</param>
+        /// <returns>True if the name exists false if not</returns>
         private static bool GetName(int ID)
         {
             string Check = DatabaseLogin.GetString(ID, "Naam");
@@ -108,8 +113,9 @@ namespace Forms_version_1._0
         }
 
         /// <summary>
-        /// Gets the EventID that belongs to the corresponding AccountID
+        /// Gets the event ID that belongs to the corresponding AccountID
         /// </summary>
+        /// <param name="ID">The id of an Account</param>
         /// <returns>True if EventID is bigger than 0 false if not</returns>
         private static bool GetEventID(int ID)
         {
@@ -132,9 +138,10 @@ namespace Forms_version_1._0
 
 
         /// <summary>
-        /// Translate the string Function to the Enum Function
+        /// Changes the string to the appropriate Enum.
         /// </summary>
-        /// <returns>The function that corresponds with the parameter</returns>
+        /// <param name="ParameterFunction">Valid parameters are Bezoeker, Beheerder, Accountbeheerder and Mederwerker</param>
+        /// <returns>Returns a single enum Function.</returns>
         public static Function TranslateFunction(string ParameterFunction)
         {
             Function function = Function.Bezoeker;
@@ -156,7 +163,11 @@ namespace Forms_version_1._0
             return function;
         }
 
-
+        /// <summary>
+        /// Changes the string to the appropriate Enum.
+        /// </summary>
+        /// <param name="ParameterCategorie">Valid parameters are Green, Luxe and Normaal</param>
+        /// <returns>Returns a single enum Categorie.</returns>
         public static Categorie TranslateCategorie(string ParameterCategorie)
         {
             Categorie Categorie = Categorie.Normal;

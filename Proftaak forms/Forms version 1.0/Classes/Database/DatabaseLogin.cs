@@ -13,6 +13,8 @@ namespace Forms_version_1._0
         /// <summary>
         /// Check if a user exist in the database
         /// </summary>
+        /// <param name="Password">Currently submitted password</param> 
+        /// <param name="Username">Currently submitted Username</param> 
         /// <returns>If record exists return a int that is not 0 or negative</returns>
         public static int CheckUser(string Password, string Username)
         {
@@ -57,6 +59,8 @@ namespace Forms_version_1._0
         /// <summary>
         ///  Get string that is requested
         /// </summary>
+        ///  <param name="ID">ID from account integer</param> 
+        ///  <param name="Data">Data you want to get string</param> 
         /// <returns>A string</returns>
         public static string GetString(int ID, string Data)
         {
@@ -100,6 +104,8 @@ namespace Forms_version_1._0
         /// <summary>
         ///  Get int that is requested
         /// </summary>
+        /// <param name="ID">ID from account integer</param> 
+        ///  <param name="Data">Data you want to get string</param> 
         /// <returns>A string</returns>
         public static int? GetInt(int ID, string Data)
         {

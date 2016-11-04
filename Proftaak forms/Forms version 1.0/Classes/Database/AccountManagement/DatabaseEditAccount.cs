@@ -12,6 +12,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Changes a account 
         /// </summary>
+        /// <param name="account">Account has to be edited</param>
         /// <returns>True if Database allows the changes false if not</returns>
         public static bool EditAccount(Account Account)
         {
@@ -54,6 +55,8 @@ namespace Forms_version_1._0
         /// <summary>
         /// Adds the account to an event
         /// </summary>
+        /// <param name="Account">Account that has to be checked in</param>
+        /// <param name="EventID">ID of event that has to be updated</param>
         /// <returns>True if Database allows the changes false if not</returns>
         public static bool UpdateEventID_checkin(Account Account, int EventID)
         {
@@ -91,6 +94,8 @@ namespace Forms_version_1._0
         /// <summary>
         /// Removes the account to an event
         /// </summary>
+        /// <param name="Account">Account that has to be checked out</param>
+        /// <param name="EventID">ID of event that has to be updated</param>
         /// <returns>True if Database allows the changes false if not</returns>
         public static bool UpdateEventID_checkuit(Account Account, int EventID)
         {

@@ -12,6 +12,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Creates an account
         /// </summary>
+        /// <param name="Account">Account that has to be created</param>
         /// <returns>True if Database allows the changes false if not</returns>
         public static bool CreateAccount(Account Account)
         {
@@ -55,6 +56,8 @@ namespace Forms_version_1._0
         /// <summary>
         /// Creates an account with RFID attached
         /// </summary>
+        /// <param name="RFIDTag">Tag that has to be added to the account</param>
+        /// <param name="Acccount">Account that has to be created</param>
         /// <returns>True if Database allows the changes false if not</returns>
         public static bool CreateAccountWithRFID(Account Account, string RFIDTag)
         {

@@ -9,7 +9,7 @@ namespace Forms_version_1._0.Classes
 {
     class RFID
     {
-        //The main class that handles all RFID activity.
+        // The main class that handles all RFID activity.
         PhidgetRFID rf;
 
         private string lastRFIDTag;
@@ -53,8 +53,9 @@ namespace Forms_version_1._0.Classes
         }
 
         /// <summary>
-        /// This method activates everytime an RFID tag leaves the scanning area of the RFID reader.
+        /// This method activates everytime an RFID tag leaves the scanning area of the RFID reader
         /// </summary>
+        /// <param name="tagNumber">The tagNumber on the RFID tag as string</param>
         private void Rf_OnTagLost(string tagNumber)
         {
             Console.WriteLine("Tag {0} lost", tagNumber);
@@ -63,8 +64,9 @@ namespace Forms_version_1._0.Classes
         }
 
         /// <summary>
-        /// This method activates everytime an RFID tag is scanned by the RFID reader. 
+        /// This method activates everytime an RFID tag is scanned by the RFID reader.
         /// </summary>
+        /// <param name="tagNumber">The tagnumber on the RFID tag as string</param>
         private void Rf_OnTag(string tagNumber)
         {
             Console.WriteLine("Tag {0} ", tagNumber);
@@ -74,6 +76,8 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// This method activates everytime an error occurs.
         /// </summary>
+        /// <param name="Description">The description of the error as string.</param>
+        /// <param name="SCODE">The Code of the error.</param>
         private void Rf_OnError(string Description, [System.Runtime.InteropServices.ComAliasName("Phidget21COM.PhidgetCOM_Error")] PhidgetCOM_Error SCODE)
         {
             Console.WriteLine(Description);

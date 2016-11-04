@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Creates a new event for the database
         /// </summary>
+        /// <param name="Event">Event that has to be created</param>
         /// <returns>True if Database allows the changes false if not</returns>
         public static bool CreateEvent(Event Event)
         {
@@ -28,11 +29,11 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "INSERT INTO Event (ID, Naam, Datum, Beschrijving, Locatie, Maxbezoekers, CampingID, AccountID) VALUES (@ID, @Name, @Date, @Discription, @location, @MaxVisitors, @CampingID, @AccountID)";
+                    cmd.CommandText = "INSERT INTO Event (ID, Naam, Datum, Beschrijving, Locatie, Maxbezoekers, CampingID, AccountID) VALUES (@ID, @Name, @Date, @Description, @location, @MaxVisitors, @CampingID, @AccountID)";
                     cmd.Parameters.Add(new SqlParameter("ID", ID ));
                     cmd.Parameters.Add(new SqlParameter("Name", Event.Name));
                     cmd.Parameters.Add(new SqlParameter("Date", Event.Date));
-                    cmd.Parameters.Add(new SqlParameter("Discription", Event.Discription));
+                    cmd.Parameters.Add(new SqlParameter("Description", Event.Description));
                     cmd.Parameters.Add(new SqlParameter("Location", Event.Location));
                     cmd.Parameters.Add(new SqlParameter("MaxVisitors", Event.MaxVisitors));
                     cmd.Parameters.Add(new SqlParameter("AccountID", Event.Account.ID));
@@ -67,6 +68,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Adds a camping to an event if the location of both are the same
         /// </summary>
+        /// <param name="Locatie">Location string</param>
         /// <returns>Returns a camping if this exist false if not</returns>
         public static Camping GetCamping(string Locatie)
         {

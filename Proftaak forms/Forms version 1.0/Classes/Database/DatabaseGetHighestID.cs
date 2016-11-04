@@ -12,6 +12,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets Highest ID For a specific Table
         /// </summary>
+        /// <param name="Tablename">Name from a table in the database</param> 
         /// <returns>If record exists return a int that is not 0 or negative</returns>
         public static int GetHighestID(string TableName)
         {

@@ -83,8 +83,8 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Get all material that is currently rented to an account.
         /// </summary>
-        /// <param name="eventid"></param>
-        /// <param name="accountid"></param>
+        /// <param name="eventid">The id from an event as int</param>
+        /// <param name="accountid">The id from an account as int</param>
         /// <returns>Returns a list of material</returns>
         public List<Material> GetMaterialForAccount(int eventid, int accountid)
         {
@@ -95,14 +95,18 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Gets the account that has the specified RFID tag
         /// </summary>
-        /// <param name="RFIDtag"></param>
+        /// <param name="RFIDtag">The RFID tag from an RFID reader</param>
         /// <returns>Returns a single account</returns>
         public Account GetAccountRFID(string RFIDtag)
         {
             Account account = DatabaseGetAccounts.GetAccountFromRFID(RFIDtag);
             return account;
         }
-      
+
+        /// <summary>
+        /// Changes the object to a string.
+        /// </summary>
+        /// <returns>Returns Type +  ', €' + Price</returns>
         public override string ToString()
         {
             return Type +  ", €" + Price;

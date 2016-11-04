@@ -90,8 +90,8 @@ namespace Forms_version_1._0
         /// <summary>
         /// Checks if the account is allowed in the database and creates it with an RFID tag.
         /// </summary>
-        /// <param name="Account"></param>
-        /// <param name="RFIDTag"></param>
+        /// <param name="Account">A single account object</param>
+        /// <param name="RFIDTag">An RFID tag from an RFID reader.</param>
         /// <returns>True if changes are allowed and false if they're not</returns>
         public bool CreateAccountWithRFID(Account Account, string RFIDTag)
         {

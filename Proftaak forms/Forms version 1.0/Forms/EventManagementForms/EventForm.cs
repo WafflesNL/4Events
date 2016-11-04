@@ -43,9 +43,9 @@ namespace Forms_version_1._0.Forms
         private void btnOpslaan_Click(object sender, EventArgs e) //still in progress
         {
             //Saves changes to the Event.         
-            if (tbEventName.Text != "" && tbEventDiscription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "" && numQuantityVisitors.Value >= 5)
+            if (tbEventName.Text != "" && tbEventDescription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "" && numQuantityVisitors.Value >= 5)
             {            
-                Event NewEvent = new Event(Event.ID, tbEventName.Text, tbEventDiscription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value);              
+                Event NewEvent = new Event(Event.ID, tbEventName.Text, tbEventDescription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value);              
              
                 if (NewEvent.EditEvent(NewEvent))
                 {                  
@@ -69,7 +69,7 @@ namespace Forms_version_1._0.Forms
         {
             this.Event = Event;
             tbEventName.Text = Event.Name;
-            tbEventDiscription.Text = Event.Discription;
+            tbEventDescription.Text = Event.Description;
             cbLocation.Text = Event.Location;
             dtpDateEvent.Value = Event.Date;
             numQuantityVisitors.Value = Event.MaxVisitors;
@@ -86,7 +86,7 @@ namespace Forms_version_1._0.Forms
             else
             {
                 tbEventName.Enabled = false;
-                tbEventDiscription.Enabled = false;
+                tbEventDescription.Enabled = false;
                 cbLocation.Enabled = false;
                 dtpDateEvent.Enabled = false;               
                 

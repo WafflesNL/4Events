@@ -32,7 +32,7 @@
             this.lblEventNaam = new System.Windows.Forms.Label();
             this.lblEventBeschrijving = new System.Windows.Forms.Label();
             this.tbEventName = new System.Windows.Forms.TextBox();
-            this.tbEventDiscription = new System.Windows.Forms.TextBox();
+            this.tbEventDescription = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblEventInfo = new System.Windows.Forms.Label();
             this.lblEventLocatie = new System.Windows.Forms.Label();
@@ -51,39 +51,35 @@
             // lblEventNaam
             // 
             this.lblEventNaam.AutoSize = true;
-            this.lblEventNaam.Location = new System.Drawing.Point(16, 70);
-            this.lblEventNaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEventNaam.Location = new System.Drawing.Point(12, 57);
             this.lblEventNaam.Name = "lblEventNaam";
-            this.lblEventNaam.Size = new System.Drawing.Size(79, 17);
+            this.lblEventNaam.Size = new System.Drawing.Size(61, 13);
             this.lblEventNaam.TabIndex = 0;
             this.lblEventNaam.Text = "Eventnaam";
             // 
             // lblEventBeschrijving
             // 
             this.lblEventBeschrijving.AutoSize = true;
-            this.lblEventBeschrijving.Location = new System.Drawing.Point(16, 102);
-            this.lblEventBeschrijving.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEventBeschrijving.Location = new System.Drawing.Point(12, 83);
             this.lblEventBeschrijving.Name = "lblEventBeschrijving";
-            this.lblEventBeschrijving.Size = new System.Drawing.Size(124, 17);
+            this.lblEventBeschrijving.Size = new System.Drawing.Size(95, 13);
             this.lblEventBeschrijving.TabIndex = 1;
             this.lblEventBeschrijving.Text = "Event Beschrijving";
             // 
             // tbEventName
             // 
-            this.tbEventName.Location = new System.Drawing.Point(181, 66);
-            this.tbEventName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEventName.Location = new System.Drawing.Point(136, 54);
             this.tbEventName.Name = "tbEventName";
-            this.tbEventName.Size = new System.Drawing.Size(211, 22);
+            this.tbEventName.Size = new System.Drawing.Size(159, 20);
             this.tbEventName.TabIndex = 2;
             // 
-            // tbEventDiscription
+            // tbEventDescription
             // 
-            this.tbEventDiscription.Location = new System.Drawing.Point(181, 98);
-            this.tbEventDiscription.Margin = new System.Windows.Forms.Padding(4);
-            this.tbEventDiscription.Multiline = true;
-            this.tbEventDiscription.Name = "tbEventDiscription";
-            this.tbEventDiscription.Size = new System.Drawing.Size(211, 86);
-            this.tbEventDiscription.TabIndex = 3;
+            this.tbEventDescription.Location = new System.Drawing.Point(136, 80);
+            this.tbEventDescription.Multiline = true;
+            this.tbEventDescription.Name = "tbEventDescription";
+            this.tbEventDescription.Size = new System.Drawing.Size(159, 71);
+            this.tbEventDescription.TabIndex = 3;
             // 
             // notifyIcon1
             // 
@@ -93,48 +89,43 @@
             // lblEventInfo
             // 
             this.lblEventInfo.AutoSize = true;
-            this.lblEventInfo.Location = new System.Drawing.Point(127, 11);
-            this.lblEventInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEventInfo.Location = new System.Drawing.Point(95, 9);
             this.lblEventInfo.Name = "lblEventInfo";
-            this.lblEventInfo.Size = new System.Drawing.Size(110, 17);
+            this.lblEventInfo.Size = new System.Drawing.Size(84, 13);
             this.lblEventInfo.TabIndex = 4;
             this.lblEventInfo.Text = "Event Informatie";
             // 
             // lblEventLocatie
             // 
             this.lblEventLocatie.AutoSize = true;
-            this.lblEventLocatie.Location = new System.Drawing.Point(16, 199);
-            this.lblEventLocatie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEventLocatie.Location = new System.Drawing.Point(12, 162);
             this.lblEventLocatie.Name = "lblEventLocatie";
-            this.lblEventLocatie.Size = new System.Drawing.Size(144, 17);
+            this.lblEventLocatie.Size = new System.Drawing.Size(107, 13);
             this.lblEventLocatie.TabIndex = 5;
             this.lblEventLocatie.Text = "Locatie (dorp of stad)";
             // 
             // lblEventDatum
             // 
             this.lblEventDatum.AutoSize = true;
-            this.lblEventDatum.Location = new System.Drawing.Point(16, 229);
-            this.lblEventDatum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEventDatum.Location = new System.Drawing.Point(12, 186);
             this.lblEventDatum.Name = "lblEventDatum";
-            this.lblEventDatum.Size = new System.Drawing.Size(89, 17);
+            this.lblEventDatum.Size = new System.Drawing.Size(69, 13);
             this.lblEventDatum.TabIndex = 7;
             this.lblEventDatum.Text = "Event Datum";
             // 
             // dtpDateEvent
             // 
             this.dtpDateEvent.Enabled = false;
-            this.dtpDateEvent.Location = new System.Drawing.Point(181, 224);
-            this.dtpDateEvent.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDateEvent.Location = new System.Drawing.Point(136, 182);
             this.dtpDateEvent.Name = "dtpDateEvent";
-            this.dtpDateEvent.Size = new System.Drawing.Size(211, 22);
+            this.dtpDateEvent.Size = new System.Drawing.Size(159, 20);
             this.dtpDateEvent.TabIndex = 8;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 350);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(9, 284);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(83, 53);
+            this.btnSave.Size = new System.Drawing.Size(62, 43);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -143,10 +134,9 @@
             // 
             // btnQuestOverview
             // 
-            this.btnQuestOverview.Location = new System.Drawing.Point(201, 331);
-            this.btnQuestOverview.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuestOverview.Location = new System.Drawing.Point(151, 269);
             this.btnQuestOverview.Name = "btnQuestOverview";
-            this.btnQuestOverview.Size = new System.Drawing.Size(195, 31);
+            this.btnQuestOverview.Size = new System.Drawing.Size(146, 25);
             this.btnQuestOverview.TabIndex = 11;
             this.btnQuestOverview.Text = "Aanwezige bezoekers";
             this.btnQuestOverview.UseVisualStyleBackColor = true;
@@ -154,10 +144,9 @@
             // 
             // btnReservations
             // 
-            this.btnReservations.Location = new System.Drawing.Point(201, 370);
-            this.btnReservations.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReservations.Location = new System.Drawing.Point(151, 301);
             this.btnReservations.Name = "btnReservations";
-            this.btnReservations.Size = new System.Drawing.Size(195, 31);
+            this.btnReservations.Size = new System.Drawing.Size(146, 25);
             this.btnReservations.TabIndex = 12;
             this.btnReservations.Text = "Reserveringen";
             this.btnReservations.UseVisualStyleBackColor = true;
@@ -172,18 +161,16 @@
             "Eindhoven",
             "Amsterdam",
             "Denhaag"});
-            this.cbLocation.Location = new System.Drawing.Point(181, 192);
-            this.cbLocation.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLocation.Location = new System.Drawing.Point(136, 156);
             this.cbLocation.Name = "cbLocation";
-            this.cbLocation.Size = new System.Drawing.Size(211, 24);
+            this.cbLocation.Size = new System.Drawing.Size(159, 21);
             this.cbLocation.TabIndex = 13;
             // 
             // btnRental
             // 
-            this.btnRental.Location = new System.Drawing.Point(201, 290);
-            this.btnRental.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRental.Location = new System.Drawing.Point(151, 236);
             this.btnRental.Name = "btnRental";
-            this.btnRental.Size = new System.Drawing.Size(195, 31);
+            this.btnRental.Size = new System.Drawing.Size(146, 25);
             this.btnRental.TabIndex = 14;
             this.btnRental.Text = "Verhuur";
             this.btnRental.UseVisualStyleBackColor = true;
@@ -191,7 +178,8 @@
             // 
             // numQuantityVisitors
             // 
-            this.numQuantityVisitors.Location = new System.Drawing.Point(181, 253);
+            this.numQuantityVisitors.Location = new System.Drawing.Point(136, 206);
+            this.numQuantityVisitors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numQuantityVisitors.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -203,7 +191,7 @@
             0,
             0});
             this.numQuantityVisitors.Name = "numQuantityVisitors";
-            this.numQuantityVisitors.Size = new System.Drawing.Size(211, 22);
+            this.numQuantityVisitors.Size = new System.Drawing.Size(158, 20);
             this.numQuantityVisitors.TabIndex = 15;
             this.numQuantityVisitors.Value = new decimal(new int[] {
             5,
@@ -214,18 +202,17 @@
             // lblQuantityVisitors
             // 
             this.lblQuantityVisitors.AutoSize = true;
-            this.lblQuantityVisitors.Location = new System.Drawing.Point(16, 258);
-            this.lblQuantityVisitors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantityVisitors.Location = new System.Drawing.Point(12, 210);
             this.lblQuantityVisitors.Name = "lblQuantityVisitors";
-            this.lblQuantityVisitors.Size = new System.Drawing.Size(108, 17);
+            this.lblQuantityVisitors.Size = new System.Drawing.Size(83, 13);
             this.lblQuantityVisitors.TabIndex = 16;
             this.lblQuantityVisitors.Text = "Max. Bezoekers";
             // 
             // EventForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 417);
+            this.ClientSize = new System.Drawing.Size(307, 339);
             this.Controls.Add(this.lblQuantityVisitors);
             this.Controls.Add(this.numQuantityVisitors);
             this.Controls.Add(this.btnRental);
@@ -237,11 +224,10 @@
             this.Controls.Add(this.lblEventDatum);
             this.Controls.Add(this.lblEventLocatie);
             this.Controls.Add(this.lblEventInfo);
-            this.Controls.Add(this.tbEventDiscription);
+            this.Controls.Add(this.tbEventDescription);
             this.Controls.Add(this.tbEventName);
             this.Controls.Add(this.lblEventBeschrijving);
             this.Controls.Add(this.lblEventNaam);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EventForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventForm";
@@ -256,7 +242,7 @@
         private System.Windows.Forms.Label lblEventNaam;
         private System.Windows.Forms.Label lblEventBeschrijving;
         private System.Windows.Forms.TextBox tbEventName;
-        private System.Windows.Forms.TextBox tbEventDiscription;
+        private System.Windows.Forms.TextBox tbEventDescription;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label lblEventInfo;
         private System.Windows.Forms.Label lblEventLocatie;

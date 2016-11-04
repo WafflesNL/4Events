@@ -16,10 +16,10 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Creates a new Place object
         /// </summary>
-        /// <param name="ID">The place id</param>
-        /// <param name="Terrain"></param>
-        /// <param name="Space"></param>
-        /// <param name="Categorie"></param>
+        /// <param name="ID">The place id as int</param>
+        /// <param name="Terrain">The terrain of the place as string</param>
+        /// <param name="Space">The amount of space of the place as int</param>
+        /// <param name="Categorie">The categorie of the place as enum Categorie</param>
         public Place(int ID, string Terrain, int Space, Categorie Categorie)
         {
             this.ID = ID;

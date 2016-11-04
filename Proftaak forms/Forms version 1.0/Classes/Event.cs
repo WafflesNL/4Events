@@ -19,22 +19,23 @@ namespace Forms_version_1._0.Classes
         public DateTime Date { get; set; }
         public int MaxVisitors { get; set; }
         public string Name { get; set; }
-        public string Discription { get; set; }
+        public string Description { get; set; }
         public string Location { get; set; }
 
         /// <summary>
         /// Used to add a Event to the database
         /// </summary>
-        /// <param name="Name"><param>
-        /// <param name="Discription"></param>
-        /// <param name="Location"></param> 
-        /// <param name="Maxvisitors"><param>
-        /// <param name="Date"></param>
-        /// <param name="Account"></param> 
-        public Event(string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, List<Material> MaterialList) 
+        /// <param name="Name">The name of the event as string<param>
+        /// <param name="Description">The description of the event as string</param>
+        /// <param name="Location">The location an event takes place as string</param> 
+        /// <param name="Maxvisitors">The maximum amount of visitors as int<param>
+        /// <param name="Date">The date an event takes place as DateTime</param>
+        /// <param name="Account">The account that made the event as Account object</param> 
+        /// <param name="MaterialList">A list of material that belongs to this event as List<Material></param> 
+        public Event(string Name, string Description, string Location, int MaxVisitors, DateTime Date, Account Account, List<Material> MaterialList) 
         {
             this.Name = Name;
-            this.Discription = Discription;
+            this.Description = Description;
             this.Location = Location;
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
@@ -46,20 +47,20 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Used to get a Event to the database
         /// </summary>
-        /// <param name="ID"><param>
-        /// <param name="Name"><param>
-        /// <param name="Discription"></param>
-        /// <param name="Location"></param> 
-        /// <param name="Maxvisitors"><param>
-        /// <param name="Date"></param>
-        /// <param name="Account"></param> 
-        /// <param name="Timlime"></param> 
-        /// <param name="Camping"></param> 
-        public Event(int ID, string Name, string Discription, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, TimeLine Timeline)
+        /// <param name="ID">The ID of an event as int<param>
+        /// <param name="Name">The name of the event as string<param>
+        /// <param name="Description">The description of the event as string</param>
+        /// <param name="Location">The location an event takes place as string</param> 
+        /// <param name="Maxvisitors">The maximum amount of visitors as int<param>
+        /// <param name="Date">The date an event takes place as DateTime</param>
+        /// <param name="Account">The account that made the event as Account object</param> 
+        /// <param name="Timelime">The timeline of an event as TimeLine object</param> 
+        /// <param name="Camping">The camping that belongs to the event as Camping object</param> 
+        public Event(int ID, string Name, string Description, string Location, int MaxVisitors, DateTime Date, Account Account, Camping Camping, TimeLine Timeline)
         {
             this.ID = ID;
             this.Name = Name;
-            this.Discription = Discription;
+            this.Description = Description;
             this.Location = Location;
             this.MaxVisitors = MaxVisitors;
             this.Date = Date;
@@ -71,26 +72,27 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Used to edit a Event to the database
         /// </summary>
-        /// <param name="ID"><param>
-        /// <param name="Name"><param>
-        /// <param name="Discription"></param>
-        /// <param name="Location"></param> 
-        /// <param name="Maxvisitors"><param>
-        /// <param name="Date"></param>     
-        public Event(int ID, string Name, string Discription, string Location, int Maxvisitors, DateTime Date)
+        /// <param name="ID">The ID of an event as int<param>
+        /// <param name="Name">The name of the event as string<param>
+        /// <param name="Description">The description of the event as string</param>
+        /// <param name="Location">The location an event takes place as string</param> 
+        /// <param name="Maxvisitors">The maximum amount of visitors as int<param>
+        /// <param name="Date">The date an event takes place as DateTime</param>
+        public Event(int ID, string Name, string Description, string Location, int Maxvisitors, DateTime Date)
         {
             this.ID = ID;
             this.Name = Name;
-            this.Discription = Discription;
+            this.Description = Description;
             this.Location = Location;
             this.MaxVisitors = Maxvisitors;
             this.Date = Date;
         }
 
         /// <summary>
-        /// Check if changes for Event are allowed in the database
+        /// Checks if the changes for Event are allowed in the database
         /// </summary>
-        /// <returns>True if changes are allowed false if not</returns>
+        /// <param name="Event">The event to be checked as Event object.</param>
+        /// <returns>Returns true if the event is allowed in the database false if it is not</returns>
         public bool EditEvent(Event Event)
         {
             bool Check = DatabaseEditEvent.EditEvent(Event); 
@@ -98,9 +100,10 @@ namespace Forms_version_1._0.Classes
         }
 
         /// <summary>
-        /// Checks if the new event is allowed in the database
+        /// Creates a new event in the database.
         /// </summary>
-        /// <returns>True if changes are allowed false if not</returns>
+        /// <param name="Event">The event to be created as Event object.</param>
+        /// <returns>Return true if it was created false if it was not.</returns>
         public bool CreateEvent(Event Event)
         {
             bool Check = DatabaseCreateEvent.CreateEvent(Event);
@@ -186,7 +189,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Gets an account with a specific RFID tag.
         /// </summary>
-        /// <param name="RFIDtag"></param>
+        /// <param name="RFIDtag">The RFID tag from an RFID reader.</param>
         /// <returns>Returns a single account</returns>
         public Account Checkin_CheckAccount(string RFIDtag)
         {
@@ -222,7 +225,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Returns an account if it is checked in to this event.
         /// </summary>
-        /// <param name="RFIDtag"></param>
+        /// <param name="RFIDtag">The RFID tag from an RFID reader.</param>
         /// <returns>Returns a single account.</returns>
         public Account Checkuit_CheckAccount(string RFIDtag)
         {

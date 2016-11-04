@@ -156,7 +156,11 @@ namespace Forms_version_1._0
             return function;
         }
 
-
+        /// <summary>
+        /// Changes the string to the appropriate Enum.
+        /// </summary>
+        /// <param name="ParameterCategorie">Valid parameters are Green, Luxe and Normaal</param>
+        /// <returns>Returns a single enum</returns>
         public static Categorie TranslateCategorie(string ParameterCategorie)
         {
             Categorie Categorie = Categorie.Normal;

@@ -114,6 +114,10 @@ namespace Forms_version_1._0.Classes
             }
         }
 
+        /// <summary>
+        /// Converts the object to string.
+        /// </summary>
+        /// <returns>Returns ID + Eventname + number of accounts</returns>
         public override string ToString()
         {
             return ID + "\t " + Event.Name + "\t " + this.Accounts.Count;

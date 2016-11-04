@@ -21,17 +21,14 @@ namespace Forms_version_1._0.Classes
         public Payment Payment { get; set; }
         public Place Place { get; set; }
 
-      
-        //waarvoor worden de verschillende constructors gebruikt
-
         /// <summary>
         /// Creates an Event if the data is already known.
         /// </summary>
-        /// <param name="ID"></param>
-        /// <param name="Event"></param>
-        /// <param name="Payment"></param>
-        /// <param name="Place"></param>
-        /// <param name="accounts"></param>
+        /// <param name="ID">The event ID.</param>
+        /// <param name="Event">An event object.</param>
+        /// <param name="Payment">A payment object.</param>
+        /// <param name="Place">A place object.</param>
+        /// <param name="accounts">A list of account objects.</param>
         public Reservation(int ID, Event Event, Payment Payment, Place Place, List<Account> accounts)
         {
             this.ID = ID;

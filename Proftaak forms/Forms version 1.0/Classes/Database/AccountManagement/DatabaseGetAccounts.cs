@@ -234,7 +234,7 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "SELECT * FROM Account a JOIN Account_Reservering ar ON a.ID = ar.AccountID JOIN Reservering r ON ar.ReserveringID = r.ID WHERE a.RFID = @RFID AND r.EventID = @EventID";
+                    cmd.CommandText = "SELECT * FROM Account a JOIN Account_Reservering ar ON a.ID = ar.AccountID JOIN Reservering r ON ar.ReserveringID = r.ID WHERE a.RFID = @RFID AND r.EventID = @EventID And BetalingStatus = 1";
                     cmd.Parameters.Add(new SqlParameter("RFID", RFID));
                     cmd.Parameters.Add(new SqlParameter("EventID", EventID));
 

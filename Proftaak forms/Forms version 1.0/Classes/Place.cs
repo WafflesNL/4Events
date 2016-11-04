@@ -13,6 +13,13 @@ namespace Forms_version_1._0.Classes
         public int Space { get; set; }
         public Categorie Categorie { get; set; }
 
+        /// <summary>
+        /// Creates a new Place object
+        /// </summary>
+        /// <param name="ID">The place id</param>
+        /// <param name="Terrain"></param>
+        /// <param name="Space"></param>
+        /// <param name="Categorie"></param>
         public Place(int ID, string Terrain, int Space, Categorie Categorie)
         {
             this.ID = ID;

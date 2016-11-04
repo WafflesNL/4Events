@@ -24,10 +24,10 @@ namespace Forms_version_1._0
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (tbEventName.Text != "" && tbEventDiscription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "")
+            if (tbEventName.Text != "" && tbEventDescription.Text != "" && cbLocation.Text != "" && dtpDateEvent.Text != "")
             {
                 Account account = new Account(CurrentAccount.ID, CurrentAccount.Name, CurrentAccount.UserName, CurrentAccount.Password, CurrentAccount.Function);
-                Event NewEvent = new Event(tbEventName.Text, tbEventDiscription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value, account, MaterialList);
+                Event NewEvent = new Event(tbEventName.Text, tbEventDescription.Text, cbLocation.Text, (int)numQuantityVisitors.Value, dtpDateEvent.Value, account, MaterialList);
                 NewEvent.GetCamping();
                 
                 if (NewEvent.CheckDateOutOfRange() == false)

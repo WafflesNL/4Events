@@ -9,7 +9,7 @@ namespace Forms_version_1._0.Classes
 {
     class RFID
     {
-        //The main class that handles all RFID activity.
+        // The main class that handles all RFID activity.
         PhidgetRFID rf;
 
         private string lastRFIDTag;

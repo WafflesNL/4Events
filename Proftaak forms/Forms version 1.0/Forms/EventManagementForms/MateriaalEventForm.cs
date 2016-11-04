@@ -16,7 +16,6 @@ namespace Forms_version_1._0
         List<Material> MaterialForRental;
         List<Material> MaterialAvailable;
 
-        //moet veranderd worden later
         Material Mt = new Material(1, "Stoel", 50, null, null);
 
         public MateriaalEventForm()

@@ -20,7 +20,7 @@ namespace _4EventsTest
 
             Assert.AreEqual(1, reservering.Event.ID);
             Assert.AreEqual("testEvent", reservering.Event.Name);
-            Assert.AreEqual("testBeschrijving", reservering.Event.Discription);
+            Assert.AreEqual("testBeschrijving", reservering.Event.Description);
             Assert.AreEqual("testLocatie", reservering.Event.Location);
             Assert.AreEqual(testDate, reservering.Event.Date);
             Assert.AreEqual(testPayment, reservering.Payment);

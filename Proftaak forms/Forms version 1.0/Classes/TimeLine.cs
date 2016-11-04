@@ -19,7 +19,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Used to add a Timeline to an Event
         /// </summary>
-        /// <param name="timelineID"><param>
+        /// <param name="timelineID">timelineID to match timeline with event<param>
         public TimeLine(int timelineID)
         {
             this.TimelineID = timelineID;
@@ -28,8 +28,8 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Used to add a list of post to the Timeline
         /// </summary>
-        /// <param name="timelineID"><param>
-        /// <param name="Postlist"></param>
+        /// <param name="timelineID">timelineID gotten from the Homeform<param>
+        /// <param name="Postlist">Postlist gotten from the database</param>
         public TimeLine(int timelineID, List<Post> Postlist)
         {
             this.TimelineID = timelineID;
@@ -39,6 +39,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Adds the post from the parameter into the Data access layer
         /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
         /// <returns>True if changes are allowed false if not</returns>
         public void AddPost(Post post)
         {
@@ -48,6 +49,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Adds the post from the parameter into the Data access layer as a reaction
         /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
         /// <returns>True if changes are allowed false if not</returns>
         public void AddReaction(Post post)
         {
@@ -74,6 +76,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Gets all reactions to a specific post from the Data access layer
         /// </summary>
+        /// <param name="ID">The ID of the selected post from Tijdlijnform<param>
         /// <returns>A list of reactions</returns>
         public List<Post> GetReaction(string ID)
         {
@@ -91,6 +94,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Likes the post from the parameter into the Data access layer
         /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
         /// <returns>True if changes are allowed false if not</returns>
         public void LikePost(Post post)
         {
@@ -100,6 +104,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Likes the post from the parameter into the Data access layer
         /// </summary>
+        /// <param name="post">The selected post from Tijdlijnform<param>
         /// <returns>True if changes are allowed false if not</returns>
         public void ReportPost(Post post)
         {

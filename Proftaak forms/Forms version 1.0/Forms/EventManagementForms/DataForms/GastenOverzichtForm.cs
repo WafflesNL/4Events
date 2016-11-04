@@ -39,22 +39,17 @@ namespace Forms_version_1._0.Forms
 
         private void btnInChecken_Click(object sender, EventArgs e)
         {
-            //voegt een gast toe aan de gastenlijst
-            //laat messagebox zien met in te checken account
             if(rfid.CurrentRFIDTag != null)
             {
                 Account account = newevent.Checkin_CheckAccount(rfid.CurrentRFIDTag);
 
                 if(account == null)
                 {
-                    MessageBox.Show("Dit account is niet ingeschreven voor dit event.");
+                    MessageBox.Show("Dit account is niet ingeschreven voor dit event of heeft niet betaald.");
                     return;
                 }
 
                 // Check het account
-                // Hier moet ook nog fout afhandeling bij.
-
-
                 if (MessageBox.Show("Account: " + account.Username + " Wordt ingeschrevern.", "Melding", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     // Schrijf het account in
@@ -88,7 +83,7 @@ namespace Forms_version_1._0.Forms
 
                 if (Account == null)
                 {
-                    MessageBox.Show("Dit account is momenteel niet op het account");
+                    MessageBox.Show("Dit account is momenteel niet op het event");
                     return;
                 }
                 // Hier moet ook nog foutafhandeling bij

@@ -15,7 +15,7 @@ namespace Forms_version_1._0.Froms
         public AccountForm()
         {
             InitializeComponent();
-            GetAcces();
+            GetAccess();
             GetAccountInformation();
         }
 
@@ -51,6 +51,10 @@ namespace Forms_version_1._0.Froms
             }                          
         }
 
+        /// <summary>
+        /// Shows the user messageboxes depending on the bool.
+        /// </summary>
+        /// <param name="Check">Requires true if the username doesn't exist and false if it does.</param>
         private void CheckUserName(bool Check)
         {
             if (Check)
@@ -64,6 +68,9 @@ namespace Forms_version_1._0.Froms
             }
         }
 
+        /// <summary>
+        /// Gets the account information from CurrentAccount.
+        /// </summary>
         private void GetAccountInformation()
         {               
             tbName.Text = CurrentAccount.Name;
@@ -72,8 +79,10 @@ namespace Forms_version_1._0.Froms
             cbFunction.Text = CurrentAccount.Function.ToString();              
         }
 
-
-        private void GetAcces()
+        /// <summary>
+        /// Grants Access depending on the account function.
+        /// </summary>
+        private void GetAccess()
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {

@@ -20,7 +20,7 @@ namespace Forms_version_1._0
         public HomeForm()
         {
             InitializeComponent();
-            GetAcces();
+            GetAccess();
             LoadEvents();       
         }
 
@@ -140,7 +140,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Grants access to users.
         /// </summary>
-        private void GetAcces()
+        private void GetAccess()
         {
             if (CurrentAccount.Function == Function.Beheerder)
             {
@@ -173,7 +173,7 @@ namespace Forms_version_1._0
             btnMaterial.Enabled = false;
             btnReserve.Enabled = false;
             btnTijdlijn.Enabled = false;
-            GetAcces();
+            GetAccess();
         }
 
 

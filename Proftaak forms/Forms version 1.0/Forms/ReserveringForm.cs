@@ -134,6 +134,7 @@ namespace Forms_version_1._0.Forms
         {
             var toBeAddedItem = lbAccount.SelectedItem;
             // Eventprice should come from the database. but this is not implemented yet.
+            // May be added at a later date.
             var EventPrice = 10;
 
             // Checks if the item is already in the list

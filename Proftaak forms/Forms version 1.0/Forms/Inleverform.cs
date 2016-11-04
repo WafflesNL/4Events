@@ -36,8 +36,7 @@ namespace Forms_version_1._0.Forms
                 btnCheck.Visible = false;
             }
         }
-    
-        //Koppelt een material aan een account       
+        
         private void btnInleveren_Click(object sender, EventArgs e)
         {
             Account account = DatabaseGetAccounts.GetAccountFromRFID(rfid.CurrentRFIDTag);
@@ -101,8 +100,7 @@ namespace Forms_version_1._0.Forms
 
         public void GetData()
         {           
-            lblEvent.Text = Event.Name;
-           // materiallist = Event.GetMaterialList();         
+            lblEvent.Text = Event.Name;       
         }
 
         private void btnCheck_Click(object sender, EventArgs e)

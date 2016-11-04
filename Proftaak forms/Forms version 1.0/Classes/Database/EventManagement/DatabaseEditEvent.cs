@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Changes the attributes for an Event
         /// </summary>
+        /// <param name="Event">Event that has to be edited</param>
         /// <returns>True if Database allows the changes false if not</returns>
         public static bool EditEvent(Event Event)
         {
@@ -26,11 +27,11 @@ namespace Forms_version_1._0
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = DatabaseConnectie.connect;
 
-                    cmd.CommandText = "UPDATE Event SET Naam = @Name, Datum = @Date, Beschrijving = @Discription, Locatie = @Location WHERE ID = @ID";
+                    cmd.CommandText = "UPDATE Event SET Naam = @Name, Datum = @Date, Beschrijving = @Description, Locatie = @Location WHERE ID = @ID";
                     cmd.Parameters.Add(new SqlParameter("ID", Event.ID));
                     cmd.Parameters.Add(new SqlParameter("Name", Event.Name));
                     cmd.Parameters.Add(new SqlParameter("Date", Event.Date));
-                    cmd.Parameters.Add(new SqlParameter("Discription", Event.Discription));
+                    cmd.Parameters.Add(new SqlParameter("Description", Event.Description));
                     cmd.Parameters.Add(new SqlParameter("Location", Event.Location));
 
                     cmd.ExecuteNonQuery();

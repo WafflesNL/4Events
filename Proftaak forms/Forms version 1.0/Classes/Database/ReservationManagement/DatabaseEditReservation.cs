@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Changes the Status of the payment to true
         /// </summary>
+        /// <param name="ReservationID">ReservationID integer</param> 
         /// <returns>True if Database allows the changes false if not</returns>     
         public static bool ChangePayment(int ReservationID)
         {

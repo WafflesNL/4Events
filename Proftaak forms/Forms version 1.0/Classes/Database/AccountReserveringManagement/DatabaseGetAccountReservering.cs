@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// returns amount of people in a reservation
         /// </summary>
+        /// <param name="Reservation">reservation</param>
         /// <returns>gets amount of all people in a reservation</returns>
         public static int GetReservationAmountReservation(Reservation Reservation)
         {

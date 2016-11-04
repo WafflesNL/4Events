@@ -13,6 +13,8 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets a camping from the database (the ID is a Foreign key from another table)
         /// </summary>
+        /// Reservation
+        /// <param name="ID">ID for camping</param>
         /// <returns>Gets a camping that exists in the database null if not</returns>
         public static Camping GetSingleCamping(int ID)
         {

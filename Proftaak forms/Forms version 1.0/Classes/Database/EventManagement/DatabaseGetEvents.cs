@@ -76,6 +76,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets a single event from the database
         /// </summary>
+        /// <param name="EventID">EventID integer</param>
         /// <returns>a specific event from the database</returns>
         public static Event GetSingleEvent(int EventID)
         {

@@ -13,6 +13,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets a place for a event
         /// </summary
+        /// <param name="Place">PlaceID integer</param>   
         /// <returns>The class place</returns>
         public static Place GetPlace(int PlaceID)
         {
@@ -60,7 +61,7 @@ namespace Forms_version_1._0
         /// <summary>
         /// Gets a list of all places that belong to a camping
         /// </summary>
-        /// <param name="CampingID">EventID int</param>     
+        /// <param name="CampingID">EventID int?</param>     
         /// <returns>Returns a list of places</returns>
         public static List<Place> GetPlacesCamping(int? CampingID)
         {

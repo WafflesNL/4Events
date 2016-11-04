@@ -142,7 +142,7 @@ namespace Forms_version_1._0.Classes
         /// <summary>
         /// Uses the btye[] from the database and converts it to bitmap
         /// </summary>
-        /// <param name="postbyte"><param>
+        /// <param name="postbyte">The byte[] gotten from the database<param>
         /// <returns>The from byte[] converted bitmap</returns>
         public static Bitmap ByteToImage(byte[] postbyte)
         {
